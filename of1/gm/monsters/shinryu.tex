@@ -1,0 +1,27 @@
+\monster{Shinryu}{10}{\includegraphics[width=0.16\textwidth]{./art/monsters/shinryu.png}}
+{
+	HP: & \hfill 500 & MP: & \hfill 800 \\
+	STR: & \hfill 12 & DEF: & \hfill 8 \\
+	MAG: & \hfill 14 & RES: & \hfill 9 \\
+	AGI: & \hfill 4 & Size: & \hfill L\\
+}
+{
+	\textbf{Tail}: 5d DMG, 4u Range \hfill \textbf{Drops:} Dragon Seal\\
+	\textbf{Immune}: \hyperlink{status}{All Status Effects} 
+	
+	\mspell{Tidal Wave}{35}{2r}{12u (front)}{Self}{
+		All enemies in target area take 9d+10 \hyperlink{type}{water} damage and suffer \hyperlink{status}{Immobile} for 2 rounds.
+	}{\water \immobile}	
+	\mspell{Atomic Rays}{45}{2r}{8u}{Self}{
+		All enemies in the target area take 8d+9 \hyperlink{type}{fire} damage and suffer \hyperlink{status}{Poison} for 3 rounds. 
+	}{\fire \poison}		
+	\mpassive{Adapt Element}{
+		At the start of every turn, choose one element (e.g. \hyperlink{type}{fire}).
+		You gain \hyperlink{status}{Resilience} against the element until the start of your next turn.
+	}
+	\mreaction{Final Attack}{
+		When you fall to 0 HP, you can instantly cast a spell without MP cost before suffering \hyperlink{status}{KO}.
+	}
+	\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	"That divine grace... He is something much more than a mere monster." -- Rosa
+}

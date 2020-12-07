@@ -1,0 +1,41 @@
+\ofjob{Monk}
+{
+	\ofquote{"Now I know why I have these stupid muscles!"\\}{Sabin}\\\\
+	\includegraphics[width=\columnwidth]{./art/jobs/monk2.jpg}\ofrow
+	\accf{Monks} are adept melee fighters that posses a deadly combination of strength and technique.
+	While they do not have expertise in using magic, Monks can produce similarly incredible effects by tapping into their inner life force. 
+	A skilled monk absorbs what is useful, discards what is useless and adds what is specifically his own.
+}
+{None}{Light Armor}{
+	Level 1: & HP +20 & MP~+13 & AGI~+4 & \\
+	Level 2: & HP~+10 & MP~+5  & STR~+2 & \\
+	Level 3: & \multicolumn{3}{l}{Archetype Attribute Bonus} \\
+	Level 4: & HP~+5  & MP~+10 & STR~+1 & RES~+1 \\
+	Level 5: & HP~+10  & MP~+5 & DEF~+1 & STR~+1 \\
+	Level 6: & HP~+10 & MP~+5  & STR~+1 & RES~+1 \\
+	Level 7: & HP~+10 & MP~+5  & STR~+1 & DEF~+1 \\ 
+	Level 8: & HP~+10 & MP~+5  & DEF~+2 &        \\
+	Level 9: & HP~+5  & MP~+10 & STR~+1 & RES~+1 \\ 
+	Level 10: & HP~+10 & MP~+10 & DEF~+1 &        \\ 
+}{
+	\ofjobpassive{Brawler}{In combat, you can use your bare fists as your weapon. They have the same DMG as weapons of the highest equipment class that you can use. Also, you can carry a third Accessory in place of your weapon slot and you gain STR +1 for every equipped Accessory.}{1}\ofabilitygap
+	\ofjobtech{Kick}{4}{0r}{1u}{Self}{You make an Attack against all enemies within 1u of you, by making one damage roll that applies to all affected targets that fail to evade. All targets that fail to evade are also knocked back by 1u.}{}{2}\ofabilitygap
+	\ofjobtech{Chakra}{6}{1r}{Single}{Self}{You regain 1d HP and recover from one Status Effect that you are currently suffering.}{}{4}\ofabilitygap
+	\ofjobtech{Pummel}{8}{0r}{Single}{1u}{You make 2 consecutive Attacks against the target.}{}{6}\ofabilitygap
+	\ofjobtech{Blitz}{3}{0r}{Single}{Self}{You use two different Techs consecutively in the same turn. In doing this, you have to respect additional MP costs and cast times of both Techs.}{}{8}\ofabilitygap
+	\ofjobtech{Final Heaven}{22}{0r}{Single}{1u}{You deal 6d damage to the target and knock him back by 5u. If he hits a wall or a similarly solid object in doing so, you deal another 3d damage to him.}{}{10}
+}{
+	\ofarchetypet{Black Belt}
+	{HP~+17 & MP~+8 & STR~+2}
+	{\ofarchetypetecha{Bonecrusher}{6}{0r}{Single}{1u}{Make an Attack against the target. If you hit, the target makes a DC~8 check and suffers Slow for 1 round upon failure.}{}}
+	{\ofarchetypepassive{Unscarred}{As long as your current HP is equal to your maximum HP, the STR bonus that is added to the damage dealt by your Attacks is doubled.}}
+	{\ofarchetypereaction{Strikeback}{Whenever you successfully evade an Attack by an enemy, you immediately make an Attack on him, if he is within range.}}
+	{\ofarchetypetechb{Meteor Strike}{14}{0r}{Single}{1u}{You slam the target into the ground dealing 5d damage. In doing this, you can also leap to a location of your choice within 3u.}{}}
+}{
+	\ofarchetypet{Templar}
+	{HP~+4 & MP~+16 & DEF~+1 & RES~+2}
+	{\ofarchetypetecha{Aurablast}{6}{0r}{Single}{3u}{You deal 2d magical damage to the target.}{}}
+	{\ofarchetypepassive{Lifestream}{If you do not have enough MP to use an ability you can instead choose to reduce your HP by the amount of its MP cost in order to use it.}}
+	{\ofarchetypereaction{Replenish MP}{Whenever you suffer physical damage, you regain an amount of MP equal to half your current Level.}}
+	{\ofarchetypetechb{Revive}{14}{1r}{Single}{1u}{You remove KO from the target and increase his HP by~1.}{\ko}}
+}

@@ -1,0 +1,28 @@
+\monster{Lich}{9}{\includegraphics[width=0.20\textwidth]{./art/monsters/lich.png}}
+{
+	HP: & \hfill 300 & MP: & \hfill 500\\
+	STR: & \hfill 4 & DEF: & \hfill 5 \\
+	MAG: & \hfill 12 & RES: & \hfill 8 \\
+	AGI: & \hfill 2 & Size: & \hfill L\\
+}
+{
+	\textbf{Beam}: 4d DMG, 5u Range \hfill \textbf{Drops:} 5000 Gil  \\
+	\textbf{Immune}: \hyperlink{status}{All Status Effects}\\
+	\textbf{Weak}:\holy \hfill \textbf{Resilient}:\dark 
+	
+	\mspell{Zombify}{22}{1r}{2u}{5u}{
+		Everyone in the target makes a DC 8 check and suffers \hyperlink{status}{Zombie} for 1 hour upon failure.
+	}{\zombie}	
+	\mspell{Poisonga}{24}{1r}{2u}{5u}{
+		Everyone in the target area makes a DC 8 check and suffers \hyperlink{status}{Poison} for 3 rounds upon failure.
+	}{\poison}	
+	\mspell{Doom}{36}{1r}{Single}{5u}{
+		The target makes a DC 8 check and suffers \hyperlink{status}{KO} after 3 rounds upon failure.
+	}{\ko}	
+	\mpassive{Greater Undead}{
+		You permamently suffer \hyperlink{status}{Zombie}, but are immune to effects that cause or cure \hyperlink{status}{KO}.
+	}
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"Was that Death himself? I felt a sudden dread course through my veins..." -- Ceodore}
+}
+

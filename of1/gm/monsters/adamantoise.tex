@@ -1,0 +1,23 @@
+\monster{Adamantoise}{9}{\includegraphics[width=0.31\textwidth]{./art/monsters/adamantoise.png}}
+{
+	HP: & \hfill 350 & MP: & \hfill 400 \\
+	STR: & \hfill 10 & DEF: & \hfill 7 \\
+	MAG: & \hfill 8 & RES: & \hfill 6 \\
+	AGI: & \hfill 1 & Size: & \hfill L\\
+}
+{
+	\textbf{Trample}: 4d DMG, 2u Target \hfill \textbf{Drops:} 3000 Gil \\
+	\textbf{Immune}:\poison \silence \hfill \textbf{Resilient}:\earth
+	
+	\mspell{Ultima}{45}{3r}{3u}{5u}{
+		You deal 10d+20 \hyperlink{type}{dark} damage to all enemies in the target area.  
+	}{\dark}	
+	\mtech{Roar}{20}{1r}{2u}{5u}{
+		All enemies within the target area make a DC 9 check and suffer \hyperlink{status}{Immobile} for 3 rounds upon failure. 
+	}{\immobile}	
+	\mreaction{Vigor}{
+		Whenever you suffer damage while concentrating, the cast time of the ability you are preparing is reduced by 1 round.  
+	}	
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"Not our lucky day." -- Fang}	
+}

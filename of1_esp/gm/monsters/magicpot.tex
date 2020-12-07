@@ -1,0 +1,17 @@
+\friendly{Olla Mágica}{5}{\includegraphics[width=0.12\textwidth]{./art/monsters/magicpot.png}}
+{
+ PV: & \hfill 1 & PM: & \hfill 1\\
+ FUE: & \hfill 0 & DEF: & \hfill 99 \\
+ MAG: & \hfill 0 & RES: & \hfill 99 \\
+ AGI: & \hfill 1 & Tamaño: & \hfill P\\
+}
+{
+ \textbf{Inmune}: \hyperlink{status}{Todos los Estados Alterados} \hfill \textbf{Botín:} 1000 Gil 
+ 
+ \mreaction{¡Dame!}{
+ Cuando recibes un \hyperlink{item}{objeto} beneficioso, desapareces (\hyperlink{status}{KO}) dejando unos Gil. De lo contrario, haz una tirada con DC 8. Si fallas, pasas a estar \hyperlink{status}{KO} e infliges 8d de daño a todos los que se encuentren a 3u de ti, sin dejar caer ningún Gil.
+	}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+ %\emph{"¡Dame Elixir!" -- Olla Mágica}
+}

@@ -1,0 +1,21 @@
+\monster{\hypertarget{malboro}{Malboro}}{7}{\includegraphics[width=0.21\textwidth]{./art/monsters/malboro.png}}
+{
+	HP: & \hfill 100 & MP: & \hfill 100 \\
+	STR: & \hfill 2 & DEF: & \hfill 4 \\
+	MAG: & \hfill 5 & RES: & \hfill 7 \\
+	AGI: & \hfill 2 & Size: & \hfill L\\
+}
+{
+	\textbf{Tentacle}: 2d DMG \hfill \textbf{Drops:} 1000 Gil  \\
+	\textbf{Immune}: \hyperlink{status}{All Status Effects} \hfill \textbf{Weak}:\fire 
+	
+	\mtech{Bad Breath}{20}{1r}{3u (front)}{Self}{
+			All enemies in the target area make a DC 8 check and are suffer \hyperlink{status}{Sleep}, \hyperlink{status}{Poison}, \hyperlink{status}{Silence} and \hyperlink{status}{Blind} for 3 rounds upon failure.	
+	}{\sleep \poison \silence \blind}	
+	\mtech{Gastric Juice}{10}{1r}{2u}{8u}{
+		All enemies in the target area suffer 5d damage and make a DC 8 check.
+		Every one that fails suffers \hyperlink{status}{DeSTR} and \hyperlink{status}{DeMAG} for 5 rounds.	
+	}{\destr \demag}	
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"That looks like a mouth. Is that its face!?" -- Prompto}
+}

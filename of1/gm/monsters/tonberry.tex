@@ -1,0 +1,18 @@
+\monster{Tonberry}{9}{\includegraphics[width=0.26\textwidth]{./art/monsters/tonberry.png}}
+{
+	HP: & \hfill 280 & MP: & \hfill 100\\
+	STR: & \hfill 12 & DEF: & \hfill 6 \\
+	MAG: & \hfill 3 & RES: & \hfill 5 \\
+	AGI: & \hfill 2 & Size: & \hfill S\\
+}
+{
+	\textbf{Knife}: 4d DMG \hfill \textbf{Drops:} 4000 Gil \\
+	\textbf{Immune}:\poison \blind \sleep  
+		
+	\mpassive{Grudge}{
+		Every time you \hyperlink{status}{Attack} an enemy, he has to make a DC 7 check and suffers \hyperlink{status}{KO} upon failure. 
+	}	
+	\mreaction{Karma}{Whenever an enemy that is more than 3u away reduces your HP, deal 8d \hyperlink{type}{dark} damage back. }
+	\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	"A kitchen knife. Wonder if it's a culinary battle he wants." -- Ignis
+}

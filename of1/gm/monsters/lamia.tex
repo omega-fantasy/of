@@ -1,0 +1,24 @@
+\monster{Lamia}{6}{\includegraphics[width=0.24\textwidth]{./art/monsters/lamia.png}}
+{
+	HP: & \hfill 70 & MP: & \hfill 100 \\
+	STR: & \hfill 2 & DEF: & \hfill 3 \\
+	MAG: & \hfill 6 & RES: & \hfill 5 \\
+	AGI: & \hfill 3 & Size: & \hfill M\\
+}
+{
+	\textbf{Slap}: 2d DMG \hfill \textbf{Drops:} 800 Gil \\
+	\textbf{Resilient}:\water \hfill \textbf{Weak}:\lightning \\
+	\textbf{Immune}:\poison\sleep\silence
+	
+	\mspell{Toad}{16}{2r}{Single}{5u}{
+		The target makes a DC 8 check and is turned into a toad upon failure for 5 rounds or until he receives any damage.
+		While being a toad, he cannot talk or take any action and can only move 1u per turn.
+	}{}	
+	\mreaction{Entice}{
+	Whenever an enemy successfully \hyperlink{action}{Attacks} you, they have to make a DC~6 check.
+	Upon failure, you can command him to perform actions and movements of your choice
+	and he has to follow these commands on his next turn. 
+	}
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"Toads!? I hate toads! Don't turn me into one!" -- Refia}
+}

@@ -1,0 +1,103 @@
+\thispagestyle{empty}
+\subsection*{\huge Marksman}
+\vspace{0.3cm}
+"I play the leading man; who else?" \\
+\indent -- Balthier 
+\vspace{0.3cm} \\
+Marksmen are experts of all kinds of ranged weapons that strike from great distance. 
+Skilled Marksmen can see through their enemies, allowing them to know target's strengths and weaknesses. 
+Therefore they can not only deal significant ranged damage, but also disable enemies with special techniques. 
+For the Marksman there is but one rule: hunt or be hunted.
+\vfill
+\battrt
+{
+	\textbf{Level 1:} & HP +19 & MP~+12 & AGI~+2 & STR +1 \\
+	\textbf{Level 2:} & HP~+5  & MP~+10 & STR~+1 & DEF~+1 \\
+	\textbf{Level 3:} & HP~+10 & MP~+5  & STR~+1 & RES~+1 \\
+}{Bow, Gun}{Light Armor}
+\vfill
+\atypet{Ranger}
+{	
+	\textbf{Level 4:} & HP~+10 & MP~+10 & STR~+1 &        \\
+	\textbf{Level 5:} & HP~+5  & MP~+10 & DEF~+2 &        \\
+	\textbf{Level 6:} & HP~+10 & MP~+10 & RES~+1 &        \\
+	\textbf{Level 7:} & HP~+5  & MP~+10 & STR~+1 & RES~+1 \\
+	\textbf{Level 8:} & HP~+5  & MP~+5  & RES~+1 & DEF~+2 \\
+	\textbf{Level 9:} & HP~+5  & MP~+10 & RES~+1 & STR~+1 \\
+	\textbf{Level 10:}& HP~+10 & MP~+5  & STR~+2 &        \\
+}
+{Recoil}
+{	
+	Whenever you make a successful \hyperlink{action}{Attack}, you can immediately move 1u even when wielding a bow.
+}
+{Magic Evade}
+{	
+	You can evade \hyperlink{action}{Magic} by passing an evasion check, the same way you evade \hyperlink{action}{Attacks}.
+}
+\vfill
+\atypet{Sniper}
+{	
+	\textbf{Level 4:} & HP~+5  & MP~+5  & STR~+2 & RES~+1 \\
+	\textbf{Level 5:} & HP~+10 & MP~+10 & DEF~+1 &		  \\
+	\textbf{Level 6:} & HP~+5  & MP~+10 & STR~+1 & DEF~+1 \\
+	\textbf{Level 7:} & HP~+5  & MP~+5  & STR~+1 & RES~+2 \\
+	\textbf{Level 8:} & HP~+5  & MP~+10 & DEF~+1 & RES~+1 \\
+	\textbf{Level 9:} & HP~+10 & MP~+5  & STR~+2 &        \\
+	\textbf{Level 10:}& HP~+5  & MP~+5  & RES~+1 & STR~+2 \\
+}
+{Concentrate}
+{	
+	Whenever you \hyperlink{action}{Attack} an enemy, he has \hyperlink{check}{Disadvantage} on the evasion check.
+}
+{Auto-Item}
+{	
+	Whenever you suffer any damage, you can immediately use an \hyperlink{item}{Item}.
+	You can only use this effect once per round.
+}
+\pagebreak \\
+\noindent {\Large\color{accent}\bf \uline{Abilities\phantom{y}\hfill}}\\\\
+	\techt{Big Shot}{3}{0r}{Single}{Weapon}
+	{
+		Make an \hyperlink{action}{Attack} on the target. 
+		If you hit, the damage dealt ignores the target's DEF.
+	}{}{1}
+	\techt{Lay Trap}{4}{1r}{1u}{Self}{
+		You set a trap where you are standing.
+		An enemy that walks over it makes a DC 9 check and suffers 2d damage and \hyperlink{status}{Immobile} for 1 round upon failure.
+		The trap disappears once it is activated.
+	}{\immobile}{2}
+	\spellt{Libra}{5}{0r}{Single}{3u}
+	{
+		You analyse the target thoroughly and know his \hyperlink{type}{Resiliences}, \hyperlink{type}{Weaknesses}, \hyperlink{type}{Immunities}, as well as his current HP and MP.
+	}{}{3}
+	\techt{Quick Shot}{9}{0r}{Single}{Weapon}
+	{
+		You make an \hyperlink{action}{Attack} after which you can immediately begin using an \hyperlink{action}{Ability} or \hyperlink{item}{Item} on the same turn.
+	}{}{5}
+	\techt{Pierceshot}{7}{0r}{10u (line)}{Self}
+	{
+		You make an \hyperlink{action}{Attack} against all targets in a line, by making one damage roll that applies to everyone that fails to evade.	
+	}{}{6}
+	\techt{Poison Ammo}{8}{0r}{Single}{Weapon}
+	{
+		Make an \hyperlink{action}{Attack} on the target. 
+		If you hit, the damage dealt is \hyperlink{type}{magical} and the target makes a DC 8 check. 
+		Upon failure, he suffers \hyperlink{status}{Poison} for 3 rounds.	
+	}{\poison}{7}
+	\techt{Target MP}{4}{1r}{Single}{Weapon}
+	{
+		Make an \hyperlink{action}{Attack} on the target.
+		If you hit, you reduce his MP by the amount of damage dealt instead of his HP.
+	}{}{8}
+	\techt{Smoke Bomb}{12}{1r}{3u}{5u}
+	{
+		You create a smoke cloud that inhibits vision in the target area for 5 rounds.
+		Everyone inside the cloud suffers \hyperlink{status}{Blind}, but gains \hyperlink{status}{Blink}.
+	}{\blind\blink}{9}
+	\techt{Barrage}{22}{1r}{Single}{Self}
+	{
+		For up to 3 rounds you make 2 consecutive \hyperlink{action}{Attacks} as your action on every turn.
+		As long as this effect is active, you cannot move or take other actions.
+		You can choose to end this effect at the start of every turn.
+	}{}{10}
+\pagebreak

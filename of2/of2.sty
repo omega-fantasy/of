@@ -1,0 +1,518 @@
+\usepackage[english]{babel}
+\usepackage[babel,style=english]{csquotes}
+\usepackage{graphicx}
+\usepackage[pass]{geometry}
+\usepackage[rgb, hyperref]{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{sectsty}
+\usepackage{multicol}
+\usepackage[quiet,no-math]{fontspec}
+\usepackage{options}
+\usepackage{fancyhdr}
+\usepackage[tocindentauto, tocgraduated]{tocstyle}
+\usetocstyle{classic}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shapes.geometric}
+
+\addto\captionsenglish{% Replace "english" with the language you use
+	\renewcommand{\contentsname}%
+	{\hfill \accf{Table of Contents} \hfill}%
+}
+
+%\setlength\belowcaptionskip{0cm}
+%\setlength\abovecaptionskip{0cm}
+%\setlength\floatsep{0cm}
+%\setlength\textfloatsep{0cm}
+%\setlength\intextsep{0.2cm}
+%\setlength\dbltextfloatsep{0cm}
+%\setlength\dblfloatsep{0cm}
+\setlength\parindent{0cm}
+%\setlength\parskip{0cm}
+%\setlength\columnsep{0cm}
+%\hangindent=0cm
+%\hangafter=0
+
+%\special{dvipdfmx:config z 0} % turns compression off
+\special{dvipdfmx:config C 0x20} % saves some KB
+
+\setsansfont[Ligatures=TeX, Scale=1.02]{Carlito}
+%\setmainfont[Ligatures=TeX, Scale=1.02]{Carlito}
+%\setmonofont[Ligatures=TeX, Scale=1.02]{Carlito}
+
+\definecolor{accent}{rgb}{0.17,0.17,0.57}
+%\colorlet{accent}{blue!20!white}
+\colorlet{accentred}{red!50!black}
+\colorlet{gr}{white!35!black}
+\newcommand{\accf}[1]{\textcolor{accent}{\textbf{#1}}}
+\newcommand{\accr}[1]{\textcolor{accentred}{\textbf{#1}}}
+\newcommand{\acc}[1]{\textcolor{accent}{#1}}
+
+\newcommand{\defaultgeometry}{\newgeometry{bottom=5mm,top=15mm,right=10mm,left=10mm, columnsep=1cm}}
+\defaultgeometry
+
+\pagestyle{fancy}
+\fancyhf{}
+%\fancyheadoffset[H]{0.1cm}
+\fancyhead[R,R]{\fontsize{13}{0}\selectfont\accf{\thepage}}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headrule}{\vspace*{-0.3cm}}
+%\renewcommand{\footrule}{\color{accent}\vspace*{-0.5cm}\rule{\columnwidth}{0cm}\vspace*{-1cm}}
+
+\newcommand{\sectiontitle}{}
+\newcommand{\setsectiontitle}[1]{\renewcommand{\sectiontitle}{#1}}
+\newcommand{\subsectiontitle}{}
+
+\newcommand{\ofsection}[1]{
+	\fancyhead[L]{\fontsize{12}{0}\selectfont\accf{#1} \hfill}
+	\refstepcounter{section}
+	\addcontentsline{toc}{section}{#1}
+	\setsectiontitle{#1}
+}
+
+\newcommand{\ofsubsection}[1]{
+	\fancyhead[L]{\fontsize{12}{0}\selectfont\sectiontitle \hspace*{0.1cm} -- \hspace*{0.05cm} \accf{#1} \hfill}
+	\refstepcounter{subsection}
+	\addcontentsline{toc}{subsection}{#1}
+	\renewcommand{\subsectiontitle}{#1}
+}
+
+\newcommand{\ofsubsubsection}[1]{
+	\fancyhead[L]{\fontsize{12}{0}\selectfont\sectiontitle \hspace*{0.1cm} -- \hspace*{0.05cm} \subsectiontitle \hspace*{0.1cm} -- \hspace*{0.05cm} \accf{#1} \hfill}
+}
+
+\sectionfont{\fontsize{0.75cm}{0cm}\selectfont \color{accent}}
+\subsectionfont{\fontsize{0.65cm}{0cm}\selectfont \color{accent}}
+\subsubsectionfont{\fontsize{0.47cm}{0cm}\selectfont \color{accent}}
+\renewcommand{\familydefault}{\sfdefault}
+
+% turn off random crap in output
+\hbadness=10000
+\hfuzz=\maxdimen
+\vbadness=\maxdimen
+\newcount\hbadness
+\newcount\vbadness
+\newdimen\hfuzz
+
+\hypersetup{colorlinks,linkcolor={blue!80!black},citecolor={blue!80!black},urlcolor={blue!80!black}}
+
+\newcommand{\fire}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/fire.png}}}
+\newcommand{\ice}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/ice.png}}}
+\newcommand{\lightning}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/lightning.png}}}
+\newcommand{\water}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/water.png}}}
+\newcommand{\earth}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/earth.png}}}
+\newcommand{\wind}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/wind.png}}}
+\newcommand{\holy}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/holy.png}}}
+\newcommand{\dark}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/dark.png}}}
+\newcommand{\physical}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/str.png}}}
+\newcommand{\ko}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/doom.png}}}
+\newcommand{\poison}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/poison.png}}}
+\newcommand{\blind}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/blind.png}}}
+\newcommand{\blink}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/blink.png}}}
+\newcommand{\sleep}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/stop.png}}}
+\newcommand{\silence}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/silence.png}}}
+\newcommand{\immobile}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/immobile.png}}}
+\newcommand{\zombie}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/zombie.png}}}
+\newcommand{\enstr}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/bravery.png}}}
+\newcommand{\enmag}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/faith.png}}}
+\newcommand{\enres}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/shell.png}}}
+\newcommand{\destr}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/debrave.png}}}
+\newcommand{\dedef}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/deprotect.png}}}
+\newcommand{\demag}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/defaith.png}}}
+\newcommand{\deres}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/deshell.png}}}
+\newcommand{\enndef}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/protect.png}}}
+\newcommand{\pas}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/passive.png}}}
+\newcommand{\rea}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/react.png}}}
+
+\newcommand{\ofimagewide}[1] {
+	\twocolumn[
+	\begin{center}
+		{#1}
+	\end{center}
+	] 	
+}
+
+\newcommand{\ofquote}[2]{\accf{#1\hspace*{0.3cm}\mbox{--~#2}}}
+
+\newcommand{\oftalent}[2]{\accf{#1:} #2}
+
+\newcommand{\ofsummon}[5]
+{
+	\begin{minipage}{\columnwidth}
+	\setlength\columnsep{0.2cm}
+	\textbf{\large\color{accent}#1}\vspace*{-0.3cm}\\
+	\begin{multicols}{2}
+		\includegraphics[width=\columnwidth]{#2}
+		\vspace*{-2cm}\\
+		\columnbreak\vspace*{-1.6cm}\\
+		\accf{Support:} #3\\\\
+		\accf{Summon:} #4
+%		\accf{Junction (Level 10):}\\#5
+	\end{multicols}	
+	\vspace*{-0.6cm}
+	\defaultgeometry
+	\end{minipage}
+}
+
+\newcommand{\ofrow}{\vspace*{0.125cm}\\}
+\newcommand{\ofbigrow}{\vspace*{0.4cm}\\}
+\newcommand{\ofgap}{\vspace*{0.25cm}\\}
+\newcommand{\ofpar}{\vspace*{0.25cm}\\\\}
+
+\newcommand{\ofbullet}[1]{
+	\begin{tabularx}{\columnwidth}{@{\hspace{-0.001cm}} p{0.01\columnwidth} p{0.94\columnwidth}} 
+		\raisebox{0.05cm}{\color{accent}\fontsize{1cm}{0cm}\selectfont.} & #1
+	\end{tabularx}
+}
+
+\newcommand{\ofboxwithtitle}[2]
+{
+	\accf{#1}\vspace*{0.1cm}\\
+	#2
+}
+
+\newcommand{\oftable}[3] {
+	\begin{tabularx}{\columnwidth}{@{\hspace{0.05cm}}#1} 
+	#2 \vspace*{0.1cm}\\
+	#3
+	\end{tabularx}
+}
+
+\newcommand{\oftablewide}[3] {
+	\twocolumn[
+	\begin{tabularx}{\columnwidth}{@{\hspace{0.05cm}}#1} 
+		#2 \vspace*{0.2cm}\\
+		#3
+	\end{tabularx}
+	]
+}
+
+\newcommand{\ofmonster}[6]
+{
+		\begin{tabularx}{\columnwidth}{@{\hspace{-0.025cm}} p{0.6\columnwidth} p{0.32\columnwidth}}
+			\accf{#1 \hfill Level #2} \vspace*{0.1cm}\newline
+			{
+				\begin{tabularx}{.6\columnwidth}{@{\hspace{-0.001cm}}p{0.7cm} p{0.7cm} @{\hspace{1.75cm}} p{0.7cm} p{0.7cm}} 
+					#4
+				\end{tabularx}
+			}
+			& \hfill\raisebox{-0.85\height}{#3}\hfill
+		\end{tabularx}
+		#5		\vspace*{-0.5cm}\\
+		#6
+}
+
+
+
+\newcommand{\ofspecial}[4] {
+	\noindent
+	\raisebox{-.1\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/#4}} \hspace*{0.025cm} \accf{#1} \hfill \accf{Level #3}\\
+	#2	
+}
+
+\newcommand{\ofability}[9] {
+	\noindent
+	% TODO: add #7 for status/element icons
+	\raisebox{-.1\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/#9}} \hspace*{0.025cm} \accf{#1} \hfill \accf{Level #8}\\
+	{MP: #2 \hfill  Target: #4 \hfill Time: #3 \hfill Range: #5}\\\
+	#6 		
+}
+
+\newcommand{\ofjobspell}[8]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{magic.png}}
+\newcommand{\ofjobtech}[8]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{tech.png}}
+\newcommand{\ofjobpassive}[3]{\ofspecial{#1}{#2}{#3}{passive.png}}
+
+\newcommand{\ofabilitygap}[0]{\vspace*{0.23cm}\\}
+\newcommand{\ofarchetypet}[6]{
+	\hfill\accf{#1 Archetype}\hfill\vspace*{0.1cm}\\
+	\begin{tabular}{@{}p{0.3\columnwidth} p{0.12\columnwidth} p{0.12\columnwidth} p{0.12\columnwidth} p{0.12\columnwidth}}\accf{Attribute Bonus:} & #2\end{tabular} \vspace*{0.15cm}\\
+	#3\ofabilitygap
+	#4\ofabilitygap
+	#5\ofabilitygap
+	#6
+}
+
+\newcommand{\ofarchetypeta}[6]{
+	\accf{\hfill \large Archetype: #1 \hfill} \vfill
+	\begin{tabular}{@{}p{0.31\columnwidth} p{0.13\columnwidth} p{0.13\columnwidth} p{0.13\columnwidth} p{0.13\columnwidth}}\accf{Attribute Bonus:} & #2\end{tabular}\vfill
+	#3\vfill
+	#4\vfill
+	#5\vfill
+	#6
+}
+
+\newcommand{\ofarchetypespella}[7]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{3}{magic.png}}
+\newcommand{\ofarchetypetecha}[7]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{3}{tech.png}}
+\newcommand{\ofarchetypespellb}[7]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{9}{magic.png}}
+\newcommand{\ofarchetypetechb}[7]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{9}{tech.png}}
+\newcommand{\ofarchetypepassive}[2]{\ofspecial{#1}{#2}{5}{passive.png}}
+\newcommand{\ofarchetypereaction}[2]{\ofspecial{#1}{#2}{7}{react.png}}
+
+\newcommand{\ofjob}[8]{
+	\ofsubsubsection{#1}
+	#2 \vspace*{0.1cm}\\ \accf{Weapons:} #3 \hfill \accf{Armor:} #4 \vspace*{0.1cm}\\
+	%
+	\vfill
+	\hfill\accf{#1 Abilities}\hfill\vspace*{0.15cm}\\
+	#6 % abilities
+	%
+	\newpage
+	%
+	\hfill\accf{#1 Attributes}\hfill\vspace*{0.15cm}\\
+	\begin{tabular}{@{}p{0.18\columnwidth} p{0.16\columnwidth} p{0.16\columnwidth} p{0.16\columnwidth} p{0.16\columnwidth}}#5\end{tabular}
+	\vfill
+	%
+	#7
+	%
+	\vfill
+	%
+	#8
+	%
+	\clearpage
+}
+
+%%%%%%%%%% CHARACTER SHEET %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\tf}[3]{\raisebox{-.2\height}{\TextField[height=0.6cm, charsize=12pt, name=#1, borderwidth=0, backgroundcolor=white, width=#2cm #3]{}}}
+\definecolor{bg}{RGB}{245,245,245}
+\newcommand{\ofcstextfield}[3]{\hspace*{-0.1cm}\raisebox{-.2\height}{\TextField[print, height=0.6cm, charsize=13pt, name=#1, borderwidth=0, backgroundcolor=bg, width=#2\columnwidth, #3]{}}}
+\newcommand{\ofcsnumfield}[2]{\raisebox{-.2\height}{%
+		\FPeval{\foo}{#2 * 0.08}
+		\TextField[align=2, print, height=0.6cm, charsize=13pt, name=#1, borderwidth=0, backgroundcolor=bg, width={\foo \columnwidth}, maxlen=#2]{}}
+}
+\newcommand{\ofcscheckbox}[1]{\hspace*{-0.1cm}\raisebox{-.2\height}{\CheckBox[print, height=0.58cm, name=#1, borderwidth=1, bordercolor=black, backgroundcolor=bg, width=0.58cm]{}}}
+
+\options{
+	/cs/.new family,
+	/cs/name/.new value,
+	/cs/description/.new value,
+	/cs/story/.new value,
+	/cs/hpcur/.new value = \phantom{999},
+	/cs/hpmax/.new value = \phantom{999},
+	/cs/mpcur/.new value = \phantom{999},
+	/cs/mpmax/.new value = \phantom{999},
+	/cs/str/.new value,
+	/cs/def/.new value,
+	/cs/mag/.new value,
+	/cs/res/.new value,
+	/cs/agi/.new value,
+	/cs/evasiondc/.new value,
+	/cs/movement/.new value,
+	/cs/level/.new value = \phantom{10},
+	/cs/status/.new value,
+	/cs/talent/.new value,
+	/cs/job/.new value = \phantom{Red Mage},
+	/cs/archetype/.new value = \phantom{Treasure Hunter},
+	/cs/specials/.new value,
+	/cs/limitbreak/.new value,
+	/cs/limitmode/.new value = \phantom{Assailant},
+	/cs/limitpoints/.new value = \hspace*{0.1cm}\raisebox{-.075\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/limitbar.png}},
+	/cs/limitdesc/.new value,
+	/cs/limitrange/.new value = \phantom{3u},
+	/cs/limittarget/.new value = \phantom{Sgl.},
+	/cs/summon/.new value,
+	/cs/summonsupport/.new value,
+	/cs/summonability/.new value,
+	/cs/summonused/.new value,
+	/cs/abilities/.new value,
+	/cs/inventory/.new value,
+	/cs/gil/.new value = \phantom{2009},
+	/cs/weapon/.new value,
+	/cs/weaponeffect/.new value,
+	/cs/weaponmateria/.new value,
+	/cs/armor/.new value,
+	/cs/armoreffect/.new value,
+	/cs/armormateria/.new value,
+	/cs/accessory1/.new value,
+	/cs/accessory1effect/.new value,
+	/cs/accessory2/.new value,
+	/cs/accessory2effect/.new value,
+}
+
+\newcommand{\ofcsrule}{\color{accent}\hspace*{-0.9cm}\rule{1.09\columnwidth}{1pt}}
+
+\newcommand{\ofcs}[1]{
+%	{
+%		\AddToShipoutPictureBG*{%
+%			\begin{tikzpicture}[overlay,remember picture]
+%			\draw[color=accent, line width=3pt]($ (current page.north west) + (0.053cm,-0.053cm) $)rectangle($ (current page.south east) + (-0.053cm,0.053cm) $);
+			%\draw[color=accent, line width=1.5pt]($ (current page.north west) + (0.25cm,-0.25cm) $)rectangle($ (current page.south east) + (-0.25cm,0.25cm) $);
+			%\end{tikzpicture}
+%		}
+		%
+		%
+	{	
+	\Large
+	\newgeometry{bottom=5mm,top=0mm,right=10mm,left=10mm, columnsep=0.75cm}
+	\thispagestyle{empty}
+	\options{/cs,#1}
+	\onecolumn
+	%
+	\vspace*{-1.8cm}
+	%
+	\begin{multicols}{2}
+	\parbox[l][6.2cm][l]{\columnwidth}{
+		\accf{Name:}\hspace*{0.3cm}\option{/cs/name}\vspace*{-0.8cm}\\
+		\option{/cs/description}\vfill
+		Talent: \option{/cs/talent} 
+	}
+	%
+	\columnbreak\\
+	%
+	\parbox[l][6.2cm][l]{\columnwidth}{
+		\accf{Story:}\option{/cs/story}
+	}
+	\end{multicols}
+	%
+	%
+	{\vspace*{-0.4cm}\ofcsrule}\vspace*{-0.6cm}\\
+	%
+	%
+	\begin{multicols}{4}
+	\hspace*{-0.5cm}
+	\parbox[l][3cm][l]{\columnwidth}{
+		\hspace*{\fill}Health Points:\hspace*{\fill}\\ 
+		\hspace*{\fill}\option{/cs/hpcur}\hspace*{0.2cm}/\hspace*{0.2cm}\option{/cs/hpmax}\hspace*{\fill}\\\\
+		\hspace*{\fill}Mana Points:\hspace*{\fill}\\ 
+		\hspace*{\fill}\option{/cs/mpcur}\hspace*{0.2cm}/\hspace*{0.2cm}\option{/cs/mpmax}\hspace*{\fill}
+	}
+	%
+	\columnbreak\\
+	%
+	\parbox[l][3cm][l]{\columnwidth}{
+		Level:\hfill\option{/cs/level}\hspace*{0.6cm}\ofbigrow
+		Agility:\hfill\option{/cs/agi}\hspace*{0.6cm}\ofbigrow
+		Movement:\hfill\option{/cs/movement}\hspace*{0.6cm}\ofbigrow
+		Evasion DC:~\hfill\option{/cs/evasiondc}\hspace*{0.6cm}\ofbigrow		
+	}
+	%
+	\columnbreak\\
+	%
+	\parbox[l][3cm][l]{\columnwidth}{
+		Strength:\hfill\option{/cs/str}\hspace*{0.6cm}\ofbigrow
+		Defense:\hfill\option{/cs/def}\hspace*{0.6cm}\ofbigrow
+		Magic:\hfill\option{/cs/mag}\hspace*{0.6cm}\ofbigrow
+		Resistance:\hfill\option{/cs/res}\hspace*{0.6cm}
+	}
+	%
+	\columnbreak\\
+	%
+	\parbox[l][3cm][l]{\columnwidth}{Status Effects:\option{/cs/status}}
+	%
+	\end{multicols}
+	%
+	%
+	{\ofcsrule}\vspace*{-0.6cm}\\
+	%
+	\begin{multicols}{4}
+	\parbox[l][2.7cm][l]{\columnwidth}{		
+		Job:\\ \option{/cs/job}\vfill
+		Archetype:\\ \option{/cs/archetype}
+	}	
+	%
+	\columnbreak\\
+	%	
+	\parbox[l][2.7cm][l]{\columnwidth}{Special Abilities:\ofrow \option{/cs/specials}}
+	%
+	\columnbreak\\
+	%
+	\parbox[l][2.7cm][l]{2\columnwidth}{Abilities:\ofrow \option{/cs/abilities}}
+	%
+	\end{multicols}
+	%
+	{\vspace*{-0.5cm}\ofcsrule}\vspace*{-0.6cm}\\
+	%
+	\begin{multicols}{2}
+	\parbox[l][2.3cm][l]{\columnwidth}{
+		Limit Break: \option{/cs/limitbreak}\ofrow
+		Limit Mode: \option{/cs/limitmode}\\\vfill
+		Limit Points: \option{/cs/limitpoints}\ofrow
+	}	
+	%
+	\columnbreak\\
+	%
+	\parbox[l][2.3cm][l]{\columnwidth}{
+		Range: \option{/cs/limitrange} \hspace*{1cm} Target: \option{/cs/limittarget}\ofrow
+		\option{/cs/limitdesc}
+	}
+	%
+	\end{multicols}
+	%
+	{\vspace*{-0.5cm}\ofcsrule}\vspace*{-0.6cm}\\
+	%
+		\begin{multicols}{2}
+		\parbox[l][1.8cm][l]{\columnwidth}{		
+			Summon: \option{/cs/summon}\ofrow
+			Support: \option{/cs/summonsupport}
+		}	
+		%
+		\columnbreak\\
+		%
+		\parbox[l][1.8cm][l]{\columnwidth}{
+			Summon Ability: \hfill Used Today: \option{/cs/summonused} \ofrow
+			\option{/cs/summonability}
+		}
+		%
+	\end{multicols}
+	%
+	{\vspace*{-0.5cm}\ofcsrule}\vspace*{-0.6cm}\\
+	%
+	\begin{multicols}{2}
+	\parbox[l][3.5cm][l]{\columnwidth}{		
+		Weapon: \option{/cs/weapon}\\
+		Effect: \option{/cs/weaponeffect}\\
+		Materia: \option{/cs/weaponmateria}\vfill
+		Accessory: \option{/cs/accessory1}\\
+		Effect: \option{/cs/accessory1effect}
+	}
+	%
+	\columnbreak\\
+	%
+	\parbox[l][3.5cm][l]{\columnwidth}{		
+		Armor: \option{/cs/armor}\\
+		Effect: \option{/cs/armoreffect}\\
+		Materia: \option{/cs/armormateria}\vfill
+		Accessory: \option{/cs/accessory2}\\
+		Effect: \option{/cs/accessory2effect}
+	}
+	\end{multicols}
+	%
+	{\vspace*{-0.5cm}\ofcsrule}\vspace*{0.3cm}\\
+	%
+	\parbox[l][3cm][l]{1\columnwidth}{		
+		Inventory:\hfill Gil:\hspace*{0.5cm}\option{/cs/gil}\\
+		\option{/cs/inventory}
+	}
+	%
+	}
+	\defaultgeometry
+	\twocolumn
+	\clearpage
+}
+\newcommand{\ofcsfill}[1]{\begin{Form}\ofcs{#1}\end{Form}}
+
+%%%%%%%%%%%%%%%%TODO REMOVE%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\ofmonsterability}[8]{
+	\vskip0.05cm
+	\raisebox{-.05\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/#8}} \hspace*{0.1cm}\accf{#1} \\
+	MP: #2 \hfill Target: #4 \hfill Time: #3 \hfill Range: #5 \\
+	#6 
+}
+
+\newcommand{\mspell}[7]{\ofmonsterability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{magic.png}}
+\newcommand{\mtech}[7]{\ofmonsterability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{tech.png}}
+
+\newcommand{\mpassive}[2]{
+	\vskip0.05cm
+	\raisebox{-.05\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/passive.png}} \accf{#1:} #2
+}
+
+\newcommand{\mreaction}[2]{
+	\vskip0.05cm
+	\raisebox{-.05\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/react.png}} \accf{#1:} #2
+}

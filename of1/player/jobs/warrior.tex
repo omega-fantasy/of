@@ -1,0 +1,94 @@
+\thispagestyle{empty}
+\subsection*{\huge Warrior}
+\vspace{0.3cm}
+"...Whatever." \\
+\indent -- Squall 
+\vspace{0.3cm} \\
+Warriors are specialists in melee combat, because of their strong physical offense and defenese. 
+They are proficient with powerful swords and armor, allowing them to become even more dangerous and
+durable. 
+In his pursuit of ever stronger opponents, the experienced Warrior knows that there is always
+a bigger fish.
+\vfill
+\battrt{
+	\textbf{Level 1:} & HP +25 & MP~+12 & AGI~+3 & STR +1 \\
+	\textbf{Level 2:} & HP~+10 & MP~+5  & STR~+1 & DEF~+1 \\
+	\textbf{Level 3:} & HP~+10 & MP~+10 & RES~+1 &        \\
+}{Sword}{Light Armor, Heavy Armor}
+\vfill
+\atypet{Dark Knight}
+{		
+	\textbf{Level 4:} & HP~+5, & MP~+10 & STR~+1 & RES~+1 \\ 
+	\textbf{Level 5:} & HP~+10 & MP~+5  & DEF~+2 & 		  \\ 
+	\textbf{Level 6:} & HP~+5  & MP~+10 & STR~+2 &		  \\ 
+	\textbf{Level 7:} & HP~+10 & MP~+5  & STR~+1 & RES~+1 \\ 
+	\textbf{Level 8:} & HP~+5  & MP~+5  & DEF~+1 & RES~+2 \\ 
+	\textbf{Level 9:} & HP~+10 & MP~+5  & STR~+1 & DEF~+1 \\ 
+	\textbf{Level 10:}& HP~+10 & MP~+10 & RES~+1 &		  \\ 
+}
+{Souleater}
+{	
+	Whenever you successfully \hyperlink{action}{Attack} an enemy, you can additionally inflict
+	\hyperlink{action}{dark} damage equal to half of the damage dealt, to yourself and all enemies within~3u.
+}
+{Blood Price}
+{	
+	Whenever an enemy or a willing ally within 5u spends MP, you can force him to spend an equal amount of HP instead if he has enough HP to do so. Afterwards, increase your own HP by half the amount spent.
+}
+\vfill
+\atypet{Fighter}
+{	
+	\textbf{Level 4:} & HP~+10 & MP~+5  & STR~+2 &        \\ 
+	\textbf{Level 5:} & HP~+5  & MP~+10 & STR~+1 & DEF~+1 \\ 
+	\textbf{Level 6:} & HP~+10 & MP~+5  & DEF~+1 & RES~+1 \\ 
+	\textbf{Level 7:} & HP~+5  & MP~+5  & STR~+2 &        \\ 
+	\textbf{Level 8:} & HP~+10 & MP~+5  & RES~+2 &        \\ 
+	\textbf{Level 9:} & HP~+5  & MP~+10 & STR~+1 & DEF~+1 \\ 
+	\textbf{Level 10:}& HP~+10 & MP~+5  & DEF~+2 &        \\ 
+}
+{Adrenaline}
+{	
+	Whenever you reduce an enemy to 0 HP, you can immediately take additional turn.
+}
+{Blindside}
+{	
+	Whenever an enemy within 1u inflicts damage to an ally or receives damage by an ally, you can immediately make an \hyperlink{action}{Attack} on him.
+}
+\pagebreak \\
+\noindent {\Large\color{accent}\bf \uline{Abilities\phantom{y}\hfill}}\\\\
+\techt{Rush}{3}{0r}{Single}{Weapon}{
+	Make an \hyperlink{action}{Attack} against the target. 
+	If you hit, you push him back by 1u on top of the damage dealt. 
+}{}{1}
+\techt{Beatdown}{5}{0r}{Single}{Weapon}{
+	Make an \hyperlink{action}{Attack} where the target has \hyperlink{check}{Advantage} on the evasion check. 
+	If you hit, you score a \hyperlink{action}{Critical Hit}.
+}{}{2}
+\techt{Defensebreak}{10}{0r}{Single}{Weapon}{
+	Make an \hyperlink{action}{Attack} against the target. 
+	If you hit, he suffers \hyperlink{status}{DeDEF} and \hyperlink{status}{DeRES} for 3 rounds on top of the damage dealt. 
+}{\dedef \deres}{3}
+\techt{Bonecrusher}{8}{0r}{Single}{Weapon}{
+	Make an \hyperlink{action}{Attack} against the target. 
+	If you hit, he suffers \hyperlink{status}{Immobile} for 1 round on top of the damage dealt. 
+}{\immobile}{5}
+\techt{Focus}{6}{1r}{Target}{Self}{
+	For the next 3 rounds, whenever you \hyperlink{action}{Attack} an enemy, he has disadvantage on the the evasion check.
+}{}{6}
+\techt{Bravery}{10}{1r}{2u}{Self}{
+	You and all allies within the target area gain \hyperlink{status}{EnSTR} and \hyperlink{status}{EnMAG} for 3 rounds.
+}{\enstr \enmag}{7}
+\techt{Razor Gale}{8}{1r}{5u (line)}{Self}{
+	Make an \hyperlink{action}{Attack} against everyone in the target area by making one damage roll that applies to all affected targets that fail to evade. 
+	The damage dealt is of \hyperlink{type}{wind} element.  
+}{\wind}{8}
+\techt{Army of One}{20}{1r}{5u}{Self}{
+	Make an \hyperlink{action}{Attack} against every enemy in the target area by making one damage roll that applies to all affected targets that fail to evade.
+	Furthermore, you gain \hyperlink{status}{Blink} until the start of your next turn.
+}{\blink}{9}
+\techt{Omnislash}{30}{0r}{Single}{Weapon}{
+	Make 3 separate \hyperlink{action}{Attacks} against the target. 
+	Each time he rolls 4 or less on an evasion check, you score a \hyperlink{action}{Critical Hit}.
+}{}{10}
+\pagebreak
+\thispagestyle{empty}

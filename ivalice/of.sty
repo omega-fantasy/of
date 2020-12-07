@@ -1,0 +1,202 @@
+\usepackage[english]{babel}
+\usepackage[babel,style=english]{csquotes}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage[pass]{geometry}
+\usepackage{hyperref}
+\usepackage[verbose]{wrapfig}
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage[pages=some]{background}
+\usepackage{sectsty}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage[quiet,no-math]{fontspec}
+\usepackage{anyfontsize}
+\usepackage[normalem]{ulem}
+\usepackage{soul}
+\usepackage{fancyhdr}
+\usepackage{vwcol}  
+\usepackage[most]{tcolorbox}
+
+\setlength\parindent{0cm}
+\setsansfont[Ligatures=TeX]{TeX Gyre Heros}
+
+\colorlet{colaccent}{blue!45!black}
+\newcommand{\accf}[1]{\textcolor{colaccent}{\textbf{#1}}}
+\newcommand{\ofaccent}[1]{\textcolor{colaccent}{\textbf{#1}}}
+\newcommand{\acc}[1]{\textcolor{colaccent}{#1}}
+
+\newcommand{\defaultgeometry}{\newgeometry{bottom=10mm,top=12mm,right=10mm,left=10mm, columnsep=0.5cm}}
+\defaultgeometry
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R,R]{\accf{\thepage}}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headrule}{\color{colaccent}\vspace*{-0.25cm}\rule{\columnwidth}{0cm}\vspace*{-0.6cm}}
+
+\newcommand{\ofsection}[1]{
+	\fancyhead[L]{\accf{Final Fantasy Tactics Worldbook -- #1}}
+	\refstepcounter{section}
+	\addcontentsline{toc}{subsection}{#1}
+}
+
+\sectionfont{\fontsize{0.75cm}{0cm}\selectfont \color{colaccent}}
+\subsectionfont{\fontsize{0.65cm}{0cm}\selectfont \color{colaccent}}
+\subsubsectionfont{\fontsize{0.47cm}{0cm}\selectfont \color{colaccent}}
+\renewcommand{\familydefault}{\sfdefault}
+
+\hbadness=10000
+\hfuzz=\maxdimen
+\vbadness=\maxdimen
+\newcount\hbadness
+\newcount\vbadness
+\newdimen\hfuzz
+
+\hypersetup{colorlinks,linkcolor={blue!80!black},citecolor={blue!80!black},urlcolor={blue!80!black}}
+
+\newcommand{\fire}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/fire.png}}}
+\newcommand{\ice}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/ice.png}}}
+\newcommand{\lightning}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/lightning.png}}}
+\newcommand{\water}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/water.png}}}
+\newcommand{\earth}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/earth.png}}}
+\newcommand{\wind}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/wind.png}}}
+\newcommand{\holy}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/holy.png}}}
+\newcommand{\dark}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/dark.png}}}
+\newcommand{\physical}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/str.png}}}
+\newcommand{\ko}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/doom.png}}}
+\newcommand{\poison}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/poison.png}}}
+\newcommand{\blind}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/blind.png}}}
+\newcommand{\blink}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/blink.png}}}
+\newcommand{\sleep}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/stop.png}}}
+\newcommand{\silence}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/silence.png}}}
+\newcommand{\immobile}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/immobile.png}}}
+\newcommand{\zombie}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/zombie.png}}}
+\newcommand{\enstr}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/bravery.png}}}
+\newcommand{\enmag}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/faith.png}}}
+\newcommand{\enres}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/shell.png}}}
+\newcommand{\destr}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/debrave.png}}}
+\newcommand{\dedef}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/deprotect.png}}}
+\newcommand{\demag}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/defaith.png}}}
+\newcommand{\deres}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/deshell.png}}}
+\newcommand{\enndef}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/protect.png}}}
+\newcommand{\pas}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/passive.png}}}
+\newcommand{\rea}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/react.png}}}
+
+\newcommand{\ofquote}[2]{\accf{#1\hspace*{0.3cm}\mbox{--~#2}}}
+
+\newcommand{\ofrow}{\vspace*{0.15cm}\\}
+
+\newcommand{\ofbox}[1] 
+{
+	{\color{colaccent}\hspace*{-0.15cm}\rule{1.02\columnwidth}{0.04cm}}	
+	#1
+	{\color{colaccent}\hspace*{-0.15cm}\rule{1.02\columnwidth}{0.04cm}}\vspace*{-0.2cm}\\
+}
+
+\newcommand{\ofboxwithtitle}[2]
+{
+	\ofbox{
+	\accf{#1}\vspace*{0.1cm}\\
+	#2\\
+	}
+}
+
+\newcommand{\oftable}[3] {
+	\begin{minipage}{\columnwidth}
+	\ofbox{
+	\begin{tabularx}{\columnwidth}{#1} 
+	#2 \vspace*{0.1cm}\\
+	#3
+	\end{tabularx}
+	}
+\end{minipage}
+}
+
+\newcommand{\oftablewide}[3] {
+	\twocolumn[
+	\begin{minipage}{\columnwidth}
+			{\color{colaccent}\hspace*{-0.15cm}\rule{2.04\columnwidth}{0.04cm}}	
+			\begin{tabularx}{\columnwidth}{#1} 
+				#2 \vspace*{0.1cm}\\
+				#3
+			\end{tabularx}
+			{\color{colaccent}\hspace*{-0.15cm}\rule{2.04\columnwidth}{0.04cm}}\vspace*{-0.2cm}\\
+	\end{minipage}
+	]
+}
+
+\newcommand{\ofimagewide}[1] {
+	\twocolumn[
+	\begin{center}
+		{#1}
+	\end{center}
+	] 	
+}
+
+\newcommand{\ofmonster}[6]
+{
+		\begin{minipage}{\columnwidth}
+	\ofbox{
+		\begin{tabularx}{\columnwidth}{@{\hspace{-0.025cm}} p{0.6\columnwidth} p{0.32\columnwidth}}
+			\accf{#1 \hfill Level #2} \vspace*{0.1cm}\newline
+			{
+				\begin{tabularx}{.6\columnwidth}{@{\hspace{-0.001cm}}p{0.7cm} p{0.7cm} @{\hspace{1.75cm}} p{0.7cm} p{0.7cm}} 
+					#4
+				\end{tabularx}
+			}
+			& \hfill\raisebox{-0.85\height}{#3}\hfill
+		\end{tabularx}
+		#5
+		#6\vspace*{-0.35cm}\\
+	}
+\end{minipage}
+}
+
+\newcommand{\ffrpgmonster}[7]
+{
+	\begin{minipage}{\columnwidth}
+		\ofbox{
+			\begin{tabularx}{\columnwidth}{@{\hspace{-0.025cm}} p{0.6\columnwidth} p{0.32\columnwidth}}
+				\accf{#1 \hfill Level #2} \newline
+				\accf{#4}\vspace*{0.1cm}\newline
+				{
+					\begin{tabularx}{.6\columnwidth}{@{\hspace{-0.001cm}}p{0.7cm} p{0.7cm} @{\hspace{1.5cm}} p{1cm} p{0.7cm}} 
+						#5
+					\end{tabularx}
+				}
+				& \hfill\raisebox{-0.9\height}{#3}\hfill
+			\end{tabularx}
+			\textbf{#6}\ofrow
+			#7\vspace*{-0.35cm}\\
+		}
+	\end{minipage}
+}
+
+%%%%%%%%%%%%%%%%TODO REMOVE%%%%%%%%%%%%%%%%%%%%
+\newcommand{\mtech}[7]{
+	\vskip0.15cm
+	\raisebox{-.05\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/tech.png}} \hspace*{0.1cm}\accf{#1} \\
+	MP: #2 \hfill Target: #4 \hfill Time: #3 \hfill Range: #5 \\
+	#6 
+}
+
+\newcommand{\mspell}[7]{
+	\vskip0.15cm
+\raisebox{-.05\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/magic.png}} \hspace*{0.1cm}\accf{#1} \\
+MP: #2 \hfill Target: #4 \hfill Time: #3 \hfill Range: #5 \\
+#6 
+}
+
+\newcommand{\mpassive}[2]{
+	\vskip0.2cm
+	\raisebox{-.05\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/passive.png}} \accf{#1:} #2
+}
+
+\newcommand{\mreaction}[2]{
+	\vskip0.2cm
+	\raisebox{-.05\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/passive.png}} \accf{#1:} #2
+}

@@ -1,0 +1,19 @@
+\monster{Kraken}{9}{\includegraphics[width=0.23\textwidth]{./art/monsters/kraken.png}}
+{
+	HP: & \hfill 320 & MP: & \hfill 400 \\
+	STR: & \hfill 7 & DEF: & \hfill 5 \\
+	MAG: & \hfill 11 & RES: & \hfill 7 \\
+	AGI: & \hfill 2 & Size: & \hfill L\\
+}
+{
+	\textbf{Tentacle}: 4d DMG, 2u range \hfill \textbf{Drops:} 2000 Gil \\
+	\textbf{Resilient}:\water\ice \hfill \textbf{Immune}:\poison\sleep\blind 
+	
+	\mspell{Waterga}{14}{2r}{Single}{5u}{You deal 8d \hyperlink{type}{water} damage to the target. }{\water}	
+	\mtech{Ink}{22}{1r}{2u}{5u}{
+		All enemies within the target area make a DC 8 check and suffer \hyperlink{status}{Blind} and 4d damage upon failure. 
+	}{\blind}
+	\mpassive{Multiattack}{Whenever you choose to \hyperlink{action}{Attack}, you can target all enemies within range at once.}
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"I am the Kraken... Your presence is forbidden!"}
+}

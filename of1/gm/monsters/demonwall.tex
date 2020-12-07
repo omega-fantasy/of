@@ -1,0 +1,25 @@
+\monster{Demon Wall}{8}{\includegraphics[width=0.17\textwidth]{./art/monsters/demonwall.png}}
+{
+	HP: & \hfill 250 & MP: & \hfill 200 \\
+	STR: & \hfill 9 & DEF: & \hfill 6 \\
+	MAG: & \hfill 5 & RES: & \hfill 6 \\
+	AGI: & \hfill 2 & Size: & \hfill L\\
+}
+{
+	\textbf{Swords}: 3d DMG, 2u Range \hfill  \textbf{Drops:} 2000 Gil \\
+	\textbf{Immune}: \hyperlink{status}{All Status Effects} 
+	
+	\mtech{Sleepga}{24}{2r}{2u}{5u}{
+		All enemies within the target area make a DC 8 check and suffer \hyperlink{status}{Sleep} upon failure. 
+	}{\sleep}	
+	\mtech{Wall Rush}{20}{1r}{10u (line)}{Self}{
+		You charge forward in a line for up to 10u, dealing 8d damage to everyone in the path and knocking them back by 3u.
+		If you crush an enemy between yourself and a wall, they instantly suffer \hyperlink{status}{KO}.
+	}{\ko}		
+	\mpassive{Heavy Turn}{
+		Every time you change direction, everyone within 2u suffers 6d damage, but you cannot take an action on the same turn.
+	}
+	\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	"As if the attacking doors weren't enough..." -- Rydia
+}
+

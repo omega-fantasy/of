@@ -1,0 +1,17 @@
+\monster{Gilgamesh}{2}{\includegraphics[width=0.17\textwidth]{./art/monsters/gilgamesh.png}}
+{
+	HP: & \hfill 45 & MP: & \hfill 40\\
+	STR: & \hfill 2 & DEF: & \hfill 1 \\
+	MAG: & \hfill 0 & RES: & \hfill 0 \\
+	AGI: & \hfill 4 & Size: & \hfill M\\
+}
+{
+	\textbf{Polearm}: 1d DMG \hfill \textbf{Drops}: 500 Gil 
+	
+	
+	\mtech{Death Claw}{6}{0r}{Single}{Weapon}{
+		Make two \hyperlink{action}{Attacks} against the target and if at least one of them hits, he suffers \hyperlink{status}{Immobile} for 1 round.
+	}{\immobile}	
+	\mtech{Blade Dance}{8}{1r}{3u}{Self}{You make an \hyperlink{action}{Attack} against every enemy in the target area.}{}
+	\mreaction{Critical Power}{When reduced below 20 HP, you gain \hyperlink{status}{EnSTR} until the end of battle.}	
+}

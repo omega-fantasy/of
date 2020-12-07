@@ -1,0 +1,21 @@
+\monster{Ghoul}{2}{\includegraphics[width=0.14\textwidth]{./art/monsters/ghoul.png}}
+{
+	HP: & \hfill 17 & MP: & \hfill 12\\
+	STR: & \hfill 3 & DEF: & \hfill 1 \\
+	MAG: & \hfill 1 & RES: & \hfill 2 \\
+	AGI: & \hfill 2 & Size: & \hfill M\\
+}
+{
+	\textbf{Claw}: 1d DMG \hfill \textbf{Drops:} 150 Gil \\
+	\textbf{Weak}:\fire \holy \hfill \textbf{Resilient}:\ice \\
+	\textbf{Immune}:\poison  \hfill 
+	
+	\mtech{Bite}{3}{0r}{Single}{1u}{
+		The target takes 2d damage and makes a DC 8 check.
+		Upon failure, he suffers \hyperlink{status}{Zombie} for 1 hour.
+	}{\zombie}		
+	\mpassive{Undead}{You permamently suffer the \hyperlink{status}{Zombie} status.}
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"Being dead has its advantages." -- Auron}
+}
+

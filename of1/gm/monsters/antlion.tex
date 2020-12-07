@@ -1,0 +1,17 @@
+\monster{Antlion}{4}{\includegraphics[width=0.26\textwidth]{./art/monsters/antlion.png}}
+{
+	HP: & \hfill 40 & MP: & \hfill 16\\
+	STR: & \hfill 3 & DEF: & \hfill 3 \\
+	MAG: & \hfill 0 & RES: & \hfill 1 \\
+	AGI: & \hfill 3 & Size: & \hfill M\\
+}
+{
+	\textbf{Bite}: 2d DMG \hfill \textbf{Drops:} 300 Gil \\
+	\textbf{Resilient}:\earth \hfill \textbf{Immune}:\blind 
+	
+	\mtech{Sandstorm}{8}{1r}{3u}{Self}{
+		All enemies in the target area make a DC 9 check and suffer 3d \hyperlink{type}{earth} damage and \hyperlink{status}{Blind} for 3 rounds upon failure.
+	}{\earth \blind}		
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"It's okay. Antlions are quite tame." -- Edward}
+}

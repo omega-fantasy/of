@@ -1,0 +1,42 @@
+\documentclass[a4paper,titlepage, 11pt, twocolumn] {article}
+\usepackage{of}
+%
+\begin{document}	
+%
+\begin{titlepage}
+	\begin{center}
+		\vspace*{0.5cm}
+		\includegraphics[width=0.9\columnwidth]{./art/images/title1.png}
+		\vspace*{0.5cm}\\
+		\includegraphics[width=0.45\columnwidth]{./art/images/title2.png}
+		\vspace*{0.75cm}\\
+		\includegraphics[width=0.9\columnwidth]{./art/images/tacticsog.png}
+		\vspace*{1.5cm}\\
+	\end{center}
+%
+	\newcommand{\tocentry}[2]{\hspace*{2cm} {\large\ofaccent{#1} \dotfill #2} \hspace*{2cm}\vspace*{0.3cm}\\}
+	\hypersetup{colorlinks,linkcolor=colaccent,citecolor=colaccent,urlcolor=colaccent}
+%
+	\tocentry{Introduction}{1}
+	\tocentry{History of Ivalice}{2}
+	\tocentry{Timeline}{8}
+	\tocentry{Geography of Ivalice}{10}
+	\tocentry{Campaign Ideas}{16}
+	\tocentry{FFRPG 4e rules}{17}
+	\tocentry{Omega Fantasy rules}{25}
+%
+	\vfill
+%
+	\begin{center}
+	\ofaccent{Credits:} Bruno Carvalho, Paul (Papa Quackers), Hywel Williams\ofrow
+	Make sure to visit the Final Fantasy Tabletop \href{https://discordapp.com/invite/F5fpxMs}{Discord Server}.
+	\end{center}
+\end{titlepage}
+%
+%
+%
+\input{./worldbook}
+\input{./rules-ffrpg}
+\input{./rules-of}
+%
+\end{document}

@@ -1,0 +1,18 @@
+\friendly{Magic Pot}{5}{\includegraphics[width=0.12\textwidth]{./art/monsters/magicpot.png}}
+{
+	HP: & \hfill 1 & MP: & \hfill 1\\
+	STR: & \hfill 0 & DEF: & \hfill 99 \\
+	MAG: & \hfill 0 & RES: & \hfill 99 \\
+	AGI: & \hfill 1 & Size: & \hfill S\\
+}
+{
+	\textbf{Immune}: \hyperlink{status}{All Status Effects} \hfill 	\textbf{Drops:} 1000 Gil 
+	
+	\mreaction{Gimme!}{
+		When given a beneficial \hyperlink{item}{item} you disappear (\hyperlink{status}{KO}), dropping Gil.
+		Otherwise, you make a DC 8 check and upon failure you suffer \hyperlink{status}{KO} to deal 8d damage in 3u around you, dropping no Gil.
+	}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"Gimme Elixir!" -- Magic Pot}
+}

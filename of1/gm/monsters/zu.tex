@@ -1,0 +1,21 @@
+\monster{Zu}{7}{\includegraphics[width=0.23\textwidth]{./art/monsters/zu.png}}
+{
+	HP: & \hfill 160 & MP: & \hfill 100 \\
+	STR: & \hfill 7 & DEF: & \hfill 5 \\
+	MAG: & \hfill 3 & RES: & \hfill 6 \\
+	AGI: & \hfill 2 & Size: & \hfill L\\
+}
+{
+	\textbf{Claw}: 3d DMG \hfill \textbf{Drops:} 1000 Gil \\
+	\textbf{Immune}:\poison \sleep \silence
+		
+	\mtech{Tornado}{20}{1r}{9u (line)}{Self}{
+			You create a tornado with a 2u diameter that travels 3u in a line per round for the next 3 rounds.
+			Anyone except you that gets into contact with it suffers 4d \hypertarget{type}{wind} damage and \hyperlink{status}{Immobile} for 1 round.	
+	}{\wind \immobile}	
+	%\mpassive{Auto-Regen}{
+	%	You regain 25 HP at the start of each turn.
+	%}	
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"How can a bird grow so big?" -- Tidus}	
+}

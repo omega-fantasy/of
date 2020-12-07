@@ -1,0 +1,333 @@
+\hypersetup{colorlinks,linkcolor={blue!80!black},citecolor={blue!80!black},urlcolor={blue!80!black}}
+
+\definecolor{ctop}{RGB}{20,20,120} % Color of the article title and sections
+\definecolor{cbottom}{RGB}{0,0,40} % Color of the boxes behind the abstract and headings
+\definecolor{cframe}{gray}{0.7} % Color of the boxes behind the abstract and headings
+\definecolor{colblack}{gray}{0} % Color of the boxes behind the abstract and headings
+\definecolor{mgreen}{RGB}{0,50,0} % Color of the article title and sections
+\definecolor{mblue}{RGB}{0,0,60} % Color of the boxes behind the abstract and headings
+\definecolor{mpurple}{RGB}{70,0,70} % Color of the boxes behind the abstract and headings
+\definecolor{myellow}{RGB}{70,40,10} % Color of the boxes behind the abstract and headings
+\definecolor{tblue}{RGB}{40,40,150} % Color of the article title and sections
+\definecolor{gback}{RGB}{245,245,245}
+
+%\definecolor{accent}{RGB}{30,30,110} % Color of the article title and sections
+\colorlet{accent}{blue!35!black}
+\colorlet{mred}{red!35!black}
+\colorlet{gr}{white!35!black}
+
+\newcommand{\accf}[1]{\textcolor{accent}{\textbf{#1}}}
+\newcommand{\acc}[1]{\textcolor{accent}{#1}}
+
+%elements
+\newcommand{\fire}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/fire.png}}}
+\newcommand{\ice}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/ice.png}}}
+\newcommand{\lightning}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/lightning.png}}}
+\newcommand{\water}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/water.png}}}
+\newcommand{\earth}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/earth.png}}}
+\newcommand{\wind}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/wind.png}}}
+\newcommand{\holy}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/holy.png}}}
+\newcommand{\dark}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/dark.png}}}
+\newcommand{\physical}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/str.png}}}
+%status effects
+\newcommand{\ko}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/doom.png}}}
+\newcommand{\poison}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/poison.png}}}
+\newcommand{\blind}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/blind.png}}}
+\newcommand{\blink}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/blink.png}}}
+\newcommand{\sleep}{\hspace*{0.05cm}
+\raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/stop.png}}}
+\newcommand{\silence}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/silence.png}}}
+\newcommand{\immobile}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/immobile.png}}}
+\newcommand{\zombie}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/zombie.png}}}
+\newcommand{\enstr}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/bravery.png}}}
+\newcommand{\enmag}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/faith.png}}}
+\newcommand{\enres}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/shell.png}}}
+\newcommand{\destr}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/debrave.png}}}
+\newcommand{\dedef}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/deprotect.png}}}
+\newcommand{\demag}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/defaith.png}}}
+\newcommand{\deres}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/deshell.png}}}
+\newcommand{\enndef}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/protect.png}}}
+\newcommand{\pas}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/passive.png}}}
+\newcommand{\rea}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/react.png}}}
+
+\newcommand{\example}[2]
+{
+	\begin{tcolorbox}[
+		colback=white,
+		before skip=0cm, after skip=0pt, 
+		 left=2pt,top=2pt,right=2pt,bottom=2pt, colframe=accent, sharp corners=south, title=\textbf{Example: #1}]
+		#2
+	\end{tcolorbox}
+}
+
+\newcommand{\passivet}[2]
+{
+	\noindent
+	{\bf\large  {\color{accent} #1} \hfill \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/passive.png}} \hspace{0.1cm} Level 4}\\
+	#2  	
+}
+\newcommand{\reactiont}[2]
+{
+	\noindent
+	{\bf\large  {\color{accent} #1} \hfill \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/react.png}} \hspace{0.1cm} Level 4}\\
+	#2  	
+}
+
+\newcommand{\spellt}[8]
+{
+	\noindent
+	{\bf\large  {\color{accent} #1} \hfill #7 \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/magic.png}} \hspace{0.1cm} Level #8}\\
+	{\bf MP: #2 \hfill  Target: #4 \hfill Time: #3 \hfill Range: #5} \\ 
+	#6  
+	
+}
+
+\newcommand{\techt}[8]
+{
+	\noindent
+	{\bf\large {\color{accent} #1} \hfill #7 \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/tech.png}} \hspace{0.1cm} Level #8}\\
+	{\bf MP: #2 \hfill  Target: #4 \hfill Time: #3 \hfill Range: #5} \\ 
+	#6 	
+	
+}
+
+\newcommand{\ability}[0]
+{
+	\begin{tcolorbox}[colframe=accent,left=2pt,top=2pt,right=2pt,bottom=2pt,title={\phantom{a}}]
+		\textbf{MP:}  \hfill \textbf{Time:} \phantom{2 rounds} \\ 
+		\textbf{Target:}  \hfill \textbf{Range:} \hspace{1.2cm}
+		
+		\vspace{1.46cm}
+	\end{tcolorbox}
+}
+
+\newcommand{\tech}[7]
+{
+	\begin{tcolorbox}[colframe=accent,left=2pt,top=2pt,right=2pt,bottom=2pt, 
+	title={\textbf{#1} \hfill #7 \hspace*{0.01cm}
+	\raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/tech.png}}}]
+	\textbf{MP:} #2 \hspace*{\fill} \textbf{Time:} #3 \\
+	\textbf{Target:} #4 \hspace*{\fill} \textbf{Range:} #5 
+	
+	\vspace{0.2cm} 
+	#6 
+	\end{tcolorbox}
+}
+
+\newcommand{\passive}[3]
+{
+	%\begin{tcolorbox}[colframe=accent,enhanced,left=2pt,top=1pt,right=2pt,bottom=2pt, title={\textbf{#1 \hfill \phantom{()}Passive #3}}] 
+	\begin{tcolorbox}[colframe=accent,left=1pt,top=1pt,right=1pt,bottom=1pt, title={\textbf{#1} \hfill #3 \hspace{0.01cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/passive.png}}}]
+		\vspace{0.1cm} 
+	#2
+	\end{tcolorbox}
+}
+
+\newcommand{\reaction}[3]
+{
+	%\begin{tcolorbox}[colframe=accent,enhanced,left=2pt,top=1pt,right=2pt,bottom=2pt, title={\textbf{#1 \hfill #3 \phantom{()}Reaction}}]  \vspace{0.1cm}
+		\begin{tcolorbox}[colframe=accent,left=1pt,top=1pt,right=1pt,bottom=1pt, title={\textbf{#1} \hfill #3 \hspace{0.01cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/react.png}}}]
+	#2
+	\end{tcolorbox}
+}
+
+\newcommand{\feat}[2]
+{
+	%\begin{tcolorbox}[colframe=accent,enhanced,left=2pt,top=0pt,right=2pt,bottom=1pt, title={\textbf{#1}}] \vspace{0.1cm}
+	%#2
+	%\end{tcolorbox}
+	\item[\large\color{accent} #1:] #2
+}
+
+\newcommand{\armor}[3]
+{
+	\begin{tcolorbox}[toptitle=0pt,colframe=accent,tabularx={p{0.18\columnwidth} l @{\hspace{0.9cm}} c c  @{\hspace{1cm}} p{0.45\columnwidth}},sharp corners=south,	
+		title={\hspace*{\fill} \textbf{#1} \hspace*{\fill}}]
+		%\textbf{Name} & \textbf{Value} & \textbf{DEF} & \textbf{RES} & \textbf{Effect} \\
+		\textbf{Name} & \textbf{Value} & \textbf{DEF} & \textbf{RES} & \textbf{Effect} \\
+		#3
+\end{tcolorbox}
+}
+
+\newcommand{\weapon}[3]
+{
+	\begin{tcolorbox}[toptitle=0pt,colframe=accent,tabularx={p{0.15\columnwidth}|l|c|p{0.6\columnwidth}},sharp corners=south,
+		title={\hspace*{\fill} \textbf{#1} \hspace*{\fill}}]	
+		\textbf{Name} & \textbf{Value} & \textbf{DMG} & \textbf{Effect} \\
+		#3
+	\end{tcolorbox}
+}
+
+\newcommand{\eweapon}[3]
+{
+	\begin{tcolorbox}[colback=white, toptitle=0pt,colframe=accent,tabularx={p{0.2\columnwidth}p{0.7\columnwidth}},sharp corners=south,
+		%title={\hspace*{\fill} \textbf{#1}\phantom{y} \hspace*{\fill}}]
+			title={\raisebox{-.2\baselineskip}{\includegraphics[height=0.8\baselineskip]{./art/icons/#2}} \hspace*{\fill} \textbf{#1} \hspace*{\fill} \raisebox{-.2\baselineskip}{\includegraphics[height=0.8\baselineskip]{./art/icons/#2}}}]
+		\textbf{Name} & \textbf{Effect} \\
+		#3
+	\end{tcolorbox}
+}
+
+\newcommand{\lweapon}[3]
+{
+	\begin{tcolorbox}[colback=white, toptitle=0pt,colframe=accent,tabularx={p{0.2\columnwidth}p{0.13\columnwidth}p{0.52\columnwidth}},sharp corners=south,
+		%title={\hspace*{\fill} \textbf{#1} \hspace*{\fill}}]	
+				title={\raisebox{-.2\baselineskip}{\includegraphics[height=0.8\baselineskip]{./art/icons/#2}} \hspace*{\fill} \textbf{#1} \hspace*{\fill} \raisebox{-.2\baselineskip}{\includegraphics[height=0.8\baselineskip]{./art/icons/#2}}}]
+		%title={\hspace*{\fill} \textbf{#1} \hspace*{\fill}}]
+		\textbf{Name} & \textbf{Type} & \textbf{Effect} \\
+		#3
+	\end{tcolorbox}
+}
+
+\newcommand{\accessory}[3]
+{
+	\begin{tcolorbox}[colback=white, toptitle=0pt,colframe=accent,tabularx={p{0.2\columnwidth} p{0.15\columnwidth} p{0.5\columnwidth}},sharp corners=south,
+	%title={\hspace*{\fill} \hypertarget{accessory}{\textbf{#1}\phantom{y}} \hspace*{\fill}}]	
+	title={\raisebox{-.2\baselineskip}{\includegraphics[height=0.8\baselineskip]{./art/icons/#2}} \hspace*{\fill} \hypertarget{accessory}{\textbf{#1}} \hspace*{\fill} \raisebox{-.2\baselineskip}{\includegraphics[height=0.8\baselineskip]{./art/icons/#2}}}]
+	\textbf{Name} & \textbf{Value} & \textbf{Effect} \\
+	#3
+\end{tcolorbox}
+}
+
+\newcommand{\consumables}[3]
+{
+	\begin{tcolorbox}[colback=white, toptitle=0pt,colframe=accent,tabularx={p{0.2\columnwidth} p{0.17\columnwidth} p{0.48\columnwidth}},sharp corners=south,
+		%title={\hspace*{\fill} \hypertarget{item}{\textbf{#1}\phantom{y}} \hspace*{\fill}}]
+			title={\raisebox{-.2\baselineskip}{\includegraphics[height=0.8\baselineskip]{./art/icons/#2}} \hspace*{\fill} \hypertarget{item}{\textbf{#1}} \hspace*{\fill} \raisebox{-.2\baselineskip}{\includegraphics[height=0.8\baselineskip]{./art/icons/#2}}}]	
+		\textbf{Name} & \textbf{Value} & \textbf{Effect} \\
+		#3
+	\end{tcolorbox}
+}
+
+\newcommand{\progtable}[1]
+{
+	\begin{tcolorbox}[colframe=accent,tabularx={c @{\hspace{1cm}} p{0.24\columnwidth} @{\hspace{0.6cm}} p{0.485\columnwidth}},sharp corners=south,title={\hspace*{\fill} \textbf{Progression Table} \hspace*{\fill}}]	
+		\textbf{Level} & \textbf{Attributes} & \textbf{Abilities} \\ \hline 
+		#1
+	\end{tcolorbox}
+}
+
+\newcommand{\monster}[5]
+{
+	\begin{tcolorbox}[
+		colback=white,
+		 left=2pt,top=0pt,right=2pt,bottom=2pt,colframe=mred, title={\textbf{#1\phantom{y}} \hfill \textbf{Level #2}}, sharp corners=south]
+		\hfill \raisebox{-0.44\height}{#3} 
+		\hfill \begin{tabularx}{.6\linewidth}{|@{\hspace{0.4cm}} p{0.5cm} p{0.7cm} @{\hspace{0.7cm}} p{0.5cm} p{0.7cm}} 
+			#4
+		\end{tabularx} \\
+		\hrule \vspace{0.1cm}
+		#5 
+	\end{tcolorbox}
+}
+
+\newcommand{\friendly}[5]
+{
+	\begin{tcolorbox}[
+		colback=white,
+		left=2pt,top=0pt,right=2pt,bottom=2pt,colframe=mpurple, sharp corners=south, title={\textbf{#1\phantom{y}} \hfill \textbf{Level #2}}]
+		\hfill \raisebox{-0.44\height}{#3} 
+		\hfill \begin{tabularx}{.6\linewidth}{|@{\hspace{0.4cm}} p{0.5cm} p{0.7cm} @{\hspace{0.7cm}} p{0.5cm} p{0.7cm}} 
+			#4
+		\end{tabularx} \\
+		\hrule \vspace{0.15cm}
+		#5 
+	\end{tcolorbox}
+}
+
+\newcommand{\mtech}[7]{
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	\vspace{0.05cm} \hrule \vspace{0.05cm}
+	%\textbf{#1} \hfill \raisebox{-.2\height}{#7} \hspace{0.01cm} \raisebox{-.3\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/tech.png}} \\
+	%\textbf{MP:} #2 \hspace*{\fill} \textbf{Time:} #3 \\
+	%\textbf{Target:} #4 \hspace*{\fill} \textbf{Range:} #5 \\
+	%#6
+	\textbf{#1} \hfill #7 \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/tech.png}} \\
+	MP: #2 \hfill Target: #4 \hfill Time: #3 \hfill Range: #5 \\
+	#6 %\\ \hline
+}
+
+\newcommand{\mspell}[7]{
+	\vspace{0.05cm} \hrule \vspace{0.05cm} 
+	%\textbf{#1} \hfill \raisebox{-.2\height}{#7} \hspace{0.01cm} \raisebox{-.3\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/mag.png}} \\
+	%\textbf{MP:} #2 \hspace*{\fill} \textbf{Time:} #3 \\
+	%\textbf{Target:} #4 \hspace*{\fill} \textbf{Range:} #5 \\
+	%
+	\textbf{#1} \hfill #7 \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/magic.png}} \\
+	MP: #2 \hfill Target: #4 \hfill Time: #3 \hfill Range: #5 \\
+	#6 %\\ \hline 
+}
+
+\newcommand{\mpassive}[2]{
+	\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	\textbf{#1} \hfill \raisebox{-.2\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/passive.png}}\\
+	#2
+}
+
+\newcommand{\mreaction}[2]{
+	\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	\textbf{#1} \hfill \raisebox{-.2\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/react.png}} \\
+	#2
+}
+
+\newcommand{\job}[8]
+{
+	\begin{multicols}{2}
+	\subsection*{\hypertarget{#1}{#1}}
+	%\addcontentsline{toc}{subsubsection}{\protect\numberline{}#1}%
+	%\emph{"M, M M M M M M M M M M M M M MAGIC?! She used magic?"} \\
+	%\indent -- Locke 
+	#2
+	\vspace*{1cm} \\
+	#3
+	%Black mages are powerful offensive magic casters. They are frail in physical combat, but can
+	%wipe out multiple enemies from great distance and inflict nasty status effects. Black mages can
+	%thus assert great control over the battlefield and are difficult to ignore for enemies. 
+	\vspace*{1cm} \\
+	\textbf{Weapon}: #4 \\
+	\textbf{Armor:} #5 \\
+	\textbf{Maximum HP:} #6 per Level \\
+	\textbf{Maximum MP:} #7 per Level 
+	\vspace*{0.2cm} 
+	#8
+	\end{multicols}
+	%\noindent {\hfill \color{accent}\rule{\columnwidth}{0.03cm} \hfill}
+}
+
+\newcommand{\atype}[6]{
+\begin{tcolorbox}[colframe=accent,tabularx={p{0.1\columnwidth} p{0.8\columnwidth}},sharp corners=south,title={\hfill \textbf{Archetype:} \textbf{#1} \hspace*{\fill}}]
+	\textbf{Lv} & \textbf{Attributes}   \\ \hline 
+	#2
+	\multicolumn{2}{p{0.95\columnwidth}}{\textbf{#3} \hfill \pas \newline #4}
+	\\ \hline
+	\multicolumn{2}{p{0.95\columnwidth}}{\textbf{#5} \hfill \rea \newline
+	#6}
+\end{tcolorbox}
+}
+
+\newcommand{\battr}[3]{
+	\begin{tcolorbox}[colframe=accent,tabularx={p{0.1\columnwidth} p{0.8\columnwidth}},sharp corners=south,title={\hspace*{\fill} \textbf{Basic Attributes} \hspace*{\fill}}]	
+	\textbf{Lv} & \textbf{Attributes}   \\ \hline 
+	#1
+	\multicolumn{2}{l}{\textbf{Weapons:} #2} \\ \hline
+	\multicolumn{2}{l}{\textbf{Armor:} #3} \\	
+	\end{tcolorbox}
+}
+\newcommand{\battrt}[3]{
+%\noindent{\Large\color{accent}\bf \underline{Basic Attributes\phantom{y}}}\hspace*{\fill} \vspace{0.15cm} \\
+\noindent{\Large\color{accent}\bf \uline{Basic Attributes\phantom{y}\hfill}}\vspace{0.15cm} \\
+{\large\accf{Weapons:} \hspace{0.1cm} #2} \vspace{0.05cm} \\
+{\large\accf{Armor:} \hspace{0.65cm} #3} \vspace{0.1cm} \\
+\begin{tabular}{@{}p{0.18\columnwidth} p{0.15\columnwidth} p{0.15\columnwidth} p{0.15\columnwidth} p{0.15\columnwidth}}
+#1
+\end{tabular}
+}
+
+\newcommand{\atypet}[6]{
+\noindent{\Large\color{accent}\bf \uline{Archetype: #1 \hfill}}\vspace{0.1cm} \\
+\passivet{#3}{#4} \vspace{0.2cm} \\
+\reactiont{#5}{#6}\vspace{0.1cm} \\
+\begin{tabular}{@{}p{0.18\columnwidth} p{0.15\columnwidth} p{0.15\columnwidth} p{0.15\columnwidth} p{0.15\columnwidth}}
+#2
+\end{tabular}
+}

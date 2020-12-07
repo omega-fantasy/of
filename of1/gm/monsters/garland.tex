@@ -1,0 +1,14 @@
+\monster{Garland}{3}{\includegraphics[width=0.18\textwidth]{./art/monsters/garland.png}}
+{
+	HP: & \hfill 40 & MP: & \hfill 30\\
+	STR: & \hfill 3 & DEF: & \hfill 1 \\
+	MAG: & \hfill 1 & RES: & \hfill 1 \\
+	AGI: & \hfill 2 & Size: & \hfill M\\
+}
+{
+	\textbf{Longsword}: 1d DMG \hfill  \textbf{Drops}: 1000 Gil, Key
+	
+	\mspell{Drain}{8}{1r}{Single}{3u}{Reduce the target's HP by 1d and increase yours by the same amount.}{}	
+	\mspell{Silence}{6}{1r}{Single}{3u}{The target makes a DC 8 check and suffers \hyperlink{status}{Silence} for 3 rounds upon failure.}{\silence}
+	\mreaction{Parry}{Whenever you fail to evade an \hyperlink{action}{Attack}, you can make a DC~8 and when you succeed, the damage you suffer is halved.}
+}

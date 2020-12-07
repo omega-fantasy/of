@@ -1,0 +1,22 @@
+\monster{Zombie Dragon}{7}{\includegraphics[width=0.28\textwidth]{./art/monsters/zombiedragon.png}}
+{
+	HP: & \hfill 125 & MP: & \hfill 80\\
+	STR: & \hfill 6 & DEF: & \hfill 5 \\
+	MAG: & \hfill 0 & RES: & \hfill 3 \\
+	AGI: & \hfill 2 & Size: & \hfill L\\
+}
+{
+	\textbf{Bite}: 3d DMG, 2u Range \hfill	\textbf{Drops:} 900 Gil  \\
+	\textbf{Immune}:\ko\poison\sleep\silence \hfill  \textbf{Weak}:\holy
+  
+	
+	\mtech{Poison Breath}{10}{1r}{3u (front)}{Self}{Everyone in the target area suffers 4d damage, makes a DC~8 check~and suffers \hyperlink{status}{Poison} for 3 rounds upon failure.}{\poison}	
+	\mreaction{Regenerate}{
+		When reduced below 50 HP, you become unable to move or act.
+		You regenerate 50 HP on each turn for 3 rounds after which you can act and move again.  
+		This effect can only be used once per battle.
+	}	
+	\mpassive{Undead}{You permamently suffer the \hyperlink{status}{Zombie} status.}
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"Don't eat me! I won't taste good!" -- Eiko}
+}

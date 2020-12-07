@@ -1,0 +1,19 @@
+\monster{Wyvern}{5}{\includegraphics[width=0.25\textwidth]{./art/monsters/wyvern.png}}
+{
+	HP: & \hfill 45 & MP: & \hfill 50 \\
+	STR: & \hfill 3 & DEF: & \hfill 3 \\
+	MAG: & \hfill 2 & RES: & \hfill 3 \\
+	AGI: & \hfill 3 & Size: & \hfill M\\
+}
+{
+	\textbf{Claw}: 2d DMG  \hfill \textbf{Drops:} 400 Gil
+	
+	\mspell{Aero}{8}{1r}{Single}{4u}{
+		You deal 3d \hyperlink{type}{wind} damage to the target.
+	}{\wind}
+	\mpassive{Dive}{
+		Whenever you \hyperlink{action}{Attack} a target, he makes a DC 6 check and suffers \hyperlink{status}{Immobile} for 1 round upon failure.
+	}
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"And so, Laguna runs for dear life." -- Kiros}
+}

@@ -1,0 +1,23 @@
+\monster{Behemoth}{8}{\includegraphics[width=0.32\textwidth]{./art/monsters/behemoth.png}}
+{
+	HP: & \hfill 200 & MP: & \hfill 250 \\
+	STR: & \hfill 8 & DEF: & \hfill 5 \\
+	MAG: & \hfill 5 & RES: & \hfill 4 \\
+	AGI: & \hfill 3 & Size: & \hfill L\\
+}
+{
+	\textbf{Claw}: 3d DMG, 2u Range \hfill \textbf{Drops:} 1500 Gil \\
+	\textbf{Immune}:\poison \silence
+		
+	\mspell{Flare}{30}{3r}{Single}{5u}{
+		You deal 9d+15 \hyperlink{type}{fire} damage to the target. 
+	}{\fire}	
+	\mtech{Heave}{20}{0r}{Single}{2u}{
+		You deal 10d damage to the target and knock him 3u into the air for 1 round. 
+	}{}		
+	\mreaction{Counter}{
+		Whenever an enemy within 2u targets you with an action, immediately make an \hyperlink{action}{Attack} on him.
+	}
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"Big enough for you?" -- Gladio}	
+}

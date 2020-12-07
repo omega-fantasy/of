@@ -1,0 +1,20 @@
+\monster{Red Dragon}{8}{\includegraphics[width=0.2\textwidth]{./art/monsters/reddragon.png}}
+{
+	HP: & \hfill 225 & MP: & \hfill 250 \\
+	STR: & \hfill 6 & DEF: & \hfill 4 \\
+	MAG: & \hfill 5 & RES: & \hfill 4 \\
+	AGI: & \hfill 3 & Size: & \hfill L\\
+}
+{
+	\textbf{Bite}: 3d DMG \hfill \textbf{Drops:} 1500 Gil \\
+	\textbf{Resilient}:\fire \hfill \textbf{Weak}:\ice \\
+	\textbf{Immune}:\sleep\blind\immobile
+	
+	\mspell{Flare}{30}{3r}{Single}{5u}{You deal 9d+15 \hyperlink{type}{fire} damage to the target. }{\fire}
+	\mtech{Blaze}{22}{1r}{3u (front)}{Self}{
+		You deal 8d \hyperlink{type}{fire} damage to all enemies in the target area.
+	}{\fire}
+	\mpassive{Tail Whip}{Whenever you \hyperlink{action}{Attack}, you can choose to target all enemies within 1u at once.}
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"I never knew such a powerful dragon existed in this universe!" -- Kain}		
+}

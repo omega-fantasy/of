@@ -1,0 +1,18 @@
+\monster{Shinriu}{10}{\includegraphics[width=0.16\textwidth]{./art/monsters/shinryu.png}}
+{
+ PV: & \hfill 500 & PM: & \hfill 800 \\
+ FUE: & \hfill 12  & DEF: & \hfill 8 \\
+ MAG: & \hfill 14 & RES: & \hfill 9 \\
+ AGI: & \hfill 4 & Tamaño: & \hfill G\\
+}
+{
+ \textbf{Cola}: 5d de daño, 4u Alcance \hfill \textbf{Botín:} 25000 Gil\\
+ \textbf{Inmune}: \hyperlink{status}{Todos los Estados Alterados} \mspell{Ola Sísmica}{35}{2t}{12u (frente)}{Tú}{
+ Todos los enemigos en el área de efecto reciben 9d+10 de daño de \hyperlink{type}{Agua} y quedan \hyperlink{status}{Inmóviles} por 2 turnos. }{\water \immobile} \mspell{Rayo Atómico}{45}{2t}{8u}{Tú}{
+ Todos los enemigos en el área de efecto reciben 8d+9 de daño de \hyperlink{type}{Fuego} y quedan \hyperlink{status}{Envenenados} por 3 turnos. }{\fire \poison} \mpassive{Adaptar Elemento}{
+ Al principio de cada turno, elige un elemento (p. ej. \hyperlink{type}{Fuego}). Obtienes \hyperlink{status}{Resistencia} a ese elemento hasta el inicio de tu próximo turno.
+	}
+ \mreaction{Ataque final}{Cuando tus PV lleguen a 0, puedes lanzar instantáneamente un hechizo sin costo de PM antes de quedar \hyperlink{status}{KO}.}
+	\hrule \vspace{0.1cm} 
+ "Esa gracia divina... Él es mucho más que un simple monstruo". -- Rosa 
+}

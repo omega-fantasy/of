@@ -1,0 +1,113 @@
+\thispagestyle{empty}
+\subsection*{\huge Red Mage}
+\vspace{0.3cm}
+"Oh, I’ll show you how lightning strikes." \\
+\indent -- Lightning 
+\vspace{0.3cm} \\
+Red Mages are very versatile characters, that possess a wide variety of abilities. 
+They are capable of using offensive and defensive spells, but can also
+hold their own in melee combat. 
+Although they excel in neither discipline, their incredible flexibility
+and speed makes Red Mages a force to be reckoned with.
+\vfill
+\battrt
+{
+	\textbf{Level 1:} & HP~+20 & MP~+16 & AGI~+3 & STR +1 \\
+	\textbf{Level 2:} & HP~+5  & MP~+10 & MAG~+1 & DEF~+1 \\
+	\textbf{Level 3:} & HP~+10 & MP~+5  & RES~+2 &        \\
+}{Staff, Sword}{Light Armor, Robe}
+\vfill
+\atypet{Ravager}
+{	
+	\textbf{Level 4:} & HP~+5  & MP~+10 & MAG~+1 & RES~+1 \\ 
+	\textbf{Level 5:} & HP~+10 & MP~+5  & STR~+2 &        \\ 
+	\textbf{Level 6:} & HP~+5  & MP~+10 & MAG~+2 &        \\ 
+	\textbf{Level 7:} & HP~+10 & MP~+5  & STR~+1 & DEF~+1 \\ 
+	\textbf{Level 8:} & HP~+5  & MP~+10 & STR~+1 & MAG~+1 \\ 
+	\textbf{Level 9:} & HP~+10 & MP~+10 & RES~+1 &        \\ 
+	\textbf{Level 10:}& HP~+5  & MP~+10 & MAG~+1 & DEF~+1 \\ 
+}
+{Overwhelm}
+{	
+	Whenever you inflict damage to an enemy that you have already damaged within the previous round, your damage dealt ignores the target's DEF and RES.
+}
+{Swiftcast}
+{	
+	Whenever you suffer damage while not concentrating, you can immediately use an ability without cast time.
+	You can only use this effect once per round.
+}
+\vfill
+\atypet{Spellblade}
+{		
+	\textbf{Level 4:} & HP~+10 & MP~+5  & STR~+1 & DEF~+1 \\ 
+	\textbf{Level 5:} & HP~+5  & MP~+10 & MAG~+2 & 		  \\ 
+	\textbf{Level 6:} & HP~+10 & MP~+5  & STR~+2 &		  \\ 
+	\textbf{Level 7:} & HP~+5  & MP~+10 & DEF~+1 & STR~+1 \\ 
+	\textbf{Level 8:} & HP~+10 & MP~+5  & STR~+1 & MAG~+1 \\ 
+	\textbf{Level 9:} & HP~+5  & MP~+10 & DEF~+1 & RES~+1 \\ 
+	\textbf{Level 10:}& HP~+10 & MP~+10 & STR~+1 		  \\ 
+}
+{Magic Weapon}
+{	
+	Whenever you cast \hyperlink{action}{Magic}, you can choose to store the spell inside your weapon.
+	If you do this, the spell costs only half as much MP as usual.
+	The spell then takes effect on the next target that you hit with an \hyperlink{action}{Attack} on top of your usual damage.
+	You cannot store more than one spell at once inside your weapon.
+}
+{Mana Shield}
+{	
+	Whenever your HP is reduced, you can instead choose to reduce your MP by the same amount.
+}
+\pagebreak \\
+\noindent {\Large\color{accent}\bf \uline{Abilities\phantom{y}\hfill}}\\\\
+\spellt{Cure}{4}{1r}{Single}{3u}
+{
+	The target regains 2d HP. 
+}{}{1}
+\spellt{Poison}{6}{1r}{Single}{3u}
+{
+	The target makes a DC 8 check and suffers \hyperlink{status}{Poison} for 3 rounds upon failure.
+}{\poison}{2}
+\spellt{Fira}{8}{1r}{Single}{4u}
+{
+	You deal 4d \hyperlink{type}{fire} damage to the target.
+}{\fire}{3}
+\spellt{Blizzara}{8}{1r}{Single}{4u}
+{
+	You deal 4d \hyperlink{type}{ice} damage to the target.
+}{\ice}{3}
+\spellt{Thundara}{8}{1r}{Single}{4u}
+{
+	You deal 4d \hyperlink{type}{lightning} damage to the target.
+}{\lightning}{3}
+\spellt{Silence}{6}{1r}{Single}{3u}
+{
+	The target makes a DC 8 check and suffers \hyperlink{status}{Silence} for 3 rounds upon failure.
+}{\silence}{5}
+\spellt{Esuna}{6}{1r}{Single}{3u}
+{
+	You remove all \hyperlink{status}{Status Effects} except \hyperlink{status}{KO} from the target.
+}{}{6}
+\techt{Elemental Strike}{4}{0r}{Single}{Weapon}
+{
+	Choose an \hyperlink{type}{element} (e.g. \hyperlink{type}{fire}) and make an \hyperlink{action}{Attack}. 
+	If you hit, the damage is of \hyperlink{type}{magical} type with the chosen element. 
+}{}{7}
+\spellt{Wall}{10}{1r}{Single}{3u}
+{
+	The target gains \hyperlink{status}{EnDEF} and \hyperlink{status}{EnRES} for 3 rounds.
+}{\enndef \enres}{8}
+\spellt{Imperil}{10}{1r}{Single}{3u}
+{
+	The target suffers \hyperlink{status}{DeDEF} and \hyperlink{status}{DeRES} for 3 rounds.
+}{\dedef \deres}{8}
+\spellt{NulElement}{12}{1r}{Single}{5u}
+{
+	Choose an \hyperlink{type}{element} (e.g. \hyperlink{type}{fire}). 
+	The target does not suffer any damage of the chosen element for 3 rounds.
+}{}{9}
+\spellt{Dualcast}{4}{0r}{Single}{Self}
+{
+	You begin casting and concentrating on two spells of your choice simultaneously, but need to spend the necessary MP for both.
+}{}{10}
+\pagebreak

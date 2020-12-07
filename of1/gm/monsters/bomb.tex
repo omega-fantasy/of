@@ -1,0 +1,17 @@
+\monster{Bomb}{3}{\includegraphics[width=0.17\textwidth]{./art/monsters/bomb.png}}
+{
+	HP: & \hfill 22 & MP: & \hfill 12\\
+	STR: & \hfill 3 & DEF: & \hfill 2 \\
+	MAG: & \hfill 2 & RES: & \hfill 1 \\
+	AGI: & \hfill 3 & Size: & \hfill M\\
+}
+{
+	\textbf{Tackle}: 1d DMG \hfill \textbf{Drops:} 200 Gil \\
+	\textbf{Resilient}:\fire \hfill \textbf{Weak}:\ice 
+
+	\mtech{Self-Destruct}{0}{1r}{2u}{Self}{
+		Inflict \hyperlink{status}{KO} on yourself to deal 6d \hyperlink{type}{fire} damage to everyone within the target area.
+	}{\fire}		
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"Run run, or you'll be well done!" -- Kefka}
+}

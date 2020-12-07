@@ -1,0 +1,22 @@
+\monster{Liche}{9}{\includegraphics[width=0.20\textwidth]{./art/monsters/lich.png}}
+{
+ PV: & \hfill 300 & PM: & \hfill 500\\
+ FUE: & \hfill 4 & DEF: & \hfill 5 \\
+ MAG: & \hfill 12  & RES: & \hfill 8 \\
+ AGI: & \hfill 2 & Tamaño: & \hfill G\\
+}
+{
+ \textbf{Rayo}: 4d de daño, 5u Alcance \hfill \textbf{Botín:} 5000 Gil \\
+ \textbf{Inmune}: \hyperlink{status}{Todos los Estados Alterados}\\
+ \textbf{Debilidad}:\holy \hfill \textbf{Resistente}:\dark 
+ 
+ \mspell{Zombificar}{22}{1t}{2u}{5u}{
+ Todos los que se encuentren en el área de efecto deben hacer una tirada con DC 8. Si fallan, quedan \hyperlink{status}{Zombis} por 1 hora. }{\zombie} \mspell{Veneno}{24}{1t}{2u}{5u}{
+ El objetivo hace una tirada con DC 8. Si falla, queda \hyperlink{status}{Envenenado} por 3 turnos. }{\poison} \mspell{Condena}{36}{1t}{Único}{5u}{
+ El objetivo hace una tirada con DC 8. Si falla, queda \hyperlink{status}{KO} al pasar 3 turnos. }{\ko} \mpassive{No Muerto Superior}{
+ Sufres permanentemente el estado \hyperlink{status}{Zombi}, pero eres inmune a los efectos que causan o curen el estado \hyperlink{status}{KO}
+	}
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+ %\emph{"¿Era esa la mismísima Muerte? De repente sentí cómo el terror corría por mis venas..." -- Ceodore}
+}
+

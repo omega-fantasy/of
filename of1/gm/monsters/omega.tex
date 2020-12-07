@@ -1,0 +1,36 @@
+\monster{Omega}{???}{\includegraphics[width=0.27\textwidth]{./art/monsters/omega.png}}
+{
+	HP: & \hfill 999 & MP: & \hfill 999 \\
+	STR: & \hfill 14 & DEF: & \hfill 10 \\
+	MAG: & \hfill 13 & RES: & \hfill 10 \\
+	AGI: & \hfill 5 & Size: & \hfill L\\
+}
+{
+	\textbf{Laser}: 5d DMG, 5u Range \hfill \textbf{Drops:} Omega Badge  \\
+	\textbf{Resilient}:\fire\dark\lightning \hfill \textbf{Weak:}\ice\water \\
+	\textbf{Immune}: \hyperlink{status}{All Status Effects} 
+	
+	\mspell{Meltdown}{50}{1r}{10u}{Self}{
+		A system vulnerability forces you to leak restricted memory content and lava.
+		Deal 8d+25 \hyperlink{type}{fire} damage on the target, including yourself. 
+	}{\fire}	
+	\mspell{Flamethrower}{12}{0r}{5u (front)}{Self}{
+	Deal 6d+10 \hyperlink{type}{fire} damage to all enemies in the target area. 
+	}{\fire}
+	\mspell{Wave Cannon}{45}{1r}{3u}{12u}{
+		You inflict 10d \hyperlink{type}{dark} damage and \hyperlink{status}{DeDEF}, \hyperlink{status}{DeRES} and \hyperlink{status}{DeSTR} for 5 rounds on the target area. 
+	}{\dark \dedef \deres}		
+	\mpassive{Auto-Repair}{
+		You regain 4d HP at the start of every turn. 
+	}
+	\mreaction{Critical Surge}{
+		When your HP is below 10\% of its maximum, you gain \hyperlink{status}{EnSTR}, \hyperlink{status}{EnMAG}, \hyperlink{status}{EnDEF}, \hyperlink{status}{EnRES}.
+	}
+	\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	"Man forges a weapon to fell the gods: Omega. 
+	The weapon knows nothing of compassion - only destruction!
+	Its might knows no equal. 
+	The wise dare not cross its path, lest they meet their end."
+	\hspace*{0.1cm} -- Gentiana
+}

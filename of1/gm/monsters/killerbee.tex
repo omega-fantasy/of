@@ -1,0 +1,17 @@
+\monster{Killer Bee}{3}{\includegraphics[width=0.15\textwidth]{./art/monsters/killerbee.png}}
+{
+	HP: & \hfill 18 & MP: & \hfill 0 \\
+	STR: & \hfill 2 & DEF: & \hfill 1 \\
+	MAG: & \hfill 1 & RES: & \hfill 3 \\
+	AGI: & \hfill 3 & Size: & \hfill S\\
+}
+{
+	\textbf{Sting}: 2d DMG \hfill \textbf{Drops:} 150 Gil \\
+	\textbf{Immune}:\poison
+	
+	\mpassive{Poisontouch}{
+		Whenever you successfully \hyperlink{action}{Attack} a target he makes a DC 8 check and suffers \hyperlink{status}{Poison} for 3 rounds upon failure.
+	}
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"I do not like low-flying things trying to kill me!"\\ -- Sazh}
+} 

@@ -1,0 +1,90 @@
+\thispagestyle{empty}
+\subsection*{\huge Sentinel}
+\vspace{0.3cm}
+"Allow me to shatter your delusions of grandeur." \\
+\indent -- Beatrix 
+\vspace{0.3cm} \\
+Sentinels are masters of defensive combat that will rarely fall in a battle.  
+Their special abilities allow them to not only withstand incredible amounts of damage, but also provide protection to their allies.
+A capable Sentinel is often the last thing standing between the party and certain death.
+\vfill
+\battrt
+{
+\textbf{Level 1:} & HP~+28 & MP~+13 & AGI~+3 & DEF~+1  \\
+\textbf{Level 2:} & HP~+10 & MP~+10 & STR~+1 & RES~+1 \\
+\textbf{Level 3:} & HP~+10 & MP~+10 & DEF~+1 &  
+}{Sword}{Heavy Armor}
+\vfill
+\atypet{Defender}
+{		
+	\textbf{Level 4:} &  HP~+10 & MP~+5  &  DEF~+1 & STR~+1 \\ 
+	\textbf{Level 5:} &  HP~+10 & MP~+5  &  STR~+1 & DEF~+1	\\ 
+	\textbf{Level 6:} &  HP~+10 & MP~+10 &  RES~+1 &        \\ 
+	\textbf{Level 7:} &  HP~+10 & MP~+5  &  STR~+1 & DEF~+1 \\
+	\textbf{Level 8:} &  HP~+10 & MP~+5  &  RES~+1 & DEF~+1 \\
+	\textbf{Level 9:} &  HP~+10 & MP~+5  &  DEF~+2 & 		\\ 
+	\textbf{Level 10:}&  HP~+10 & MP~+5  &  STR~+2 &        \\
+}
+{Provoke}
+{	
+	Whenever you successfully \hyperlink{action}{Attack} an enemy, you can try to provoke him.
+	If you do so, he has to make a DC~7 check and upon failure he has to target you with an action on his next turn if possible.
+}
+{Block}
+{	
+	Whenever an enemy within 1u of you tries to move away from you, he has make a DC 7 check.
+	Upon failure, he suffers \hyperlink{status}{Immobile} until the start of his next turn, preventing him from moving any further on this turn.
+}
+\vfill
+\atypet{Paladin}
+{	
+	\textbf{Level 4:} & HP~+10 & MP~+10 & DEF~+1          \\
+	\textbf{Level 5:} & HP~+10 & MP~+5  & RES~+1 & DEF~+1 \\ 
+	\textbf{Level 6:} & HP~+10 & MP~+5  & STR +2 &        \\
+	\textbf{Level 7:} & HP~+10 & MP~+5  & RES +2 &        \\
+	\textbf{Level 8:} & HP~+10 & MP~+5  & STR +1 & DEF~+1 \\
+	\textbf{Level 9:} & HP~+10 & MP~+10 & STR +1 &        \\
+	\textbf{Level 10:}& HP~+5  & MP~+10 & RES~+1 & DEF +1 \\
+}
+{Holy Guard}
+{	
+	As long as there is an ally within 1u of you, both of you gain \hyperlink{status}{Blink}.
+	This benefit cannot apply to more than one ally at once.
+}
+{Cover}
+{	
+	Whenever an ally within 1u of you receives \hyperlink{type}{physical} damage, you can decide to direct half of the total damage dealt on yourself instead of onto your ally.
+}
+\pagebreak \\
+\noindent {\Large\color{accent}\bf \uline{Abilities\phantom{y}\hfill}}\\\\
+\techt{Guard}{3}{0r}{Single}{Self}{
+	You gain \hyperlink{status}{EnDEF} until the end of your next turn. 
+}{\enndef}{1}
+\techt{First Aid}{5}{0r}{Single}{1u}{
+	Choose a target that has received damage within one round, including yourself. The target regains 2d HP. 
+}{}{2}
+\techt{Powerbreak}{10}{0r}{Single}{Weapon}{
+	Make an \hyperlink{action}{Attack} against the target. 
+	If you hit, he suffers \hyperlink{status}{DeSTR} and \hyperlink{status}{DeMAG} for 3 rounds on top of the damage dealt. 
+}{\destr \demag}{3}
+\techt{Mediguard}{9}{1r}{Single}{Self}{
+	You gain \hyperlink{status}{EnDEF} for 3 rounds and when this effect ends, you regain 2d HP. 
+}{\enndef}{5}
+\spellt{Earth Wall}{10}{1r}{3u (line)}{3u}{
+	You create a 3u tall and wide wall of earth that blocks the path.
+	The wall breaks down after 5 rounds or upon suffering a total of 30 damage.
+}{}{6}
+\techt{Threaten}{8}{1r}{Single}{3u}{
+	The target makes a DC 8 check and suffers \hyperlink{status}{Immobile} for 3 rounds upon failure.
+}{\immobile}{7}
+\spellt{Astra}{11}{1r}{Single}{3u}{
+	For the next 3 rounds, the target becomes \hyperlink{status}{Immune} to all \hyperlink{status}{Status Effects}.
+}{}{8}
+\techt{Mow Down}{16}{0r}{Single}{Weapon}{
+	Make an \hyperlink{action}{Attack} against the target. 
+	If you hit, the target suffers the difference between your current and your maximum HP instead of your usual damage. 
+}{}{9}
+\techt{Omniguard}{30}{1r}{Single}{Self}{
+	For the next 3 rounds, you cannot suffer any damage.
+}{}{10}
+\pagebreak

@@ -1,0 +1,93 @@
+\documentclass[a4paper,twocolumn,titlepage] {article}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage[pass]{geometry}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage[]{tcolorbox}
+\usepackage[pages=some]{background}
+\usepackage{sectsty}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage[quiet,no-math]{fontspec}
+\usepackage{anyfontsize}
+\usepackage[normalem]{ulem}
+\usepackage{soul}
+\usepackage{lmodern}
+\usepackage[spanish,es-noindentfirst]{babel}
+\usetikzlibrary{babel}
+\usepackage[babel,style=english]{csquotes}
+\MakeOuterQuote{"}
+
+\sectionfont{\fontsize{0.75cm}{0cm}\selectfont \color{accent}}
+\subsectionfont{\fontsize{0.65cm}{0cm}\selectfont \color{accent} }
+\subsubsectionfont{\fontsize{0.47cm}{0cm}\selectfont \color{accent}}
+\setlength{\columnsep}{0.6cm}
+\renewcommand{\familydefault}{\sfdefault}
+\input{./macros}
+
+\begin{document}	
+
+\hbadness=10000
+\hfuzz=\maxdimen
+\vbadness=\maxdimen
+\newcount\hbadness
+\newcount\vbadness
+\newdimen\hfuzz
+
+\onecolumn
+\newgeometry{bottom=10mm,top=70mm,right=25mm,left=25mm}
+\hypersetup{linkcolor=accent,citecolor={blue!80!black},urlcolor={blue!80!black}}
+\begin{titlepage}
+	\backgroundsetup{position={8.5,-5.3}, scale=1,opacity=1,angle=0, contents={\includegraphics[width=0.9\columnwidth]{./art/images/ffta.png}}}
+	\BgThispage
+	\begin{center} \includegraphics[width=0.9\columnwidth]{./art/images/title.png} \end{center}
+	\begin{center}
+	\large
+	\vspace{6cm} \hyperlink{gameplay}{\bf Reglas} \dotfill 1 \\
+	\hspace{1cm} \hyperlink{adv}{Aventura} \dotfill 2 \\
+	\hspace{1cm} \hyperlink{combat}{Combate} \dotfill 3 \\ 
+	\vspace{0.5cm} \hyperlink{char}{\bf Personajes} \dotfill 5 \\
+	\hspace{1cm} \hyperlink{cs}{Hojas de personaje} \dotfill 6 \\ 
+	\hspace{1cm} \hyperlink{talent}{Talentos} \dotfill 8 \\ 
+	\hspace{1cm} \hyperlink{job}{Oficios} \dotfill 10 \\ 
+	\hspace{1cm} \hyperlink{equip}{Equipo} \dotfill 23 \\ 
+	\vspace{0.5cm} \hyperlink{gm}{\bf Director del Juego} \dotfill 27 \\
+	\hspace{1cm} \hyperlink{optrules}{Reglas opcionales} \dotfill 29 \\ 
+	\hspace{1cm} \hyperlink{world}{Crear una aventura} \dotfill 30 \\ 
+	\hspace{1cm} \hyperlink{monster}{Monstruos} \dotfill 31 \\ 
+	\hspace{1cm} \hyperlink{coc}{Primera aventura} \dotfill 39 \\ 
+	\end{center}
+	\vfill
+	\begin{center} 
+	\footnotesize
+	\textbf{
+		 {\large Traducción: Juan Zabalza, David Rodríguez} \vspace{0.5cm}\\		
+ Créditos: \\
+ Wally Zielinski, Chris Giannoukos, Joshua Davis, Bruno Carvalho, Juan Altamirano, TastyRedTomato, Netzacoatl, Eldi13, Red7394, TaintedBalance, GM\_3826, The\_Fencer0, OmegaWeapon, Kaiten619, StorytellerZeke y todos los usuarios de nuestro \href{https://old.reddit.com/r/omegafantasy}{Subreddit} y nuestro \href{https://discordapp.com/invite/F5fpxMs}{Discord} \vspace{0.3cm} \\
+ Final Fantasy, sus temas, arte y otros contenidos afiliados son propiedad de Square Enix Co., Ltd. Omega Fantasy es un proyecto de fans bajo la licencia \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{Creative Commons License (CC BY-NC-SA 4.0)} 2018. El proyecto se someterá a cualquier exigencia del propietario de la propiedad intelectual, Square Enix Co., Ltd. Como es un proyecto hecho por fans, nunca realizará cobros ni relaciones comerciales.
+	}
+	\end{center} 
+\end{titlepage}
+
+\hypersetup{linkcolor={blue!50!black},citecolor={blue!80!black},urlcolor={blue!80!black}}
+\standardgeometry
+
+\input{./rules/gameplay}
+\input{./rules/adventuring}
+\input{./rules/combat}
+\input{./player/character}
+\input{./player/charactersheet}
+\input{./player/talents}
+\input{./player/jobs}
+\input{./player/equip}
+\input{./gm/general}
+\input{./gm/optrules}
+\input{./gm/world}
+\input{./gm/monsters}
+\input{./gm/adventure}
+
+\end{document}

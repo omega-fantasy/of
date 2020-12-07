@@ -1,0 +1,21 @@
+\monster{\hypertarget{abyssworm}{Sand Worm}}{7}{\includegraphics[width=0.21\textwidth]{./art/monsters/abyssworm.png}}
+{
+	HP: & \hfill 150 & MP: & \hfill 120 \\
+	STR: & \hfill 7 & DEF: & \hfill 4 \\
+	MAG: & \hfill 5 & RES: & \hfill 6 \\
+	AGI: & \hfill 1 & Size: & \hfill L\\
+}
+{
+	\textbf{Acid}: 3d DMG, 3u Range \hfill \textbf{Drops:} 1000 Gil \\
+	\textbf{Immune}:\poison \sleep 
+	
+	\mspell{Quake}{22}{2r}{4u}{8u}{
+		You deal 8d \hyperlink{type}{earth} damage to everyone in the target area. 
+	}{\earth}	
+	\mtech{Inhale}{20}{1r}{Single}{3u}{
+		You inhale the target, removing him from the battle. 
+		At the beginning of every turn he may try to free himself by passing a DC 9 check.
+	}{}		
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"Ah, where’s the early bird when you need one?" -- Wakka}	
+}

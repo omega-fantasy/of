@@ -1,0 +1,18 @@
+\monster{Drago}{5}{\includegraphics[width=0.25\textwidth]{./art/monsters/wyvern.png}}
+{
+ PV: & \hfill 45 & PM: & \hfill 50 \\
+ FUE: & \hfill 3 & DEF: & \hfill 3 \\
+ MAG: & \hfill 2 & RES: & \hfill 3 \\
+ AGI: & \hfill 3 & Tamaño: & \hfill M\\
+}
+{
+ \textbf{Garra}: 2d de daño \hfill \textbf{Botín:} 400 Gil 
+ 
+ \mspell{Aero}{8}{1t}{Único}{4u}{
+ Infliges 3d de daño de \hyperlink{type}{Viento} al objetivo. }{\wind}
+ \mpassive{Zambullida}{
+ Siempre que realices un \hyperlink{action}{Ataque} sobre un objetivo, él debe hacer una tirada con DC 6. Si falla, queda \hyperlink{status}{Inmóvil} por 1 turno.
+	}
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+ %\emph{"Y así, Laguna corre por su preciada vida." -- Kiros}
+}

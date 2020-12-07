@@ -1,0 +1,17 @@
+\monster{Ochu}{8}{\includegraphics[width=0.27\textwidth]{./art/monsters/ochu.png}}
+{
+	HP: & \hfill 180 & MP: & \hfill 100 \\
+	STR: & \hfill 7 & DEF: & \hfill 5 \\
+	MAG: & \hfill 6 & RES: & \hfill 4 \\
+	AGI: & \hfill 1 & Size: & \hfill L\\
+}
+{
+	\textbf{Vines}: 3d DMG, 3u Range \hfill \textbf{Drops:} 1500 Gil \\
+	\hfill \textbf{Immune}:\poison \sleep \blind 
+	
+	\mtech{Pollen}{15}{1r}{5u}{Self}{
+		All enemies in the target area make a DC 8 check and suffer \hyperlink{status}{Sleep} \& \hyperlink{status}{Poison} for 3 rounds on failure.
+	}{\sleep \poison}	
+	%\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%\emph{"The Ochu is no garden variety fiend. We could throw a hundred Crusaders at it and still lose." -- Luzzu}
+}

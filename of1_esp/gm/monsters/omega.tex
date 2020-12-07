@@ -1,0 +1,23 @@
+\monster{Omega}{???}{\includegraphics[width=0.27\textwidth]{./art/monsters/omega.png}}
+{
+ PV: & \hfill 999 & PM: & \hfill 999 \\
+ FUE: & \hfill 14 & DEF: & \hfill 10 \\
+ MAG: & \hfill 13 & RES: & \hfill 10 \\
+ AGI: & \hfill 5 & Tamaño: & \hfill G\\
+}
+{
+ \textbf{Láser}: 5d de daño, 5u de Alcance \hfill \textbf{Botín:} 50000 Gil \\
+ \textbf{Resistencia}:\fire\dark\lightning \hfill \textbf{Debilidad:}\ice\water \\
+ \textbf{Inmune}: \hyperlink{status}{Todos los Estados Alterados} \mspell{Fusión}{50}{1t}{10u}{Tú}{
+ Una falla en el sistema te obliga a perder memoria restringida y lava. Infliges 8d+25 de daño de \hyperlink{type}{Fuego} a todos los que se encuentren en el área de efecto, incluido tú. }{\fire} \mspell{Lanzallamas}{12}{0t}{5u (frente)}{Tú}{
+ Infliges 6d+10 de daño de \hyperlink{type}{Fuego} a todos los que se encuentren en el área de efecto }{\fire}
+ \mspell{Cañón de Ondas}{45}{1t}{3u}{12u}{
+ Infliges 10d de daño \hyperlink{type}{Oscuro} y \hyperlink{status}{disDEF}, \hyperlink{status}{disRES} y \hyperlink{status}{disFUE} por 5 turnos a todos los que se encuentren en el área de efecto. }{\dark \dedef \deres} \mpassive{Reparación Automática}{
+ Recuperas 4d de tus PV al principio de cada turno. 
+	}
+ \mreaction{Sobrecarga Crítica}{
+ Cuando tus PV estén por debajo del 10\% de su valor máximo, obtienes \hyperlink{status}{aumFUE}, \hyperlink{status}{aumMAG}, \linebreak \hyperlink{status}{aumDEF}, \hyperlink{status}{aumRES}.
+	}
+	\vspace{0.1cm} \hrule \vspace{0.1cm} 
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+"El hombre forja una arma para derrotar a los dioses: Omega. El arma no conoce la compasión, ¡solo la destrucción! Su poder no tiene igual. El sabio no se cruzará en su camino, pues encontrará su fin."\hspace*{0.1cm} -- Gentiana }
