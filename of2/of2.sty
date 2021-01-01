@@ -17,6 +17,10 @@
 \usetikzlibrary{calc}
 \usetikzlibrary{patterns}
 \usetikzlibrary{shapes.geometric}
+\usetikzlibrary{shapes.misc, positioning, arrows}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+
 
 \addto\captionsenglish{% Replace "english" with the language you use
 	\renewcommand{\contentsname}%
@@ -48,10 +52,12 @@
 \definecolor{accentgreen}{rgb}{0.08,0.5,0.08} % 44 145 44
 \colorlet{gr}{white!35!black}
 
+\newcommand{\acc}[1]{\textcolor{accent}{#1}}
 \newcommand{\accf}[1]{\textcolor{accent}{\textbf{#1}}}
 \newcommand{\accr}[1]{\textcolor{accentred}{#1}}
+\newcommand{\accrf}[1]{\textcolor{accentred}{\textbf{#1}}}
 \newcommand{\accg}[1]{\textcolor{accentgreen}{#1}}
-\newcommand{\acc}[1]{\textcolor{accent}{#1}}
+\newcommand{\accgf}[1]{\textcolor{accentgreen}{\textbf{#1}}}
 
 \newcommand{\defaultgeometry}{\newgeometry{bottom=5mm,top=15mm,right=10mm,left=10mm, columnsep=1cm}}
 \defaultgeometry
@@ -102,33 +108,33 @@
 
 \hypersetup{colorlinks,linkcolor={blue!80!black},citecolor={blue!80!black},urlcolor={blue!80!black}}
 
-\newcommand{\fire}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/fire.png}}}
-\newcommand{\ice}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/ice.png}}}
-\newcommand{\lightning}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/lightning.png}}}
-\newcommand{\water}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/water.png}}}
-\newcommand{\earth}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/earth.png}}}
-\newcommand{\wind}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/wind.png}}}
-\newcommand{\holy}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/holy.png}}}
-\newcommand{\dark}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/dark.png}}}
-\newcommand{\physical}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/str.png}}}
-\newcommand{\ko}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/doom.png}}}
-\newcommand{\poison}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/poison.png}}}
-\newcommand{\blind}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/blind.png}}}
-\newcommand{\blink}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/blink.png}}}
-\newcommand{\sleep}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/stop.png}}}
-\newcommand{\silence}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/silence.png}}}
-\newcommand{\immobile}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/immobile.png}}}
-\newcommand{\zombie}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/zombie.png}}}
-\newcommand{\enstr}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/bravery.png}}}
-\newcommand{\enmag}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/faith.png}}}
-\newcommand{\enres}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/shell.png}}}
-\newcommand{\destr}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/debrave.png}}}
-\newcommand{\dedef}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/deprotect.png}}}
-\newcommand{\demag}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/defaith.png}}}
-\newcommand{\deres}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/deshell.png}}}
-\newcommand{\enndef}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/protect.png}}}
-\newcommand{\pas}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/passive.png}}}
-\newcommand{\rea}{\hspace*{0.05cm} \raisebox{-.1\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/react.png}}}
+\newcommand{\fire}{\oficonfire}
+\newcommand{\ice}{\oficonice}
+\newcommand{\lightning}{\oficonlightning}
+\newcommand{\water}{\oficonwater}
+\newcommand{\earth}{\oficonearth}
+\newcommand{\wind}{\oficonwind}
+\newcommand{\holy}{\oficonholy}
+\newcommand{\dark}{\oficondark}
+%\newcommand{\physical}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/str.png}}}
+\newcommand{\ko}{\oficonko}
+\newcommand{\poison}{\oficonpoison}
+\newcommand{\blind}{\oficonblind}
+\newcommand{\blink}{\oficonblink}
+\newcommand{\sleep}{\oficonsleep}
+\newcommand{\silence}{\oficonsilence}
+\newcommand{\immobile}{\oficonimmobile}
+\newcommand{\zombie}{\oficonzombie}
+\newcommand{\enstr}{\oficonenstr}
+\newcommand{\enmag}{\oficonenmag}
+\newcommand{\enres}{\oficonenres}
+\newcommand{\destr}{\oficondestr}
+\newcommand{\dedef}{\oficondedef}
+\newcommand{\demag}{\oficondemag}
+\newcommand{\deres}{\oficonderes}
+\newcommand{\enndef}{\oficonendef}
+\newcommand{\pas}{\oficonpassive}
+\newcommand{\rea}{\oficonreaction}
 
 \newcommand{\ofimagewide}[1] {
 	\twocolumn[
@@ -140,13 +146,15 @@
 
 \newcommand{\ofquote}[2]{\accf{#1\hspace*{0.3cm}\mbox{--~#2}}}
 
+\newcommand{\ofmbox}[1]{\hspace*{-0.1cm}\mbox{#1}}
+
 \newcommand{\oftalent}[2]{\accf{#1:} #2}
 
 \newcommand{\ofsummon}[5]
 {
 	\begin{minipage}{\columnwidth}
 	\setlength\columnsep{0.2cm}
-	\textbf{\large\color{accent}#1}\vspace*{-0.3cm}\\
+	\hspace*{0.5cm}\textbf{\large\color{accent}#1}\vspace*{-0.3cm}\\
 	\begin{multicols}{2}
 		\includegraphics[width=\columnwidth]{#2}
 		\vspace*{-2cm}\\
@@ -212,21 +220,21 @@
 
 \newcommand{\ofspecial}[4] {
 	\noindent
-	\raisebox{-.1\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/#4}} \hspace*{0.025cm} \accf{#1} \hfill \accf{Level #3}\\
+	#4 \accf{#1} \hfill \acc{Level #3}\\
 	#2	
 }
 
 \newcommand{\ofability}[9] {
 	\noindent
 	% TODO: add #7 for status/element icons
-	\raisebox{-.1\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/#9}} \hspace*{0.025cm} \accf{#1} \hfill \accf{Level #8}\\
+	#9 \accf{#1} \hfill \acc{Level #8}\\
 	{MP: #2 \hfill  Target: #4 \hfill Time: #3 \hfill Range: #5}\\\
 	#6 		
 }
 
-\newcommand{\ofjobspell}[8]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{magic.png}}
-\newcommand{\ofjobtech}[8]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{tech.png}}
-\newcommand{\ofjobpassive}[3]{\ofspecial{#1}{#2}{#3}{passive.png}}
+\newcommand{\ofjobspell}[8]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{\oficonmagic}}
+\newcommand{\ofjobtech}[8]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{\oficontech}}
+\newcommand{\ofjobpassive}[3]{\ofspecial{#1}{#2}{#3}{\oficonpassive}}
 
 \newcommand{\ofabilitygap}[0]{\vspace*{0.23cm}\\}
 \newcommand{\ofarchetypet}[6]{
@@ -247,12 +255,12 @@
 	#6
 }
 
-\newcommand{\ofarchetypespella}[7]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{3}{magic.png}}
-\newcommand{\ofarchetypetecha}[7]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{3}{tech.png}}
-\newcommand{\ofarchetypespellb}[7]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{9}{magic.png}}
-\newcommand{\ofarchetypetechb}[7]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{9}{tech.png}}
-\newcommand{\ofarchetypepassive}[2]{\ofspecial{#1}{#2}{5}{passive.png}}
-\newcommand{\ofarchetypereaction}[2]{\ofspecial{#1}{#2}{7}{react.png}}
+\newcommand{\ofarchetypespella}[7]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{3}{\oficonmagic}}
+\newcommand{\ofarchetypetecha}[7]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{3}{\oficontech}}
+\newcommand{\ofarchetypespellb}[7]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{9}{\oficonmagic}}
+\newcommand{\ofarchetypetechb}[7]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{9}{\oficontech}}
+\newcommand{\ofarchetypepassive}[2]{\ofspecial{#1}{#2}{5}{\oficonpassive}}
+\newcommand{\ofarchetypereaction}[2]{\ofspecial{#1}{#2}{7}{\oficonreaction}}
 
 \newcommand{\ofjob}[8]{
 	\ofsubsubsection{#1}
@@ -312,7 +320,7 @@
 	/cs/specials/.new value,
 	/cs/limitbreak/.new value,
 	/cs/limitmode/.new value = \phantom{Assailant},
-	/cs/limitpoints/.new value = \hspace*{0.1cm}\raisebox{-.075\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/limitbar.png}},
+	/cs/limitpoints/.new value = \ofcslimitbar,
 	/cs/limitdesc/.new value,
 	/cs/limitrange/.new value = \phantom{3u},
 	/cs/limittarget/.new value = \phantom{Sgl.},
@@ -337,16 +345,27 @@
 
 \newcommand{\ofcsrule}{\color{accent}\hspace*{-0.9cm}\rule{1.09\columnwidth}{1pt}}
 
+\newcommand{\ofcslimitbar}[0]{
+	\raisebox{-.05cm}{%
+		\tikz{
+			\tikzstyle{seg}=[thick, draw, rectangle, align=center, minimum height = 0.35cm, minimum width = 0.6cm]
+			\newcommand{\ofcslimitdist}{0.6}
+			\node[seg](l0)at (0,0) {};					
+			\node[seg](l1)at (\ofcslimitdist,0) {};
+			\node[seg](l2)at (2*\ofcslimitdist,0) {};					
+			\node[seg](l3)at (3*\ofcslimitdist,0) {};
+			\node[seg](l4)at (4*\ofcslimitdist,0) {};
+			\node[seg](l5)at (5*\ofcslimitdist,0) {};
+			\node[seg](l6)at (6*\ofcslimitdist,0) {};					
+			\node[seg](l7)at (7*\ofcslimitdist,0) {};
+			\node[seg](l8)at (8*\ofcslimitdist,0) {};
+			\node[seg](l9)at (9*\ofcslimitdist,0) {};
+		}	
+	}
+}
+
+
 \newcommand{\ofcs}[1]{
-%	{
-%		\AddToShipoutPictureBG*{%
-%			\begin{tikzpicture}[overlay,remember picture]
-%			\draw[color=accent, line width=3pt]($ (current page.north west) + (0.053cm,-0.053cm) $)rectangle($ (current page.south east) + (-0.053cm,0.053cm) $);
-			%\draw[color=accent, line width=1.5pt]($ (current page.north west) + (0.25cm,-0.25cm) $)rectangle($ (current page.south east) + (-0.25cm,0.25cm) $);
-			%\end{tikzpicture}
-%		}
-		%
-		%
 	{	
 	\Large
 	\newgeometry{bottom=5mm,top=0mm,right=10mm,left=10mm, columnsep=0.75cm}
@@ -455,7 +474,7 @@
 		\columnbreak\\
 		%
 		\parbox[l][1.8cm][l]{\columnwidth}{
-			Summon Ability: \hfill Used Today: \option{/cs/summonused} \ofrow
+			Summon Ability: \ofrow
 			\option{/cs/summonability}
 		}
 		%
@@ -501,23 +520,23 @@
 
 
 \newcommand{\ofmonsterability}[8]{
-	\vskip0.05cm
-	\raisebox{-.05\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/#8}} \hspace*{0.1cm}\accf{#1} \\
+	\vskip0.1cm
+	#8 \accf{#1} \\
 	MP: #2 \hfill Target: #4 \hfill Time: #3 \hfill Range: #5 \\
 	#6 
 }
 
-\newcommand{\mspell}[7]{\ofmonsterability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{magic.png}}
-\newcommand{\mtech}[7]{\ofmonsterability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{tech.png}}
+\newcommand{\mspell}[7]{\ofmonsterability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{\oficonmagic}}
+\newcommand{\mtech}[7]{\ofmonsterability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{\oficontech}}
 
 \newcommand{\mpassive}[2]{
-	\vskip0.05cm
-	\raisebox{-.05\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/passive.png}} \accf{#1:} #2
+	\vskip0.1cm
+	\oficonpassive \accf{#1:} #2
 }
 
 \newcommand{\mreaction}[2]{
-	\vskip0.05cm
-	\raisebox{-.05\height}{\includegraphics[height=0.7\baselineskip]{./art/icons/react.png}} \accf{#1:} #2
+	\vskip0.1cm
+	\oficonreaction \accf{#1:} #2
 }
 
 
@@ -526,16 +545,167 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% ICONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \newcommand{\oficon}[3]{
 	\hspace*{-0.15cm}
-	\begin{tikzpicture}[scale=#1]
-	\tikzstyle{icon}=[thick, draw, align=center, color=#2]
+	\tikz[scale=#1]{
+	\tikzstyle{icon}=[line width=0.35mm, draw, align=center, color=#2]
 	#3
-	\end{tikzpicture}
-	\hspace*{-0.15cm}
+	}
+	\hspace*{-0.2cm}
 }
 
-\newcommand{\ofsmalliconscale}{0.7}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ELEMENT ICONS %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\oficonelement}[2]{
+	\hspace*{-0.1cm}
+	\raisebox{-.02cm}{%
+		\oficon{1}{accent}{
+			\node[icon, color=#1, diamond, minimum size = 0.32cm, inner sep=0pt](l0)at (0, 0) {};
+		}
+	}
+	\hspace*{-0.2cm}
+}
+
+\newcommand{\oficonfire}[0]{\oficonelement{red}{red!20!white}}
+\newcommand{\oficonice}[0]{\oficonelement{teal}{blue!20!white}}
+\newcommand{\oficonlightning}[0]{\oficonelement{yellow}{yellow!20!white}}
+\newcommand{\oficonwater}[0]{\oficonelement{blue}{green!20!white}}
+\newcommand{\oficonearth}[0]{\oficonelement{brown!90!black}{brown!40!white}}
+\newcommand{\oficonwind}[0]{\oficonelement{green}{green!20!white}}
+\newcommand{\oficonholy}[0]{\oficonelement{cyan}{cyan!10!white}}
+\newcommand{\oficondark}[0]{\oficonelement{black}{black!40!white}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EQUIPMENT ICONS %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\oficonweapon}[0]{
+	\hspace*{-0.15cm}
+	\raisebox{+.02cm}{%
+		\oficon{1}{accent}{
+			\draw[icon, -](0, 0) -- (-0.125, 0) -- (-0.125, 0.175) -- (-0.225, 0.225) parabola bend (0, 0.28) (0.225, 0.225) -- (0.125, 0.175) -- (0.125, 0) -- cycle;
+			\draw[icon, -](-0.1, 0.27) parabola bend (0, 0.22) (0.1, 0.27);
+		}
+	}
+}
+
+
+\newcommand{\oficonarmor}[0]{
+	\hspace*{-0.15cm}
+	\raisebox{+.02cm}{%
+		\oficon{1}{accent}{
+			\draw[icon, -](0, 0) -- (-0.125, 0) -- (-0.125, 0.175) -- (-0.225, 0.225) parabola bend (0, 0.28) (0.225, 0.225) -- (0.125, 0.175) -- (0.125, 0) -- cycle;
+			\draw[icon, -](-0.1, 0.27) parabola bend (0, 0.22) (0.1, 0.27);
+		}
+	}
+}
+
+
+\newcommand{\oficonaccessory}[0]{
+	\hspace*{-0.1cm}
+	\raisebox{-.05cm}{%
+		\oficon{1}{accent}{
+			\node[icon, circle, minimum size = 0.2cm, inner sep=0pt](l0)at (0, 0) {};
+			\node[icon, circle, minimum size = 0.3cm, inner sep=0pt](l0)at (0, 0) {};
+			\node[icon, circle, minimum size = 0.1cm, inner sep=0pt, fill=white](l0)at (0, 0.175) {};
+		}
+	}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ACTION ICONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\ofactionicon}[3]{
+	\hspace*{-0.08cm}
+	\raisebox{-.1cm}{%
+	\tikz[scale=#1]{
+	\tikzstyle{icon}=[draw, line width=0.35mm, align=center, color=#2]	
+	\node[icon, rectangle, rounded corners=0.05cm, minimum size = #1*0.45cm, inner sep=0pt](l0)at (0, 0) {};
+	#3
+	}	
+	}
+	\hspace*{-0.12cm}
+}
+
+
+\newcommand{\oficonattackbase}[1]{\ofactionicon{#1}{accent}{
+	\draw[icon, thick, -](-0.05, -0.05) -- (-0.16, -0.16);
+	\draw[icon, -](-0.025, -0.025) -- (0.1, 0.1);
+	\draw[icon, -](-0.05, -0.05) -- (-0.1, 0) -- (0.05, 0.15) -- (0.15, 0.15) -- (0.15, 0.15) -- (0.15, 0.05) -- (0, -0.1) -- cycle;
+}}
+\newcommand{\oficonsmallattack}{\oficonattackbase{0.6}}
+\newcommand{\oficonattack}{\oficonattackbase{0.95}}
+
+\newcommand{\oficonmagicbase}[1]{\ofactionicon{#1}{accent}{
+	\draw[icon, thick, -](-0.15, -0.15) -- node[] {}(0.05, 0.05);
+	\node[icon, star, star point ratio=0.5, rotate=-5, minimum size = #1*0.1cm, inner sep=0pt, fill=white](l0)at (0.05, 0.05) {};
+}}
+\newcommand{\oficonsmallmagic}{\oficonmagicbase{0.6}}
+\newcommand{\oficonmagic}{\oficonmagicbase{0.95}}
+
+
+\newcommand{\oficontechbase}[1]{\ofactionicon{#1}{accent}{
+	\node[icon, star, star points=8, star point ratio=0.8, rotate=0, minimum size = #1*0.26cm, inner sep=0pt](l0)at (0, 0) {};
+	\node[icon, circle, minimum size = #1*0.1cm, inner sep=0pt](l0)at (0, 0) {};
+}}
+\newcommand{\oficonsmalltech}{\oficontechbase{0.6}}
+\newcommand{\oficontech}{\oficontechbase{0.95}}
+
+
+\newcommand{\oficondefendbase}[1]{\ofactionicon{#1}{accent}{
+	\draw[icon](-0.15, 0.1) to[bend right] (0, -0.15) to[bend right] (0.15, 0.1) -- (0, 0.17) -- cycle;	
+}}
+\newcommand{\oficonsmalldefend}{\oficondefendbase{0.6}}
+\newcommand{\oficondefend}{\oficondefendbase{0.95}}
+
+
+\newcommand{\oficonitembase}[1]{\ofactionicon{#1}{accent}{
+	\draw[icon](-0.13, -0.14) -- (0.13, -0.14) to[bend right] (0.05, 0.025) -- (0.05, 0.15) -- (-0.05, 0.15) -- (-0.05, 0.025) to[bend right] cycle;	
+}}
+\newcommand{\oficonsmallitem}{\oficonitembase{0.6}}
+\newcommand{\oficonitem}{\oficonitembase{0.95}}
+
+
+\newcommand{\oficonreequipbase}[1]{\ofactionicon{#1}{accent}{
+	\draw[icon, -{Latex[length=0.5mm,width=1.2mm]}](-0.13, 0.05) parabola bend (0, 0.13) (0.13, 0.05);
+	\draw[icon, -{Latex[length=0.5mm,width=1.2mm]}](0.13, -0.05) parabola bend (0, -0.13) (-0.13, -0.05);
+}}
+\newcommand{\oficonsmallreequip}{\oficonreequipbase{0.6}}
+\newcommand{\oficonreequip}{\oficonreequipbase{0.95}}
+
+
+\newcommand{\oficondashbase}[1]{\ofactionicon{#1}{accent}{
+	\draw[icon](-0.15, -0.15) -- (0, 0) -- (-0.15, 0.15);
+	\draw[icon](0, -0.15) -- (0.15, 0) -- (0, 0.15);
+}}
+\newcommand{\oficonsmalldash}{\oficondashbase{0.6}}
+\newcommand{\oficondash}{\oficondashbase{0.95}}
+
+
+\newcommand{\oficonreaction}[0]{\ofactionicon{0.95}{accent}{
+	\node[thick, align=center, color=accent, inner sep=0pt](l0)at (0, 0) {\bf\large!};
+}}
+
+
+\newcommand{\oficonpassive}[0]{\ofactionicon{0.95}{accent}{
+	\draw[icon, -{Latex[length=0.5mm,width=1.2mm]}](-0.02, -0.15) arc(265:-85:0.15);
+}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ATTRIBUTE ICONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\hpbase}[2]{
+	\raisebox{-.05cm}{%
+		\oficon{#1}{#2}{
+			\draw[icon](-0.2, 0.2) to[bend right] (-0.15, 0.1) -- (0, -0.05) -- (0.15, 0.1) to[bend right] (0.2, 0.2) parabola bend (0.1, 0.3) (0, 0.225) parabola bend (-0.1, 0.3) (-0.2, 0.2);
+		}
+	}
+}
+\newcommand{\oficonhp}{\hpbase{0.95}{accent}}
+
 
 \newcommand{\oficonmp}[0]{
 	\raisebox{-.01cm}{%
@@ -545,14 +715,55 @@
 	}
 }
 
-\newcommand{\oficontech}[0]{
-	\raisebox{-.05cm}{%
-		\oficon{1}{accent}{	
-			\node[icon, star, star points=8, star point ratio=0.8, rotate=0, minimum size = 0.3cm, inner sep=0pt](l0)at (0, 0) {};
-			\node[icon, circle, minimum size = 0.15cm, inner sep=0pt](l0)at (0, 0) {};
+
+\newcommand{\strbase}[2]{
+	\hspace*{-0.1cm}
+	\raisebox{-.02cm}{%
+		\oficon{#1}{#2}{
+			\draw[icon, very thick, -](0, 0) -- (-0.11, -0.11);
+			\draw[icon, -](0.025, 0.025) -- (0.15, 0.15);
+			\draw[icon, -](0, 0) -- (-0.05, 0.05) -- (0.1, 0.2) -- (0.2, 0.2) -- (0.2, 0.2) -- (0.2, 0.1) -- (0.05, -0.05) -- cycle;
 		}
 	}
 }
+\newcommand{\oficonstr}{\strbase{1}{accent}}
+
+
+
+\newcommand{\defbase}[2]{
+	\hspace*{-0.1cm}
+	\raisebox{-.01cm}{%
+		\oficon{#1}{#2}{
+			\draw[icon](-0.15, 0.1) to[bend right] (0, -0.15) to[bend right] (0.15, 0.1) -- (0, 0.17) -- cycle;	
+		}
+	}
+}
+\newcommand{\oficondef}{\defbase{1}{accent}}
+
+
+\newcommand{\magbase}[2]{
+	\hspace*{-0.1cm}
+	\raisebox{-.015cm}{%
+		\oficon{#1}{#2}{
+			\draw[icon, very thick, -](-0.225, -0.225) -- node[] {}(0, 0);
+			\node[icon, star, star point ratio=0.5, rotate=-5, minimum size = #1*0.11cm, inner sep=0pt, fill=white](l0)at (0, 0) {};
+		}
+	}
+}
+\newcommand{\oficonmag}{\magbase{1}{accent}}
+
+
+\newcommand{\resbase}[2]{
+	\hspace*{-0.1cm}
+	\raisebox{-.03cm}{%
+		\oficon{#1}{#2}{
+			\node[icon, ellipse, minimum width = #1*0.4cm, minimum height = #1*0.2cm, inner sep=0pt](l0)at (0,0) {};
+			\draw[icon, -, fill=white](-0.11, 0) -- node[] {}(0, 0.25) -- (0.11, 0);
+		}
+	}
+}
+\newcommand{\oficonres}{\resbase{1}{accent}}
+
 
 \newcommand{\oficonagi}[0]{
 	\raisebox{-.1cm}{%
@@ -564,67 +775,44 @@
 	}
 }
 
-\newcommand{\magbase}[2]{
-	\hspace*{-0.1cm}
-	\raisebox{-.015cm}{%
-		\oficon{#1}{#2}{
-			\draw[icon, very thick, -](-0.225, -0.225) -- node[] {}(0, 0);
-			\node[icon, star, star point ratio=0.5, rotate=-5, minimum size = #1*0.11cm, inner sep=0pt, fill=white](l0)at (0, 0) {};
-		}
-	}
-}
-\newcommand{\magnew}{\magbase{1}{accent}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% STATUS EFFECT ICONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\ofsmalliconscale}{0.7}
+
+\newcommand{\oficonregen}{\hpbase{1}{accentgreen}}
+\newcommand{\regensmall}{\hpbase{0.7}{accentgreen}}
+
+\newcommand{\oficonpoison}{\hpbase{1}{accentred}}
+\newcommand{\poisonsmall}{\hpbase{0.7}{accentred}}
+
+\newcommand{\oficonenmag}{\magbase{1}{accentgreen}}
 \newcommand{\enmagsmall}{\magbase{0.7}{accentgreen}}
+
+\newcommand{\oficondemag}{\magbase{1}{accentred}}
 \newcommand{\demagsmall}{\magbase{0.7}{accentred}}
 
-\newcommand{\defbase}[2]{
-	\hspace*{-0.1cm}
-	\raisebox{-.01cm}{%
-		\oficon{#1}{#2}{
-			\draw[icon](-0.15, 0.25) to[bend right] (0, 0) to[bend right] (0.15, 0.25) -- (0, 0.32) -- cycle;
-		}
-	}
-}
-\newcommand{\defnew}{\defbase{1}{accent}}
+\newcommand{\oficonendef}{\defbase{1}{accentgreen}}
 \newcommand{\enndefsmall}{\defbase{0.7}{accentgreen}}
+
+\newcommand{\oficondedef}{\defbase{1}{accentred}}
 \newcommand{\dedefsmall}{\defbase{0.7}{accentred}}
 
-\newcommand{\resbase}[2]{
-	\hspace*{-0.1cm}
-	\raisebox{-.03cm}{%
-		\oficon{#1}{#2}{
-			\node[icon, ellipse, minimum width = #1*0.4cm, minimum height = #1*0.2cm, inner sep=0pt](l0)at (0,0) {};
-			\draw[icon, -, fill=white](-0.11, 0) -- node[] {}(0, 0.25) -- (0.11, 0);
-		}
-	}
-}
-\newcommand{\resnew}{\resbase{1}{accent}}
+\newcommand{\oficonenres}{\resbase{1}{accentgreen}}
 \newcommand{\enressmall}{\resbase{0.7}{accentgreen}}
+
+\newcommand{\oficonderes}{\resbase{1}{accentred}}
 \newcommand{\deressmall}{\resbase{0.7}{accentred}}
 
-\newcommand{\strbase}[2]{
-	\hspace*{-0.1cm}
-	\raisebox{-.02cm}{%
-		\oficon{#1}{#2}{
-			% old str icon
-			%\draw[icon](0.1, 0.2) arc(-50:230:0.075);
-			%\draw[icon](0.3, 0.1) arc(20:160:0.1);				
-			%\draw[icon, -](0.1, 0.1) -- node[] {}(0.1, 0.21);	
-			%\draw[icon, -](0, 0) -- node[] {}(0, 0.21);	
-			%\draw[icon, -](-0.02, 0) -- node[] {}(0.3, 0);
-			
-			\draw[icon, ultra thick, -](0, 0) -- (-0.11, -0.11);
-			\draw[icon, -](0.025, 0.025) -- (0.15, 0.15);
-			\draw[icon, -](0, 0) -- (-0.05, 0.05) -- (0.1, 0.2) -- (0.2, 0.2) -- (0.2, 0.2) -- (0.2, 0.1) -- (0.05, -0.05) -- cycle;
-		}
-	}
-}
-\newcommand{\strnew}{\strbase{1}{accent}}
+\newcommand{\oficonenstr}{\strbase{1}{accentgreen}}
 \newcommand{\enstrsmall}{\strbase{0.7}{accentgreen}}
+
+\newcommand{\oficondestr}{\strbase{1}{accentred}}
 \newcommand{\destrsmall}{\strbase{0.7}{accentred}}
 
 \newcommand{\immobilebase}[2]{
-	\hspace*{-0.1cm}
+	\hspace*{-0.05cm}
 	\raisebox{-.1cm}{%
 		\oficon{#1}{#2}{
 			\draw[icon] (0, 0.3) -- (0, 0) -- (0.3, 0) to[bend right] (0.3, 0.15) -- (0.175, 0.15) -- (0.175, 0.3);
@@ -633,7 +821,7 @@
 	}
 	%\hspace*{-0.12cm}
 }
-\newcommand{\immobilenew}{\immobilebase{1}{accentred}}
+\newcommand{\oficonimmobile}{\immobilebase{1}{accentred}}
 \newcommand{\immobilesmall}{\immobilebase{0.7}{accentred}}
 
 \newcommand{\zombiebase}[2]{
@@ -645,52 +833,51 @@
 		}
 	}
 }
-\newcommand{\zombienew}{\zombiebase{1}{accentred}}
+\newcommand{\oficonzombie}{\zombiebase{1}{accentred}}
 \newcommand{\zombiesmall}{\zombiebase{0.7}{accentred}}
 
 \newcommand{\blindblink}[2]{
 	\hspace*{-0.12cm}
-	\raisebox{-.1cm}{%
+	\raisebox{-.05cm}{%
 		\oficon{#1}{#2}{
 			\draw[icon](-0.04, 0.1) arc(45:135:0.2);
 			\draw[icon](0, 0) arc(-35:-145:0.225);
-			\draw[icon, -](-0.05, -0.06) -- node[] {}(-0.02, -0.15);
-			\draw[icon, -](-0.14, -0.075) -- node[] {}(-0.13, -0.18);
-			\draw[icon, -](-0.23, -0.075) -- node[] {}(-0.24, -0.18);
-			\draw[icon, -](-0.32, -0.06) -- node[] {}(-0.34, -0.15);	
+			\draw[icon, -](-0.05, -0.06) -- (-0.02, -0.15);
+			\draw[icon, -](-0.14, -0.075) -- (-0.13, -0.18);
+			\draw[icon, -](-0.23, -0.075) -- (-0.24, -0.18);
+			\draw[icon, -](-0.32, -0.06) -- (-0.34, -0.15);	
 		}
 	}
 	\hspace*{-0.12cm}
 }
-\newcommand{\blindnew}{\blindblink{1}{accentred}}
+\newcommand{\oficonblind}{\blindblink{1}{accentred}}
 \newcommand{\blindsmall}{\blindblink{0.7}{accentred}}
-\newcommand{\blinknew}{\blindblink{1}{accentgreen}}
+\newcommand{\oficonblink}{\blindblink{1}{accentgreen}}
 \newcommand{\blinksmall}{\blindblink{0.7}{accentgreen}}
 
 \newcommand{\sleepbase}[2]{
 	\raisebox{-.05cm}{%
 		\oficon{#1}{#2}{
 			\tikzstyle{zf}=[thick, align=center, color=accentred, rectangle, minimum size = #1*0.1cm, inner sep=0pt]
-			\node[zf](l0)at (0,0) {{\fontsize{5}{5}\selectfont\bf z}};
-			\node[zf](l0)at (0.12,0.12) {{\fontsize{6}{5}\selectfont\bf z}};
-			\node[zf](l0)at (0.26,0.26) {{\fontsize{7}{5}\selectfont\bf z}};
+			\node[zf](l0)at (0,0) {{\fontsize{6}{5}\selectfont\bf z}};
+			\node[zf](l0)at (0.12,0.12) {{\fontsize{7}{5}\selectfont\bf z}};
+			\node[zf](l0)at (0.26,0.26) {{\fontsize{8}{5}\selectfont\bf z}};
 		}
 	}
 }
-\newcommand{\sleepnew}{\sleepbase{1}{accentred}}
+\newcommand{\oficonsleep}{\sleepbase{1}{accentred}}
 \newcommand{\sleepsmall}{\sleepbase{0.7}{accentred}}
 
 \newcommand{\silencebase}[2]{
 	\raisebox{-.02cm}{%
 		\oficon{#1}{#2}{
-			\node[icon, rectangle, minimum height = #1*0.15cm, minimum width=#1*0.07cm, inner sep=0pt](l0)at (0,0) {};
-			\node[icon, trapezium, trapezium angle=120, align=center, rotate=270, inner sep=0.01cm, minimum height=#1*0.125cm](a1)at (#1*0.14, 0) {};
-			\draw[icon, -](0.225, -0.075) -- node[] {}(0.375, 0.075);
-			\draw[icon, -](0.375, -0.075) -- node[] {}(0.225, 0.075);
+			\draw[icon, -](0.1, 0) -- (0.025, 0) -- (0.025, 0.15) -- (0.1, 0.15) -- (0.225, 0.225) -- (0.225, -0.075) -- cycle;
+			\draw[icon, -](0.3, 0) -- (0.45, 0.15);
+			\draw[icon, -](0.3, 0.15) -- (0.45, 0);
 		}
 	}
 }
-\newcommand{\silencenew}{\silencebase{1}{accentred}}
+\newcommand{\oficonsilence}{\silencebase{1}{accentred}}
 \newcommand{\silencesmall}{\silencebase{0.7}{accentred}}
 
 \newcommand{\kobase}[2]{
@@ -701,7 +888,7 @@
 		}
 	}
 }
-\newcommand{\konew}{\kobase{1}{accentred}}
+\newcommand{\oficonko}{\kobase{1}{accentred}}
 \newcommand{\kosmall}{\kobase{0.7}{accentred}}
 
 \newcommand{\hasteslow}[2]{
@@ -712,20 +899,8 @@
 		}
 	}
 }
-\newcommand{\haste}{\hasteslow{1}{accent}}
+\newcommand{\oficonhaste}{\hasteslow{1}{accentgreen}}
 \newcommand{\hastesmall}{\hasteslow{\ofsmalliconscale}{accentgreen}}
-\newcommand{\slow}{\hasteslow{1}{accentred}}
-\newcommand{\slowsmall}{\hasteslow{\ofsmalliconscale}{accentred}}
 
-\newcommand{\regenpoison}[2]{
-	\raisebox{-.05cm}{%
-		\oficon{#1}{#2}{
-			\draw[icon](-0.2, 0.2) to[bend right] (-0.15, 0.1) -- (0, -0.05) -- (0.15, 0.1) to[bend right] (0.2, 0.2) parabola bend (0.1, 0.3) (0, 0.225) parabola bend (-0.1, 0.3) cycle;
-		}
-	}
-}
-\newcommand{\oficonhp}{\regenpoison{0.95}{accent}}
-\newcommand{\regen}{\regenpoison{1}{accentgreen}}
-\newcommand{\regensmall}{\regenpoison{0.7}{accentgreen}}
-\newcommand{\poisonnew}{\regenpoison{1}{accentred}}
-\newcommand{\poisonsmall}{\regenpoison{0.7}{accentred}}
+\newcommand{\oficonslow}{\hasteslow{1}{accentred}}
+\newcommand{\slowsmall}{\hasteslow{\ofsmalliconscale}{accentred}}

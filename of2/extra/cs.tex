@@ -8,6 +8,8 @@
 \usepackage{calc}
 \usepackage{tikz}
 \usepackage{eso-pic}
+\usetikzlibrary{shapes.misc, positioning, arrows}
+\usetikzlibrary{arrows}
 \usetikzlibrary{arrows.meta}
 
 \tcbuselibrary{skins}
@@ -34,25 +36,6 @@
 	\begin{tcolorbox}[width=\columnwidth, boxrule=0.00cm, height=#1cm, sharp corners, colback=white, before skip=0cm, after skip=0pt, left=-3pt,top=-3pt,right=-3pt,bottom=-3pt, colframe=white]
 		#2	
 	\end{tcolorbox}
-}
-
-\newcommand{\ofcslimitbar}[0]{
-	\raisebox{-.05cm}{%
-	\tikz{
-		\tikzstyle{seg}=[thick, draw, rectangle, align=center, minimum height = 0.35cm, minimum width = 0.6cm]
-		\newcommand{\ofcslimitdist}{0.6}
-		\node[seg](l0)at (0,0) {};					
-		\node[seg](l1)at (\ofcslimitdist,0) {};
-		\node[seg](l2)at (2*\ofcslimitdist,0) {};					
-		\node[seg](l3)at (3*\ofcslimitdist,0) {};
-		\node[seg](l4)at (4*\ofcslimitdist,0) {};
-		\node[seg](l5)at (5*\ofcslimitdist,0) {};
-		\node[seg](l6)at (6*\ofcslimitdist,0) {};					
-		\node[seg](l7)at (7*\ofcslimitdist,0) {};
-		\node[seg](l8)at (8*\ofcslimitdist,0) {};
-		\node[seg](l9)at (9*\ofcslimitdist,0) {};
-	}	
-	}
 }
 
 \newcommand{\ofcsrulea}{\color{accent}\hspace*{-0.9cm}\rule{1.09\columnwidth}{2pt}}
@@ -116,10 +99,10 @@
 	%
 	\begin{multicols}{2}
 		\ofcsinvisbox{2.5}{
-			\strnew\acc{STR}ength:\hfill\option{/cs/str}\hspace*{1cm}\ofrow
-			\defnew\acc{DEF}ense:\hfill\option{/cs/def}\hspace*{1cm}\ofrow
-			\magnew\acc{MAG}ic:\hfill\option{/cs/mag}\hspace*{1cm}\ofrow
-			\resnew\acc{RES}istance:\hfill\option{/cs/res}\hspace*{1cm}
+			\oficonstr\acc{STR}ength:\hfill\option{/cs/str}\hspace*{1cm}\ofrow
+			\oficondef\acc{DEF}ense:\hfill\option{/cs/def}\hspace*{1cm}\ofrow
+			\oficonmag\acc{MAG}ic:\hfill\option{/cs/mag}\hspace*{1cm}\ofrow
+			\oficonres\acc{RES}istance:\hfill\option{/cs/res}\hspace*{1cm}
 		}
 		\columnbreak
 		\ofcsinvisbox{2.5}{
@@ -164,15 +147,15 @@
 	%	
 	\begin{multicols}{2}
 	\ofcsbox{5.1}{
-		Weapon: \option{/cs/weapon}\\
+		\oficonweapon Weapon: \option{/cs/weapon}\\
 		Effect: \option{/cs/weaponeffect}\\
 		Materia: \option{/cs/weaponmateria}\ofrow
-		Armor: \option{/cs/armor}\\
+		\oficonarmor Armor: \option{/cs/armor}\\
 		Effect: \option{/cs/armoreffect}\\
 		Materia: \option{/cs/armormateria}\ofrow			
-		Accessory: \option{/cs/accessory1}\\
+		\oficonaccessory Accessory: \option{/cs/accessory1}\\
 		Effect: \option{/cs/accessory1effect}\ofrow
-		Accessory: \option{/cs/accessory2}\\
+		\oficonaccessory Accessory: \option{/cs/accessory2}\\
 		Effect: \option{/cs/accessory2effect}
 	}
 	\columnbreak
@@ -189,21 +172,21 @@
 	\parbox{1.03\columnwidth}{
 		\scriptsize
 		\hfill\accf{Combat Actions Summary:}\hfill\ofrow
-		\acc{Attack:} Attack with your weapon.
+		\oficonsmallattack\acc{Attack:} Attack with your weapon.
 		Target makes an evasion check with DC 12 minus his AGI.
 		On failure, the damage dealt is your weapon's DMG plus your STR.
 		You score a critical hit (2x damage) if check is a 2.
 		The target makes a counter attack if check is a 12.\ofrow
-		\acc{Magic:} Cast a spell by spending MP, choosing a target in range and concentrating.
+		\oficonsmallmagic\acc{Magic:} Cast a spell by spending MP, choosing a target in range and concentrating.
 		While concentrating, you cannot take actions or evade. 
 		After the cast time is up, the spell takes effect on the target right before your turn and cannot be evaded even if you are not in range anymore.
 		If the spell deals damage or restores HP, add your MAG to the amount.\ofrow
-		\acc{Tech:}
+		\oficonsmalltech\acc{Tech:}
 		Same as Magic but add your STR instead of MAG to damage and healing if bonus is not already included.\ofrow
-		\acc{Defend:} Damage that you receive by Attacks until your next turn is halved. \ofrow
-		\acc{Item:} Use an Item from your inventory on yourself or someone within 1u.\ofrow
-		\acc{Re-Equip:} Swap a Materia or Equipment piece that you are wearing against one from your Inventory.\ofrow
-		\acc{Dash:} Move another distance of your AGI+1 units.
+		\oficonsmalldefend\acc{Defend:} Damage that you receive by Attacks until your next turn is halved. \ofrow
+		\oficonsmallitem\acc{Item:} Use an Item from your inventory on yourself or someone within 1u.\ofrow
+		\oficonsmallreequip\acc{Re-Equip:} Swap a Materia or Equipment piece that you are wearing against one from your Inventory.\ofrow
+		\oficonsmalldash\acc{Dash:} Move another distance of your AGI+1 units.
 	}
 	\columnbreak\\
 	\parbox{1.03\columnwidth}{
@@ -266,4 +249,9 @@
 	%
 \clearpage
 %
+Actions: \oficonattack \oficonmagic \oficontech \oficondefend \oficonitem \oficonreequip \oficondash \\\\
+Attributes: \oficonhp \oficonmp \oficonstr \oficonmag \oficonres \oficonagi \\\\
+Elements: \oficonfire \oficonice \oficonlightning \oficonearth \oficonwind \oficonholy \oficondark \\\\
+Equipment: \oficonweapon \oficonarmor \oficonaccessory \\\\
+Status Effects: \oficonko \oficonblind \oficonpoison \oficonslow \oficonsleep \oficonzombie \oficonsilence \oficonimmobile \oficondestr \oficondedef \oficondemag \oficonderes
 \end{document}

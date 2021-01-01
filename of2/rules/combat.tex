@@ -24,51 +24,49 @@ Whenever a calculation results in a non-integer value, the result is always roun
 %
 \ofgap
 %
-\newcommand{\attricon}[1]{\raisebox{-.15\height}{\includegraphics[height=0.8\baselineskip]{./art/icons/#1.png}}\hspace*{0.15cm}}
-%
-\attricon{hp}\accf{Hit Points (HP)} increase your durability. You have a maximum and a current number of HP, if your current HP falls to 0 you fall unconscious. \ofrow
-\attricon{mp}\accf{Mana Points (MP)} are the resource required for using abilities such as Magic and Techs. Similar to HP, you have a maximum and a current number of MP. \ofrow
-\attricon{str}\accf{Strength (STR)} increases the damage dealt by your physical attacks. \ofrow
-\attricon{def}\accf{Defense (DEF)} increases your resilience against physical damage. \ofrow
-\attricon{mag}\accf{Magic (MAG)} increases the potency of your healing and attacking spells. \ofrow
-\attricon{res}\accf{Resistance (RES)} increases your resilience against magical damage. \ofrow
-\attricon{mov}\accf{Agility (AGI)} allows you to evade physical attacks and determines how quickly you can move.
+\ofmbox{\oficonhp\accf{Hit Points (HP)}} increase your durability. You have a maximum and a current number of HP, if your current HP falls to 0 you fall unconscious. \ofrow
+\ofmbox{\oficonmp\accf{Mana Points (MP)}} are the resource required for using abilities such as Magic and Techs. Similar to HP, you have a maximum and a current number of MP. \ofrow
+\ofmbox{\oficonstr\accf{Strength (STR)}} increases the damage dealt by your physical attacks. \ofrow
+\ofmbox{\oficondef\accf{Defense (DEF)}} increases your resilience against physical damage. \ofrow
+\ofmbox{\oficonmag\accf{Magic (MAG)}} increases the potency of your healing and attacking spells. \ofrow
+\ofmbox{\oficonres\accf{Resistance (RES)}} increases your resilience against magical damage. \ofrow
+\ofmbox{\oficonagi\accf{Agility (AGI)}} allows you to evade physical attacks and determines how quickly you can move.
 %
 \newpage
 %
 During your turn you can, in any order, move a distance of your AGI+1 units and take an action.
-Below is a list of combat actions, but the GM may allow any other action that can be completed in one turn:\ofgap
+Below is a list of \accf{combat actions}, but the GM may allow any other action that can be completed in one turn:\ofgap
 %
-\attricon{attack}\accf{Attack:}
+\ofmbox{\oficonattack\accf{Attack:}}
 You attack an enemy with your weapon. 
 He may evade by passing an \accf{evasion check} with a DC of 12 minus his AGI. 
 If he fails the check, you reduce the target's HP by your weapon's DMG plus your STR.
-If the evader rolls a 2, you make a \mbox{\accf{critical hit}}, doubling your usual damage. 
+If the evader rolls a 2, you make a \ofmbox{\accf{critical hit}}, doubling your usual damage. 
 If he rolls a 12, not only does your Attack miss, but the evader makes an Attack action on you instead, which you cannot evade.\ofgap
 %
-\attricon{magic}\accf{Magic:}
+\ofmbox{\oficonmagic\accf{Magic:}}
 You cast a spell by spending MP, choosing a target within its range and concentrating for a duration.
 While concentrating, you cannot take actions or evade. 
 After the cast time is up, the spell's effect occurs on the target right \accf{before your turn} and cannot be evaded even if you are not in range anymore.
 If the spell deals damage or restores HP, add your MAG to the amount.
 Every spell's description has information on its cast time, MP cost, target, range and effect.\ofgap
 %
-\attricon{tech}\accf{Tech:}
+\ofmbox{\oficontech\accf{Tech:}}
 You use a non-magical ability. 
 Techs are used the same way as magic, but their damage and healing is amplified by your STR instead of your MAG, 
 except if their use already includes this bonus in another way, for example by involving an Attack.\ofgap
 %
-\attricon{defend}\accf{Defend:} All damage that you receive by Attacks until your next turn is halved. \ofgap
+\ofmbox{\oficondefend\accf{Defend:}} All damage that you receive by Attacks until your next turn is halved. \ofgap
 %
-\attricon{item}\accf{Item:} You use an Item from your inventory on yourself or someone within 1u.\ofgap
+\ofmbox{\oficonitem\accf{Item:}} You use an Item from your inventory on yourself or someone within 1u.\ofgap
 %
-\accf{Re-Equip:} Swap a Materia or Equipment piece that you are wearing against one from your Inventory.\ofgap
+\ofmbox{\oficonreequip\accf{Re-Equip:}} Swap a Materia or Equipment piece that you are wearing against one from your Inventory.\ofgap
 %
-\accf{Dash:} Move another distance of your AGI+1 units.\\\\
+\ofmbox{\oficondash\accf{Dash:}} Move another distance of your AGI+1 units.\\\\
 %
 Apart from Magic and Techs, characters can also learn the following \accf{special abilities}: \ofrow
-\attricon{passive}\accf{Passive:} Effects that are permanently active. \ofgap
-\attricon{react}\accf{Reaction:} Allow you to take certain actions on someone else's turn under specific conditions.
+\ofmbox{\oficonpassive\accf{Passive:}} Effects that are permanently active. \ofgap
+\ofmbox{\oficonreaction\accf{Reaction:}} Allow you to take certain actions on someone else's turn under specific conditions.
 %
 \vfill
 %
@@ -86,15 +84,13 @@ Apart from Magic and Techs, characters can also learn the following \accf{specia
 %
 \clearpage
 %
-\newcommand{\elemicon}[1]{\hspace*{0.15cm}\raisebox{-.2\height}{\includegraphics[height=\baselineskip]{./art/icons/#1.png}}}
-%
 All damage dealt has one of two basic types.
 Unless specified otherwise, Attacks and Techs are of \accf{physical} type, while Magic and Items are of \accf{magical} type.
 When you receive physical damage, subtract your DEF from the amount and when you receive magical damage, subtract your RES from the amount.
 In addition, damage can have an elemental type to which combatants can have \accf{Weaknesses} or \accf{Resiliences}. 
 When resilient, you only suffer half the usual damage and when weak, you suffer double the usual damage. 
 Resilience and Weakness cancel each other out and do not stack.
-The following elemental types exist: fire\elemicon{fire}, ice\elemicon{ice}, lightning\elemicon{lightning}, earth\elemicon{earth}, water\elemicon{water}, holy\elemicon{holy} and dark\elemicon{dark}.
+The following elemental types exist: fire\oficonfire, ice\oficonice, lightning\oficonlightning, water\oficonwater, \mbox{earth\oficonearth}, wind\oficonwind, holy\oficonholy and dark\oficondark.
 %
 \vfill
 %
@@ -176,50 +172,48 @@ They can also be \accf{Immune} to certain Status Effects, in which case they are
 Also, if a combatant suffers two opposite Status Effects, for example Poison and Regen, they negate each other and are both removed.
 Below is a list of all Status Effects. 
 %
-\ofgap
+\vfill
 %
-\attricon{doom}\accf{KO:}
+\ofmbox{\oficonko\accrf{KO:}}
 You are unconscious and your turns are skipped.
 You suffer KO when your current HP drops to 0 and your HP cannot be increased until this status is removed.  
 Immunity against KO only makes you immune against effects that cause it when above 0 HP.\ofgap
 %
-\attricon{blind}\accf{Blind}: Whenever you Attack an enemy, he has Advantage on the evasion check. \ofgap
+\ofmbox{\oficonblind\accrf{Blind:}} Whenever you Attack an enemy, he has Advantage on the evasion check. \ofgap
 %
-\attricon{blink}\accf{Blink}: Whenever you are targeted by an Attack, you have Advantage on the evasion check. \ofgap
+\ofmbox{\oficondestr\oficondedef\oficondemag\oficonderes\accrf{DeATR:}} The according attribute is reduced by 3 (minimum 0), e.g. DeMAG reduces MAG. \ofgap
 %
-\attricon{debrave}\attricon{deprotect}\attricon{defaith}\attricon{deshell}\accf{DeATR}: 
-The according attribute is reduced by 3 (minimum 0), e.g. DeMAG reduces MAG. \ofgap
+\ofmbox{\oficonimmobile\accrf{Immobile:}} You are unable to move.\ofgap
 %
-\attricon{bravery}\attricon{protect}\attricon{faith}\attricon{shell}\accf{EnATR}: 
-The according attribute is increased by 3, e.g. EnMAG increases MAG. \ofgap
+\ofmbox{\oficonpoison\accrf{Poison:}} You take damage equal to 10\% of your maximum HP at the start of each turn, but cannot fall below 1 HP due to this effect.\ofgap
 %
-\accf{Haste}: During your turn, you can either make an additional action or movement. \ofgap
+\ofmbox{\oficonsilence\accrf{Silence:}} You cannot begin casting Magic or using Techs, but you can still Attack.\ofgap
 %
-\attricon{immobile}\accf{Immobile}: You are unable to move.\ofgap
+\ofmbox{\oficonslow\accrf{Slow:}} During your turn, you can either move or take an action but not both.\ofgap
 %
-\attricon{poison}\accf{Poison}: You take damage equal to 10\% of your maximum HP at the start of each turn, but cannot fall below 1 HP due to this effect.\ofgap
+\ofmbox{\oficonsleep\accrf{Sleep:}} You cannot move or take any action. This status is removed when you take any damage.\ofgap
 %
-\accf{Regen}: You regain HP equal to 10\% of your maximum HP at the start of each turn.\ofgap
-%
-\attricon{silence}\accf{Silence}: You cannot begin casting Magic or using Techs, but you can still Attack.\ofgap
-%
-\accf{Slow}: During your turn, you can either move or take an action but not both.\ofgap
-%
-\attricon{stop}\accf{Sleep}: You cannot move or take any action. This status is removed when you take any damage.\ofgap
-%
-\attricon{zombie}\accf{Zombie}: All healing effects are reversed for you. Healing reduces your HP and effects that normally remove KO, inflict it to you instead.
+\ofmbox{\oficonzombie\accrf{Zombie:}} All healing effects are reversed for you. Healing reduces your HP and effects that normally remove KO, inflict it to you instead.\ofpar
 %	
+\ofmbox{\oficonblink\accgf{Blink:}} Whenever you are targeted by an Attack, you have Advantage on the evasion check. \ofgap
+%
+\ofmbox{\oficonenstr\oficonendef\oficonenmag\oficonenres\accgf{EnATR}} The according attribute is increased by 3, e.g. EnMAG increases MAG. \ofgap
+%
+\ofmbox{\oficonhaste\accgf{Haste:}} During your turn, you can either make an additional action or movement. \ofgap
+%
+\ofmbox{\oficonregen\accgf{Regen:}} You regain HP equal to 10\% of your maximum HP at the start of each turn.
+%
 \vfill
 %
 \ofboxwithtitle{Example: Status Effects}
 {
-	Noctis and his party fight Malboro. 
+	Noctis and Prompto fight Malboro. 
 	The monster uses its Bad Breath ability to inflict multiple Status Effects.
-	Prompto suffers Sleep and Poison. 
-	He cannot move or take actions and before his turn is finished, he loses 3 HP, because his maximum HP is 37.
+	Prompto suffers Sleep and Poison.
+	At the start of his turn he loses 3 HP (his maximum HP is 37) and he cannot move or take actions.
 	Noctis suffers Silence and Blind.
 	He cannot use abilities, so he tries to Attack Malboro. 
-	The monster~(AGI:~2) rolls [1,6,4] on the evasion check, barely passing the \mbox{DC 12-2} due to Advantage.
+	The monster~(2~AGI) rolls [1,6,4] on the evasion check, barely passing the DC 12-2 check due to Advantage.
 }
 %
 \clearpage
