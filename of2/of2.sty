@@ -23,6 +23,20 @@
 \usetikzlibrary{arrows.meta}
 
 
+\usepackage{tcolorbox}[all]
+\usepackage{blindtext}
+\usepackage{pdflscape}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usetikzlibrary{shapes.misc, positioning, arrows}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+
+\tcbuselibrary{skins}
+
+
 \addto\captionsenglish{% Replace "english" with the language you use
 	\renewcommand{\contentsname}%
 	{\hfill \accf{Table of Contents} \hfill}%
@@ -286,14 +300,14 @@
 	\clearpage
 }
 
-%%%%%%%%%% CHARACTER SHEET %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\tf}[3]{\raisebox{-.2\height}{\TextField[height=0.6cm, charsize=12pt, name=#1, borderwidth=0, backgroundcolor=white, width=#2cm #3]{}}}
+%%%%%%%%%%%%%%%% CHARACTER SHEET %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \definecolor{bg}{RGB}{245,245,245}
-\newcommand{\ofcstextfield}[3]{\hspace*{-0.1cm}\raisebox{-.2\height}{\TextField[print, height=0.6cm, charsize=13pt, name=#1, borderwidth=0, backgroundcolor=bg, width=#2\columnwidth, #3]{}}}
+\newcommand{\ofcstextfield}[3]{\hspace*{-0.1cm}\raisebox{-.2\height}{\TextField[print, height=0.45cm, charsize=10pt, name=#1, borderwidth=0, backgroundcolor=bg, width=#2\columnwidth, #3]{}}}
 \newcommand{\ofcsnumfield}[2]{\raisebox{-.2\height}{%
 		\FPeval{\foo}{#2 * 0.08}
-		\TextField[align=2, print, height=0.6cm, charsize=13pt, name=#1, borderwidth=0, backgroundcolor=bg, width={\foo \columnwidth}, maxlen=#2]{}}
+		\TextField[align=2, print, height=0.45cm, charsize=10pt, name=#1, borderwidth=0, backgroundcolor=bg, width={\foo \columnwidth}, maxlen=#2]{}}
 }
 \newcommand{\ofcscheckbox}[1]{\hspace*{-0.1cm}\raisebox{-.2\height}{\CheckBox[print, height=0.58cm, name=#1, borderwidth=1, bordercolor=black, backgroundcolor=bg, width=0.58cm]{}}}
 
@@ -333,9 +347,11 @@
 	/cs/inventory/.new value,
 	/cs/gil/.new value = \phantom{2009},
 	/cs/weapon/.new value,
+	/cs/weapontype/.new value,
 	/cs/weaponeffect/.new value,
 	/cs/weaponmateria/.new value,
 	/cs/armor/.new value,
+	/cs/armortype/.new value,
 	/cs/armoreffect/.new value,
 	/cs/armormateria/.new value,
 	/cs/accessory1/.new value,
@@ -344,14 +360,12 @@
 	/cs/accessory2effect/.new value,
 }
 
-\newcommand{\ofcsrule}{\color{accent}\hspace*{-0.9cm}\rule{1.09\columnwidth}{1pt}}
-
 \newcommand{\ofcslimitbar}[0]{
 	\raisebox{-.05cm}{%
 		\tikz{
-			\tikzstyle{seg}=[thick, draw, rectangle, align=center, minimum height = 0.35cm, minimum width = 0.65cm, color=accent]
+			\tikzstyle{seg}=[very thick, draw, rectangle, align=center, minimum height = 0.35cm, minimum width = 0.65cm, color=accent]
 			\newcommand{\ofcslimitdist}{0.65}
-			\node[seg](l0)at (0,0) {};					
+			\node[seg, minimum width=0.95cm, rounded rectangle, rounded rectangle east arc=0pt](l0)at (0,0) {};				
 			\node[seg](l1)at (\ofcslimitdist,0) {};
 			\node[seg](l2)at (2*\ofcslimitdist,0) {};					
 			\node[seg](l3)at (3*\ofcslimitdist,0) {};
@@ -360,164 +374,211 @@
 			\node[seg](l6)at (6*\ofcslimitdist,0) {};					
 			\node[seg](l7)at (7*\ofcslimitdist,0) {};
 			\node[seg](l8)at (8*\ofcslimitdist,0) {};
-			\node[seg](l9)at (9*\ofcslimitdist,0) {};
+			\node[seg, minimum width=0.95cm, rounded rectangle, rounded rectangle west arc=0pt](l9)at (9*\ofcslimitdist,0) {};
 		}	
 	}
 }
 
+\newcommand{\ofcssubtext}[2]{%
+	\raisebox{-.1cm}{%
+		\parbox[l]{\widthof{#1}}{%
+			#1\vspace*{-0.2cm}\\
+			{\scriptsize\acc{#2}}
+		}
+	}
+}
 
-\newcommand{\ofcs}[1]{
-	{	
-	\Large
-	\newgeometry{bottom=5mm,top=0mm,right=10mm,left=10mm, columnsep=0.75cm}
+\newcommand{\ofcsbox}[2]{%
+	\begin{tcolorbox}[width=\columnwidth, boxrule=0.00cm, height=#1cm, sharp corners, colback=white, before skip=0cm, after skip=0pt, left=0mm,top=0pt,right=0mm,bottom=0pt, colframe=white]
+		#2	
+	\end{tcolorbox}
+}
+
+\newcommand{\ofcsinvisbox}[2]{%
+	\begin{tcolorbox}[width=\columnwidth, boxrule=0.00cm, height=#1cm, sharp corners, colback=white, before skip=0cm, after skip=0pt, left=-3pt,top=-3pt,right=-3pt,bottom=-3pt, colframe=white]
+		#2	
+	\end{tcolorbox}
+}
+
+\newcommand{\ofcsrulea}{\color{accent}\hspace*{-0.9cm}\rule{1.09\columnwidth}{2pt}}
+
+\newcommand{\ofcs}[1]{	
+	{
+	\AddToShipoutPictureBG*{%
+		\begin{tikzpicture}[overlay,remember picture]
+		\draw[color=accent, line width=2pt]($ (current page.north west) + (0.035cm,-0.035cm) $)rectangle($ (current page.south east) + (-0.035cm,0.035cm) $);
+		%\draw[color=accent, line width=3pt]($ (current page.north west) + (0.053cm,-0.053cm) $)rectangle($ (current page.south east) + (-0.053cm,0.053cm) $);
+		%\draw[color=accent, line width=1.5pt]($ (current page.north west) + (0.25cm,-0.25cm) $)rectangle($ (current page.south east) + (-0.25cm,0.25cm) $);
+		\end{tikzpicture}
+	}
+	
+	\newgeometry{bottom=0mm,top=4mm,right=6mm,left=6mm, columnsep=8mm}
 	\thispagestyle{empty}
 	\options{/cs,#1}
 	\onecolumn
+	\large
 	%
-	\vspace*{-1.8cm}
+	\begin{multicols}{3}
+		\begin{tcolorbox}[enhanced, text fill, width=1.05\columnwidth, boxrule=0.00cm, height=6cm, sharp corners, colback=white, before skip=0cm, after skip=0pt, left=0mm,top=0pt,right=0mm,bottom=0pt, colframe=white]			
+			\accf{Name:}\hspace*{0.2cm}\option{/cs/name} \hfill
+			\accf{Level:}\hspace*{0.1cm}\option{/cs/level}\\
+			\option{/cs/description}\vfill
+			\ofcssubtext{Talents:}{Level 2} \option{/cs/talent} 
+		\end{tcolorbox}
+		\ofcsbox{6}{
+			\begin{center}
+				\vspace*{-0.2cm}
+				{\LARGE \accf{Character}\hspace*{0.25cm}\accf{Sheet}} \vspace*{0.5cm}\\
+				\includegraphics[width=0.55\columnwidth]{./art/charactersheets/ff9cs.jpg}
+			\end{center}
+		}
+		\begin{tcolorbox}[enhanced, width=\columnwidth, boxrule=0.00cm, height=6cm, sharp corners, colback=white, before skip=0cm, after skip=0pt, left=-0.7cm,top=0pt,right=0mm,bottom=0pt, colframe=white]
+			\accf{Story:}\\\option{/cs/story}
+		\end{tcolorbox}
+	\end{multicols}
+	%
+	{\vspace*{-0.6cm}\ofcsrulea}\vspace*{-0.7cm}\\
 	%
 	\begin{multicols}{2}
-	\parbox[l][6.2cm][l]{\columnwidth}{
-		\accf{Name:}\hspace*{0.3cm}\option{/cs/name}\vspace*{-0.8cm}\\
-		\option{/cs/description}\vfill
-		Talent: \option{/cs/talent} 
-	}
-	%
-	\columnbreak\\
-	%
-	\parbox[l][6.2cm][l]{\columnwidth}{
-		\accf{Story:}\option{/cs/story}
-	}
-	\end{multicols}
-	%
-	%
-	{\vspace*{-0.4cm}\ofcsrule}\vspace*{-0.6cm}\\
-	%
-	%
-	\begin{multicols}{4}
-	\hspace*{-0.5cm}
-	\parbox[l][3cm][l]{\columnwidth}{
-		\hspace*{\fill}Health Points:\hspace*{\fill}\\ 
-		\hspace*{\fill}\option{/cs/hpcur}\hspace*{0.2cm}/\hspace*{0.2cm}\option{/cs/hpmax}\hspace*{\fill}\\\\
-		\hspace*{\fill}Mana Points:\hspace*{\fill}\\ 
-		\hspace*{\fill}\option{/cs/mpcur}\hspace*{0.2cm}/\hspace*{0.2cm}\option{/cs/mpmax}\hspace*{\fill}
-	}
-	%
-	\columnbreak\\
-	%
-	\parbox[l][3cm][l]{\columnwidth}{
-		Level:\hfill\option{/cs/level}\hspace*{0.6cm}\ofbigrow
-		Agility:\hfill\option{/cs/agi}\hspace*{0.6cm}\ofbigrow
-		Movement:\hfill\option{/cs/movement}\hspace*{0.6cm}\ofbigrow
-		Evasion DC:~\hfill\option{/cs/evasiondc}\hspace*{0.6cm}\ofbigrow		
-	}
-	%
-	\columnbreak\\
-	%
-	\parbox[l][3cm][l]{\columnwidth}{
-		Strength:\hfill\option{/cs/str}\hspace*{0.6cm}\ofbigrow
-		Defense:\hfill\option{/cs/def}\hspace*{0.6cm}\ofbigrow
-		Magic:\hfill\option{/cs/mag}\hspace*{0.6cm}\ofbigrow
-		Resistance:\hfill\option{/cs/res}\hspace*{0.6cm}
-	}
-	%
-	\columnbreak\\
-	%
-	\parbox[l][3cm][l]{\columnwidth}{Status Effects:\option{/cs/status}}
-	%
-	\end{multicols}
-	%
-	%
-	{\ofcsrule}\vspace*{-0.6cm}\\
-	%
-	\begin{multicols}{4}
-	\parbox[l][2.7cm][l]{\columnwidth}{		
-		Job:\\ \option{/cs/job}\vfill
-		Archetype:\\ \option{/cs/archetype}
-	}	
-	%
-	\columnbreak\\
-	%	
-	\parbox[l][2.7cm][l]{\columnwidth}{Special Abilities:\ofrow \option{/cs/specials}}
-	%
-	\columnbreak\\
-	%
-	\parbox[l][2.7cm][l]{2\columnwidth}{Abilities:\ofrow \option{/cs/abilities}}
-	%
-	\end{multicols}
-	%
-	{\vspace*{-0.5cm}\ofcsrule}\vspace*{-0.6cm}\\
-	%
-	\begin{multicols}{2}
-	\parbox[l][2.3cm][l]{\columnwidth}{
-		Limit Break: \option{/cs/limitbreak}\ofrow
-		Limit Mode: \option{/cs/limitmode}\\\vfill
-		Limit Points: \option{/cs/limitpoints}\ofrow
-	}	
-	%
-	\columnbreak\\
-	%
-	\parbox[l][2.3cm][l]{\columnwidth}{
-		Range: \option{/cs/limitrange} \hspace*{1cm} Target: \option{/cs/limittarget}\ofrow
-		\option{/cs/limitdesc}
-	}
-	%
-	\end{multicols}
-	%
-	{\vspace*{-0.5cm}\ofcsrule}\vspace*{-0.6cm}\\
-	%
-		\begin{multicols}{2}
-		\parbox[l][1.8cm][l]{\columnwidth}{		
-			Summon: \option{/cs/summon}\ofrow
-			Support: \option{/cs/summonsupport}
+		\ofcsbox{4.5}{
+			\setlength{\columnsep}{0.7cm}
+			\begin{multicols}{2}	
+				\ofcsinvisbox{1.5}{
+					\oficonhp\acc{H}ealth \acc{P}oints:\hspace*{\fill}\hspace*{0.8cm}\vspace*{-0.175cm}\\
+					\hspace*{0.1cm}{\scriptsize\acc{current}\hspace*{0.3cm}\phantom{|}\hspace*{0.5cm}\acc{maximum}}\hspace*{\fill}\hspace*{1.1cm}\vspace*{-0.1cm}\\
+					\hspace*{\fill}\option{/cs/hpcur}\hspace*{0.6cm}|\hspace*{0.6cm}\option{/cs/hpmax}\hspace*{\fill}\hspace*{1.3cm}\\
+				}
+				\columnbreak
+				\ofcsinvisbox{1.5}{
+					\oficonmp\acc{M}ana \acc{P}oints:\hspace*{\fill}\hspace*{0.8cm}\vspace*{-0.175cm}\\
+					\hspace*{0.1cm}{\scriptsize\acc{current}\hspace*{0.3cm}\phantom{|}\hspace*{0.5cm}\acc{maximum}}\hspace*{\fill}\hspace*{1.1cm}\vspace*{-0.1cm}\\
+					\hspace*{\fill}\option{/cs/mpcur}\hspace*{0.6cm}|\hspace*{0.6cm}\option{/cs/mpmax}\hspace*{\fill}\hspace*{1.3cm}\\
+				}
+			\end{multicols}
+			%
+			\vspace*{-0.8cm}
+			%
+			\begin{multicols}{2}
+				\ofcsinvisbox{2.5}{
+					\oficonstr\acc{STR}ength:\hfill\option{/cs/str}\hspace*{1cm}\ofrow
+					\oficondef\acc{DEF}ense:\hfill\option{/cs/def}\hspace*{1cm}\ofrow
+					\oficonmag\acc{MAG}ic:\hfill\option{/cs/mag}\hspace*{1cm}\ofrow
+					\oficonres\acc{RES}istance:\hfill\option{/cs/res}\hspace*{1cm}
+				}
+				\columnbreak
+				\ofcsinvisbox{2.5}{
+					\oficonagi \acc{AGI}lity:\hfill\option{/cs/agi}\hspace*{1.3cm}\ofgap
+					\ofcssubtext{Movement:}{= 1 + Agility}\hfill\option{/cs/movement}\hspace*{1.3cm}\ofgap
+					\ofcssubtext{Evasion DC:}{= 12 - Agility}~\hfill\option{/cs/evasiondc}\hspace*{1.3cm}
+				}
+			\end{multicols}
 		}	
 		%
-		\columnbreak\\
+		\vspace*{-0.1cm}
+		\ofcsbox{0.25}{Status Effects: \option{/cs/status}}
 		%
-		\parbox[l][1.8cm][l]{\columnwidth}{
-			Summon Ability: \ofrow
-			\option{/cs/summonability}
+		\columnbreak
+		%
+		\ofcsbox{4.5}{
+			\ofcssubtext{Job:\phantom{y}}{Level 1}\option{/cs/job}\hfill
+			\ofcssubtext{Archetype:}{Level 3} \option{/cs/archetype}\vspace*{0.5cm}\\
+			\oficonpassive \hspace*{-0.3cm} \oficonreaction Special Abilities: \option{/cs/specials}\vspace*{0.6cm}\\
+			\oficonmagic Spells \hspace*{0.025cm} and \oficontech Techs:\ofrow \option{/cs/abilities}
 		}
-		%
 	\end{multicols}
 	%
-	{\vspace*{-0.5cm}\ofcsrule}\vspace*{-0.6cm}\\
+	{\vspace*{-0.4cm}\ofcsrulea}\vspace*{-0.7cm}\\
 	%
 	\begin{multicols}{2}
-	\parbox[l][3.5cm][l]{\columnwidth}{		
-		Weapon: \option{/cs/weapon}\\
-		Effect: \option{/cs/weaponeffect}\\
-		Materia: \option{/cs/weaponmateria}\vfill
-		Accessory: \option{/cs/accessory1}\\
-		Effect: \option{/cs/accessory1effect}
-	}
-	%
-	\columnbreak\\
-	%
-	\parbox[l][3.5cm][l]{\columnwidth}{		
-		Armor: \option{/cs/armor}\\
-		Effect: \option{/cs/armoreffect}\\
-		Materia: \option{/cs/armormateria}\vfill
-		Accessory: \option{/cs/accessory2}\\
-		Effect: \option{/cs/accessory2effect}
-	}
+		\ofcsbox{3.7}{
+			\ofcssubtext{Limit Break:}{Level 4} \option{/cs/limitbreak} \ofgap 
+			Limit Modes: \option{/cs/limitmode}\ofrow
+			Limit Points:\hspace*{0.2cm} \option{/cs/limitpoints}\ofrow	
+			\option{/cs/limitdesc}
+		}
+		\columnbreak
+		\ofcsbox{3.7}{
+			\ofcssubtext{Summons:}{Level 5}\option{/cs/summon}\ofgap
+			Support: \option{/cs/summonsupport}	\ofrow
+			Ability: \hfill {\small \acc{Cost: 10\% of current HP \& MP} \hfill \acc{Time: 1r}} \ofrow \option{/cs/summonability}
+		}
 	\end{multicols}
 	%
-	{\vspace*{-0.5cm}\ofcsrule}\vspace*{0.3cm}\\
+	{\vspace*{-0.4cm}\ofcsrulea}\vspace*{-0.7cm}\\
+	%	
+	\begin{multicols}{2}
+		\ofcsbox{4.8}{
+			\oficonweapon Weapon: \option{/cs/weapon}\\
+			Unique Effect: \option{/cs/weaponeffect}\\
+			Type Effect: \option{/cs/weapontype}\\
+			Materia: \option{/cs/weaponmateria}\\\\
+			\oficonaccessory Accessory: \option{/cs/accessory1}\\
+			Effect: \option{/cs/accessory1effect}\\\\
+			\oficonaccessory Accessory: \option{/cs/accessory2}\\
+			Effect: \option{/cs/accessory2effect}\vspace*{0.3cm}\\		
+		}
+		\columnbreak
+		\ofcsbox{4.8}{
+			\oficonarmor Armor: \option{/cs/armor}\\
+			Unique Effect: \option{/cs/armoreffect}\\
+			Type Effect: \option{/cs/armortype} \\
+			Materia: \option{/cs/armormateria}\\\\	
+			\oficonitem Inventory: \hfill Gil:\hspace*{0.5cm}\option{/cs/gil}
+			\vspace*{0.2cm}\option{/cs/inventory}
+		}
+	\end{multicols}
 	%
-	\parbox[l][3cm][l]{1\columnwidth}{		
-		Inventory:\hfill Gil:\hspace*{0.5cm}\option{/cs/gil}\\
-		\option{/cs/inventory}
-	}
+	{\vspace*{-0.4cm}\ofcsrulea}\vspace*{-0.8cm}\\
 	%
+	\begin{multicols}{2}
+		\hspace*{-0.3cm}
+		\parbox{1.03\columnwidth}{
+			\footnotesize
+			\accf{Combat Actions Summary:}\ofrow
+			\ofmbox{\oficonsmallattack\acc{Attack:}} 
+			Attack with your weapon.
+			The target makes an evasion check with DC 12 minus his AGI.
+			On failure, the damage dealt is your weapon's DMG plus your STR.
+			You score a critical hit (2x damage) if he rolls a 2.
+			The target makes a counter attack that cannot be evaded if he rolls a 12.\ofrow
+			\ofmbox{\oficonsmallmagic\acc{Magic:}} Cast a spell by spending MP, choosing a target in range and concentrating.
+			While concentrating, you cannot take actions or evade. 
+			After cast time, its effect occurs on the target right before your turn and cannot be evaded.
+			If the spell deals damage or restores HP, add MAG to the amount.\ofrow
+			\ofmbox{\oficonsmalltech\acc{Tech:}} Used the same way as Magic but add your STR instead of MAG to damage and healing if bonus is not already included.\ofrow
+			\ofmbox{\oficonsmalldefend\acc{Defend:}} Damage you receive by Attacks until your next turn is halved. \ofrow
+			\ofmbox{\oficonsmallitem\acc{Item:}} Use Item from your inventory on yourself or someone within 1u.\ofrow
+			\ofmbox{\oficonsmallreequip\acc{Re-Equip:}} Swap a Materia or Equipment piece that you are wearing against one from your Inventory.\ofrow
+			\ofmbox{\oficonsmalldash\acc{Dash:}} Move another distance of your AGI+1 units.
+		}
+		\columnbreak\\
+		\parbox{1.03\columnwidth}{
+			\footnotesize	
+			\accf{Status Effects Summary:}\ofrow
+			\ofmbox{\kosmall\accr{KO:}} You are unconscious and your turns are skipped.\ofrow
+			\ofmbox{\blindsmall\accr{Blind:}} On Attack, enemy has Advantage on the evasion check. \ofrow
+			\ofmbox{\poisonsmall\accr{Poison:}} suffer damage equal to 10\% max HP at start of each turn.\ofrow
+			\ofmbox{\slowsmall\accr{Slow:}} During your turn, you can move or take an action but not both.\ofrow
+			\ofmbox{\sleepsmall\accr{Sleep:}} You can't move or take actions. Removed when you take damage.\ofrow
+			\ofmbox{\zombiesmall\accr{Zombie:}} All healing effects are reversed for you.\ofrow
+			\ofmbox{\silencesmall\accr{Silence:}} You cannot begin casting Magic or using Techs.\ofrow
+			\ofmbox{\immobilesmall\accr{Immobile:}} You are unable to move. \ofrow
+			\ofmbox{\destrsmall\dedefsmall\demagsmall\deressmall\accr{DeATR:}} attribute is reduced by 3, e.g. DeMAG reduces MAG. \ofrow
+			\ofmbox{\blinksmall\accg{Blink:}} You have advantage on evasion checks. \ofrow
+			\ofmbox{\hastesmall\accg{Haste:}} You can either make an additional action or movement. \ofrow
+			\ofmbox{\regensmall\accg{Regen:}} Regain 10\% of your maximum HP at the start of each turn.\ofrow
+			\ofmbox{\enstrsmall\enndefsmall\enmagsmall\enressmall\accg{EnATR:}} attribute is increased by 3, e.g. EnMAG increases MAG.
+		}
+	\end{multicols}
 	}
-	\defaultgeometry
 	\twocolumn
+	\defaultgeometry
 	\clearpage
 }
-\newcommand{\ofcsfill}[1]{\begin{Form}\ofcs{#1}\end{Form}}
 
-%%%%%%%%%%%%%%%%TODO REMOVE%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%% MONSTERS %%%%%%%%%%%%%%%%%%%%
 
 
 \newcommand{\ofmonsterability}[8]{
@@ -539,10 +600,6 @@
 	\vskip0.1cm
 	\oficonreaction \accf{#1:} #2
 }
-
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% ICONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

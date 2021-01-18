@@ -1,6 +1,6 @@
 \ofjob{Summoner}
 {
-	\ofquote{"I don’t like your plan. It sucks."\\}{Yuna}\ofrow
+	\ofquote{"I don’t like your plan. It sucks."}{Yuna}\ofrow
 	\includegraphics[width=\columnwidth]{./art/jobs/summoner.jpg}\ofrow
 	Most powerful heroes are able to call summons, but the bonds created \accf{Summoners} are far stronger.
 	While Summoners are competent with Magic, they thrive when fighting alongside their summons on the battlefield.
@@ -16,9 +16,9 @@
 	Level 8: & HP~+5 & MP~+10 & DEF~+1 &		  \\  
 	Level 9: & HP~+10 & MP~+5  & MAG~+1 & RES~+1 \\  
 	Level 10: & HP~+10 & MP~+10 & STR~+1 &        	  
-}{	
-	\ofjobspell{Summon: Carbuncle}{10}{1r}{1u}{1u}{
-		You gain the ability to summon \acc{Carbuncle}.
+}{
+	\ofjobspell{Summon}{8}{1r}{1u}{1u}{
+		Call a creature that you have the ability to summon.  
 		In combat, summons always take their turn right after yours, following your command.
 		Summons are dismissed when they suffer KO, when you summon again or when you dismiss them.
 		The current HP and MP of a summon is the same as when it was dismissed, if it suffered KO, it is summoned with 1 HP.
@@ -26,16 +26,17 @@
 		Details on all Summons are shown on the next page.
 		Summons Level Up together with you where they gain the same attribute increases as you and learn new abilities as shown in their ability lists.
 	}{}{1}\ofabilitygap
+	\ofjobpassive{Summon: Carbuncle}{You gain the ability to summon \acc{Carbuncle}.}{1}\ofabilitygap
 	\ofjobspell{Image}{6}{0r}{Single}{5u}{The target gains Blink for 3 rounds.}{\blink}{2}\ofabilitygap
 	\ofjobspell{Dispel}{10}{0r}{Single}{5u}{All Resiliences and active beneficial Status Effects of the target are removed for 3 rounds.}{}{6}\ofabilitygap
-	\ofjobspell{Summon: Bahamut}{8}{1r}{2u}{1u}{You gain the ability to summon \acc{Bahamut}.}{}{8}\ofabilitygap
+	\ofjobpassive{Summon: Bahamut}{You gain the ability to summon \acc{Bahamut}.}{8}\ofabilitygap
 	\ofjobspell{Morph}{24}{1r}{Single}{5u}{The target is turned into a harmless creature of your choice for 3 rounds. In this form he cannot take any action and only move 1u on his turn. Some enemies may be Immune to this effect as decided by the GM. Also, you cannot use this ability consecutively on the same target.
 	}{}{10}
 }{
 	\ofarchetypet{Devout}
 	{HP~+7 & MP~+13 & STR~+1 & RES~+2}
 	{\ofarchetypespella{Pray}{6}{0r}{1u}{Self}{You and all allies in the target area regain 2d HP.}{}}
-	{\ofarchetypepassive{Inferno}{You gain the ability to summon \acc{Ifrit} and permanent Resilience against fire damage. Also, whenever your summon deals damage, add your STR and MAG to the summon's for calculating the total damage dealt.}}
+	{\ofarchetypepassive{Inferno}{You gain the ability to summon \acc{Ifrit} and permanent Resilience against fire damage. Also, whenever one of your summons deals damage, add your STR and MAG to the summon's for calculating the total damage dealt.}}
 	{\ofarchetypereaction{Blood Pact}{Whenever your currently active summon receives any damage, you can redirect half of the total damage dealt to your own HP.}}
 	{\ofarchetypespellb{Healing Wind}{14}{0r}{5u (line)}{Self}{You and all allies in the target area regain 4d HP.}{}}
 }{

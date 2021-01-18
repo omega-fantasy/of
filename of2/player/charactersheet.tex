@@ -1,12 +1,14 @@
 \ofcs{}
+%
 \ofcs{
 	name=Lightning,
 	%
-	description={
+	description={%
+		\vspace*{-0.5cm}
 		\begin{multicols}{2}
-		Age: 21\\Race: human\\Hair: rose\\Height: 1.70m\\Right-Handed\\Personality:\\Determined, Cold
-		\columnbreak\\
-		\hspace*{-1cm}\includegraphics[width=1\columnwidth]{./art/images/claire.jpg}
+			Age: 21\\Race: human\\Hair: rose\\Height: 1.70m\\Right-Handed\ofrow Personality:\\Determined\\ Cold
+			\columnbreak\\
+			\hspace*{-0.4cm}\includegraphics[width=1.4\columnwidth]{./art/charactersheets/claire.jpg}
 		\end{multicols}
 		\vspace*{-0.9cm}
 	},
@@ -14,80 +16,23 @@
 	story={\vfill
 		Both of my parents died when I was young. 
 		I raised my sister Serah and joined the army where I became a sergeant. 
-		But now Serah is in danger so I have quit the army to find her. 
-		\\\\
+		But now Serah is in danger so I have quit the army to find her. \\\\
 		"It's not a question of can or can't. There are some things in life you just do."
 	},
 	% 
-	hpcur=19, hpmax=70, mpcur=60, mpmax=71, agi=3, movement=4u, evasiondc=9, str=6, def=3, mag=5, res=3, 
+	hpcur=17, hpmax=99, mpcur=13, mpmax=71, agi=3, movement=4u, evasiondc=9, str=6, def=3, mag=5, res=3, 
 	%
 	level=8, job=Red Mage, archetype=Ravager, talent=Guardian Corps,
 	%
 	abilities={Cure, Fire, Blizzard, Thunder, Blind,\\ Poison, Esuna, NulElement},
-	specials=Overwhelm\\Swiftcast, status=\\\\Blind (1r)\\EnDEF (2r)\\EnRES (2r),
+	specials={Overwhelm, Swiftcast}, status={Blind (1r), EnDEF (2r)},
 	%
 	limitbreak=Thundara, limitmode=Brave, limitrange=5u, limittarget=2u, 
-	limitdesc={A barrage of lightning strikes descends upon your foes. All enemies in the target area suffer 2d+8 lightning damage.},
+	limitdesc={A barrage of lightning strikes descends upon an enemy within 5u and everyone within 2u of him. All affect targets suffer 2d+8 lightning damage.},
 	%
-	summon=Odin, summonused=yes, summonsupport={Conjure horse Sleipnir}, summonability={Target on the battlefield suffers KO with DC~8 check or 3 x Level damage otherwise.},
+	summon=Odin, summonused=yes, summonsupport={Conjure horse Sleipnir}, summonability={Target on the battlefield suffers KO with DC~8 check or 3 times Level damage otherwise.},
 	%
-	weapon=Gunblade (Expert), weaponeffect=Ranged attack after ability, armor=Guardian Corps Uniform, armoreffect=DEF~+1, accessory1=Power Armlet, accessory1effect=STR~+1,
+	weapon=Gunblade (Expert), weaponeffect=Ranged attack after ability, weapontype=crit on 11 or 12 enemy evasion check, armor=Guardian Corps Uniform, armortype=DEF~+1, accessory1=Power Armlet, accessory1effect=STR~+1,
 	%
 	gil=2009, inventory={\\Survival Knife, 5x Bomb Fragment, 5x Hi-Potion\\ 3x Remedy, 2x Phoenix Down, 1x Elixir}
 }
-%
-%
-%
-%\begin{Form}
-%\ofcs{
-%	name=\ofcstextfield{name}{0.76}{},
-%	description={\vfill \ofcstextfield{desc}{0.95}{, height=4.5cm, multiline}},
-%	talent=\ofcstextfield{talent}{0.78}{},
-%	story={\vfill \ofcstextfield{story}{1}{, height=5.5cm, multiline}},
-%	%
-%	hpcur=\ofcsnumfield{hpcur}{3},
-%	hpmax=\ofcsnumfield{hpmax}{3}, 
-%	mpcur=\ofcsnumfield{mpcur}{3}, 
-%	mpmax=\ofcsnumfield{mpmax}{3}, 
-%	level=\ofcsnumfield{level}{2},
-%	agi=\ofcsnumfield{agi}{2},
-%	movement=\ofcsnumfield{movement}{2},
-%	evasiondc=\ofcsnumfield{evasiondc}{2},
-%	str=\ofcsnumfield{str}{2}, 
-%	def=\ofcsnumfield{def}{2},
-%	mag=\ofcsnumfield{mag}{2}, 
-%	res=\ofcsnumfield{res}{2}, 
-%	status={\vspace*{0.3cm}\\ \ofcstextfield{status}{1}{, height=3cm, multiline}},
-%	% 
-%	job=\ofcstextfield{job}{1}{}, 
-%	archetype=\ofcstextfield{archetype}{1}{},
-%	specials=\ofcstextfield{specials}{1}{, height=2.1cm, multiline},
-%	abilities=\ofcstextfield{abilities}{2.2}{, height=2.1cm, multiline},
-%	%
-%	limitbreak=\ofcstextfield{limitbreak}{0.7}{},
-%	limitmode=\ofcstextfield{limitmode}{0.7}{},
-%	limitpoints=\ofcscheckbox{lp1}\ofcscheckbox{lp2}\ofcscheckbox{lp3}\ofcscheckbox{lp4}\ofcscheckbox{lp5}\ofcscheckbox{lp6}\ofcscheckbox{lp7}\ofcscheckbox{lp8}\ofcscheckbox{lp9}\ofcscheckbox{lp10},
-%	limitrange=\ofcstextfield{limitrange}{0.1}{},
-%	limittarget=\ofcstextfield{limittarget}{0.4}{},
-%	limitdesc=\ofcstextfield{limitdesc}{1}{, height=1.7cm, multiline},
-%	%
-%	summon=\ofcstextfield{summon}{0.7}{},
-%	summonsupport={\\ \ofcstextfield{summonsupport}{1}{}},
-%	summonused=\ofcscheckbox{summonused},
-%	summonability=\ofcstextfield{summonability}{1}{, height=1.3cm, multiline},
-%	%
-%	weapon=\ofcstextfield{weapon}{0.75}{}, 
-%	weaponeffect=\ofcstextfield{weaponeffect}{0.82}{},
-%	weaponmateria=\ofcstextfield{weaponmateria}{0.77}{}, 
-%	armor=\ofcstextfield{armor}{0.8}{}, 
-%	armoreffect=\ofcstextfield{armoreffect}{0.82}{}, 
-%	armormateria=\ofcstextfield{armormateria}{0.77}{},
-%	accessory1=\ofcstextfield{accessory1}{0.72}{},
-%	accessory1effect=\ofcstextfield{accessory1effect}{0.82}{}, 
-%	accessory2=\ofcstextfield{accessory2}{0.72}{},
-%	accessory2effect=\ofcstextfield{accessory2effect}{0.82}{},
-%	%
-%	gil=\ofcstextfield{gil}{0.1}{}, 
-%	inventory=\ofcstextfield{inventory}{1}{, height=3cm, multiline}
-%}
-%\end{Form}
