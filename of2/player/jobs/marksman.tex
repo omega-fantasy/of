@@ -21,10 +21,10 @@
 	\ofjobtech{Libra}{4}{0r}{Single}{5u}{You analyse the target thoroughly and know his Resiliences, Weaknesses, Immunities, as well as his current HP and MP.}{}{1}\ofabilitygap
 	\ofjobtech{Heavy Shot}{6}{0r}{Single}{Weapon}{Make an Attack on the target. If you hit, the damage dealt ignores the target's DEF.}{}{2}\ofabilitygap
 	\ofjobtech{Fast Draw}{8}{0r}{Single}{Weapon}{You make an Attack after which you can immediately begin using another Ability in the same turn.}{}{4}\ofabilitygap
-	\ofjobtech{Explosive Shot}{10}{0r}{2u}{Weapon}{Everyone in the target area suffers 3d fire damage. In addition, you create a Hot Field in the target area that lasts for 3 rounds.}{}{6}\ofabilitygap
+	\ofjobtech{Explosive Shot}{10}{0r}{2u}{Weapon}{Everyone in the target area suffers 3d fire damage. In addition, you create a Hot Field in the target area that lasts for 3 rounds.}{\fire}{6}\ofabilitygap
 	\ofjobtech{Smoke Bomb}{10}{0r}{3u}{10u}{You create an Obscure Field in the target area that lasts for 3 rounds.}{}{8}\ofabilitygap
 	\ofjobtech{Barrage}{22}{1r}{Single}{Self}{For the next 3 rounds you gain Haste and EnSTR. In addition, all of your Attacks and Techs which target a single enemy instead affect all enemies within 2u of the chosen target.
-	}{}{10}
+	}{\haste\enstr}{10}
 }{
 	\ofarchetypet{Ranger}
 	{HP~+13 & MP~+12 & DEF~+2}
@@ -38,5 +38,5 @@
 	{\ofarchetypetecha{Pierceshot}{6}{0r}{10u (line)}{Self}{Make an Attack against all targets in a line, by making one damage roll that applies to everyone that fails to evade.}{}}
 	{\ofarchetypepassive{Concentrate}{Whenever you Attack an enemy, he has Disadvantage on the evasion check.}}
 	{\ofarchetypereaction{Camouflage}{Whenever you end a turn in which you have not moved, you gain Blink until the start of your next turn.}}
-	{\ofarchetypetechb{Aim}{8}{0r}{Single}{Weapon}{Make an Attack on the target and choose one of the following spots to inflict an additional effect if you hit:\\ \acc{Head:} the target's evasion DC is reduced by 2, but if you hit you score a Critical Hit.\\ \acc{Heart:} MP is reduced by same amount as HP.\\ \acc{Leg:} the target suffers Immobile for 1 round.}{}}
+	{\ofarchetypetechb{Aim}{8}{0r}{Single}{Weapon}{Make an Attack on the target and choose one of the following spots to inflict an additional effect if you hit:\\ \acc{Head:} the target's evasion DC is reduced by 2, but if you hit you score a Critical Hit.\\ \acc{Heart:} MP is reduced by same amount as HP.\\ \acc{Leg:} the target suffers Immobile for 1 round.}{\immobile}}
 }

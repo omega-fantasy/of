@@ -6,7 +6,7 @@
 	They can create special items and devices that cause fantastic effects in combat. 
 	Tinkers prove that any sufficiently advanced technology is indistinguishable from magic.	
 }
-{Bow or Gun}{Light Armor}{
+{Bow or Gun or Spear}{Robe}{
 	Level 1: & HP~+17 & MP~+23 & AGI~+2 & STR~+1 \\
 	Level 2: & HP~+5  & MP~+10 & RES~+1 & DEF~+1 \\
 	Level 3: & \multicolumn{3}{l}{Archetype Attribute Bonus}  \\
@@ -18,24 +18,25 @@
 	Level 9: & HP~+10 & MP~+10 & RES~+1 \\
 	Level 10:& HP~+5  & MP~+10 & RES~+2
 }{
-	\ofjobtech{Stimulant}{5}{0r}{Single}{1u}{The target gains Regen for 3 rounds.}{}{1}\ofabilitygap
-	\ofjobtech{Automatic Fire}{4}{0r}{3u (front)}{Self}{Make an Attack against every enemy in the target area.}{}{2}\ofabilitygap
+	\ofjobtech{Stimulant}{5}{0r}{Single}{1u}{The target gains Regen for 3 rounds.}{\regen}{1}\ofabilitygap
+	\ofjobtech{Flamethrower}{4}{0r}{3u (front)}{Self}{Make an Attack against every enemy in the target area. When you hit, the damage dealt is of fire type.}{\fire}{2}\ofabilitygap
 	\ofjobtech{Propel}{6}{0r}{1u}{Self}{You shoot up to 3u into the air from where you can move and act as usual. After 2 rounds, you land on the ground in your current position.}{}{4}\ofabilitygap
-	\ofjobtech{Flash Bomb}{8}{0r}{2u}{5u}{All enemies in the target area make a DC~8 check and suffer Blind for 2 rounds upon failure.}{\blind}{6}\ofabilitygap
+	\ofjobtech{Fortify Position}{10}{0r}{2u}{5u}{You create a special field in the target area for 3 rounds. All allies gain EnSTR and EnDEF as long as they are standing inside it.}{\enstr\enndef}{6}\ofabilitygap	
 	\ofjobtech{Shockwave}{9}{0r}{3u}{Self}{Everyone in the target area except you receives 3d damage and is pushed back by 3u. In addition, all affected targets make a DC~8 check and suffer Immobile for 1 round upon failure.}{\immobile}{8}\ofabilitygap
-	\ofjobtech{Pandora's Box}{26}{1r}{5u}{Self}{All enemies in the target area suffer 4d damage. In addition, all affected targets roll 1d and suffer the following Status Effects for 3 rounds based on the result: 1-Immobile, 2-Slow, 3-Silence, 4-Poison, 5-Blind, 6-Sleep.}{}{10}
+	\ofjobtech{Pandora's Box}{26}{1r}{5u}{Self}{All enemies in the target area suffer 4d damage. In addition, all affected targets roll 1d and suffer the following Status Effects for 3 rounds based on the result: 1-Immobile, 2-Slow, 3-Silence, 4-Poison, 5-Blind, 6-Sleep.}{\immobile\slow\silence\poison\blind\sleep}{10}
 }{
 	\ofarchetypet{Chemist}
-	{HP~+8 & MP~17 & RES~+2}
+	{HP~+8 & MP~+17 & RES~+2}
 	{\ofarchetypetecha{Turbo Vaccine}{6}{0r}{Single}{1u}{The target regains 1d HP and becomes Immune to Poison, Silence, Blind and flu-like viruses for 3 rounds.}{}}
-	{\ofarchetypepassive{Item Lore}{You can use Items on targets in a range of up to 3u. Optionally, you can decide your Item should also affect everyone within 1u of the target. Both effects also apply to the Stimulant, Turbo Vaccine and Mix Techs.}}
+	{\ofarchetypepassive{Item Lore}{You can use Items in a range of up to 3u and you may affect everyone within 1u of the target. Both effects also apply to the Stimulant, Turbo Vaccine and Mix Techs.}}
 	{\ofarchetypereaction{Auto-Potion}{Whenever you suffer damage, you can immediately use an Item. You can only use this effect once per round.}}
-	{\ofarchetypetechb{Mix}{10}{0r}{Single}{3u}{Use 2 Items on the target and roll 1d. If the target is an ally, he recovers 3d HP on 1-2, gains Blink for 3 rounds on 3-4 and Haste for 3 rounds on 5-6. If he is an enemy, he suffers 3d damage on 1-2, suffers Immobile for 3 rounds on 3-4 and suffers Slow for 3 rounds on 5-6.}{}}
+	{\ofarchetypetechb{Mix}{10}{0r}{Single}{3u}{Use 2 Items on the target and then roll 1d. Targeted allies recover 3d HP on 1-2, gain Blink for 3r on 3-4 and Haste for 3r on 5-6. Targeted enemies suffer 3d damage on 1-2, Immobile for 3r on 3-4 and Slow for 3r on 5-6.}{\blink\haste\immobile\slow}}
 }{
 	\ofarchetypet{Machinist}
 	{HP~+10 & MP~+10 & STR~+2 & DEF~+1}
-	{\ofarchetypetecha{Flamethrower}{6}{0r}{2u}{5u}{Create a Hot Field in the target area for 3 rounds.}{\fire}}
-	{\ofarchetypepassive{Synthesis}{You can slot one Materia into every Accessory that you have currently equipped.}}
+	{\ofarchetypetecha{Autoturret}{8}{0r}{1u}{1u}{You create a turret in the target area for 3 rounds. At the start of each turn,
+	deal damage equal to your current Level to one enemy within 3u of it. You cannot create a turret if a previous one is still active.}{}}
+	{\ofarchetypepassive{Synthesis}{You can slot a Materia into your equipped Accessories.}}
 	{\ofarchetypereaction{Ballistic Defense}{Whenever you would suffer damage from an enemy that is further than 2u away from you, make a DC 8 check. If you succeed, the damage dealt is negated.}}
 	{\ofarchetypetechb{Satellite Beam}{12}{0r}{?}{?}{All affected enemies suffer 5d damage. Choose one of the following target shapes to determine the affected targets: draw a 1u thick ring around you with an outer radius of up to 8u \accf{or} draw a 1u wide line with both ends within 8u of you \accf{or} all enemies within 5u of you make a check and everyone who rolls an odd number is affected.}{}}
 }

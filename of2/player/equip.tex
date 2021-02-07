@@ -13,14 +13,14 @@ All weapons have a range of 1u unless specified otherwise.
 Instead of armor, characters can also wear regular clothes which only provide DEF~+1.
 Accessories can be worn by everyone, but characters can only equip specific weapon and armor types depending on their job.
 However, all characters can use \accf{Items}, that provide quick benefits in and outside of combat, but are consumed after a single use.
-Equipment pieces are classified into different \accf{Equipment Classes} depending on their potency and rarity.
+Equipment pieces are classified into different \accf{Equipment Ranks} depending on their potency and rarity.
 While everyone can carry Beginner equipment, characters need to reach higher Levels to use Advanced and Expert equipment.
-The details of each equipment class are shown in the table below.
+The details of each equipment rank are shown in the table below.
 %
 \vfill
 %
 \oftable{p{0.225\columnwidth} p{0.125\columnwidth} p{0.15\columnwidth} p{0.15\columnwidth} p{0.3\columnwidth}}
-{\accf{Equipment Class} & \accf{Level} & \accf{Weapon DMG} & \accf{Armor\newline DEF/RES} & \accf{Value}}
+{\accf{Equipment Rank} & \accf{Level} & \accf{Weapon DMG} & \accf{Armor\newline DEF/RES} & \accf{Value}}
 {
 	Beginner & 	1 - 3 	& 1d & +0 / +0   & \textasciitilde 500G\ofrow
 	Advanced &  4 - 7   & 2d & +1 / +1   & \textasciitilde 2000G\ofrow
@@ -72,7 +72,7 @@ Unless the GM decides otherwise, every character gains 1500G at Level~1, from wh
 \ofbullet{Optionally, buy one Materia that you can afford.}
 The following pages give various examples of equipment pieces that you can choose.
 The tables detail the unique effect of each equipment piece, as well as the type effects of each weapon and armor type.
-All listed weapons and armor are of Beginner class unless the GM explicitly decides otherwise.
+All listed weapons and armor are of Beginner rank unless the GM explicitly decides otherwise.
 Note that your character sheet provides various fields to keep track of your inventory as well as your currently equipment pieces with all their effects.
 %
 \clearpage
@@ -164,7 +164,7 @@ Note that your character sheet provides various fields to keep track of your inv
 	Power Staff & Whenever you perform a successful Attack, also add your MAG to the damage dealt. \ofrow
 	Sage's Staff & You can add the holy type to damage dealt by Attacks and Magic.\ofrow
 	Oracle Bone & The range of all HP restoring or Status Effect causing spells is increased by 1u.\ofrow
-	\ofequipnote{Staves increase the wielder's maximum MP by 5 per increase in equipment class (for example a Beginner staff grants maximum MP~+5). In exchange, staves cannot have more than 1d DMG.}
+	\ofequipnote{Staves increase the wielder's maximum MP by 5 per increase in equipment rank (for example a Beginner staff grants maximum MP~+5). In exchange, staves cannot have more than 1d DMG.}
 }
 %
 \vfill
@@ -174,12 +174,12 @@ Note that your character sheet provides various fields to keep track of your inv
 {
 	Mythril Rod & Has an additional Materia slot. \ofrow
 	Elemental Rod & This weapon has to be of a specific element (e.g. fire) and can have an according name (e.g. Flame Rod). Whenever you deal damage of that element, add 2 to the amount.\ofrow
-	Adamantine Rod & This weapon does not suffer from the same penalty as other rods. It has the same DMG as any other weapon in the same class.\ofrow
+	Adamantine Rod & This weapon does not suffer from the same penalty as other rods. It has the same DMG as any other weapon of the same rank.\ofrow
 	Stardust Rod & When you reduce an enemy to 0 HP, you regain an amount of MP equal to your current Level. \ofrow
 	Lilith Rod & While you are concentrating, you can still use the Dash action. \ofrow
 	Whale Whisker & You can add the water type to damage dealt by Attacks and Magic.\ofrow
 	Magus Rod & When you use a Fortune Die on a roll related to your Magic, add 2 to the total amount. \ofrow
-	\ofequipnote{Rods increase the wielder's MAG by one per increase in equipment class (for example a Beginner rod grants MAG~+1). In exchange, rods cannot have more than 1d DMG.}
+	\ofequipnote{Rods increase the wielder's MAG by one per increase in equipment rank (for example a Beginner rod grants MAG~+1). In exchange, rods cannot have more than 1d DMG.}
 }
 %
 %
@@ -242,7 +242,7 @@ Note that your character sheet provides various fields to keep track of your inv
 \clearpage
 %
 \oftablewide{p{0.32\columnwidth} p{0.25\columnwidth} p{1.45\columnwidth}}
-{\oficonaccessory\accf{Accessory} & \accf{Class} & \accf{Unique Effect}}
+{\oficonaccessory\accf{Accessory} & \accf{Rank} & \accf{Unique Effect}}
 {
 	 Mythril Shield & Beginner & DEF +1  \ofrow
 	 Power Armlet & Beginner & STR +1 \ofrow
@@ -330,8 +330,8 @@ Note that your character sheet provides various fields to keep track of your inv
 	Mega-Potion & 800G & Everyone within 1u regains 6d HP.  \ofrow
 	X-Ether & 900G & The target fully regains all MP.\ofrow
 	Tent & 1000G & Allows the party to sleep outside comfortably. \ofrow
-	Magicite Shard & 1000G & Roll 1d, based on the result use the following summoning ability: \newline 1-Ifrit, 2-Shiva, 3-Ramuh, 4-Odin, 5-Phoenix, 6-Bahamut.\ofrow
-	Summon Magicite & 1250G & This Item is for one Summon (e.g. Ifrit Magicite). When used it activates the summoning ability of that Summon. \ofrow
+	Magicite Shard & 1000G & Roll 1d, based on the result use the following Esper Call: \newline 1-Ifrit, 2-Shiva, 3-Ramuh, 4-Odin, 5-Phoenix, 6-Bahamut.\ofrow
+	Esper Magicite & 1250G & This Item is for one Esper (e.g. Ifrit Magicite). When used it activates the Call of that Esper. \ofrow
 	Elixir & 1250G & The targets fully regains HP and MP. \ofrow
 	Gold Hourglass & 1500G & Time freezes for everyone except yourself within 5u for 10 seconds (1 round). \ofrow
 	Mega-Elixir & 1500G & Everyone within 1u fully regains their HP and MP.\ofrow
@@ -407,7 +407,7 @@ Note that your character sheet provides various fields to keep track of your inv
 	X-Ray Materia & 2500G & You can see through up 1u thick walls when standing next to them.\ofrow
 	Climb Materia & 2500G & Allows you to walk on vertical walls the same as you can on horizontal ground.\ofrow
 	Lure Materia & 2500G &  Each monster within 3u will choose you as target whenever possible. Some enemies may be immune to this effect as decided by the GM.\ofrow
-	Upgrade Materia & 2500G & When you slot this materia into a weapon or armor, it is immediately upgraded to the next equipment class. This item is destroyed in the process. \ofrow
+	Upgrade Materia & 2500G & When you slot this materia into a weapon or armor, it is immediately upgraded to the next equipment rank. This item is destroyed in the process. \ofrow
 	Counter Materia & 2500G & Whenever you roll a 10 or higher on an evasion check, you can immediately make an Attack against the attacker. (weapon only) \ofrow
 	Drain Materia & 2750G & On every successful Attack, your HP is increased by 3. (weapon only) \ofrow
 	Osmosis Materia & 2750G & On every successful Attack, your MP is increased by 3. (weapon only)  \ofrow

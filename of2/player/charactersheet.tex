@@ -1,38 +1,37 @@
 \ofcs{}
-%
 \ofcs{
 	name=Lightning,
 	%
 	description={%
 		\vspace*{-0.5cm}
 		\begin{multicols}{2}
-			Age: 21\\Race: human\\Hair: rose\\Height: 1.70m\\Right-Handed\ofrow Personality:\\Determined\\ Cold
-			\columnbreak\\
-			\hspace*{-0.4cm}\includegraphics[width=1.4\columnwidth]{./art/charactersheets/claire.jpg}
+			Age: 21\\Race: human\\Hair: rose\\Height: 1.70m\\Right-Handed\\ Determined\\ Cold
+			\columnbreak\vspace*{-1.7cm}\\
+			\hspace*{-1cm}\includegraphics[width=1\columnwidth]{./art/charactersheets/claire.jpg}
 		\end{multicols}
 		\vspace*{-0.9cm}
 	},
 	%
-	story={\vfill
+	story={\\
 		Both of my parents died when I was young. 
 		I raised my sister Serah and joined the army where I became a sergeant. 
-		But now Serah is in danger so I have quit the army to find her. \\\\
+		But now Serah is in danger so I have quit the army to find her. \\\\\\
 		"It's not a question of can or can't. There are some things in life you just do."
 	},
 	% 
 	hpcur=17, hpmax=99, mpcur=13, mpmax=71, agi=3, movement=4u, evasiondc=9, str=6, def=3, mag=5, res=3, 
 	%
-	level=8, job=Red Mage, archetype=Ravager, talent=Guardian Corps,
+	level=8, job=Red Mage, archetype=Ravager\phantom{1234567}, talent=Guardian Corps,
 	%
 	abilities={Cure, Fire, Blizzard, Thunder, Blind,\\ Poison, Esuna, NulElement},
 	specials={Overwhelm, Swiftcast}, status={Blind (1r), EnDEF (2r)},
 	%
-	limitbreak=Thundara, limitmode=Brave, limitrange=5u, limittarget=2u, 
+	limitbreak=Thundara, limitmode=Brave, limitpoints=\ofcslimitbarfilled, 
 	limitdesc={A barrage of lightning strikes descends upon an enemy within 5u and everyone within 2u of him. All affect targets suffer 2d+8 lightning damage.},
 	%
 	summon=Odin, summonused=yes, summonsupport={Conjure horse Sleipnir}, summonability={Target on the battlefield suffers KO with DC~8 check or 3 times Level damage otherwise.},
 	%
-	weapon=Gunblade (Expert), weaponeffect=Ranged attack after ability, weapontype=crit on 11 or 12 enemy evasion check, armor=Guardian Corps Uniform, armortype=DEF~+1, accessory1=Power Armlet, accessory1effect=STR~+1,
+	weapon=Foldable Gunblade, weaponbox=\ofcsweaponboxexpert, weaponeffect=Ranged attack after ability, weapontype=crit on 11 or 12 enemy evasion check, armor=Guardian Corps Uniform, armorbox=\ofcsarmorboxexpert, armortype=DEF~+1, accessory1=Power Armlet, accessory1effect=STR~+1,
 	%
 	gil=2009, inventory={\\Survival Knife, 5x Bomb Fragment, 5x Hi-Potion\\ 3x Remedy, 2x Phoenix Down, 1x Elixir}
 }

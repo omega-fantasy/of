@@ -52,15 +52,11 @@
 \setlength\parindent{0cm}
 %\setlength\parskip{0cm}
 %\setlength\columnsep{0cm}
-%\hangindent=0cm
-%\hangafter=0
 
 %\special{dvipdfmx:config z 0} % turns compression off
 \special{dvipdfmx:config C 0x20} % saves some KB
 
-\setsansfont[Ligatures=TeX, Scale=1.02]{Carlito}
-%\setmainfont[Ligatures=TeX, Scale=1.02]{Carlito}
-%\setmonofont[Ligatures=TeX, Scale=1.02]{Carlito}
+\setsansfont[Ligatures=TeX]{Carlito}
 
 \definecolor{accent}{rgb}{0.17,0.17,0.57} % 44 44 145
 \definecolor{accentred}{rgb}{0.57,0.17,0.17} % 145 44 44
@@ -140,6 +136,9 @@
 \newcommand{\silence}{\oficonsilence}
 \newcommand{\immobile}{\oficonimmobile}
 \newcommand{\zombie}{\oficonzombie}
+\newcommand{\regen}{\oficonregen}
+\newcommand{\haste}{\oficonhaste}
+\newcommand{\slow}{\oficonslow}
 \newcommand{\enstr}{\oficonenstr}
 \newcommand{\enmag}{\oficonenmag}
 \newcommand{\enres}{\oficonenres}
@@ -148,8 +147,6 @@
 \newcommand{\demag}{\oficondemag}
 \newcommand{\deres}{\oficonderes}
 \newcommand{\enndef}{\oficonendef}
-\newcommand{\pas}{\oficonpassive}
-\newcommand{\rea}{\oficonreaction}
 
 \newcommand{\ofimagewide}[1] {
 	\twocolumn[
@@ -175,7 +172,7 @@
 		\vspace*{-2cm}\\
 		\columnbreak\vspace*{-1.6cm}\\
 		\accf{Support:} #3\\\\
-		\accf{Summon:} #4
+		\accf{Call:} #4
 %		\accf{Junction (Level 10):}\\#5
 	\end{multicols}	
 	\vspace*{-0.6cm}
@@ -241,7 +238,7 @@
 
 \newcommand{\ofability}[9] {
 	\noindent
-	% TODO: add #7 for status/element icons
+	% #7 is the icon but it didn't look great here imo
 	#9 \accf{#1} \hfill \acc{Level #8}\\
 	{MP: #2 \hfill  Target: #4 \hfill Time: #3 \hfill Range: #5}\\\
 	#6 		
@@ -253,22 +250,14 @@
 
 \newcommand{\ofabilitygap}[0]{\vspace*{0.23cm}\\}
 \newcommand{\ofarchetypet}[6]{
-	\hfill\accf{#1 Archetype}\hfill\vspace*{0.1cm}\\
-	\begin{tabular}{@{}p{0.3\columnwidth} p{0.12\columnwidth} p{0.12\columnwidth} p{0.12\columnwidth} p{0.12\columnwidth}}\accf{Attribute Bonus:} & #2\end{tabular} \vspace*{0.15cm}\\
+	\accf{\hfill #1 Archetype \hfill}\\
+	\begin{tabular}{@{}p{0.3\columnwidth} p{0.12\columnwidth} p{0.12\columnwidth} p{0.12\columnwidth} p{0.12\columnwidth}}\accf{Attribute Bonus:} & #2\end{tabular} \vspace*{0.05cm}\\
 	#3\ofabilitygap
 	#4\ofabilitygap
 	#5\ofabilitygap
 	#6
 }
 
-\newcommand{\ofarchetypeta}[6]{
-	\accf{\hfill \large Archetype: #1 \hfill} \vfill
-	\begin{tabular}{@{}p{0.31\columnwidth} p{0.13\columnwidth} p{0.13\columnwidth} p{0.13\columnwidth} p{0.13\columnwidth}}\accf{Attribute Bonus:} & #2\end{tabular}\vfill
-	#3\vfill
-	#4\vfill
-	#5\vfill
-	#6
-}
 
 \newcommand{\ofarchetypespella}[7]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{3}{\oficonmagic}}
 \newcommand{\ofarchetypetecha}[7]{\ofability{#1}{#2}{#3}{#4}{#5}{#6}{#7}{3}{\oficontech}}
@@ -303,13 +292,34 @@
 
 %%%%%%%%%%%%%%%% CHARACTER SHEET %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\definecolor{bg}{RGB}{245,245,245}
-\newcommand{\ofcstextfield}[3]{\hspace*{-0.1cm}\raisebox{-.2\height}{\TextField[print, height=0.45cm, charsize=10pt, name=#1, borderwidth=0, backgroundcolor=bg, width=#2\columnwidth, #3]{}}}
-\newcommand{\ofcsnumfield}[2]{\raisebox{-.2\height}{%
-		\FPeval{\foo}{#2 * 0.08}
-		\TextField[align=2, print, height=0.45cm, charsize=10pt, name=#1, borderwidth=0, backgroundcolor=bg, width={\foo \columnwidth}, maxlen=#2]{}}
+\definecolor{bg}{RGB}{250,250,250}
+\def\DefaultOptionsofText{print, multiline, height=0.55cm, charsize=10pt, borderwidth=0, bordersep=0, backgroundcolor=bg}
+\newcommand{\ofcstextfield}[3]{\hspace*{-0.1cm}\raisebox{-.175\height}{\TextField[name=#1, width=#2\columnwidth, #3]{}}}
+\newcommand{\ofcscheckbox}[1]{\hspace*{-0.1cm}\raisebox{-.1\height}{\CheckBox[print, height=0.4cm, name=#1, borderwidth=0.5, bordercolor=black, backgroundcolor=bg, width=0.74cm]{}}}
+\newcommand{\ofcsweaponboxfillable}[0]{
+	\raisebox{-.25cm}{%
+		\tikz{
+			\tikzstyle{seg}=[align=center, minimum size = 0.25cm, inner sep=0pt, color=accent]
+			\node[align=center](l1)at (0, 0.25) {\tiny \acc{Rank DMG}};
+			\node[seg,](l1)at (-0.48,0) {\CheckBox[print, height=0.25cm, name=weaponrank1, borderwidth=0.5, bordercolor=black, backgroundcolor=bg, width=0.25cm]{}};
+			\node[seg](l2)at (-0.04,0) {\CheckBox[print, height=0.25cm, name=weaponrank2, borderwidth=0.5, bordercolor=black, backgroundcolor=bg, width=0.25cm]{}};					
+			\node[seg](l3)at (0.41,0) {\CheckBox[print, height=0.25cm, name=weaponrank3, borderwidth=0.5, bordercolor=black, backgroundcolor=bg, width=0.25cm]{}};
+			\node[align=center](l1)at (0, -0.25) {\tiny\acc{1d\hspace*{0.22cm}2d\hspace*{0.22cm}3d}};
+		}	
+	}
 }
-\newcommand{\ofcscheckbox}[1]{\hspace*{-0.1cm}\raisebox{-.2\height}{\CheckBox[print, height=0.58cm, name=#1, borderwidth=1, bordercolor=black, backgroundcolor=bg, width=0.58cm]{}}}
+\newcommand{\ofcsarmorboxfillable}[0]{
+	\raisebox{-.25cm}{%
+		\tikz{
+			\tikzstyle{seg}=[align=center, minimum size = 0.25cm, inner sep=0pt, color=accent]
+			\node[align=center](l1)at (0, 0.25) {\tiny \acc{Armor DEF \& RES}};
+			\node[seg,](l1)at (-0.48,0) {\CheckBox[print, height=0.25cm, name=armorrank1, borderwidth=0.5, bordercolor=black, backgroundcolor=bg, width=0.25cm]{}};
+			\node[seg](l2)at (-0.04,0) {\CheckBox[print, height=0.25cm, name=armorrank2, borderwidth=0.5, bordercolor=black, backgroundcolor=bg, width=0.25cm]{}};					
+			\node[seg](l3)at (0.41,0) {\CheckBox[print, height=0.25cm, name=armorrank3, borderwidth=0.5, bordercolor=black, backgroundcolor=bg, width=0.25cm]{}};
+			\node[align=center](l1)at (0, -0.25) {\tiny\acc{+0\hspace*{0.22cm}+1\hspace*{0.22cm}+2}};
+		}	
+	}
+}
 
 \options{
 	/cs/.new family,
@@ -321,6 +331,7 @@
 	/cs/mpcur/.new value = \phantom{999},
 	/cs/mpmax/.new value = \phantom{999},
 	/cs/str/.new value,
+	/cs/blockraise/.new value = -0.7cm,
 	/cs/def/.new value,
 	/cs/mag/.new value,
 	/cs/res/.new value,
@@ -331,7 +342,7 @@
 	/cs/status/.new value,
 	/cs/talent/.new value,
 	/cs/job/.new value = \phantom{Red Mage},
-	/cs/archetype/.new value = \phantom{Ravager123},
+	/cs/archetype/.new value = \phantom{Ravager1234567},
 	/cs/specials/.new value,
 	/cs/limitbreak/.new value,
 	/cs/limitmode/.new value = \phantom{Assailant},
@@ -347,6 +358,8 @@
 	/cs/inventory/.new value,
 	/cs/gil/.new value = \phantom{2009},
 	/cs/weapon/.new value,
+	/cs/weaponbox/.new value = \ofcsweaponboxregular,
+	/cs/armorbox/.new value = \ofcsarmorboxregular,
 	/cs/weapontype/.new value,
 	/cs/weaponeffect/.new value,
 	/cs/weaponmateria/.new value,
@@ -360,15 +373,15 @@
 	/cs/accessory2effect/.new value,
 }
 
-\newcommand{\ofcslimitbar}[0]{
+\newcommand{\ofcslimitbarbase}[1]{
 	\raisebox{-.05cm}{%
 		\tikz{
-			\tikzstyle{seg}=[very thick, draw, rectangle, align=center, minimum height = 0.35cm, minimum width = 0.65cm, color=accent]
-			\newcommand{\ofcslimitdist}{0.65}
-			\node[seg, minimum width=0.95cm, rounded rectangle, rounded rectangle east arc=0pt](l0)at (0,0) {};				
-			\node[seg](l1)at (\ofcslimitdist,0) {};
-			\node[seg](l2)at (2*\ofcslimitdist,0) {};					
-			\node[seg](l3)at (3*\ofcslimitdist,0) {};
+			\tikzstyle{seg}=[thick, draw, rectangle, align=center, minimum height = 0.3cm, minimum width = 0.7cm, color=accent]
+			\newcommand{\ofcslimitdist}{0.7}
+			\node[seg, minimum width=0.95cm, rounded rectangle, rounded rectangle east arc=0pt, fill=#1](l0)at (0,0) {};				
+			\node[seg, fill=#1](l1)at (\ofcslimitdist,0) {};
+			\node[seg, fill=#1](l2)at (2*\ofcslimitdist,0) {};					
+			\node[seg, fill=#1](l3)at (3*\ofcslimitdist,0) {};
 			\node[seg](l4)at (4*\ofcslimitdist,0) {};
 			\node[seg](l5)at (5*\ofcslimitdist,0) {};
 			\node[seg](l6)at (6*\ofcslimitdist,0) {};					
@@ -378,6 +391,29 @@
 		}	
 	}
 }
+\newcommand{\ofcslimitbar}[0]{\ofcslimitbarbase{white}}
+\newcommand{\ofcslimitbarfilled}[0]{\ofcslimitbarbase{accent}}
+
+\newcommand{\ofcsequipclassboxes}[7]{
+	\raisebox{-.25cm}{%
+	\tikz{
+		\tikzstyle{seg}=[draw, circle, align=center, minimum size = 0.25cm, inner sep=0pt, color=accent]
+		\newcommand{\ofcsdmgdist}{0.45}
+		%\node[seg, minimum width=0.95cm, rounded rectangle, rounded rectangle east arc=0pt](l0)at (0,0) {};
+		\node[align=center](l1)at (0, 0.25) {\tiny \acc{#1}};
+		\node[seg, fill=#5](l1)at (-\ofcsdmgdist,0) {};
+		\node[seg, fill=#6](l2)at (0,0) {};					
+		\node[seg, fill=#7](l3)at (\ofcsdmgdist,0) {};
+		\node[align=center](l1)at (0, -0.25) {\tiny\acc{#2\hspace*{0.22cm}#3\hspace*{0.22cm}#4}};
+	}	
+	}
+}
+\newcommand{\ofcsweaponboxregular}[0]{\ofcsequipclassboxes{Rank DMG}{1d}{2d}{3d}{white}{white}{white}}
+\newcommand{\ofcsarmorboxregular}[0]{\ofcsequipclassboxes{Rank DEF \& RES}{+0}{+1}{+2}{white}{white}{white}}
+\newcommand{\ofcsweaponboxexpert}[0]{\ofcsequipclassboxes{Rank DMG}{1d}{2d}{3d}{white}{white}{accent}}
+\newcommand{\ofcsarmorboxexpert}[0]{\ofcsequipclassboxes{Rank DEF \& RES}{+0}{+1}{+2}{white}{white}{accent}}
+\newcommand{\ofcsweaponboxbeginner}[0]{\ofcsequipclassboxes{Rank DMG}{1d}{2d}{3d}{accent}{white}{white}}
+\newcommand{\ofcsarmorboxbeginner}[0]{\ofcsequipclassboxes{Rank DEF \& RES}{+0}{+1}{+2}{accent}{white}{white}}
 
 \newcommand{\ofcssubtext}[2]{%
 	\raisebox{-.1cm}{%
@@ -400,7 +436,7 @@
 	\end{tcolorbox}
 }
 
-\newcommand{\ofcsrulea}{\color{accent}\hspace*{-0.9cm}\rule{1.09\columnwidth}{2pt}}
+\newcommand{\ofcsrulea}{\color{accent}\hspace*{-0.9cm}\rule{1.09\columnwidth}{1pt}}
 
 \newcommand{\ofcs}[1]{	
 	{
@@ -411,65 +447,50 @@
 		%\draw[color=accent, line width=1.5pt]($ (current page.north west) + (0.25cm,-0.25cm) $)rectangle($ (current page.south east) + (-0.25cm,0.25cm) $);
 		\end{tikzpicture}
 	}
-	
-	\newgeometry{bottom=0mm,top=4mm,right=6mm,left=6mm, columnsep=8mm}
+	%
+	\newgeometry{bottom=0mm,top=4mm,right=3mm,left=3mm, columnsep=0mm}
 	\thispagestyle{empty}
 	\options{/cs,#1}
 	\onecolumn
-	\large
 	%
 	\begin{multicols}{3}
-		\begin{tcolorbox}[enhanced, text fill, width=1.05\columnwidth, boxrule=0.00cm, height=6cm, sharp corners, colback=white, before skip=0cm, after skip=0pt, left=0mm,top=0pt,right=0mm,bottom=0pt, colframe=white]			
-			\accf{Name:}\hspace*{0.2cm}\option{/cs/name} \hfill
-			\accf{Level:}\hspace*{0.1cm}\option{/cs/level}\\
+		\begin{tcolorbox}[enhanced, text fill, width=1.2\columnwidth, boxrule=0.00cm, height=6cm, sharp corners, colback=white, before skip=0cm, after skip=0pt, left=0mm,top=0pt,right=0mm,bottom=0pt, colframe=white]			
+			\accf{Name:}\hspace*{0.2cm}\option{/cs/name} \vspace*{0.1cm}\\%\hfill
+			Level:\hspace*{0.2cm}\option{/cs/level}\\
 			\option{/cs/description}\vfill
-			\ofcssubtext{Talents:}{Level 2} \option{/cs/talent} 
+			\ofcssubtext{Talents:}{Level 2}\option{/cs/talent} 
 		\end{tcolorbox}
-		\ofcsbox{6}{
-			\begin{center}
-				\vspace*{-0.2cm}
-				{\LARGE \accf{Character}\hspace*{0.25cm}\accf{Sheet}} \vspace*{0.5cm}\\
-				\includegraphics[width=0.55\columnwidth]{./art/charactersheets/ff9cs.jpg}
-			\end{center}
-		}
+		\columnbreak
+		\ofcsbox{6}{\begin{center} \hspace*{-0.4cm}\includegraphics[width=0.55\columnwidth]{./art/charactersheets/ff9cs.jpg} \end{center}}
+		\columnbreak
 		\begin{tcolorbox}[enhanced, width=\columnwidth, boxrule=0.00cm, height=6cm, sharp corners, colback=white, before skip=0cm, after skip=0pt, left=-0.7cm,top=0pt,right=0mm,bottom=0pt, colframe=white]
-			\accf{Story:}\\\option{/cs/story}
+		\accf{Story:}\\\option{/cs/story}
 		\end{tcolorbox}
 	\end{multicols}
+	\setlength{\columnsep}{1.2cm}
 	%
-	{\vspace*{-0.6cm}\ofcsrulea}\vspace*{-0.7cm}\\
+	{\vspace*{-0.6cm}\ofcsrulea}\vspace*{\option{/cs/blockraise}}\\
 	%
 	\begin{multicols}{2}
 		\ofcsbox{4.5}{
-			\setlength{\columnsep}{0.7cm}
-			\begin{multicols}{2}	
-				\ofcsinvisbox{1.5}{
-					\oficonhp\acc{H}ealth \acc{P}oints:\hspace*{\fill}\hspace*{0.8cm}\vspace*{-0.175cm}\\
-					\hspace*{0.1cm}{\scriptsize\acc{current}\hspace*{0.3cm}\phantom{|}\hspace*{0.5cm}\acc{maximum}}\hspace*{\fill}\hspace*{1.1cm}\vspace*{-0.1cm}\\
-					\hspace*{\fill}\option{/cs/hpcur}\hspace*{0.6cm}|\hspace*{0.6cm}\option{/cs/hpmax}\hspace*{\fill}\hspace*{1.3cm}\\
-				}
-				\columnbreak
-				\ofcsinvisbox{1.5}{
-					\oficonmp\acc{M}ana \acc{P}oints:\hspace*{\fill}\hspace*{0.8cm}\vspace*{-0.175cm}\\
-					\hspace*{0.1cm}{\scriptsize\acc{current}\hspace*{0.3cm}\phantom{|}\hspace*{0.5cm}\acc{maximum}}\hspace*{\fill}\hspace*{1.1cm}\vspace*{-0.1cm}\\
-					\hspace*{\fill}\option{/cs/mpcur}\hspace*{0.6cm}|\hspace*{0.6cm}\option{/cs/mpmax}\hspace*{\fill}\hspace*{1.3cm}\\
-				}
-			\end{multicols}
+			\vspace*{-0.2cm}
+			{\scriptsize \hspace*{\fill} \acc{current} \hspace*{1.5cm} \acc{maximum}} \hspace*{1.3cm}\\
+			\oficonhp Health Points:\hspace*{\fill}\option{/cs/hpcur}\hspace*{0.3cm}\acc{|}\hspace*{0.3cm}\option{/cs/hpmax}\hspace*{\fill}\vspace*{0.2cm}\\
+			\oficonmp Mana Points:\hspace*{0.15cm}\hspace*{\fill}\option{/cs/mpcur}\hspace*{0.3cm}\acc{|}\hspace*{0.3cm}\option{/cs/mpmax}\hspace*{\fill}\vspace*{-0.4cm}\\
 			%
-			\vspace*{-0.8cm}
-			%
+			\setlength{\columnsep}{0cm}
 			\begin{multicols}{2}
 				\ofcsinvisbox{2.5}{
-					\oficonstr\acc{STR}ength:\hfill\option{/cs/str}\hspace*{1cm}\ofrow
-					\oficondef\acc{DEF}ense:\hfill\option{/cs/def}\hspace*{1cm}\ofrow
-					\oficonmag\acc{MAG}ic:\hfill\option{/cs/mag}\hspace*{1cm}\ofrow
-					\oficonres\acc{RES}istance:\hfill\option{/cs/res}\hspace*{1cm}
+					\oficonstr Strength:\hspace*{0.5cm}\option{/cs/str}\hspace*{\fill}\ofrow
+					\oficondef Defense:\hspace*{0.58cm}\option{/cs/def}\hspace*{\fill}\ofrow
+					\oficonmag Magic:\hspace*{0.88cm}\option{/cs/mag}\hspace*{\fill}\ofrow
+					\oficonres Resistance: \option{/cs/res}\hspace*{\fill}
 				}
 				\columnbreak
 				\ofcsinvisbox{2.5}{
-					\oficonagi \acc{AGI}lity:\hfill\option{/cs/agi}\hspace*{1.3cm}\ofgap
-					\ofcssubtext{Movement:}{= 1 + Agility}\hfill\option{/cs/movement}\hspace*{1.3cm}\ofgap
-					\ofcssubtext{Evasion DC:}{= 12 - Agility}~\hfill\option{/cs/evasiondc}\hspace*{1.3cm}
+					\hspace*{0.33cm}\oficonagi Agility:\hspace*{0.41cm}\option{/cs/agi}\hspace*{\fill}\ofgap
+					\hspace*{0.33cm}\ofcssubtext{Movement:}{= 1 + Agility}\hspace*{0.1cm}\option{/cs/movement}\hspace*{\fill}\ofgap
+					\hspace*{0.33cm}\ofcssubtext{Evasion DC:}{= 12 - Agility} \option{/cs/evasiondc}\hspace*{\fill}
 				}
 			\end{multicols}
 		}	
@@ -481,45 +502,29 @@
 		%
 		\ofcsbox{4.5}{
 			\ofcssubtext{Job:\phantom{y}}{Level 1}\option{/cs/job}\hfill
-			\ofcssubtext{Archetype:}{Level 3} \option{/cs/archetype}\vspace*{0.5cm}\\
+			\ofcssubtext{Archetype:}{Level 3}\option{/cs/archetype}\vspace*{0.5cm}\\
 			\oficonpassive \hspace*{-0.3cm} \oficonreaction Special Abilities: \option{/cs/specials}\vspace*{0.6cm}\\
 			\oficonmagic Spells \hspace*{0.025cm} and \oficontech Techs:\ofrow \option{/cs/abilities}
 		}
 	\end{multicols}
 	%
-	{\vspace*{-0.4cm}\ofcsrulea}\vspace*{-0.7cm}\\
+	{\vspace*{-0.4cm}\ofcsrulea}\vspace*{\option{/cs/blockraise}}\\
 	%
-	\begin{multicols}{2}
-		\ofcsbox{3.7}{
-			\ofcssubtext{Limit Break:}{Level 4} \option{/cs/limitbreak} \ofgap 
-			Limit Modes: \option{/cs/limitmode}\ofrow
-			Limit Points:\hspace*{0.2cm} \option{/cs/limitpoints}\ofrow	
-			\option{/cs/limitdesc}
-		}
-		\columnbreak
-		\ofcsbox{3.7}{
-			\ofcssubtext{Summons:}{Level 5}\option{/cs/summon}\ofgap
-			Support: \option{/cs/summonsupport}	\ofrow
-			Ability: \hfill {\small \acc{Cost: 10\% of current HP \& MP} \hfill \acc{Time: 1r}} \ofrow \option{/cs/summonability}
-		}
-	\end{multicols}
-	%
-	{\vspace*{-0.4cm}\ofcsrulea}\vspace*{-0.7cm}\\
-	%	
+	\vspace*{-0.2cm}
 	\begin{multicols}{2}
 		\ofcsbox{4.8}{
-			\oficonweapon Weapon: \option{/cs/weapon}\\
+			\oficonweapon Weapon: \option{/cs/weapon}\hspace*{\fill}\option{/cs/weaponbox}\vspace*{-0.1cm}\\
 			Unique Effect: \option{/cs/weaponeffect}\\
 			Type Effect: \option{/cs/weapontype}\\
 			Materia: \option{/cs/weaponmateria}\\\\
 			\oficonaccessory Accessory: \option{/cs/accessory1}\\
 			Effect: \option{/cs/accessory1effect}\\\\
 			\oficonaccessory Accessory: \option{/cs/accessory2}\\
-			Effect: \option{/cs/accessory2effect}\vspace*{0.3cm}\\		
+			Effect: \option{/cs/accessory2effect}\\		
 		}
 		\columnbreak
 		\ofcsbox{4.8}{
-			\oficonarmor Armor: \option{/cs/armor}\\
+			\oficonarmor Armor: \option{/cs/armor}\hspace*{\fill}\option{/cs/armorbox}\vspace*{-0.1cm}\\
 			Unique Effect: \option{/cs/armoreffect}\\
 			Type Effect: \option{/cs/armortype} \\
 			Materia: \option{/cs/armormateria}\\\\	
@@ -528,13 +533,29 @@
 		}
 	\end{multicols}
 	%
-	{\vspace*{-0.4cm}\ofcsrulea}\vspace*{-0.8cm}\\
+	{\vspace*{-0.2cm}\ofcsrulea}\vspace*{\option{/cs/blockraise}}\\
+	%	
+	\begin{multicols}{2}
+		\ofcsbox{3.8}{
+			\ofcssubtext{Limit Break:}{Level 4}\option{/cs/limitbreak} \ofgap 
+			Limit Modes: \option{/cs/limitmode}\ofrow
+			Limit Points:\hspace*{0.1cm} \option{/cs/limitpoints}\ofrow	
+			\option{/cs/limitdesc}
+		}
+		\columnbreak
+		\ofcsbox{3.8}{
+			\ofcssubtext{Espers:}{Level 5}\option{/cs/summon}\ofgap
+			Support: \option{/cs/summonsupport}	\ofrow
+			Call: \hfill {\small \acc{Cost: 10\% of current HP \& MP} \hfill \acc{Time: 1r}} \ofrow \option{/cs/summonability}
+		}
+	\end{multicols}
+	%
+	{\vspace*{-0.4cm}\ofcsrulea}\vspace*{\option{/cs/blockraise}}\\
 	%
 	\begin{multicols}{2}
-		\hspace*{-0.3cm}
-		\parbox{1.03\columnwidth}{
+		\parbox{1\columnwidth}{
 			\footnotesize
-			\accf{Combat Actions Summary:}\ofrow
+			\acc{Combat Actions Summary:}\ofrow
 			\ofmbox{\oficonsmallattack\acc{Attack:}} 
 			Attack with your weapon.
 			The target makes an evasion check with DC 12 minus his AGI.
@@ -544,7 +565,7 @@
 			\ofmbox{\oficonsmallmagic\acc{Magic:}} Cast a spell by spending MP, choosing a target in range and concentrating.
 			While concentrating, you cannot take actions or evade. 
 			After cast time, its effect occurs on the target right before your turn and cannot be evaded.
-			If the spell deals damage or restores HP, add MAG to the amount.\ofrow
+			If it deals damage or restores HP, add MAG to the amount.\ofrow
 			\ofmbox{\oficonsmalltech\acc{Tech:}} Used the same way as Magic but add your STR instead of MAG to damage and healing if bonus is not already included.\ofrow
 			\ofmbox{\oficonsmalldefend\acc{Defend:}} Damage you receive by Attacks until your next turn is halved. \ofrow
 			\ofmbox{\oficonsmallitem\acc{Item:}} Use Item from your inventory on yourself or someone within 1u.\ofrow
@@ -552,9 +573,9 @@
 			\ofmbox{\oficonsmalldash\acc{Dash:}} Move another distance of your AGI+1 units.
 		}
 		\columnbreak\\
-		\parbox{1.03\columnwidth}{
+		\parbox{1\columnwidth}{
 			\footnotesize	
-			\accf{Status Effects Summary:}\ofrow
+			\acc{Status Effects Summary:}\ofrow
 			\ofmbox{\kosmall\accr{KO:}} You are unconscious and your turns are skipped.\ofrow
 			\ofmbox{\blindsmall\accr{Blind:}} On Attack, enemy has Advantage on the evasion check. \ofrow
 			\ofmbox{\poisonsmall\accr{Poison:}} suffer damage equal to 10\% max HP at start of each turn.\ofrow
@@ -621,20 +642,20 @@
 	\hspace*{-0.1cm}
 	\raisebox{-.02cm}{%
 		\oficon{1}{accent}{
-			\node[icon, color=#1, diamond, minimum size = 0.32cm, inner sep=0pt](l0)at (0, 0) {};
+			\node[icon, color=#1, fill=#1, diamond, minimum height = 0.3cm, minimum width = 0.25cm, inner sep=0pt](l0)at (0, 0) {};
 		}
 	}
-	\hspace*{-0.2cm}
+	%\hspace*{-0.2cm}
 }
 
 \newcommand{\oficonfire}[0]{\oficonelement{red}{red!20!white}}
 \newcommand{\oficonice}[0]{\oficonelement{teal}{blue!20!white}}
-\newcommand{\oficonlightning}[0]{\oficonelement{yellow}{yellow!20!white}}
+\newcommand{\oficonlightning}[0]{\oficonelement{yellow!90!black}{yellow!90!white}}
 \newcommand{\oficonwater}[0]{\oficonelement{blue}{green!20!white}}
 \newcommand{\oficonearth}[0]{\oficonelement{brown!90!black}{brown!40!white}}
 \newcommand{\oficonwind}[0]{\oficonelement{green}{green!20!white}}
 \newcommand{\oficonholy}[0]{\oficonelement{cyan}{cyan!10!white}}
-\newcommand{\oficondark}[0]{\oficonelement{black}{black!40!white}}
+\newcommand{\oficondark}[0]{\oficonelement{black!80!white}{black!10!white}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EQUIPMENT ICONS %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -702,14 +723,14 @@
 	\draw[icon, -](-0.05, -0.05) -- (-0.1, 0) -- (0.05, 0.15) -- (0.15, 0.15) -- (0.15, 0.15) -- (0.15, 0.05) -- (0, -0.1) -- cycle;
 }}
 \newcommand{\oficonsmallattack}{\oficonattackbase{0.6}}
-\newcommand{\oficonattack}{\oficonattackbase{0.95}}
+\newcommand{\oficonattack}{\oficonattackbase{0.9}}
 
 \newcommand{\oficonmagicbase}[1]{\ofactionicon{#1}{accent}{
 	\draw[icon, -](-0.15, -0.15) -- node[] {}(0.05, 0.05);
 	\node[icon, star, star point ratio=0.5, rotate=-5, minimum size = #1*0.1cm, inner sep=0pt, fill=white](l0)at (0.05, 0.05) {};
 }}
 \newcommand{\oficonsmallmagic}{\oficonmagicbase{0.6}}
-\newcommand{\oficonmagic}{\oficonmagicbase{0.95}}
+\newcommand{\oficonmagic}{\oficonmagicbase{0.9}}
 
 
 \newcommand{\oficontechbase}[1]{\ofactionicon{#1}{accent}{
@@ -717,21 +738,21 @@
 	\node[icon, circle, minimum size = #1*0.1cm, inner sep=0pt](l0)at (0, 0) {};
 }}
 \newcommand{\oficonsmalltech}{\oficontechbase{0.6}}
-\newcommand{\oficontech}{\oficontechbase{0.95}}
+\newcommand{\oficontech}{\oficontechbase{0.9}}
 
 
 \newcommand{\oficondefendbase}[1]{\ofactionicon{#1}{accent}{
 	\draw[icon](-0.15, 0.1) to[bend right] (0, -0.15) to[bend right] (0.15, 0.1) -- (0, 0.17) -- cycle;	
 }}
 \newcommand{\oficonsmalldefend}{\oficondefendbase{0.6}}
-\newcommand{\oficondefend}{\oficondefendbase{0.95}}
+\newcommand{\oficondefend}{\oficondefendbase{0.9}}
 
 
 \newcommand{\oficonitembase}[1]{\ofactionicon{#1}{accent}{
 	\draw[icon](-0.13, -0.14) -- (0.13, -0.14) to[bend right] (0.05, 0.025) -- (0.05, 0.15) -- (-0.05, 0.15) -- (-0.05, 0.025) to[bend right] cycle;	
 }}
 \newcommand{\oficonsmallitem}{\oficonitembase{0.6}}
-\newcommand{\oficonitem}{\oficonitembase{0.95}}
+\newcommand{\oficonitem}{\oficonitembase{0.9}}
 
 
 \newcommand{\oficonreequipbase}[1]{\ofactionicon{#1}{accent}{
@@ -739,7 +760,7 @@
 	\draw[icon, -{Latex[length=#1*0.5mm,width=#1*1.2mm]}](0.13, -0.05) parabola bend (0, -0.13) (-0.13, -0.05);
 }}
 \newcommand{\oficonsmallreequip}{\oficonreequipbase{0.6}}
-\newcommand{\oficonreequip}{\oficonreequipbase{0.95}}
+\newcommand{\oficonreequip}{\oficonreequipbase{0.9}}
 
 
 \newcommand{\oficondashbase}[1]{\ofactionicon{#1}{accent}{
@@ -747,15 +768,15 @@
 	\draw[icon](0, -0.15) -- (0.15, 0) -- (0, 0.15);
 }}
 \newcommand{\oficonsmalldash}{\oficondashbase{0.6}}
-\newcommand{\oficondash}{\oficondashbase{0.95}}
+\newcommand{\oficondash}{\oficondashbase{0.9}}
 
 
-\newcommand{\oficonreaction}[0]{\ofactionicon{0.95}{accent}{
+\newcommand{\oficonreaction}[0]{\ofactionicon{0.9}{accent}{
 	\node[thick, align=center, color=accent, inner sep=0pt](l0)at (0, 0) {\bf\large!};
 }}
 
 
-\newcommand{\oficonpassive}[0]{\ofactionicon{0.95}{accent}{
+\newcommand{\oficonpassive}[0]{\ofactionicon{0.9}{accent}{
 	\draw[icon, -{Latex[length=0.5mm,width=1.2mm]}](-0.02, -0.15) arc(265:-85:0.15);
 }}
 
@@ -769,7 +790,7 @@
 		}
 	}
 }
-\newcommand{\oficonhp}{\hpbase{0.95}{accent}}
+\newcommand{\oficonhp}{	\hspace*{-0.125cm}\hpbase{0.95}{accent}}
 
 
 \newcommand{\oficonmp}[0]{
