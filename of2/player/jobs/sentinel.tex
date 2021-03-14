@@ -18,16 +18,16 @@
 	Level 9: & HP~+10 & MP~+10 & STR +1 &        \\
 	Level 10: & HP~+10  & MP~+10 & DEF +1 
 }{
-	\ofjobtech{Guard}{3}{0r}{Single}{Self}{You gain EnDEF until the end of your next turn.}{\enndef}{1}\ofabilitygap
-	\ofjobtech{First Aid}{5}{0r}{Single}{1u}{Choose a target that has received damage since your last turn, including yourself. The target regains 2d HP.}{}{2}\ofabilitygap
+	\ofjobtech{Guard}{2}{0r}{Single}{Self}{You gain EnDEF until the end of your next turn.}{\enndef}{1}\ofabilitygap
+	\ofjobtech{First Aid}{6}{0r}{Single}{1u}{Choose a target that has received damage since your last turn, including yourself. The target regains an amount of HP equal to 2 times your current Level.}{}{2}\ofabilitygap
 	\ofjobtech{Threaten}{8}{0r}{Single}{5u}{The target makes a DC 8 check and suffers Immobile for 3 rounds upon failure.}{\immobile}{4}\ofabilitygap
-	\ofjobtech{Mediguard}{10}{0r}{Single}{Self}{You gain EnDEF and Regen for 3 rounds.}{\enndef}{6}\ofabilitygap
-	\ofjobtech{Barrier}{10}{0r}{2u}{Self}{You and all allies within the target area gain Blink for 2 rounds.}{\blink}{8}\ofabilitygap
+	\ofjobtech{Mediguard}{9}{0r}{Single}{Self}{You gain EnDEF and Regen for 3 rounds.}{\enndef}{6}\ofabilitygap
+	\ofjobtech{Defensive Formation}{10}{0r}{2u}{Self}{You and all allies within the target area gain Blink for 2 rounds.}{\blink}{8}\ofabilitygap
 	\ofjobtech{Mighty Guard}{26}{1r}{Single}{Self}{For the next 3 rounds, you gain Resilience against all physical and magical damage.}{}{10}
 }{
 	\ofarchetypet{Defender}
 	{HP~+17 & MP~+3 & STR~+2 & DEF~+1}
-	{\ofarchetypetecha{Powerbreak}{6}{0r}{Single}{1u}{Make an Attack on the target.  If you hit, he suffers DeSTR and DeMAG for 3 rounds on top of the damage dealt.}{\destr \demag}}
+	{\ofarchetypetecha{Powerbreak}{6}{0r}{Single}{1u}{Make an Attack on the target. If you hit, he suffers DeSTR and DeMAG for 2 rounds on top of the damage dealt.}{\destr \demag}}
 	{\ofarchetypepassive{Provoke}{Whenever you successfully Attack an enemy, you can try to provoke him. If you do so, he has to make a DC~8 check and upon failure he has to target you with an action on his next turn if possible.}}
 	{\ofarchetypereaction{Block}{Whenever an enemy within 2u of you tries to move away from you, he has make a DC 8 check. Upon failure, he suffers Immobile until the start of his next turn, preventing him from moving any further on this turn.}}
 	{\ofarchetypetechb{Vengeance}{14}{0r}{Single}{1u}{Make an Attack against the target. If you hit, the target suffers the difference between your current and your maximum HP instead of your usual damage.}{}}

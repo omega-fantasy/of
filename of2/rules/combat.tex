@@ -90,7 +90,7 @@ When you receive physical damage, subtract your DEF from the amount and when you
 In addition, damage can have an elemental type to which combatants can have \accf{Weaknesses} or \accf{Resiliences}. 
 When resilient, you only suffer half the usual damage and when weak, you suffer double the usual damage. 
 Resilience and Weakness cancel each other out and do not stack.
-The following elemental types exist: fire\oficonfire, ice\oficonice, lightning\oficonlightning, water\oficonwater, \mbox{earth\oficonearth}, wind\oficonwind, holy\oficonholy and dark\oficondark.
+The following elemental types exist: fire~(\fire), ice~(\ice), lightning~(\lightning), water~(\water), earth~(\earth), wind~(\wind), holy~(\holy) and dark~(\dark).
 %
 \vfill
 %
@@ -181,7 +181,7 @@ Immunity against KO only makes you immune against effects that cause it when abo
 %
 \ofmbox{\oficonblind\accrf{Blind:}} Whenever you Attack an enemy, he has Advantage on the evasion check. \ofgap
 %
-\ofmbox{\oficondestr\oficondedef\oficondemag\oficonderes\accrf{DeATR:}} The according attribute is reduced by 3 (minimum 0), e.g. DeMAG reduces MAG. \ofgap
+\ofmbox{\oficondestr\hspace*{-0.1cm}\oficondedef\hspace*{-0.1cm}\oficondemag\hspace*{-0.1cm}\oficonderes\accrf{DeATR:}} The according attribute is reduced by 1 plus half your current Level to a minimum 0. For example, DeSTR reduces your STR by 4 when you are Level 7.  \ofgap
 %
 \ofmbox{\oficonimmobile\accrf{Immobile:}} You are unable to move.\ofgap
 %
@@ -193,11 +193,11 @@ Immunity against KO only makes you immune against effects that cause it when abo
 %
 \ofmbox{\oficonsleep\accrf{Sleep:}} You cannot move or take any action. This status is removed when you take any damage.\ofgap
 %
-\ofmbox{\oficonzombie\accrf{Zombie:}} All healing effects are reversed for you. Healing reduces your HP and effects that normally remove KO, inflict it to you instead.\ofpar
+\ofmbox{\oficonzombie\accrf{Zombie:}} All healing effects are reversed for you. Healing reduces your HP and effects that normally remove KO, inflict it to you instead.\ofgap
 %	
 \ofmbox{\oficonblink\accgf{Blink:}} Whenever you are targeted by an Attack, you have Advantage on the evasion check. \ofgap
 %
-\ofmbox{\oficonenstr\oficonendef\oficonenmag\oficonenres\accgf{EnATR}} The according attribute is increased by 3, e.g. EnMAG increases MAG. \ofgap
+\ofmbox{\oficonenstr\hspace*{-0.1cm}\oficonendef\hspace*{-0.1cm}\oficonenmag\hspace*{-0.1cm}\oficonenres\accgf{EnATR}} The according attribute is increased by by 1 plus half your current Level. For example, EnMAG increases your MAG by 2 when you are Level 3. \ofgap
 %
 \ofmbox{\oficonhaste\accgf{Haste:}} During your turn, you can either make an additional action or movement. \ofgap
 %

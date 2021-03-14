@@ -4,11 +4,11 @@
 	\includegraphics[width=\columnwidth]{./art/jobs/whitemage.jpg}\ofrow
 	\accf{White Mages} are experts of defensive magic and boast a variety of recovery and protective spells.
 	While mediocre in physical combat, they also feature incredible resistance against magic. 
-	Where others will succumb to the God of Death, a skilled White Mage will face him and say: "Not today".	
+%	Where others will succumb to the God of Death, a skilled White Mage will face him and say: "Not today".	
 }
 {Staff}{Robe}{
-	Level 1: & HP~+19 & MP~+27 & AGI~+2 & RES~+1 \\
-	Level 2: & HP~+5  & MP~+10 & MAG~+1 & STR~+1 \\
+	Level 1: & HP~+19 & MP~+25 & AGI~+2 & STR~+1 \\
+	Level 2: & HP~+5  & MP~+10 & MAG~+1 & RES~+1 \\
 	Level 3: & \multicolumn{3}{l}{Archetype Attribute Bonus} \\
 	Level 4: & HP~+10 & MP~+5 & MAG~+1 & DEF~+1	  \\
 	Level 5: & HP~+5  & MP~+10 & RES~+1 &	STR~+1  \\ 
@@ -19,24 +19,25 @@
 	Level 10:& HP~+10 & MP~+10 & RES~+1 &	        
 }{	
 	\ofjobspell{Cure}{4}{0r}{Single}{3u}{The target regains 2d HP.}{}{1}\ofabilitygap
-	\ofjobspell{Drain}{6}{0r}{Single}{4u}{Deal 1d damage to the target and increase your own HP by the total amount of damage dealt.}{}{2}\ofabilitygap
-	\ofjobspell{Esuna}{6}{0r}{Single}{3u}{You remove all negative Status Effects except KO from the target.}{}{4}\ofabilitygap
+	\ofjobspell{Drain}{6}{0r}{Single}{3u}{Deal 1d damage to the target and increase your own HP by the total amount of damage dealt.}{}{2}\ofabilitygap
+	\ofjobspell{Esuna}{6}{0r}{Single}{5u}{You remove all negative Status Effects except KO from the target.}{}{4}\ofabilitygap
 	\ofjobspell{Curaga}{14}{1r}{2u}{5u}{Everyone in the target area regains 6d HP.}{}{6}\ofabilitygap
-	\ofjobspell{Holy}{21}{2r}{Single}{7u}{You deal 6d+20 holy damage to the target.}{\holy}{8}\ofabilitygap
+	\ofjobspell{Clear}{6}{0r}{5u}{50u}{You remove one active Field Effect within range.}{}{6}\ofabilitygap
+	\ofjobspell{Holy}{21}{2r}{Single}{12u}{You deal 6d+45 holy damage to the target.}{\holy}{8}\ofabilitygap
 	\ofjobspell{Auto-Life}{28}{2r}{Single}{3u}{You summon a guardian angel that watches over the target. The next time he falls KO, he is instantly revived with 1 HP. This effect does not stack and if not activated, it expires when the target goes to sleep.}{\ko}{10}
 }{
 	\ofarchetypet{Sage}
 	{HP~+11 & MP~+9 & MAG~+2 & STR~+1}
-	{\ofarchetypespella{Sleep}{6}{0r}{Single}{3u}{The target makes a DC 8 check and suffers Sleep for 3 rounds upon failure.}{\sleep}
-	\vspace*{0.1cm}\\ \ofarchetypespella{Silence}{6}{0r}{Single}{3u}{The target makes a DC 8 check and suffers Silence for 3 rounds upon failure.}{\silence}}
-	{\ofarchetypepassive{Ancient Wisdom}{All magic damage that you deal ignores the RES of its targets. In addition, you can inflict Status Effects on targets that are Immune against them.}}
+	{\ofarchetypespella{Sleep}{6}{0r}{Single}{5u}{The target makes a DC 8 check and suffers Sleep for 3 rounds upon failure.}{\sleep}
+	\vspace*{0.1cm}\\ \ofarchetypespella{Silence}{6}{0r}{Single}{5u}{The target makes a DC 8 check and suffers Silence for 3 rounds upon failure.}{\silence}}
+	{\ofarchetypepassive{Ancient Wisdom}{Whenever you inflict on or more Status Effects on a target, you can also inflict DeDEF or DeRES on him for 3 rounds.}}
 	{\ofarchetypereaction{Absorb MP}{When you are the target of an enemy ability, increase your MP by half the amount that the caster spent on it.}}
-	{\ofarchetypespellb{Drainga}{18}{1r}{3u}{7u}{Deal 4d damage to all enemies in the target area and increase your HP by the total amount of damage dealt.}{}}
+	{\ofarchetypespellb{Curse}{14}{1r}{Single}{5u}{The target makes a DC~9 check and upon failure he suffers 4d damage as well as Poison and Zombie for 3 rounds.}{}}
 }{
 	\ofarchetypet{Medic}
 	{HP~+7 & MP~+13 & RES~+2 & DEF~+1}
 	{\ofarchetypespella{Protect}{4}{0r}{Single}{5u}{The target gains EnDEF for 3 rounds.}{\enndef} \vspace*{0.1cm}\\ \ofarchetypespella{Shell}{4}{0r}{Single}{5u}{The target gains EnRES for 3 rounds.}{\enres}}
 	{\ofarchetypepassive{Doctor's Code}{Whenever you use Magic on an ally within 1u, you can also immediately use an Item on him in addition.}}
 	{\ofarchetypereaction{No Collateral}{Whenever you would be affected by a spell or tech that you are not the primary target of, you can choose that you and all other secondary targets are unaffected.}}
-	{\ofarchetypespellb{Full-Life}{22}{2r}{Single}{5u}{Remove the KO status from the target and fully restore his HP.}{\ko}}
+	{\ofarchetypespellb{Full-Life}{22}{2r}{Single}{5u}{You remove the KO status from the target and fully restore his HP.}{\ko}}
 }

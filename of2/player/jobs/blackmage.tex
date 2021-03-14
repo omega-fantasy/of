@@ -6,8 +6,8 @@
 	They assert great control over the battlefield and are difficult to ignore for enemies. 
 }
 {Rod}{Robe}{
-	Level 1: & HP~+18 & MP~+26 & AGI~+2 & MAG~+1  \\
-	Level 2: & HP~+5  & MP~+10 & STR~+1 & RES~+1  \\
+	Level 1: & HP~+18 & MP~+26 & AGI~+2 & RES~+1  \\
+	Level 2: & HP~+5  & MP~+10 & MAG~+1 & STR~+1  \\
 	Level 3: & \multicolumn{3}{l}{Archetype Attribute Bonus} \\
 	Level 4: & MP~+10 & RES~+1 & DEF~+1 & MAG~+1 	\\
 	Level 5: & HP~+10 & MP~+10 & MAG~+1 		  \\
@@ -24,8 +24,8 @@
 	\ofjobspell{Firaga}{12}{1r}{Single}{5u}{You deal 6d fire damage to the target.}{\fire}{6}\ofabilitygap
 	\ofjobspell{Blizzaga}{12}{1r}{Single}{5u}{You deal 6d ice damage to the target.}{\ice}{6}\ofabilitygap
 	\ofjobspell{Thundaga}{12}{1r}{Single}{5u}{You deal 6d lightning damage to the target.}{\lightning}{6}\ofabilitygap
-	\ofjobspell{Flare}{21}{2r}{Single}{7u}{You deal 6d+20 fire damage to the target.}{\fire}{8}\ofabilitygap
-	\ofjobspell{Ultima}{28}{2r}{2u}{7u}{Deal 6d+25 dark damage to all enemies in the target area.}{\dark}{10}
+	\ofjobspell{Flare}{20}{2r}{Single}{10u}{You deal 6d+50 damage to the target. The damage dealt ignores the target's RES.}{\fire}{8}\ofabilitygap
+	\ofjobspell{Ultima}{30}{2r}{50u}{Self}{Deal 6d+40 dark damage to all enemies in the target area.}{\dark}{10}
 }{
 	\ofarchetypet{Geomancer}
 	{HP~+14 & MP~+6 & DEF~+2 & RES~+1}
@@ -36,7 +36,7 @@
 }{
 	\ofarchetypet{Scholar}
 	{HP~+7 & MP~+18 & MAG~+2}
-	{\ofarchetypespella{Zombify}{8}{0r}{Single}{5u}{The target makes a DC 8 check and suffers 3d damage and Zombie for 3 rounds upon failure.}{\zombie}}
+	{\ofarchetypespella{Zombify}{8}{0r}{Single}{5u}{The target makes a DC 8 check and suffers 3d dark damage and Zombie for 3 rounds upon failure.}{\zombie}}
 	{\ofarchetypepassive{Study}{Whenever you deal magical damage to an enemy, you can choose one of the following aspects that you learn about him: Resiliences, Weaknesses, Immunities, current HP, current MP.}}
 	{\ofarchetypereaction{Learn}{Whenever you are targeted by Magic, you can make a DC~8 check. If you succeed, you learn how to use the same spell. If you have already learned a spell in this way, you can choose to forget it to learn a new one.}}
 	{\ofarchetypespellb{Doom}{18}{0r}{Single}{5u}{The target makes a DC 8 check and suffers KO after 3 rounds upon failure. If the enemy is Immune to KO, he instead suffers 6d+5 dark damage.}{\ko}}

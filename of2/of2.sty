@@ -119,15 +119,16 @@
 
 \hypersetup{colorlinks,linkcolor={blue!80!black},citecolor={blue!80!black},urlcolor={blue!80!black}}
 
-\newcommand{\fire}{\oficonfire}
-\newcommand{\ice}{\oficonice}
-\newcommand{\lightning}{\oficonlightning}
-\newcommand{\water}{\oficonwater}
-\newcommand{\earth}{\oficonearth}
-\newcommand{\wind}{\oficonwind}
-\newcommand{\holy}{\oficonholy}
-\newcommand{\dark}{\oficondark}
-%\newcommand{\physical}{\hspace*{0.05cm} \raisebox{-.2\height}{\includegraphics[height=0.9\baselineskip]{./art/icons/str.png}}}
+
+\newcommand{\iconelem}[2]{\hspace*{0.15cm}\textcolor{#1}{\textbf{#2}}\hspace*{0.15cm}}
+\newcommand{\fire}{\iconelem{red}{F}}
+\newcommand{\ice}{\iconelem{teal}{I}}
+\newcommand{\lightning}{\iconelem{yellow!90!black}{L}}
+\newcommand{\water}{\iconelem{blue}{A}}
+\newcommand{\earth}{\iconelem{brown}{E}}
+\newcommand{\wind}{\iconelem{green}{W}}
+\newcommand{\holy}{\iconelem{cyan}{H}}
+\newcommand{\dark}{\iconelem{black!80!white}{D}}
 \newcommand{\ko}{\oficonko}
 \newcommand{\poison}{\oficonpoison}
 \newcommand{\blind}{\oficonblind}
@@ -312,7 +313,7 @@
 	\raisebox{-.25cm}{%
 		\tikz{
 			\tikzstyle{seg}=[align=center, minimum size = 0.25cm, inner sep=0pt, color=accent]
-			\node[align=center](l1)at (0, 0.25) {\tiny \acc{Armor DEF \& RES}};
+			\node[align=center](l1)at (0, 0.25) {\tiny \acc{Rank DEF \& RES}};
 			\node[seg,](l1)at (-0.48,0) {\CheckBox[print, height=0.25cm, name=armorrank1, borderwidth=0.5, bordercolor=black, backgroundcolor=bg, width=0.25cm]{}};
 			\node[seg](l2)at (-0.04,0) {\CheckBox[print, height=0.25cm, name=armorrank2, borderwidth=0.5, bordercolor=black, backgroundcolor=bg, width=0.25cm]{}};					
 			\node[seg](l3)at (0.41,0) {\CheckBox[print, height=0.25cm, name=armorrank3, borderwidth=0.5, bordercolor=black, backgroundcolor=bg, width=0.25cm]{}};
@@ -553,6 +554,7 @@
 	{\vspace*{-0.4cm}\ofcsrulea}\vspace*{\option{/cs/blockraise}}\\
 	%
 	\begin{multicols}{2}
+		\vspace*{-0.5cm}
 		\parbox{1\columnwidth}{
 			\footnotesize
 			\acc{Combat Actions Summary:}\ofrow
@@ -572,7 +574,7 @@
 			\ofmbox{\oficonsmallreequip\acc{Re-Equip:}} Swap a Materia or Equipment piece that you are wearing against one from your Inventory.\ofrow
 			\ofmbox{\oficonsmalldash\acc{Dash:}} Move another distance of your AGI+1 units.
 		}
-		\columnbreak\\
+		\columnbreak\vspace*{-0.5cm}\\
 		\parbox{1\columnwidth}{
 			\footnotesize	
 			\acc{Status Effects Summary:}\ofrow
@@ -584,11 +586,11 @@
 			\ofmbox{\zombiesmall\accr{Zombie:}} All healing effects are reversed for you.\ofrow
 			\ofmbox{\silencesmall\accr{Silence:}} You cannot begin casting Magic or using Techs.\ofrow
 			\ofmbox{\immobilesmall\accr{Immobile:}} You are unable to move. \ofrow
-			\ofmbox{\destrsmall\dedefsmall\demagsmall\deressmall\accr{DeATR:}} attribute is reduced by 3, e.g. DeMAG reduces MAG. \ofrow
+			\ofmbox{\destrsmall\hspace*{-0.05cm}\dedefsmall\hspace*{-0.05cm}\demagsmall\hspace*{-0.05cm}\deressmall\accr{DeATR:}} according attribute is reduced by 1 + half your Level. \ofrow
 			\ofmbox{\blinksmall\accg{Blink:}} You have advantage on evasion checks. \ofrow
 			\ofmbox{\hastesmall\accg{Haste:}} You can either make an additional action or movement. \ofrow
 			\ofmbox{\regensmall\accg{Regen:}} Regain 10\% of your maximum HP at the start of each turn.\ofrow
-			\ofmbox{\enstrsmall\enndefsmall\enmagsmall\enressmall\accg{EnATR:}} attribute is increased by 3, e.g. EnMAG increases MAG.
+			\ofmbox{\enstrsmall\hspace*{-0.05cm}\enndefsmall\hspace*{-0.05cm}\enmagsmall\hspace*{-0.05cm}\enressmall\accg{EnATR:}} according attribute is increased by 1 + half your Level.
 		}
 	\end{multicols}
 	}

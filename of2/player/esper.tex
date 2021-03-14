@@ -10,8 +10,8 @@ In rare cases, when an Esper is impressed by an outstanding mortal, it will lend
 When reaching \accf{Level~5} each player chooses one Esper that bonds with their character.
 Note that these Esper bonds are different than the ones granted by the Summoner job and act entirely independent of them.
 An Esper bond grants a permanently available Support effect, as well as a Call ability that can be activated using an action in combat. 
-All Call abilities have a cast time of 1 round and cost 10\% of your current HP and MP to use.
-However, this cost cannot fall below a minimum of 1 HP and 1 MP.
+All Call abilities have a cast time of 1 round and cost 10\% of your current HP and MP to use, but this cost cannot fall below a minimum of 1 HP and 1 MP.
+Also, all damage dealt by Call abilities ignores the targets' DEF and RES.
 All available Espers are listed below.
 %
 \vfill
@@ -39,7 +39,7 @@ All available Espers are listed below.
 %
 \ofsummon{Bahamut}{./art/esper/bahamut.jpg}
 {Whenever you fall from any height, you can gracefully glide down to avoid damage. In addition, you can levitate 1u above ground for up to 10 seconds.}
-{Choose any enemy on the battlefield. After 3 rounds, the target suffers fire damage equal to 5 times your current Level.}
+{Choose any enemy on the battlefield. After 3 rounds, the target suffers fire damage equal to 5 times your current Level. You cannot use this ability if a previous Call has not been completed yet.}
 {STR +2, MAG +1}
 %
 \clearpage
@@ -59,7 +59,7 @@ All available Espers are listed below.
 \vfill
 %
 \ofsummon{Gilgamesh}{./art/esper/gilgamesh.jpg}
-{Whenever you choose the Re-Equip action, you gain EnSTR for 2 rounds.}
+{Whenever you choose the Re-Equip action, you gain EnSTR for 3 rounds.}
 {For 1 round, whenever you or an ally performs a successful Attack you always score a Critical Hit.}
 {STR +2, MaxHP +5}
 %
@@ -74,21 +74,21 @@ All available Espers are listed below.
 %
 \ofsummon{Leviathan}{./art/esper/leviathan.jpg}
 {You can stay underwater indefinitely. In addition, you gain permanent Resilience against water damage.}
-{From the point you are standing, you conjure a stream of water that is 5u wide, reaches up to 10u and lasts for 3 rounds. It acts as a Slow Field that only affects enemies.}
+{From the point you are standing, you conjure a stream of water that is 3u wide, reaches up to 10u and lasts for 5 rounds. It acts as a Slow Field that only affects enemies.}
 {MAG +1, DEF +2}
 %
 \vfill
 %
 \ofsummon{Magus Sisters}{./art/esper/magus.jpg}
 {Choose 2 allies. The three of you can communicate telepathically over a distance of up to 100u. You can change your chosen allies when you go to sleep.}
-{You can take 3 actions on your next turn.}
+{You can take 3 actions on your next turn. This effect negates all other effects that would grant you additional actions on the same turn.}
 {MaxHP +5, MaxMP +10}
 %
 \clearpage
 %
 \ofsummon{Odin}{./art/esper/odin.jpg}
 {You can perform a short ritual to summon Odin's horse, Sleipnir. When riding on its back, you are twice as fast as usual. Sleipnir disappears whenever it takes any damage or when you dismiss it.}
-{Choose any enemy on the battlefield. He makes a DC~8 check and suffers KO upon failure. If he succeeds or is Immune to this effect, the target suffers physical damage equal to 2 times your current Level.}
+{Choose any enemy on the battlefield. He makes a DC~8 check and suffers KO upon failure. If he succeeds or is Immune to this effect, the target suffers physical damage equal to 3 times your current Level.}
 {STR +2, DEF +1}
 %
 \vfill
@@ -109,7 +109,8 @@ All available Espers are listed below.
 %
 \ofsummon{Siren}{./art/esper/siren.jpg}
 {You have Advantage on all checks related to deescalating a situation through speech.}
-{You create a noise-absorbing field that follows you and reaches up to 2u for 15 minutes. Nobody outside of the field can hear any noise that is created inside of it.}
+%{You create a noise-absorbing field that follows you and reaches up to 2u for 15 minutes. Nobody outside of the field can hear any noise that is created inside of it.}
+{All enemies on the battlefield make a DC~9 check and suffer Silence for 3 rounds upon failure. Enemies Immune to this effect, instead suffer damage equal to 2 times your current Level.}
 {MAG +1, DEF +1, RES +1}
 %
 \vfill
@@ -123,7 +124,7 @@ All available Espers are listed below.
 %
 \ofsummon{Titan}{./art/esper/titan.jpg}
 {Whenever you are in a natural environment such as a forest or cave, you gain Resilience against all elemental damage except dark and holy.}
-{You grow 3 times in size for the next 3 rounds, accordingly you take up 3u in diameter when viewed from above. As long as this effect is active, you gain EnDEF and EnRES.}
+{You grow 3 times in size for the next 5 rounds, accordingly you take up 3u in diameter when viewed from above. As long as this effect is active, you gain EnDEF and EnRES and can move twice your usual distance.}
 {DEF +2, STR +1}
 %
 \clearpage

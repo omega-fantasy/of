@@ -22,6 +22,7 @@ The details of each equipment rank are shown in the table below.
 \oftable{p{0.225\columnwidth} p{0.125\columnwidth} p{0.15\columnwidth} p{0.15\columnwidth} p{0.3\columnwidth}}
 {\accf{Equipment Rank} & \accf{Level} & \accf{Weapon DMG} & \accf{Armor\newline DEF/RES} & \accf{Value}}
 {
+	\vspace*{0.2cm}
 	Beginner & 	1 - 3 	& 1d & +0 / +0   & \textasciitilde 500G\ofrow
 	Advanced &  4 - 7   & 2d & +1 / +1   & \textasciitilde 2000G\ofrow
 	Expert   &  8 - 10	& 3d & +2 / +2   & >4000G 
@@ -57,7 +58,6 @@ Unless explicitly stated otherwise, every weapon or armor can carry one Materia,
 Materia can be divided into two categories: command and support Materia.
 Command materia allow the wielder of the imbued equipment to use new abilities, while support Materia grant passive effects.
 If a Materia allows the use of an existing ability, the user has to adhere to its usual rules including MP cost and cast time.
-Finally, some Materia can only be slotted into weapons, while others are only compatible with armor.
 %
 \vfill
 %
@@ -82,11 +82,11 @@ Note that your character sheet provides various fields to keep track of your inv
 {\oficonweapon\accf{Bow} & \accf{Unique Effect}}
 {
 	Mythril~Bow & Has an additional Materia slot. \ofrow
-	Elfin Bow & Whenever you Attack a target that is suffering a Status Effect, add 3 to the damage dealt. \ofrow 
-	Killer Bow & On a Critical Hit, the target instantly suffers KO. \ofrow
+	Elfin Bow & Add 3 to the damage when you Attack a target that suffering a Status Effect\ofrow
+	Killer Bow & On Critical Hit, the target suffers KO. \ofrow
 	Crossbow & This weapon does not suffer from the same penalty as other bows, so you can move and Attack on the same turn. But its range is only 3u. \ofrow
-%	Aplu & Attacks by this weapon ignore all effects that would grant the target advantage on the evasion check. \ofrow
-	Selene & When the target of your Attack rolls a 5 or less on the evasion check, he suffers Sleep for 3 rounds.\ofrow
+	Aplu & Attacks by this weapon ignore all effects that would grant the target advantage on the evasion check. \ofrow
+%	Selene & When the target of your Attack rolls a 5 or less on the evasion check, he suffers Sleep for 3 rounds.\ofrow
 	Anteros & When the target of your Attack rolls a 5 or less on the evasion check, he suffers Blind for 3 rounds.\ofrow
 	\ofequipnote{Bows have 5u range. If you Attack or use a Tech including an Attack and you move on the same turn, the target has Advantage on the evasion check.\phantom{y}}
 }
@@ -98,9 +98,9 @@ Note that your character sheet provides various fields to keep track of your inv
 {
 	Mythril~Gun & Has an additional Materia slot. \ofrow
 	Fomalhaut & The damage dealt by this weapon is of magical type. \ofrow
-	Tiny Bee & On Critical Hit, you gain 10 Limit Points.\ofrow  
+	Tiny Bee & On Critical Hit, you may immediately take another action.\ofrow
 	Machine Gun & If the target evades your Attack, he still suffers half the total damage. \ofrow
-	Dragon Breath & Damage dealt by this weapon is of fire type. Also, everyone who ends his turn within 1u of you, suffers 3 fire damage.\ofrow
+	Dragon Breath & Damage dealt by this weapon is of fire type. Also, anyone who ends his turn within 1u of you, suffers 3 fire damage.\ofrow
 	Spirit \newline Cannon & Whenever you successfully Attack a target who is suffering the Zombie status, you score a Critical Hit.\ofrow
 	\ofequipnote{Guns have 3u range. Unlike Bows, their damage is not directly increased by STR. Instead, a gun's DMG is increased by 1d for every 3 STR of its wielder.}
 }
@@ -146,7 +146,7 @@ Note that your character sheet provides various fields to keep track of your inv
 	Bloodsword & When you reduce an enemy to 0 HP, you regain an amount of HP equal to your current Level. \ofrow
 	Murasame & The range of all your Techs is increased by 1u. \ofrow
 	Yoshihara & Whenever you perform a counter Attack through an evasion check, you always score a Critical Hit.\ofrow
-	Vorpal Blade & On Critical Hit, quadruple your usual damage, instead of just doubling it. \ofrow
+	Vorpal Blade & On Critical Hit, triple your usual damage, instead of just doubling it. \ofrow
 	Save the \newline Queen & Whenever you or an ally within 1u is affected by Magic, you can halve the damage suffered by passing a DC 9 check.\ofrow
 	\ofequipnote{When rolling an evasion check, you can make a counter Attack not only when you roll a 12 but also when you roll an 11.}
 }
@@ -158,13 +158,13 @@ Note that your character sheet provides various fields to keep track of your inv
 {
 	Mythril Staff & Has an additional Materia slot. \ofrow
 	Healing Staff & Whenever you restore HP with Magic, add 2 to the amount. \ofrow 
-	Oak Staff & While you are concentrating, you can use the Defend action. \ofrow
-	Malboro Staff & When you use Magic that requires the target to pass a check, its DC is increased by 1.\ofrow
+	Oak Staff & After performing an Attack, you can additionally use the Defend action. \ofrow
+	Malboro Staff & When you cause one or more Status Effects, you regain 3 HP.\ofrow
 	Rune Staff & When you deal magical damage to an enemy that is suffering a Status Effect, he also suffers Silence for 3 rounds. \ofrow
 	Power Staff & Whenever you perform a successful Attack, also add your MAG to the damage dealt. \ofrow
 	Sage's Staff & You can add the holy type to damage dealt by Attacks and Magic.\ofrow
 	Oracle Bone & The range of all HP restoring or Status Effect causing spells is increased by 1u.\ofrow
-	\ofequipnote{Staves increase the wielder's maximum MP by 5 per increase in equipment rank (for example a Beginner staff grants maximum MP~+5). In exchange, staves cannot have more than 1d DMG.}
+	\ofequipnote{Staves increase the wielder's maximum MP by 10 per increase in equipment rank (for example a Beginner staff grants maximum MP~+10, an Advanced rod grants MP~+20). In exchange, staves cannot have more than 1d DMG.}
 }
 %
 \vfill
@@ -174,12 +174,12 @@ Note that your character sheet provides various fields to keep track of your inv
 {
 	Mythril Rod & Has an additional Materia slot. \ofrow
 	Elemental Rod & This weapon has to be of a specific element (e.g. fire) and can have an according name (e.g. Flame Rod). Whenever you deal damage of that element, add 2 to the amount.\ofrow
-	Adamantine Rod & This weapon does not suffer from the same penalty as other rods. It has the same DMG as any other weapon of the same rank.\ofrow
+	Adamantine Rod & This weapon does not suffer from the same penalty as other rods. It has the same DMG as any other weapon of the same rank.\ofrow %TODO
 	Stardust Rod & When you reduce an enemy to 0 HP, you regain an amount of MP equal to your current Level. \ofrow
-	Lilith Rod & While you are concentrating, you can still use the Dash action. \ofrow
+	Lilith Rod & While you are concentrating, you can still use the Dash action. \ofrow %TODO
 	Whale Whisker & You can add the water type to damage dealt by Attacks and Magic.\ofrow
 	Magus Rod & When you use a Fortune Die on a roll related to your Magic, add 2 to the total amount. \ofrow
-	\ofequipnote{Rods increase the wielder's MAG by one per increase in equipment rank (for example a Beginner rod grants MAG~+1). In exchange, rods cannot have more than 1d DMG.}
+	\ofequipnote{Rods increase the wielder's MAG by 2 per increase in equipment rank (for example a Beginner rod grants MAG~+2, an Advanced rod grants MAG~+4). In exchange, rods cannot have more than 1d DMG.}
 }
 %
 %
@@ -231,7 +231,7 @@ Note that your character sheet provides various fields to keep track of your inv
 	Coat of \newline Many Colors & DEF +1\newline \ofrow
 	Cotton Robe & Resilience: wind \ofrow
 	Luminous Robe & Resilience: holy \ofrow
-	Magus Robe & MAG +1 \ofrow
+	Magus Robe & RES +1 \ofrow
 	Scholar's Robe  & Maximum MP +5  \ofrow
 	Necromancer Shroud & Resilience: dark\newline \ofrow
 	White Robe & Immunity: Sleep \ofrow
@@ -284,7 +284,7 @@ Note that your character sheet provides various fields to keep track of your inv
 	 Genji Shield & Expert & DEF~+2, RES~+1.\ofrow
 	 Genji Gloves & Expert & STR~+2, MAG~+2.\ofrow
 	 Gold Hairpin & Expert & The MP costs of all your abilities are reduced by 2.  \ofrow
- 	 Ribbon & Expert & In all checks to resist a Status Effect, the DC is reduced by 2. \ofrow
+ 	 Ribbon & Expert & You gain advantage on all checks related to resisting Status Effects. \ofrow
 	 \multicolumn{3}{p{2\columnwidth}}{\hspace*{-0.15cm}\accf{Note:} For some accessories it does not make sense to wear two of the same kind (for example shields).}
 }
 %
@@ -331,7 +331,7 @@ Note that your character sheet provides various fields to keep track of your inv
 	X-Ether & 900G & The target fully regains all MP.\ofrow
 	Tent & 1000G & Allows the party to sleep outside comfortably. \ofrow
 	Magicite Shard & 1000G & Roll 1d, based on the result use the following Esper Call: \newline 1-Ifrit, 2-Shiva, 3-Ramuh, 4-Odin, 5-Phoenix, 6-Bahamut.\ofrow
-	Esper Magicite & 1250G & This Item is for one Esper (e.g. Ifrit Magicite). When used it activates the Call of that Esper. \ofrow
+	Esper Magicite & 1250G & This Item is for one Esper (e.g. Ifrit Magicite). When used it activates its Call. \ofrow
 	Elixir & 1250G & The targets fully regains HP and MP. \ofrow
 	Gold Hourglass & 1500G & Time freezes for everyone except yourself within 5u for 10 seconds (1 round). \ofrow
 	Mega-Elixir & 1500G & Everyone within 1u fully regains their HP and MP.\ofrow
@@ -343,6 +343,7 @@ Note that your character sheet provides various fields to keep track of your inv
 \oftablewide{p{0.36\columnwidth} p{0.16\columnwidth} p{1.45\columnwidth}}
 {\accf{Command Materia} & \accf{Value} & \accf{Unique Effect}}
 {
+	Conjuring Materia & 250G & You can use your action to create a simple magical effect, for example a loud noise or a flash of light.\ofrow
 	Fire Materia & 500G & Allows you to use the "Fire" ability (see Black Mage job) \ofrow
 	Ice Materia & 500G & Allows you to use the "Blizzard" ability (see Black Mage job) \ofrow
 	Bolt Materia & 500G & Allows you to use the "Thunder" ability (see Black Mage job) \ofrow  
@@ -352,69 +353,71 @@ Note that your character sheet provides various fields to keep track of your inv
 	Kung-Fu Materia & 500G & Allows you to use the "Kick" ability (see Monk job) \ofrow 
 	Impromptu Materia & 750G & Allows you to use the "Improvise" ability (see Bard job) \ofrow
 	Mirage Materia & 750G & Allows you to use the "Image" ability (see Summoner job) \ofrow
-	Reflect Materia & 750G & Whenever you are targeted by Magic, you immediately reflect its effect back to its caster. This item is destroyed after its effect is used. (armor only)\ofrow
-	Decoy Materia & 750G & When you fail to evade an Attack, you can summon a decoy that absorbs all the damage dealt. This item is destroyed after its effect is used. (armor only)\ofrow 
+	Blind Materia & 500G & Allows you to use the "Blind" ability (see Red Mage job) \ofrow  
 	Restore Materia & 750G & Allows you to use the "Cure" ability (see White Mage job) \ofrow
 	Trap Materia & 750G & Allows you to use the "Lay Trap" ability (see Marksman job) \ofrow
 	Dragon Materia & 750G & Allows you to use the "Fire Breath" ability (see Dragoon job) \ofrow
-	Runic Materia & 1000G & Whenever you are targeted by Magic, you can negate its effect and increase your MP by the same amount that its caster spent on the action. This item is destroyed after its effect is used. (armor only) \ofrow 
-	Signal Materia & 1250G & You can use your action to shoot an orb of light into the air that is visible from up to 1000u. (weapon only) \ofrow 
-	Bomb Materia & 1250G & You can use your action to create a blast wave that pushes everyone within 1u of you back by up to 2u. \ofrow 
-	Vacuum Materia & 1250G & You can use your action to pull all enemies within 3u towards you by up to 2u. (armor only) \ofrow
+	Signal Materia & 1000G & You can use your action to shoot light into the air that is visible from up to 1000u.\ofrow 
+	Transfuse Materia & 1000G & You can use your action to reduce your HP by your current Level and increase the HP of a target within 3u by the same amount.\ofrow 
+	Bomb Materia & 1250G & You can use your action to push everyone within 1u of you back by up to 2u. \ofrow 
+	Vacuum Materia & 1250G & You can use your action to pull all enemies within 3u towards you by up to 2u. \ofrow
 	Fly Materia & 1500G & Allows you to use the "Propel" ability (see Tinker job) \ofrow
 	Time Materia & 1500G & Allows you to use the "Haste" ability (see Time Mage job)\ofrow   
 	Item Materia & 1500G & Allows you to use the "Quick Pockets" ability (see Thief job) \ofrow   
-	Jump Materia & 1500G & You can use your action to make a 5u high or long jump. \ofrow
-	Magnifying Materia & 1500G & You can conjure a magnifying lens that allows to see everything in a location up to 5000u away as if it was right next to you (weapon only). \ofrow
+	Magnifying Materia & 1500G & You can conjure a magnifying lens that allows to see everything in a location up to 5000u away as if it was right next to you. \ofrow
+	Jump Materia & 1750G & You can use your action to make a 10u high or long jump. \ofrow
+	Analyze Materia & 2000G & You can use your action to find out the remaining HP of a target within 5u.\ofrow 
+	Stampede Materia & 2000G & You can take the Dash action and then perform an Attack immediately after. \ofrow
 	Mop Materia & 2000G & You can use your action to remove a Field that you are standing next to. \ofrow
 	Mend Materia & 2000G & You can use your action to remove one Status Effect that your are suffering. \ofrow
+	Swap Materia & 2000G & You can use your action to exchange your position with that of an ally within 10u. \ofrow
 	Wet Floor Materia & 2000G & You can use your action to create a Slippery Field that is centered around a point within 3u, reaches up to 3u and lasts for 3 rounds. You cannot use this effect while the previous field is still active. \ofrow	
+	Arcane Materia & 2000G & You can use your action to detect the presence of magic infused objects within 10u. \ofrow
 	Lava Materia & 2000G & You can use your action to create a Hot Field that is centered around a point within 3u, reaches up to 3u and lasts for 3 rounds. You cannot use this effect while the previous field is still active. \ofrow
-	Alarm Materia & 2500G & You can use your action to create an invisible sphere of 5u diameter where you are standing. The sphere stays for up to 1 hour and whenever someone else steps through it, it is destroyed and emits a loud noise that is audible in a distance up to 500u. You can not use this ability again until the previous sphere is destroyed.\ofrow 
-	Blaze Materia & 2500G & Allows you to use the "Firaga" ability (see Black Mage job) \ofrow
-	Freeze Materia & 2500G & Allows you to use the "Blizzaga" ability (see Black Mage job) \ofrow
-	Shock Materia & 2500G & Allows you to use the "Thundaga" ability (see Black Mage job) \ofrow 
-	Heal Materia & 3000G & Allows you to use the "Curaga" ability (see White Mage job) \ofrow 	
-	Chameleon \newline Materia & 3000G & While not in combat, you can blend in with your environment. Enemies can only notice you by passing a DC~9 check. (armor only) \ofrow 
+	Telepathy Materia & 2000G & You can use your action to send a telepathic message to a target within 10u.\ofrow 
+	Alarm Materia & 2000G & You can use your action to create an invisible sphere of 5u diameter where you are standing. The sphere stays for up to 1 hour and whenever someone else steps through it, it is destroyed and emits a loud noise that is audible in a distance up to 500u. You can not use this ability again until the previous sphere is destroyed.\ofrow
+	Trap Materia & 2500G & While not in combat, you can create an invisible trap with 2u diameter on the ground. If an enemy steps on it, he becomes temporarily incapacitated and if you engage in combat you gain a guaranteed surprise round. \ofrow 
+	Chameleon \newline Materia & 3000G & While not in combat, you can blend in with your environment. Enemies can only notice you by passing a DC~9 check. \ofrow 
 }
 %
 \oftablewide{p{0.36\columnwidth} p{0.16\columnwidth} p{1.45\columnwidth}}
 {\accf{Support Materia} & \accf{Value} & \accf{Unique Effect}}
 {
-	Water Materia & 250G & Allows you to breathe normally under water. (armor only)  \ofrow 
+	Water Materia & 250G & Allows you to breathe normally under water. \ofrow 
 	Weather Materia & 250G & Equipment starts glowing to indicate incoming storm or rain. \ofrow 
 	ATR Plus & 500G & This materia is of one the following attributes: STR, DEF, MAG or RES and increases the according attribute by 1 (e.g. STR Plus increases STR by 1).\ofrow 
-	Resilience \newline Materia & 500G &  This materia is of one elemental type (e.g. fire). The armor it is slotted into grants permanent resilience against that type. (armor only)\ofrow
-	Elemental \newline Materia & 500G & This materia is of one elemental type (e.g. fire). Every Attack that you make with your weapon deals damage of this type. (weapon only)\ofrow
-	Immunity \newline Materia & 700G &  This materia is of one status effect and grants immunity against it (e.g. Blind Materia grants immunity against the Blind status). (armor only)\ofrow
-	Glow Materia & 750G & Your weapon glows to grant visibility within 10u. (weapon only) \ofrow
-	Status Materia & 750G & This Materia is of one status effect (e.g. Poison Materia). Whenever you hit an Attack, where the target rolls a 5 or less on the evasion check, the target suffers that status effect for 3 rounds in addition. (weapon only) \ofrow
-	Angel Materia & 750G & Whenever you fall KO with this materia equipped, you are instantly revived with 1 HP. This item is destroyed after its effect is used. (armor only) \ofrow
+	Resilience \newline Materia & 500G &  This materia is of one elemental type (e.g. fire). You gain permanent resilience against that type.\ofrow
+	Elemental \newline Materia & 500G & This materia is of one elemental type (e.g. fire). Every Attack that you make deals damage of this type.\ofrow
+	Immunity \newline Materia & 700G &  This materia is of one status effect and grants Immunity against it (e.g. Blind Materia grants immunity against the Blind status).\ofrow
+	Glow Materia & 750G & The equipment piece glows to grant visibility within 5u. \ofrow
+	Status Materia & 750G & This Materia is of one status effect (e.g. Poison Materia). Whenever you hit an Attack, where the target rolls a 5 or less on the evasion check, the target suffers that status effect for 3 rounds in addition.\ofrow
 	Consumer Materia & 1000G & Whenever you use an Item on yourself, you regain an additional 3 HP. \ofrow 
 	Chocobo Materia & 1000G & When you fall from any height, you can glide down gracefully. \ofrow 
-	HP Plus & 1250G & You maximum HP is increased by 10. (armor only) \ofrow
-	MP Plus & 1250G & You maximum MP is increased by 10. (armor only) \ofrow 
-	Alert Materia & 1500G & Allows you to evade Attacks while concentrating. (armor only)\ofrow
+	HP Plus & 1250G & You maximum HP is increased by 10. \ofrow
+	MP Plus & 1250G & You maximum MP is increased by 10. \ofrow 
+	Alert Materia & 1500G & Allows you to evade Attacks while concentrating.\ofrow
 	Moogle Materia & 1500G & The weapon or armor glows whenever there is a monster within 25u. \ofrow
-	Nightvision Materia & 1500G & You can see in the dark. (armor only) \ofrow
+	Nightvision Materia & 1500G & You can perfectly see in the dark. \ofrow
 	Sense Materia & 1750G & You can see the remaining HP of all enemies within 3u. \ofrow
-	Berserk Materia & 1750G &  Whenever your current HP is below half of its maximum, add 3 to the damage dealt by Attacks with your weapon. (weapon only)\ofrow
+	Berserk Materia & 1750G &  When your HP is below half of its maximum, add 3 to the damage dealt by Attacks.\ofrow
 	Item Materia & 2000G & The range in which you can use Items is increased by 1u.\ofrow
-	Toughness \newline Materia & 2000G & Whenever you make a check to withstand a status effect, the DC is reduced by 1. (armor only)\ofrow
+	Tough Materia & 2000G & Whenever you make a check to withstand a status effect, the DC is reduced by 1.\ofrow
 	Counterspell \newline Materia & 2000G & When you suffer damage by Magic that you know or you know a spell with the same elemental type, you can immediately cast it on the perpetrator without cast time.\ofrow
+	Bystander \newline Materia & 2000G & All damage that you suffer from area effects that you are not the primary target of is halved. \ofrow
 	Concentration \newline Materia & 2250G & Whenever it is your turn and you cannot use your action due to concentrating, you instead regain MP equal to your current Level. \ofrow
-	Float Materia & 2250G & You are unaffected by Fields. (armor only) \ofrow
+	Float Materia & 2250G & You are unaffected by Fields. \ofrow
 	X-Ray Materia & 2500G & You can see through up 1u thick walls when standing next to them.\ofrow
 	Climb Materia & 2500G & Allows you to walk on vertical walls the same as you can on horizontal ground.\ofrow
 	Lure Materia & 2500G &  Each monster within 3u will choose you as target whenever possible. Some enemies may be immune to this effect as decided by the GM.\ofrow
 	Upgrade Materia & 2500G & When you slot this materia into a weapon or armor, it is immediately upgraded to the next equipment rank. This item is destroyed in the process. \ofrow
-	Counter Materia & 2500G & Whenever you roll a 10 or higher on an evasion check, you can immediately make an Attack against the attacker. (weapon only) \ofrow
-	Drain Materia & 2750G & On every successful Attack, your HP is increased by 3. (weapon only) \ofrow
-	Osmosis Materia & 2750G & On every successful Attack, your MP is increased by 3. (weapon only)  \ofrow
+	Counter Materia & 2500G & Whenever you roll a 10 or higher on an evasion check, you can immediately make an Attack against the attacker.\ofrow
+	Drain Materia & 2750G & On every successful Attack, your HP is increased by 3. \ofrow
+	Osmosis Materia & 2750G & On every successful Attack, your MP is increased by 3. \ofrow
 	HP/MP Materia & 2750G &  Your maximum HP and your maximum MP are switched.\ofrow
-	Range Materia & 3000G & Increases the range of your weapon by 1u. (weapon only)\ofrow
+	Rewind Materia & 3000G & Whenever you roll a 2 or 3 on an evasion check, you may re-roll it once.\ofrow
+	Range Materia & 3000G & Increases the range of your weapon by 1u.\ofrow
 	Nimble Materia & 3000G & You can move 1u further per turn than your usual distance. \ofrow
-	Ghost Materia & 3000G & Allows you to walk through people, monsters and solid objects. (armor only)\ofrow
+	Ghost Materia & 3000G & Allows you to walk through people, monsters and solid objects.\ofrow
 }
 %
 \clearpage
