@@ -6,14 +6,12 @@
 %
 \vfill
 %
-\accf{Combat} consists of a series of rounds (shortened~\accf{r}) that take 10 seconds of in-game time each.
-During a round, each combatant takes one turn.
-At the start of the battle, both parties choose who takes the first turn in each round on their side.
-The GM then decides which side goes first.
-At the end of every turn, select an ally who has not taken a turn in this round and takes the next turn for your side.
-Both sides take alternating turns until everyone has taken one and the round is completed.
-The GM should announce the start and end of each round to avoid confusion.
-If one side has more combatants than the other, they take consecutive turns at the end of the round until everyone has taken a turn.
+\accf{Combat} encounters are played out in a series of rounds (shortened~\accf{r}) and during a round, every combatant takes one turn.
+At the start of the battle, both parties choose who takes the first turn in each round on their side and the GM the decides which side goes first.
+Then, the opposing parties take alternating turns until every combatant has taken one and the round is finished.
+The turn order for each side is decided as follows: at the end of their turns, every combatant chooses an ally who has not taken a turn in this round and should take the next one for their side.
+If one side has more combatants, they can take consecutive turns at the end of the round until every participant has taken one.
+Announce the start and end of each round to avoid confusion.
 When a party ambushes the other before combat, the GM can decide that they gain a \accf{surprise round}.
 In this case, only the surprising party acts in the first round before the battle continues as usual.
 %
@@ -35,7 +33,7 @@ Whenever a calculation results in a non-integer value, the result is always roun
 \newpage
 %
 During your turn you can, in any order, move a distance of your AGI+1 units and take an action.
-Below is a list of \accf{combat actions}, but the GM may allow any other action that can be completed in one turn:\ofgap
+Below is a list of \accf{combat actions}, but the GM may allow any other action that can be completed in a similar amount of time:\ofgap
 %
 \ofmbox{\oficonattack\accf{Attack:}}
 You attack an enemy with your weapon. 
@@ -56,7 +54,7 @@ You use a non-magical ability.
 Techs are used the same way as magic, but their damage and healing is amplified by your STR instead of your MAG, 
 except if their use already includes this bonus in another way, for example by involving an Attack.\ofgap
 %
-\ofmbox{\oficondefend\accf{Defend:}} All damage that you receive by Attacks until your next turn is halved. \ofgap
+\ofmbox{\oficondefend\accf{Defend:}} All total damage that you receive by Attacks until your next turn is halved. \ofgap
 %
 \ofmbox{\oficonitem\accf{Item:}} You use an Item from your inventory on yourself or someone within 1u.\ofgap
 %
@@ -74,7 +72,7 @@ Apart from Magic and Techs, characters can also learn the following \accf{specia
 {
 	Squall (4 DEF, 3 AGI, 1 RES) and Seifer (6 STR, 2 MAG) decide to duel.
 	Both are wielding a gunblade~(1d DMG) and the GM decides that Seifer takes the first turn.
-	He begins casting Firaga (6d DMG, 1r Time) by spending 12~MP, choosing Squall as target and concentrating.
+	He begins casting Firaga (6d DMG, 1r Time) by spending 12~MP, choosing Squall as its target and concentrating.
 	Squall uses his turn to Defend.
 	It's Seifer's turn again, so Firaga takes effect and Squall suffers \mbox{6d+2-1} damage. 
 	Seifer can still take his turn, so he also Attacks. 
@@ -84,13 +82,14 @@ Apart from Magic and Techs, characters can also learn the following \accf{specia
 %
 \clearpage
 %
+\newcommand{\elemicon}[1]{\hspace*{-0.14cm}#1\hspace*{-0.14cm}}
 All damage dealt has one of two basic types.
 Unless specified otherwise, Attacks and Techs are of \accf{physical} type, while Magic and Items are of \accf{magical} type.
 When you receive physical damage, subtract your DEF from the amount and when you receive magical damage, subtract your RES from the amount.
 In addition, damage can have an elemental type to which combatants can have \accf{Weaknesses} or \accf{Resiliences}. 
 When resilient, you only suffer half the usual damage and when weak, you suffer double the usual damage. 
 Resilience and Weakness cancel each other out and do not stack.
-The following elemental types exist: fire~(\fire), ice~(\ice), lightning~(\lightning), water~(\water), earth~(\earth), wind~(\wind), holy~(\holy) and dark~(\dark).
+The following elemental types exist: \elemicon{\fire}ire, \elemicon{\ice}ce, \elemicon{\lightning}ightning, W\elemicon{\water}ter, \elemicon{\earth}arth, \elemicon{\wind}ind, \elemicon{\holy}oly and \elemicon{\dark}ark.
 %
 \vfill
 %
@@ -163,10 +162,7 @@ All Field effects are listed below.
 %
 \newpage
 %
-%\ofquote{"Ha, ha, ha. You look like you're not feeling well."\\}{Sephiroth}\\\\
-% "I'm not...feeling well..." - Selphie
-%
-\accf{Status Effects} alter your the combat potency positively or negatively for a limited duration.
+\accf{Status Effects} alter your the combat potency for a limited duration.
 Combatants can suffer multiple different Status Effects at once, but applying the same one twice only refreshes its duration. 
 They can also be \accf{Immune} to certain Status Effects, in which case they are not affected by them.
 Also, if a combatant suffers two opposite Status Effects, for example Poison and Regen, they negate each other and are both removed.

@@ -21,21 +21,10 @@
 \usetikzlibrary{shapes.misc, positioning, arrows}
 \usetikzlibrary{arrows}
 \usetikzlibrary{arrows.meta}
-
-
 \usepackage{tcolorbox}[all]
-\usepackage{blindtext}
-\usepackage{pdflscape}
 \usepackage{array}
-\usepackage{calc}
-\usepackage{tikz}
 \usepackage{eso-pic}
-\usetikzlibrary{shapes.misc, positioning, arrows}
-\usetikzlibrary{arrows}
-\usetikzlibrary{arrows.meta}
-
 \tcbuselibrary{skins}
-
 
 \addto\captionsenglish{% Replace "english" with the language you use
 	\renewcommand{\contentsname}%
@@ -225,7 +214,7 @@
 			}
 			& \hfill\raisebox{-0.85\height}{#3}\hfill
 		\end{tabularx}
-		#5		\vspace*{-0.5cm}\\
+		#5\hspace*{-0.15cm}\vspace*{-0.5cm}\\
 		#6
 }
 
@@ -352,7 +341,7 @@
 	/cs/limitrange/.new value = \phantom{3u},
 	/cs/limittarget/.new value = \phantom{Sgl.},
 	/cs/summon/.new value,
-	/cs/summonsupport/.new value,
+	/cs/summonsupport/.new value = \\,
 	/cs/summonability/.new value,
 	/cs/summonused/.new value,
 	/cs/abilities/.new value,
@@ -546,8 +535,8 @@
 		\columnbreak
 		\ofcsbox{3.8}{
 			\ofcssubtext{Espers:}{Level 5}\option{/cs/summon}\ofgap
-			Support: \option{/cs/summonsupport}	\ofrow
-			Call: \hfill {\small \acc{Cost: 10\% of current HP \& MP} \hfill \acc{Time: 1r}} \ofrow \option{/cs/summonability}
+			Support:\\ \option{/cs/summonsupport}\\
+			Call:\\ \option{/cs/summonability}
 		}
 	\end{multicols}
 	%
@@ -572,7 +561,7 @@
 			\ofmbox{\oficonsmalldefend\acc{Defend:}} Damage you receive by Attacks until your next turn is halved. \ofrow
 			\ofmbox{\oficonsmallitem\acc{Item:}} Use Item from your inventory on yourself or someone within 1u.\ofrow
 			\ofmbox{\oficonsmallreequip\acc{Re-Equip:}} Swap a Materia or Equipment piece that you are wearing against one from your Inventory.\ofrow
-			\ofmbox{\oficonsmalldash\acc{Dash:}} Move another distance of your AGI+1 units.
+			\ofmbox{\oficonsmalldash\acc{Dash:}} Move to a location up to AGI +1 units away.
 		}
 		\columnbreak\vspace*{-0.5cm}\\
 		\parbox{1\columnwidth}{
@@ -580,17 +569,17 @@
 			\acc{Status Effects Summary:}\ofrow
 			\ofmbox{\kosmall\accr{KO:}} You are unconscious and your turns are skipped.\ofrow
 			\ofmbox{\blindsmall\accr{Blind:}} On Attack, enemy has Advantage on the evasion check. \ofrow
-			\ofmbox{\poisonsmall\accr{Poison:}} suffer damage equal to 10\% max HP at start of each turn.\ofrow
+			\ofmbox{\poisonsmall\accr{Poison:}} Suffer damage equal to 10\% max HP at start of each turn.\ofrow
 			\ofmbox{\slowsmall\accr{Slow:}} During your turn, you can move or take an action but not both.\ofrow
 			\ofmbox{\sleepsmall\accr{Sleep:}} You can't move or take actions. Removed when you take damage.\ofrow
 			\ofmbox{\zombiesmall\accr{Zombie:}} All healing effects are reversed for you.\ofrow
 			\ofmbox{\silencesmall\accr{Silence:}} You cannot begin casting Magic or using Techs.\ofrow
 			\ofmbox{\immobilesmall\accr{Immobile:}} You are unable to move. \ofrow
-			\ofmbox{\destrsmall\hspace*{-0.05cm}\dedefsmall\hspace*{-0.05cm}\demagsmall\hspace*{-0.05cm}\deressmall\accr{DeATR:}} according attribute is reduced by 1 + half your Level. \ofrow
+			\ofmbox{\destrsmall\hspace*{-0.05cm}\dedefsmall\hspace*{-0.05cm}\demagsmall\hspace*{-0.05cm}\deressmall\accr{DeATR:}} According attribute is reduced by 1 + half your Level. \ofrow
 			\ofmbox{\blinksmall\accg{Blink:}} You have advantage on evasion checks. \ofrow
-			\ofmbox{\hastesmall\accg{Haste:}} You can either make an additional action or movement. \ofrow
+			\ofmbox{\hastesmall\accg{Haste:}} During your turn, make an extra movement or action. \ofrow
 			\ofmbox{\regensmall\accg{Regen:}} Regain 10\% of your maximum HP at the start of each turn.\ofrow
-			\ofmbox{\enstrsmall\hspace*{-0.05cm}\enndefsmall\hspace*{-0.05cm}\enmagsmall\hspace*{-0.05cm}\enressmall\accg{EnATR:}} according attribute is increased by 1 + half your Level.
+			\ofmbox{\enstrsmall\hspace*{-0.05cm}\enndefsmall\hspace*{-0.05cm}\enmagsmall\hspace*{-0.05cm}\enressmall\accg{EnATR:}} According attribute is increased by 1 + half your Level.
 		}
 	\end{multicols}
 	}
@@ -616,12 +605,12 @@
 
 \newcommand{\mpassive}[2]{
 	\vskip0.1cm
-	\oficonpassive \accf{#1:} #2
+	\ofmbox{\oficonpassive \accf{#1:}} #2
 }
 
 \newcommand{\mreaction}[2]{
 	\vskip0.1cm
-	\oficonreaction \accf{#1:} #2
+	\ofmbox{\oficonreaction \accf{#1:}} #2
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% ICONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
