@@ -27,9 +27,9 @@
 	\ofjobtech{Cheer}{4}{0r}{1u}{Self}{Everyone in the target area can choose to either gain \mbox{EnSTR}, EnMAG, EnDEF or EnRES for 3 rounds.}{\enstr\enmag}{1}\ofabilitygap
 	\ofjobtech{Improvise}{6}{0r}{Single}{5u}{Roll 1d. Based on the result, the target gains the following Status Effect for 3 rounds:\\ 1-EnDEF, 2-EnRES, 3-EnSTR, 4-Blink, 5-Regen, 6-Haste.}{\enndef\enres\enstr\blink\regen\haste}{2}\ofabilitygap
 	\ofjobtech{Spotlight}{8}{0r}{2u}{Self}{You create an Obscure Field around yourself that follows you for 3 rounds, but does not affect you.}{}{4}\ofabilitygap
-	\ofjobtech{Mighty March}{12}{0r}{2u}{Self}{You and all allies in the target area gain Haste and EnDEF for 2 rounds.}{\haste\enndef}{6}\ofabilitygap
-	\ofjobtech{Charm}{14}{1r}{Single}{4u}{Choose an enemy as the target. He makes a DC~8 check and upon failure he immediately takes an extra turn following your command. The turn order is unchanged. Some enemies may be Immune to this effect.}{}{8}\ofabilitygap
-	\ofjobtech{Mimic}{?}{0r}{?}{?}{You use an ability that was used by an ally or enemy on the battlefield since your last turn. In doing this, you have to respect the MP cost, cast time as well as the target and range specifications of the copied ability.}{}{10}
+	\ofjobtech{Mighty March}{14}{0r}{2u}{Self}{You and all allies in the target area gain Haste and EnDEF for 2 rounds.}{\haste\enndef}{6}\ofabilitygap
+	\ofjobtech{Charm}{15}{1r}{Single}{4u}{Choose an enemy as the target. He makes a DC~8 check and upon failure he immediately takes an extra turn following your command. The turn order is unchanged. Some enemies may be Immune to this effect.}{}{8}\ofabilitygap
+	\ofjobtech{Mimic}{?}{0r}{?}{?}{You use an ability that was used by an ally or enemy on the battlefield since your last turn. In doing this, you have to respect the MP cost, cast time as well as the target and range of the copied ability.}{}{10}
 }{
 	\ofarchetypet{Dancer}
 	{HP~+12 & MP~+8 & STR~+2 & DEF~+1}
@@ -76,7 +76,7 @@
 	\ofjobspell{Firaga}{12}{1r}{Single}{5u}{You deal 6d fire damage to the target.}{\fire}{6}\ofabilitygap
 	\ofjobspell{Blizzaga}{12}{1r}{Single}{5u}{You deal 6d ice damage to the target.}{\ice}{6}\ofabilitygap
 	\ofjobspell{Thundaga}{12}{1r}{Single}{5u}{You deal 6d lightning damage to the target.}{\lightning}{6}\ofabilitygap
-	\ofjobspell{Flare}{20}{2r}{Single}{10u}{You deal 6d+50 damage to the target. The damage dealt ignores the target's RES.}{\fire}{8}\ofabilitygap
+	\ofjobspell{Flare}{25}{2r}{Single}{7u}{You deal 6d+45 damage to the target. The damage dealt ignores the target's RES.}{\fire}{8}\ofabilitygap
 	\ofjobspell{Ultima}{30}{2r}{50u}{Self}{Deal 6d+40 dark damage to all enemies in the target area.}{\dark}{10}
 }{
 	\ofarchetypet{Geomancer}
@@ -88,10 +88,10 @@
 }{
 	\ofarchetypet{Scholar}
 	{HP~+7 & MP~+18 & MAG~+2}
-	{\ofarchetypespella{Zombify}{8}{0r}{Single}{5u}{The target makes a DC 8 check and suffers 3d dark damage and Zombie for 3 rounds upon failure.}{\zombie}}
-	{\ofarchetypepassive{Study}{Whenever you deal magical damage to an enemy, you can choose one of the following aspects that you learn about him: Resiliences, Weaknesses, Immunities, current HP, current MP.}}
+	{\ofarchetypespella{Thesis}{8}{0r}{Single}{5u}{Choose a type of action, for example Attack or Magic. If the target takes that type of action on his next turn, he suffers damage equal to 2 times your current Level and Immobile for 2 rounds.}{}}
+	{\ofarchetypepassive{Analyze}{Whenever you deal magical damage, you can learn one of the following aspects about the target: Resiliences, Weaknesses, Immunities, current HP, current MP.}}
 	{\ofarchetypereaction{Learn}{Whenever you are targeted by Magic, you can make a DC~8 check. If you succeed, you learn how to use the same spell. If you have already learned a spell in this way, you can choose to forget it to learn a new one.}}
-	{\ofarchetypespellb{Doom}{18}{0r}{Single}{8u}{The target makes a DC 8 check and suffers KO after 3 rounds upon failure. If the enemy is Immune to KO, he instead suffers 6d+5 dark damage.}{\ko}}
+	{\ofarchetypespellb{Specialize}{5}{0r}{Single}{5u}{The target chooses one of his known abilities. For the next 3 rounds, when the target uses that ability, its range is doubled and its MP cost is halved.}{\ko}}
 }
 %
 %
@@ -119,10 +119,10 @@
 	Level 10:& HP~+10  & RES~+1 & DEF~+2 
 }{
 	\ofjobtech{Jump}{4}{1r}{Single}{3u}{When you begin using this Tech, you jump 3u up into the air. After the cast time is up, you leap onto the target and make an Attack on him.}{}{1}\ofabilitygap
-	\ofjobtech{Lancet}{3}{0r}{Single}{5u}{You deal damage to the target's HP and MP by an amount equal to your current Level and increase your own HP and MP by the same amount. This amount is not recued by the target's DEF or RES.}{}{2}\ofabilitygap
+	\ofjobtech{Lancet}{3}{0r}{Single}{5u}{You deal damage to the target's HP and MP by an amount equal to your current Level and increase your own HP and MP by the same amount. This amount is not reduced by the target's DEF or RES.}{}{2}\ofabilitygap
 	\ofjobtech{Double Jump}{8}{1r}{Single}{3u}{When you begin using this tech, you jump 3u up into the air. After the cast time is up, you leap onto the target and make an Attack on him. You can then leap to another location within 3u. If you land on another enemy you can make an Attack on him too.}{}{6}\ofabilitygap
 	\ofjobtech{Roar}{8}{0r}{5u}{Self}{All enemies in the target area make a DC 9 check and suffer 2d damage and Immobile for 1 round upon failure.}{\immobile}{8}\ofabilitygap
-	\ofjobtech{Highwind}{24}{1r}{Single}{Self}{For the next 3 rounds, you stay up to 3u in the air from where you can move your usual distance and perform one of the following 2 actions without additional MP cost or cast time on each turn:\\ 
+	\ofjobtech{Highwind}{24}{1r}{Single}{Self}{For the next 3 rounds, you stay up to 3u in the air from where you can move your usual distance and perform one of the following 2 actions on each turn without additional MP cost or cast time:\\ 
 		\acc{Lance Barrage:} make an Attack against a target within 10u. If you hit, you score a Critical Hit.\\
 		\acc{Fire Blast:} choose a target within 10u. He and all enemies within 2u of him suffer 4d fire damage.
 	}{\fire}{10}
@@ -171,7 +171,7 @@
 	\ofjobtech{Fast Draw}{8}{0r}{Single}{Weapon}{You make an Attack after which you can immediately begin using another Ability in the same turn.}{}{4}\ofabilitygap
 	\ofjobtech{Explosive Shot}{10}{0r}{2u}{Weapon}{Everyone in the target area suffers 3d fire damage. In addition, you create a Hot Field in the target area that lasts for 3 rounds.}{\fire}{6}\ofabilitygap
 	\ofjobtech{Smoke Bomb}{10}{0r}{3u}{10u}{You create an Obscure Field in the target area that lasts for 3 rounds.}{}{8}\ofabilitygap
-	\ofjobtech{Barrage}{22}{1r}{Single}{Self}{You gain Haste and EnSTR for 3 rounds. Also, all your Attacks which target a single enemy instead affect all enemies within 2u of the chosen target.
+	\ofjobtech{Barrage}{24}{1r}{Single}{Self}{You gain Haste and EnSTR for 3 rounds. Also, all your Attacks which target a single enemy instead affect all enemies within 2u of the chosen target.
 	}{\haste\enstr}{10}
 }{
 	\ofarchetypet{Ranger}
@@ -201,7 +201,7 @@
 	While they do not have expertise in using magic, Monks can produce similar effects by tapping into their inner life force. 
 }
 {None}{Light Armor}{
-	Level 1: & HP +20 & MP~+13 & AGI~+4 & \\
+	Level 1: & HP +20 & MP~+16 & AGI~+4 & \\
 	Level 2: & HP~+10 & MP~+5  & STR~+2 & \\
 	Level 3: & \multicolumn{3}{l}{Archetype Attribute Bonus} \\
 	Level 4: & HP~+5  & MP~+10 & STR~+1 & RES~+1 \\
@@ -294,8 +294,8 @@
 	A capable Sentinel is often the last thing standing between the party and certain death.
 }
 {Sword}{Heavy Armor}{
-	Level 1: & HP~+27 & MP~+18 & AGI~+3 & DEF~+1  \\
-	Level 2: & HP~+10 & MP~+10 & STR~+1 & RES~+1 \\
+	Level 1: & HP~+27 & MP~+16 & AGI~+3 & STR~+1  \\
+	Level 2: & HP~+10 & MP~+10 & DEF~+1 & RES~+1 \\
 	Level 3: & \multicolumn{3}{l}{Archetype Attribute Bonus} \\
 	Level 4: & HP~+10 & MP~+5  &  DEF~+1 & STR~+1 \\ 
 	Level 5: & HP~+10 & MP~+5  & RES~+1 & DEF~+1 \\ 
@@ -308,7 +308,7 @@
 	\ofjobtech{Guard}{3}{0r}{Single}{Self}{You gain EnDEF until the end of your next turn.}{\enndef}{1}\ofabilitygap
 	\ofjobtech{First Aid}{6}{1r}{Single}{1u}{%
 		When you begin using this ability, the target regains an amount of HP equal to your current Level. After the cast time is up, if you have received no damage since casting and if the target is still in range, he additionally gains EnDEF and Haste for 1 round.}{}{2}\ofabilitygap
-	\ofjobtech{Threaten}{8}{0r}{Single}{5u}{The target makes a DC 8 check and suffers Immobile for 3 rounds upon failure.}{\immobile}{4}\ofabilitygap
+	\ofjobtech{Threaten}{6}{0r}{Single}{5u}{The target makes a DC 8 check and suffers Immobile for 3 rounds upon failure.}{\immobile}{4}\ofabilitygap
 	\ofjobtech{Mediguard}{9}{0r}{Single}{Self}{You gain EnDEF and Regen for 3 rounds.}{\enndef}{6}\ofabilitygap
 	\ofjobtech{Defensive Formation}{10}{0r}{2u}{Self}{You and all allies within the target area gain Blink for 2 rounds.}{\blink}{8}\ofabilitygap
 	\ofjobtech{Mighty Guard}{26}{1r}{Single}{Self}{For the next 3 rounds, you gain Resilience against all physical and magical damage.}{}{10}
@@ -386,7 +386,7 @@
 %
 \clearpage
 %
-\ofmonster{Carbuncle}{1}{\includegraphics[width=0.25\columnwidth]{./art/jobs/carbuncle.png}}
+\ofmonster{Carbuncle}{1}{\includegraphics[width=0.25\columnwidth]{./art/jobs/carbuncle.jpg}}
 {
 	HP: & \hfill 10 & MP: & \hfill 12\\
 	STR: & \hfill 1 & DEF: & \hfill 1 \\
@@ -404,7 +404,7 @@
 %
 \vspace*{1.8cm}\\
 %
-\ofmonster{Ifrit}{5}{\includegraphics[width=0.28\columnwidth]{./art/jobs/ifrit.png}}
+\ofmonster{Ifrit}{5}{\includegraphics[width=0.28\columnwidth]{./art/jobs/ifrit.jpg}}
 {
 	HP: & \hfill 30 & MP: & \hfill 25\\
 	STR: & \hfill 3 & DEF: & \hfill 2 \\
@@ -425,7 +425,7 @@
 %
 \newpage
 %
-\ofmonster{Bahamut}{9}{\includegraphics[width=0.3\columnwidth]{./art/jobs/bahamut.png}}
+\ofmonster{Bahamut}{9}{\includegraphics[width=0.3\columnwidth]{./art/jobs/bahamut.jpg}}
 {
 	HP: & \hfill 60 & MP: & \hfill 80\\
 	STR: & \hfill 5 & DEF: & \hfill 4 \\
@@ -445,7 +445,7 @@
 %
 \vfill
 %
-\ofmonster{Shiva}{5}{\includegraphics[width=0.23\columnwidth]{./art/jobs/shiva.png}}
+\ofmonster{Shiva}{5}{\includegraphics[width=0.23\columnwidth]{./art/jobs/shiva.jpg}}
 {
 	HP: & \hfill 25 & MP: & \hfill 45\\
 	STR: & \hfill 2 & DEF: & \hfill 1 \\
@@ -488,12 +488,12 @@
 	Level 9: & HP~+5  & MP~+10 & STR~+2 &        \\ 
 	Level 10:& HP~+10 & MP~+10  & DEF~+1 
 }{
-	\ofjobtech{Steal}{3}{0r}{Single}{1u}{Make a DC 7 check and "borrow" something from the target if you succeed. Roll 1d and the you get your Level times 20G on 1 or 2, a Potion on a 3, a Remedy on a 4, an Ether on a 5 and a Phoenix Down on a 6. The item may also be determined in any other way by the GM.}{}{1} \ofabilitygap
+	\ofjobtech{Steal}{3}{0r}{Single}{1u}{Make a DC 7 check and "borrow" something from the target if you succeed. Roll 1d and you get your Level times 20G on 1 or 2, a Potion on a 3, a Remedy on a 4, an Ether on a 5 and a Phoenix Down on a 6. The item may also be determined in any other way by the GM.}{}{1} \ofabilitygap
 	\ofjobtech{Flee}{4}{0r}{3u}{Self}{You and all allies in the target area can move twice as fast when running away from enemies for 3 rounds.}{}{2} \ofabilitygap
 	\ofjobtech{Poison Dart}{7}{0r}{Single}{4u}{The target makes a DC~8 check and suffers 1d damage and one of the following Status Effects of your choice for 3 rounds upon failure: Poison, Immobile, Sleep}{}{4}\ofabilitygap
 	\ofjobtech{Vanish}{8}{0r}{Single}{Self}{You become invisible for up to  5 rounds or until you take an action. While invisible, you gain Blink and if you hit an Attack, you always score a Critical Hit.}{\blink}{6} \ofabilitygap
 	\ofjobtech{Sticky Fingers}{6}{0r}{Single}{Self}{For the next 3 rounds, whenever you perform a successful Attack you can also use Steal on the same target without additional cost. Additionally, all items that you receive from Steal are doubled for this duration.}{}{8} \ofabilitygap
-	\ofjobtech{Mirror Image}{23}{1r}{Single}{1u}{You create an exact copy of yourself that lasts for 3 rounds or until you create a new one. It acts with you on your turn, following your command. The clone can use the same abilities as you except this one.}{}{10}
+	\ofjobtech{Mirror Image}{25}{1r}{Single}{1u}{You create an exact copy of yourself that lasts for 3 rounds or until you create a new one. It acts with you on your turn, following your command. The clone can use the same abilities as you except this one.}{}{10}
 }{
 	\ofarchetypet{Ninja}
 	{HP~+14 & MP~+11 & STR~+2}
@@ -568,7 +568,7 @@
 	They manipulate the flow of time and bend the fabric of reality to their advantage.
 }
 {Staff}{Robe}{
-	Level 1: & HP~+17 & MP~+28 & AGI~+2 & MAG~+1 \\
+	Level 1: & HP~+17 & MP~+27 & AGI~+2 & MAG~+1 \\
 	Level 2: & HP~+5  & MP~+10 & RES~+1 & STR~+1 \\
 	Level 3: & \multicolumn{3}{l}{Archetype Attribute Bonus}  \\
 	Level 4: & HP~+10  & MP~+10 & MAG~+1 &        \\ 
@@ -596,10 +596,10 @@
 }{
 	\ofarchetypet{Oracle}
 	{HP~+8 & MP~+17 & STR~+1 & RES~+1}
-	{\ofarchetypespella{Extend}{5}{0r}{Single}{5u}{The duration of all Status Effects that the target is suffering or benefiting from, is extended by 3 rounds.}{}}
+	{\ofarchetypespella{Extend}{5}{0r}{Single}{8u}{The duration of all Status Effects that the target is suffering or benefiting from, is extended by 3 rounds.}{}}
 	{\ofarchetypepassive{Read Ahead}{Right before the start of each combat, you can take one extra turn, even if the enemy has a surprise round.}}
-	{\ofarchetypereaction{Kismet}{Whenever a spell or tech that targets someone within 5u takes effect, you can choose to delay it. In this case, the battle continues as usual and the ability instead takes effect on the target after 1 round.}}
-	{\ofarchetypespellb{Quicken}{10}{0r}{Single}{5u}{The target takes an extra turn immediately before yours is finished. The round continues as usual afterwards, so you still have to pick the next combatant for your side. You can only use this ability once per round.}{}}
+	{\ofarchetypereaction{Kismet}{When a spell or tech that targets someone within 5u takes effect, you can choose to delay it. In this case, the battle continues as usual and the ability instead takes effect on the target after 1 round. This effect does not stack.}}
+	{\ofarchetypespellb{Quicken}{12}{0r}{Single}{5u}{The target takes an extra turn immediately before yours is finished. The round continues as usual afterwards, so you still have to pick the next combatant for your side. You can only use this ability once per round.}{}}
 }
 %
 %
@@ -627,7 +627,7 @@
 }{
 	\ofjobtech{Rush}{3}{0r}{Single}{1u}{Make an Attack against the target. If you hit, you push him back by 1u on top of the damage dealt.}{}{1}\ofabilitygap
 	\ofjobtech{Beatdown}{6}{0r}{Single}{1u}{Make an Attack where the target has Advantage on the evasion check. If you hit, you score a Critical Hit.}{}{2}\ofabilitygap
-	\ofjobtech{Vitality}{4}{0r}{Single}{Self}{For the next 3 rounds, when an effect restores your HP or MP, the amount is doubled. Also, when you have to make a check to resist a negative effect, its DC is reduced by 2.}{}{4}\ofabilitygap
+	\ofjobtech{Vitality}{5}{0r}{Single}{Self}{For the next 3 rounds, when an effect restores your HP or MP, the amount is doubled. Also, when you have to make a check to resist a negative effect, its DC is reduced by 2.}{}{4}\ofabilitygap
 	\ofjobtech{Army of One}{10}{0r}{3u}{Self}{Make an Attack against every enemy in the target area by making one damage roll that applies to all affected targets that fail to evade. After using the ability, you can move next to any of the affected targets.}{}{6}\ofabilitygap
 	\ofjobtech{Bravery}{10}{0r}{2u}{Self}{You and all allies within the target area gain EnSTR and EnMAG for 2 rounds.}{\enstr \enmag}{8}\ofabilitygap
 	\ofjobtech{Omnislash}{28}{0r}{Single}{1u}{Make 3 separate Attacks against the target. Each time he rolls 4 or less on an evasion check, you score a Critical Hit.}{}{10}
@@ -682,14 +682,14 @@
 	{HP~+11 & MP~+9 & MAG~+2 & STR~+1}
 	{\ofarchetypespella{Sleep}{6}{0r}{Single}{5u}{The target makes a DC 8 check and suffers Sleep for 3 rounds upon failure.}{\sleep}
 		\vspace*{0.1cm}\\ \ofarchetypespella{Silence}{6}{0r}{Single}{5u}{The target makes a DC 8 check and suffers Silence for 3 rounds upon failure.}{\silence}}
-	{\ofarchetypepassive{Ancient Wisdom}{Whenever you inflict on or more Status Effects on a target, you can also inflict DeDEF or DeRES on him for 3 rounds.}}
+	{\ofarchetypepassive{Ancient Wisdom}{When you inflict one or more Status Effects on a target, you can also inflict DeDEF or DeRES on him for 3 rounds.}}
 	{\ofarchetypereaction{Absorb MP}{When you are the target of an enemy ability, increase your MP by half the amount that the caster spent on it.}}
 	{\ofarchetypespellb{Curse}{14}{1r}{Single}{5u}{The target makes a DC~9 check and upon failure he suffers 4d damage as well as Poison and Zombie for 3 rounds.}{}}
 }{
 	\ofarchetypet{Medic}
 	{HP~+7 & MP~+13 & RES~+2 & DEF~+1}
 	{\ofarchetypespella{Protect}{4}{0r}{Single}{5u}{The target gains EnDEF for 3 rounds.}{\enndef} \vspace*{0.1cm}\\ \ofarchetypespella{Shell}{4}{0r}{Single}{5u}{The target gains EnRES for 3 rounds.}{\enres}}
-	{\ofarchetypepassive{Doctor's Code}{Whenever you use Magic on an ally within 1u, you can also immediately use an Item on him in addition.}}
+	{\ofarchetypepassive{Doctor's Code}{Whenever you use Magic on an ally within 1u, you can immediately use an Item on him in addition.}}
 	{\ofarchetypereaction{No Collateral}{Whenever you would be affected by a spell or tech that you are not the primary target of, you can choose that you and all other secondary targets are unaffected.}}
 	{\ofarchetypespellb{Full-Life}{22}{2r}{Single}{5u}{You remove the KO status from the target and fully restore his HP.}{\ko}}
 }

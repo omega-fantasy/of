@@ -87,8 +87,8 @@ Note that your character sheet provides various fields to keep track of your inv
 	Mythril~Bow & Has an additional Materia slot. \ofrow
 	Elfin Bow & Add 3 to the damage when you Attack a target that is suffering a Status Effect.\ofrow
 	Killer Bow & On Critical Hit, the target suffers KO. \ofrow
-	Crossbow & This weapon does not suffer from the same penalty as other bows, so you can move and Attack on the same turn. But its range is only 3u. \ofrow
-	Aplu & Attacks by this weapon ignore all effects that would grant the target advantage on the evasion check. \ofrow
+	Crossbow & Does not suffer from the penalty of its Type Effect, but its range is only 3u. \ofrow
+	Aplu & Attacks ignore all effects that grant the target advantage on the evasion check except its own Type Effect. \ofrow
 	Anteros & When the target of your Attack rolls a 5 or less on the evasion check, he suffers Blind for 3 rounds.\ofrow
 	\ofequipnote{Bows have 5u range. If you Attack or use a Tech including an Attack and you move on the same turn, the target has Advantage on the evasion check.\phantom{y}}
 }
@@ -160,7 +160,7 @@ Note that your character sheet provides various fields to keep track of your inv
 {
 	Mythril Staff & Has an additional Materia slot. \ofrow
 	Healing Staff & Whenever you restore HP with Magic, add 2 to the amount. \ofrow 
-	Oak Staff & After performing an Attack, you can additionally use the Defend action. \ofrow
+	Oak Staff & After performing an Attack, you can additionally use the Defend action at a cost of 4 MP. \ofrow
 	Rune Staff & When you deal magical damage to an enemy that is suffering a Status Effect, he also suffers Silence for 3 rounds. \ofrow
 	Golden Staff & When your HP falls below half of its maximum, you gain EnDEF for 3 rounds. \ofrow
 	Power Staff & Whenever you perform a successful Attack, also add your MAG to the damage dealt. \ofrow
@@ -198,10 +198,10 @@ Note that your character sheet provides various fields to keep track of your inv
 	Dragon Mail & Resilience: fire \ofrow
 	Knight's Armor & RES +1 \ofrow
 	Mirror Mail & Immunity: Silence \ofrow
-	Achilles & DEF +1 \ofrow
+	Achilles & Immunity: Slow \ofrow
 	Fullplate & Maximum HP +5 \ofrow
 	Karuta-gane & When you Dash you can move twice as far as usual. \ofrow
-	\ofequipnote{Heavy Armor provide an additional DEF+2.}
+	\ofequipnote{Heavy Armor provide an additional DEF~+2.}
 }
 %
 \vfill
@@ -221,7 +221,7 @@ Note that your character sheet provides various fields to keep track of your inv
 	Flak Jacket & Resilience gainst damage dealt by Bows and Guns. \ofrow
 	Nemean \newline Lionskin & Resilience gainst damage dealt by Swords and Daggers. \ofrow
 	Behemoth Suit & RES +1 \ofrow
-	\ofequipnote{Light Armor provide an additional DEF+1 and RES+1.\phantom{y}}
+	\ofequipnote{Light Armor provide an additional DEF~+1 and RES~+1.\phantom{y}}
 }
 %
 \vfill
@@ -229,9 +229,9 @@ Note that your character sheet provides various fields to keep track of your inv
 \oftable{p{0.3\columnwidth} p{0.62\columnwidth}}
 {\oficonarmor\accf{Robe} & \accf{Unique Effect}}
 {
-	Silk Robe &  Has an additional Materia slot. \ofrow
+	Mythril Robe &  Has an additional Materia slot. \ofrow
 	Black Robe & Immunity: Poison \ofrow
-	Coat of \newline Many Colors & DEF +1\newline \ofrow
+	Silk Robe & DEF +1\newline \ofrow
 	Cotton Robe & Resilience: wind \ofrow
 	Luminous Robe & Resilience: holy \ofrow
 	Magus Robe & RES +1 \ofrow
@@ -239,7 +239,7 @@ Note that your character sheet provides various fields to keep track of your inv
 	Necromancer Shroud & Resilience: dark\newline \ofrow
 	White Robe & Immunity: Sleep \ofrow
 	Hagoromo & Immunity to all Field effects. \ofrow
-	\ofequipnote{Robes provide an additional RES+2.}	
+	\ofequipnote{Robes provide an additional RES~+2.}	
 }
 %
 \clearpage
@@ -336,8 +336,8 @@ Note that your character sheet provides various fields to keep track of your inv
 	Magicite Shard & 1000G & Roll 1d, based on the result use the following Esper Call: \newline 1-Ifrit, 2-Shiva, 3-Ramuh, 4-Odin, 5-Phoenix, 6-Bahamut.\ofrow
 	Esper Magicite & 1250G & This Item is for one Esper (e.g. Ifrit Magicite). When used it activates its Call ability. \ofrow
 	Elixir & 1250G & The targets fully regains HP and MP. \ofrow
-	Gold Hourglass & 1500G & Time freezes for everyone except yourself within 5u for 10 seconds (1 round). \ofrow
-	Mega-Elixir & 1500G & Everyone within 1u fully regains their HP and MP.\ofrow
+	Gold Hourglass & 1500G & Everyone within 5u except yourself suffers Sleep for 1 round. \ofrow
+	Mega-Elixir & 1750G & Everyone within 1u fully regains their HP and MP.\ofrow
 	Mega-Phoenix & 2000G & Removes KO from everyone within 3u and fully restores their HP and MP.	
 }
 %
@@ -401,7 +401,7 @@ Note that your character sheet provides various fields to keep track of your inv
 	Alert Materia & 1500G & Allows you to evade Attacks while concentrating.\ofrow
 	Moogle Materia & 1500G & The weapon or armor glows whenever there is a monster within 25u. \ofrow
 	Nightvision Materia & 1500G & You can perfectly see in the dark. \ofrow
-	Sense Materia & 1750G & You can see the remaining HP of all enemies within 3u. \ofrow
+	Sense Materia & 1750G & You can see the remaining HP of all enemies within 1u. \ofrow
 	Berserk Materia & 1750G &  When your HP is below half of its maximum, add 3 to the damage dealt by Attacks.\ofrow
 	Item Materia & 2000G & The range in which you can use Items is increased by 1u.\ofrow
 	Tough Materia & 2000G & Whenever you make a check to withstand a status effect, the DC is reduced by 1.\ofrow
@@ -411,7 +411,7 @@ Note that your character sheet provides various fields to keep track of your inv
 	Float Materia & 2250G & You are unaffected by Fields. \ofrow
 	X-Ray Materia & 2500G & You can see through up 1u thick walls when standing next to them.\ofrow
 	Climb Materia & 2500G & Allows you to walk on vertical walls the same as you can on horizontal ground.\ofrow
-	Lure Materia & 2500G &  Each monster within 3u will choose you as target whenever possible. Some enemies may be immune to this effect as decided by the GM.\ofrow
+	Lure Materia & 2500G &  Each monster within 2u will choose you as target whenever possible. Some enemies may be immune to this effect as decided by the GM.\ofrow
 	Upgrade Materia & 2500G & When you slot this materia into a weapon or armor, it is immediately upgraded to the next equipment rank. This item is destroyed in the process. \ofrow
 	Counter Materia & 2500G & Whenever you roll a 10 or higher on an evasion check, you can immediately make an Attack against the attacker.\ofrow
 	Drain Materia & 2750G & On every successful Attack, your HP is increased by 3. \ofrow

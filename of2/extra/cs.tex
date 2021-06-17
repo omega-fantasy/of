@@ -1,9 +1,6 @@
 \documentclass[a4paper, titlepage, 11pt, twocolumn] {article}
 \usepackage{../of2}
-
 \graphicspath{..}
-
-
 
 \begin{document}
 
@@ -17,7 +14,7 @@
 	%
 	hpcur=\ofcstextfield{hpcur}{0.29}{align=2},
 	hpmax={\ofcstextfield{hpmax}{0.335}{}\vspace*{-0.1cm}}, 
-	mpcur=\ofcstextfield{mpcur}{0.29}{}, 
+	mpcur=\ofcstextfield{mpcur}{0.29}{align=2}, 
 	mpmax={\ofcstextfield{mpmax}{0.335}{}\vspace*{-0.1cm}}, 
 	agi={\ofcstextfield{agi}{0.49}{}},
 	movement={\ofcstextfield{movement}{0.49}{}\vspace*{-0.1cm}},
@@ -30,8 +27,8 @@
 	% 
 	job={\ofcstextfield{job}{0.37}{}}, 
 	archetype=\ofcstextfield{archetype}{0.3}{}\vspace*{-0.15cm},
-	specials=\ofcstextfield{specials}{0.6}{}\vspace*{-0.15cm},
-	abilities=\ofcstextfield{abilities}{1}{, height=2.2cm},
+	specials=\ofcstextfield{specials}{1}{}\vspace*{-0.15cm},
+	abilities=\ofcstextfield{abilities}{1}{, height=2cm},
 	%
 	limitbreak=\ofcstextfield{limitbreak}{0.785}{}\vspace*{-0.45cm},
 	limitmode=\ofcstextfield{limitmode}{0.77}{},
@@ -40,9 +37,9 @@
 	limittarget=\ofcstextfield{limittarget}{0.4}{},
 	limitdesc=\ofcstextfield{limitdesc}{1}{, height=2cm},
 	%
-	summon=\ofcstextfield{summon}{0.85}{}\vspace*{-0.25cm},
-	summonsupport={\ofcstextfield{summonsupport}{0.83}{}}\vspace*{-0.05cm},
-	summonability=\ofcstextfield{summonability}{1}{, height=2.1cm},
+	summon=\ofcstextfield{summon}{0.85}{},
+	summonsupport={\ofcstextfield{summonsupport}{0.83}{}}\vspace*{0.3cm},
+	summonability=\ofcstextfield{summonability}{1}{, height=1.8cm},
 	%
 	weaponbox=\ofcsweaponboxfillable,
 	armorbox=\ofcsarmorboxfillable,
@@ -64,3 +61,5 @@
 }
 \end{Form}
 \end{document}
+%
+\clearpage

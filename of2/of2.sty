@@ -2,7 +2,6 @@
 \usepackage[babel,style=english]{csquotes}
 \usepackage{graphicx}
 \usepackage[pass]{geometry}
-\usepackage[rgb, hyperref]{xcolor}
 \usepackage{hyperref}
 \usepackage{tabularx}
 \usepackage{sectsty}
@@ -12,42 +11,28 @@
 \usepackage{options}
 \usepackage{fancyhdr}
 \usepackage[tocindentauto, tocgraduated]{tocstyle}
-\usetocstyle{classic}
+\usetocstyle{standard}
 \usepackage{tikz}
 \usepackage{fp}
-\usetikzlibrary{calc}
-\usetikzlibrary{patterns}
-\usetikzlibrary{shapes.geometric}
-\usetikzlibrary{shapes.misc, positioning, arrows}
-\usetikzlibrary{arrows}
-\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc, patterns, shapes.geometric, shapes.misc, positioning, arrows, arrows.meta}
 \usepackage{tcolorbox}[all]
-\usepackage{array}
+%\usepackage{array}
 \usepackage{eso-pic}
 \tcbuselibrary{skins}
 
 \addto\captionsenglish{% Replace "english" with the language you use
 	\renewcommand{\contentsname}%
-	{\hfill \accf{Table of Contents} \hfill}%
+%	{\hfill \accf{Table of Contents} \hfill}%
 }
 
-%\setlength\belowcaptionskip{0cm}
-%\setlength\abovecaptionskip{0cm}
-%\setlength\floatsep{0cm}
-%\setlength\textfloatsep{0cm}
-%\setlength\intextsep{0.2cm}
-%\setlength\dbltextfloatsep{0cm}
-%\setlength\dblfloatsep{0cm}
 \setlength\parindent{0cm}
-%\setlength\parskip{0cm}
-%\setlength\columnsep{0cm}
-
 %\special{dvipdfmx:config z 0} % turns compression off
 \special{dvipdfmx:config C 0x20} % saves some KB
 
 \setsansfont[Ligatures=TeX]{Carlito}
 
 \definecolor{accent}{rgb}{0.17,0.17,0.57} % 44 44 145
+\definecolor{accentlight}{rgb}{0.45,0.45,0.90} % 44 44 145
 \definecolor{accentred}{rgb}{0.57,0.17,0.17} % 145 44 44
 \definecolor{accentgreen}{rgb}{0.08,0.5,0.08} % 44 145 44
 \colorlet{gr}{white!35!black}
@@ -106,8 +91,7 @@
 \newcount\vbadness
 \newdimen\hfuzz
 
-\hypersetup{colorlinks,linkcolor={blue!80!black},citecolor={blue!80!black},urlcolor={blue!80!black}}
-
+\hypersetup{colorlinks,linkcolor=accent,citecolor={blue!80!black},urlcolor={blue!80!black}}
 
 \newcommand{\iconelem}[2]{\hspace*{0.15cm}\textcolor{#1}{\textbf{#2}}\hspace*{0.15cm}}
 \newcommand{\fire}{\iconelem{red}{F}}
@@ -152,26 +136,22 @@
 
 \newcommand{\oftalent}[2]{\accf{#1:} #2}
 
-\newcommand{\ofsummon}[5]
+
+\newcommand{\ofsummon}[4]
 {
-	\begin{minipage}{\columnwidth}
-	\setlength\columnsep{0.2cm}
-	\hspace*{0.5cm}\textbf{\large\color{accent}#1}\vspace*{-0.3cm}\\
-	\begin{multicols}{2}
-		\includegraphics[width=\columnwidth]{#2}
-		\vspace*{-2cm}\\
-		\columnbreak\vspace*{-1.6cm}\\
-		\accf{Support:} #3\\\\
+	\begin{minipage}[t]{0.4\linewidth}
+		\textbf{\large\color{accent}#1}\ofrow
+		\includegraphics[width=0.85\columnwidth]{#2}\hfill
+		\vfill
+	\end{minipage}
+	\begin{minipage}[t]{0.58\linewidth}
+		\accf{Support:} #3\ofrow
 		\accf{Call:} #4
-%		\accf{Junction (Level 10):}\\#5
-	\end{multicols}	
-	\vspace*{-0.6cm}
-	\defaultgeometry
+		\vspace*{\fill}\\
 	\end{minipage}
 }
 
 \newcommand{\ofrow}{\vspace*{0.125cm}\\}
-\newcommand{\ofbigrow}{\vspace*{0.4cm}\\}
 \newcommand{\ofgap}{\vspace*{0.25cm}\\}
 \newcommand{\ofpar}{\vspace*{0.25cm}\\\\}
 
@@ -202,23 +182,6 @@
 	\end{tabularx}
 	]
 }
-
-\newcommand{\ofmonster}[6]
-{
-		\begin{tabularx}{\columnwidth}{@{\hspace{-0.025cm}} p{0.6\columnwidth} p{0.32\columnwidth}}
-			\accf{#1 \hfill Level #2} \vspace*{0.1cm}\newline
-			{
-				\begin{tabularx}{.6\columnwidth}{@{\hspace{-0.001cm}}p{0.7cm} p{0.7cm} @{\hspace{1.75cm}} p{0.7cm} p{0.7cm}} 
-					#4
-				\end{tabularx}
-			}
-			& \hfill\raisebox{-0.85\height}{#3}\hfill
-		\end{tabularx}
-		#5\hspace*{-0.15cm}\vspace*{-0.5cm}\\
-		#6
-}
-
-
 
 \newcommand{\ofspecial}[4] {
 	\noindent
@@ -341,7 +304,7 @@
 	/cs/limitrange/.new value = \phantom{3u},
 	/cs/limittarget/.new value = \phantom{Sgl.},
 	/cs/summon/.new value,
-	/cs/summonsupport/.new value = \\,
+	/cs/summonsupport/.new value = \\\\,
 	/cs/summonability/.new value,
 	/cs/summonused/.new value,
 	/cs/abilities/.new value,
@@ -382,7 +345,7 @@
 	}
 }
 \newcommand{\ofcslimitbar}[0]{\ofcslimitbarbase{white}}
-\newcommand{\ofcslimitbarfilled}[0]{\ofcslimitbarbase{accent}}
+\newcommand{\ofcslimitbarfilled}[0]{\ofcslimitbarbase{accentlight}}
 
 \newcommand{\ofcsequipclassboxes}[7]{
 	\raisebox{-.25cm}{%
@@ -400,10 +363,10 @@
 }
 \newcommand{\ofcsweaponboxregular}[0]{\ofcsequipclassboxes{Rank DMG}{1d}{2d}{3d}{white}{white}{white}}
 \newcommand{\ofcsarmorboxregular}[0]{\ofcsequipclassboxes{Rank DEF \& RES}{+0}{+1}{+2}{white}{white}{white}}
-\newcommand{\ofcsweaponboxexpert}[0]{\ofcsequipclassboxes{Rank DMG}{1d}{2d}{3d}{white}{white}{accent}}
-\newcommand{\ofcsarmorboxexpert}[0]{\ofcsequipclassboxes{Rank DEF \& RES}{+0}{+1}{+2}{white}{white}{accent}}
-\newcommand{\ofcsweaponboxbeginner}[0]{\ofcsequipclassboxes{Rank DMG}{1d}{2d}{3d}{accent}{white}{white}}
-\newcommand{\ofcsarmorboxbeginner}[0]{\ofcsequipclassboxes{Rank DEF \& RES}{+0}{+1}{+2}{accent}{white}{white}}
+\newcommand{\ofcsweaponboxexpert}[0]{\ofcsequipclassboxes{Rank DMG}{1d}{2d}{3d}{white}{white}{accentlight}}
+\newcommand{\ofcsarmorboxexpert}[0]{\ofcsequipclassboxes{Rank DEF \& RES}{+0}{+1}{+2}{white}{white}{accentlight}}
+\newcommand{\ofcsweaponboxbeginner}[0]{\ofcsequipclassboxes{Rank DMG}{1d}{2d}{3d}{accentlight}{white}{white}}
+\newcommand{\ofcsarmorboxbeginner}[0]{\ofcsequipclassboxes{Rank DEF \& RES}{+0}{+1}{+2}{accentlight}{white}{white}}
 
 \newcommand{\ofcssubtext}[2]{%
 	\raisebox{-.1cm}{%
@@ -430,14 +393,6 @@
 
 \newcommand{\ofcs}[1]{	
 	{
-	\AddToShipoutPictureBG*{%
-		\begin{tikzpicture}[overlay,remember picture]
-		\draw[color=accent, line width=2pt]($ (current page.north west) + (0.035cm,-0.035cm) $)rectangle($ (current page.south east) + (-0.035cm,0.035cm) $);
-		%\draw[color=accent, line width=3pt]($ (current page.north west) + (0.053cm,-0.053cm) $)rectangle($ (current page.south east) + (-0.053cm,0.053cm) $);
-		%\draw[color=accent, line width=1.5pt]($ (current page.north west) + (0.25cm,-0.25cm) $)rectangle($ (current page.south east) + (-0.25cm,0.25cm) $);
-		\end{tikzpicture}
-	}
-	%
 	\newgeometry{bottom=0mm,top=4mm,right=3mm,left=3mm, columnsep=0mm}
 	\thispagestyle{empty}
 	\options{/cs,#1}
@@ -451,10 +406,15 @@
 			\ofcssubtext{Talents:}{Level 2}\option{/cs/talent} 
 		\end{tcolorbox}
 		\columnbreak
-		\ofcsbox{6}{\begin{center} \hspace*{-0.4cm}\includegraphics[width=0.55\columnwidth]{./art/charactersheets/ff9cs.jpg} \end{center}}
+		\ofcsbox{6}{
+			\begin{center} 
+				\vspace*{-0.15cm}{\Large\accf{Omega Fantasy II}}\vspace*{0.2cm}\\
+				\hspace*{-0.4cm}\includegraphics[width=0.45\columnwidth]{./art/charactersheets/ff9cs.jpg}\vspace*{0.2cm}\\
+				{\Large\accf{Character Sheet}}
+			\end{center}}
 		\columnbreak
 		\begin{tcolorbox}[enhanced, width=\columnwidth, boxrule=0.00cm, height=6cm, sharp corners, colback=white, before skip=0cm, after skip=0pt, left=-0.7cm,top=0pt,right=0mm,bottom=0pt, colframe=white]
-		\accf{Story:}\\\option{/cs/story}
+		\hspace*{\fill}\accf{Story:}\hspace*{\fill}\\\option{/cs/story}
 		\end{tcolorbox}
 	\end{multicols}
 	\setlength{\columnsep}{1.2cm}
@@ -490,12 +450,12 @@
 		%
 		\columnbreak
 		%
-		\ofcsbox{4.5}{
+		\begin{tcolorbox}[text fill, width=\columnwidth, boxrule=0.00cm, height=4.5cm, sharp corners, colback=white, before skip=0cm, after skip=0pt, left=0mm,top=0pt,right=0mm,bottom=0pt, colframe=white]
 			\ofcssubtext{Job:\phantom{y}}{Level 1}\option{/cs/job}\hfill
 			\ofcssubtext{Archetype:}{Level 3}\option{/cs/archetype}\vspace*{0.5cm}\\
-			\oficonpassive \hspace*{-0.3cm} \oficonreaction Special Abilities: \option{/cs/specials}\vspace*{0.6cm}\\
-			\oficonmagic Spells \hspace*{0.025cm} and \oficontech Techs:\ofrow \option{/cs/abilities}
-		}
+			\oficonmagic Magic \hspace*{0.02cm} \& \oficontech Techs:\ofrow \option{/cs/abilities} \vspace*{\fill}\\
+			\oficonpassive Passives \hspace*{0.02cm} \& \oficonreaction Reactions:\ofrow \option{/cs/specials}\vspace*{-0.4cm}
+		\end{tcolorbox}
 	\end{multicols}
 	%
 	{\vspace*{-0.4cm}\ofcsrulea}\vspace*{\option{/cs/blockraise}}\\
@@ -535,7 +495,7 @@
 		\columnbreak
 		\ofcsbox{3.8}{
 			\ofcssubtext{Espers:}{Level 5}\option{/cs/summon}\ofgap
-			Support:\\ \option{/cs/summonsupport}\\
+			Support: \option{/cs/summonsupport}\\
 			Call:\\ \option{/cs/summonability}
 		}
 	\end{multicols}
@@ -567,19 +527,19 @@
 		\parbox{1\columnwidth}{
 			\footnotesize	
 			\acc{Status Effects Summary:}\ofrow
-			\ofmbox{\kosmall\accr{KO:}} You are unconscious and your turns are skipped.\ofrow
-			\ofmbox{\blindsmall\accr{Blind:}} On Attack, enemy has Advantage on the evasion check. \ofrow
-			\ofmbox{\poisonsmall\accr{Poison:}} Suffer damage equal to 10\% max HP at start of each turn.\ofrow
-			\ofmbox{\slowsmall\accr{Slow:}} During your turn, you can move or take an action but not both.\ofrow
-			\ofmbox{\sleepsmall\accr{Sleep:}} You can't move or take actions. Removed when you take damage.\ofrow
-			\ofmbox{\zombiesmall\accr{Zombie:}} All healing effects are reversed for you.\ofrow
-			\ofmbox{\silencesmall\accr{Silence:}} You cannot begin casting Magic or using Techs.\ofrow
-			\ofmbox{\immobilesmall\accr{Immobile:}} You are unable to move. \ofrow
-			\ofmbox{\destrsmall\hspace*{-0.05cm}\dedefsmall\hspace*{-0.05cm}\demagsmall\hspace*{-0.05cm}\deressmall\accr{DeATR:}} According attribute is reduced by 1 + half your Level. \ofrow
-			\ofmbox{\blinksmall\accg{Blink:}} You have advantage on evasion checks. \ofrow
+			\ofmbox{\blinksmall\accg{Blink:}} You have Advantage on all evasion checks. \ofrow
+			\ofmbox{\enstrsmall\hspace*{-0.05cm}\enndefsmall\hspace*{-0.05cm}\enmagsmall\hspace*{-0.05cm}\enressmall\accg{EnATR:}} According attribute is increased by 1 + half your Level. \ofrow
 			\ofmbox{\hastesmall\accg{Haste:}} During your turn, make an extra movement or action. \ofrow
-			\ofmbox{\regensmall\accg{Regen:}} Regain 10\% of your maximum HP at the start of each turn.\ofrow
-			\ofmbox{\enstrsmall\hspace*{-0.05cm}\enndefsmall\hspace*{-0.05cm}\enmagsmall\hspace*{-0.05cm}\enressmall\accg{EnATR:}} According attribute is increased by 1 + half your Level.
+			\ofmbox{\regensmall\accg{Regen:}} You regain 10\% of your max. HP at start of each turn.\ofrow
+			\ofmbox{\blindsmall\accr{Blind:}} On Attack, enemy has Advantage on the evasion check. \ofrow
+			\ofmbox{\destrsmall\hspace*{-0.05cm}\dedefsmall\hspace*{-0.05cm}\demagsmall\hspace*{-0.05cm}\deressmall\accr{DeATR:}} According attribute is reduced by 1 + half your Level. \ofrow
+			\ofmbox{\immobilesmall\accr{Immobile:}} You are unable to move. \ofrow			
+			\ofmbox{\kosmall\accr{KO:}} You are unconscious and your turns are skipped.\ofrow
+			\ofmbox{\poisonsmall\accr{Poison:}} You suffer damage equal to 10\% max. HP at start of each turn.\ofrow
+			\ofmbox{\sleepsmall\accr{Sleep:}} You can't move or take actions. Removed when you take damage.\ofrow
+			\ofmbox{\silencesmall\accr{Silence:}} You cannot begin casting Magic or using Techs.\ofrow
+			\ofmbox{\slowsmall\accr{Slow:}} During your turn, you can move or take an action but not both.\ofrow
+			\ofmbox{\zombiesmall\accr{Zombie:}} All healing effects are reversed for you.
 		}
 	\end{multicols}
 	}
@@ -592,6 +552,20 @@
 
 %%%%%%%%%%%%%%%% MONSTERS %%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\ofmonster}[6]
+{
+	\begin{tabularx}{\columnwidth}{@{\hspace{-0.025cm}} p{0.6\columnwidth} p{0.32\columnwidth}}
+		\accf{#1 \hfill Level #2} \vspace*{0.1cm}\newline
+		{
+			\begin{tabularx}{.6\columnwidth}{@{\hspace{-0.001cm}}p{0.7cm} p{0.7cm} @{\hspace{1.75cm}} p{0.7cm} p{0.7cm}} 
+				#4
+			\end{tabularx}
+		}
+		& \hfill\raisebox{-0.85\height}{#3}\hfill
+	\end{tabularx}
+	#5\hspace*{-0.15cm}\vspace*{-0.5cm}\\
+	#6
+}
 
 \newcommand{\ofmonsterability}[8]{
 	\vskip0.1cm
@@ -706,8 +680,6 @@
 	\hspace*{-\ofactionicondist cm}
 }
 
-
-
 \newcommand{\oficonattackbase}[1]{\ofactionicon{#1}{accent}{
 	\draw[icon, -](-0.05, -0.05) -- (-0.16, -0.16);
 	\draw[icon, -](-0.025, -0.025) -- (0.1, 0.1);
@@ -722,7 +694,6 @@
 }}
 \newcommand{\oficonsmallmagic}{\oficonmagicbase{0.6}}
 \newcommand{\oficonmagic}{\oficonmagicbase{0.9}}
-
 
 \newcommand{\oficontechbase}[1]{\ofactionicon{#1}{accent}{
 	\node[icon, star, star points=8, star point ratio=0.8, rotate=0, minimum size = #1*0.26cm, inner sep=0pt](l0)at (0, 0) {};

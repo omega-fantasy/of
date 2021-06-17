@@ -1,44 +1,24 @@
-\documentclass[a4paper, titlepage, 11pt, twocolumn] {article}
+\documentclass[a4paper, titlepage, 11pt, twocolumn]{article}
 \usepackage{of2}
 %
 \begin{document}
 {
-\newgeometry{bottom=15mm,top=20mm,right=19mm,left=19mm}
-\hypersetup{linkcolor=accent,citecolor={black},urlcolor={black}}
+\newgeometry{bottom=2mm,top=0mm,right=25mm,left=25mm}
 \begin{titlepage}	
-	{\Large \accf{BETA VERSION}}\\
 	\begin{center}
-	\includegraphics[width=\columnwidth]{./art/images/title.jpg}
+	\includegraphics[width=0.92\columnwidth]{./art/images/title.jpg}
+	\vspace*{-0.8cm}\\
+	\parbox{0.9\columnwidth}{\tableofcontents}
 	\vspace*{\fill}\\
-	\small
-	\accf{Credits:} Edgar Edgelord, JimMorrigan, OmegaWeapon, Erik Radspinner, StorytellerZeke, Kori,
-	Wally Zielinski, Chris Giannoukos, Joshua Davis, Bruno Carvalho, Juan Altamirano, TastyRedTomato, Netzacoatl, Eldi13, Red7394, TaintedBalance, GM\_3826, The\_Fencer0, Kaiten619 and
-	all users of our \href{https://discordapp.com/invite/F5fpxMs}{\accf{Discord Server}}
-	 \vspace*{0.75cm}\\
+	\tiny
 	Final Fantasy, its themes, art, and other affiliated content are owned by Square Enix Co., Ltd. 
 	Omega Fantasy is a fan project under the \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{\accf{Creative Commons License (CC BY-NC-SA 4.0)}} 2021. 
 	It will submit itself to any demands from the original IP owner, Square Enix Co., Ltd. As a fan project it will never charge for anything, or make commercial interactions.
+	\accf{Credits:} Edgar Edgelord, JimMorrigan, Bruno Carvalho, Erik Radspinner, OmegaWeapon, StorytellerZeke, Kori,
+	Wally Zielinski, Chris Giannoukos, Joshua Davis, Juan Altamirano, TastyRedTomato, Netzacoatl, Eldi13, Red7394, TaintedBalance, GM\_3826, The\_Fencer0, Kaiten619 and all users of our \href{https://discordapp.com/invite/F5fpxMs}{\accf{Discord Server}}
 	\end{center}
 \end{titlepage}
 %
-}
-%
-%
-\newgeometry{bottom=10mm,top=12mm,right=23mm,left=23mm}
-\clearpage
-\thispagestyle{empty}
-\addtocounter{page}{-1}
-%
-{
-	\Large
-	\hypersetup{linkcolor=accent,citecolor={black},urlcolor={black}}
-	\onecolumn
-	\clearpage
-	\begin{center}
-	\tableofcontents
-	\vspace*{\fill}
-	\includegraphics[width=0.9\columnwidth]{./art/images/tacticsog.jpg}
-	\end{center}
 }
 %
 \clearpage
@@ -56,15 +36,14 @@
 \input{./gm/bestiary}
 \input{./gm/chaosincornelia}
 \input{./gm/tombofraithwall}
-\input{./gm/goldsaucer}
 \input{./gm/mariaanddraco}
 \input{./gm/siegeofdollet}
+\input{./gm/goldsaucer}
 \input{./gm/worldbook}
 \input{./gm/optrules}
 \input{./gm/races}
 \input{./gm/chocobo}
 \input{./gm/tripletriad}
 \input{./gm/blitz}
-\input{./gm/filledcharactersheets}
 %
 \end{document}

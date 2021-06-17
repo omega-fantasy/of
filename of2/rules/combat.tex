@@ -23,17 +23,19 @@ Whenever a calculation results in a non-integer value, the result is always roun
 \ofgap
 %
 \ofmbox{\oficonhp\accf{Hit Points (HP)}} increase your durability. You have a maximum and a current number of HP, if your current HP falls to 0 you fall unconscious. \ofrow
-\ofmbox{\oficonmp\accf{Mana Points (MP)}} are the resource required for using abilities such as Magic and Techs. Similar to HP, you have a maximum and a current number of MP. \ofrow
-\ofmbox{\oficonstr\accf{Strength (STR)}} increases the damage dealt by your physical attacks. \ofrow
-\ofmbox{\oficondef\accf{Defense (DEF)}} increases your resilience against physical damage. \ofrow
-\ofmbox{\oficonmag\accf{Magic (MAG)}} increases the potency of your healing and attacking spells. \ofrow
-\ofmbox{\oficonres\accf{Resistance (RES)}} increases your resilience against magical damage. \ofrow
+\ofmbox{\oficonmp\accf{Mana Points (MP)}} are the resource required for using abilities. Similar to HP, you have a maximum and a current number of MP. \ofrow
+\ofmbox{\oficonstr\accf{Strength (STR)}} increases the damage dealt by your physical attacks and abilities. \ofrow
+\ofmbox{\oficondef\accf{Defense (DEF)}} increases your resilience against physical damage that you suffer. \ofrow
+\ofmbox{\oficonmag\accf{Magic (MAG)}} increases the damage dealt and healing done by your magical abilities. \ofrow
+\ofmbox{\oficonres\accf{Resistance (RES)}} increases your resilience against magical damage that you suffer. \ofrow
 \ofmbox{\oficonagi\accf{Agility (AGI)}} allows you to evade physical attacks and determines how quickly you can move.
 %
 \newpage
 %
 During your turn you can, in any order, move a distance of your AGI+1 units and take an action.
-Below is a list of \accf{combat actions}, but the GM may allow any other action that can be completed in a similar amount of time:\ofgap
+Below is a list of \accf{combat actions}, but the GM may allow any other action that can be completed in a similar amount of time:
+%
+\vfill
 %
 \ofmbox{\oficonattack\accf{Attack:}}
 You attack an enemy with your weapon. 
@@ -43,14 +45,14 @@ If the evader rolls a 2, you make a \accf{critical hit}, doubling your usual dam
 If he rolls a 12, not only does your Attack miss, but the evader makes an Attack action on you instead, which you cannot evade.\ofgap
 %
 \ofmbox{\oficonmagic\accf{Magic:}}
-You cast a spell by spending MP, choosing a target within its range and concentrating for a duration.
+You use a magical ability by spending MP, choosing a target within its range and concentrating for a duration.
 While concentrating, you cannot take actions or evade. 
 After the cast time is up, the spell's effect occurs on the target right \accf{before your turn} and cannot be evaded even if you are not in range anymore.
 If the spell deals damage or restores HP, add your MAG to the amount.
 Every spell's description has information on its cast time, MP cost, target, range and effect.\ofgap
 %
 \ofmbox{\oficontech\accf{Tech:}}
-You use a non-magical ability. 
+You use a physical ability. 
 Techs are used the same way as magic, but their damage and healing is amplified by your STR instead of your MAG, 
 except if their use already includes this bonus in another way, for example by involving an Attack.\ofgap
 %
@@ -60,9 +62,11 @@ except if their use already includes this bonus in another way, for example by i
 %
 \ofmbox{\oficonreequip\accf{Re-Equip:}} Swap a Materia or Equipment piece that you are wearing against one from your Inventory.\ofgap
 %
-\ofmbox{\oficondash\accf{Dash:}} Move to a location up to AGI +1 units away.\\\\
+\ofmbox{\oficondash\accf{Dash:}} Move to a location up to AGI+1 units away.
 %
-Apart from Magic and Techs, characters can also learn the following \accf{special abilities}: \ofrow
+\vfill
+%
+Combatants can also learn two kinds of innate traits:\vspace*{0.2cm}\\
 \ofmbox{\oficonpassive\accf{Passive:}} Effects that are permanently active. \ofgap
 \ofmbox{\oficonreaction\accf{Reaction:}} Allow you to take certain actions on someone else's turn under specific conditions.
 %
@@ -162,7 +166,7 @@ All Field effects are listed below.
 %
 \newpage
 %
-\accf{Status Effects} alter your the combat potency for a limited duration.
+\accf{Status Effects} alter your combat potency for a limited duration.
 Combatants can suffer multiple different Status Effects at once, but applying the same one twice only refreshes its duration. 
 They can also be \accf{Immune} to certain Status Effects, in which case they are not affected by them.
 Also, if a combatant suffers two opposite Status Effects, for example Poison and Regen, they negate each other and are both removed.
@@ -170,34 +174,36 @@ Below is a list of all Status Effects.
 %
 \vfill
 %
-\ofmbox{\oficonko\accrf{KO:}}
-You are unconscious and your turns are skipped.
-You suffer KO when your current HP drops to 0 and your HP cannot be increased until this status is removed.  
-Immunity against KO only makes you immune against effects that cause it when above 0 HP.\ofgap
+\ofmbox{\oficonblink\accgf{Blink:}} Whenever you are targeted by an Attack, you have Advantage on the evasion check. \ofgap
+%
+\ofmbox{\oficonenstr\hspace*{-0.1cm}\oficonendef\hspace*{-0.1cm}\oficonenmag\hspace*{-0.1cm}\oficonenres\accgf{EnATR}} The according attribute is increased by by 1 plus half your current Level. For example, EnMAG increases your MAG by 2 at Level 3. \ofgap
+%
+\ofmbox{\oficonhaste\accgf{Haste:}} During your turn, you can either make an additional action or movement. \ofgap
+%
+\ofmbox{\oficonregen\accgf{Regen:}} You regain HP equal to 10\% of your maximum HP at the start of each of your turns.
+%
+\vfill
 %
 \ofmbox{\oficonblind\accrf{Blind:}} Whenever you Attack an enemy, he has Advantage on the evasion check. \ofgap
 %
-\ofmbox{\oficondestr\hspace*{-0.1cm}\oficondedef\hspace*{-0.1cm}\oficondemag\hspace*{-0.1cm}\oficonderes\accrf{DeATR:}} The according attribute is reduced by 1 plus half your current Level to a minimum 0. For example, DeSTR reduces your STR by 4 when you are Level 7.  \ofgap
+\ofmbox{\oficondestr\hspace*{-0.1cm}\oficondedef\hspace*{-0.1cm}\oficondemag\hspace*{-0.1cm}\oficonderes\accrf{DeATR:}} The according attribute is reduced by 1 plus half your current Level to a minimum 0. For example, DeSTR reduces your STR by 4 at Level 7.  \ofgap
 %
 \ofmbox{\oficonimmobile\accrf{Immobile:}} You are unable to move.\ofgap
 %
+\ofmbox{\oficonko\accrf{KO:}}
+You are unconscious and your turns are skipped.
+You suffer KO when your current HP drops to 0 and your HP cannot be increased until this status is removed.  
+Immunity against KO only applies when above 0 HP.\ofgap
+%
 \ofmbox{\oficonpoison\accrf{Poison:}} You take damage equal to 10\% of your maximum HP at the start of each of your turns, but cannot fall below 1 HP due to this effect.\ofgap
+%
+\ofmbox{\oficonsleep\accrf{Sleep:}} You cannot move or take any action. This status is removed when you take any damage.\ofgap
 %
 \ofmbox{\oficonsilence\accrf{Silence:}} You cannot begin casting Magic or using Techs, but you can still Attack.\ofgap
 %
 \ofmbox{\oficonslow\accrf{Slow:}} During your turn, you can either move or take an action but not both.\ofgap
 %
-\ofmbox{\oficonsleep\accrf{Sleep:}} You cannot move or take any action. This status is removed when you take any damage.\ofgap
-%
-\ofmbox{\oficonzombie\accrf{Zombie:}} All healing effects are reversed for you. Healing reduces your HP and effects that normally remove KO, inflict it to you instead.\ofgap
-%	
-\ofmbox{\oficonblink\accgf{Blink:}} Whenever you are targeted by an Attack, you have Advantage on the evasion check. \ofgap
-%
-\ofmbox{\oficonenstr\hspace*{-0.1cm}\oficonendef\hspace*{-0.1cm}\oficonenmag\hspace*{-0.1cm}\oficonenres\accgf{EnATR}} The according attribute is increased by by 1 plus half your current Level. For example, EnMAG increases your MAG by 2 when you are Level 3. \ofgap
-%
-\ofmbox{\oficonhaste\accgf{Haste:}} During your turn, you can either make an additional action or movement. \ofgap
-%
-\ofmbox{\oficonregen\accgf{Regen:}} You regain HP equal to 10\% of your maximum HP at the start of each of your turns.
+\ofmbox{\oficonzombie\accrf{Zombie:}} All healing effects are reversed for you. Healing reduces your HP and effects that normally remove KO, inflict it to you instead.
 %
 \vfill
 %
