@@ -1,0 +1,65 @@
+\documentclass[a4paper, titlepage, 11pt, twocolumn] {article}
+\usepackage{../of2}
+\graphicspath{..}
+
+\begin{document}
+
+\begin{Form}
+\ofcs{
+	name=\ofcstextfield{name}{0.8}{}\vspace*{-0.1cm},
+	level=\ofcstextfield{level}{0.82}{},
+	description={\ofcstextfield{desc}{0.96}{, height=4cm}\vfill},
+	talent=\ofcstextfield{talent}{0.785}{},
+	story={\ofcstextfield{story}{1}{, height=5.7cm}},
+	%
+	hpcur=\ofcstextfield{hpcur}{0.29}{align=2},
+	hpmax={\ofcstextfield{hpmax}{0.335}{}\vspace*{-0.1cm}}, 
+	mpcur=\ofcstextfield{mpcur}{0.29}{align=2}, 
+	mpmax={\ofcstextfield{mpmax}{0.335}{}\vspace*{-0.1cm}}, 
+	agi={\ofcstextfield{agi}{0.49}{}},
+	movement={\ofcstextfield{movement}{0.49}{}\vspace*{-0.1cm}},
+	evasiondc={\ofcstextfield{evasiondc}{0.49}{}\vspace*{-0.2cm}},
+	str={\ofcstextfield{str}{0.49}{}\vspace*{-0.1cm}}, 
+	def={\ofcstextfield{def}{0.49}{}\vspace*{-0.1cm}},
+	mag={\ofcstextfield{mag}{0.49}{}\vspace*{-0.1cm}}, 
+	res={\ofcstextfield{res}{0.49}{}\vspace*{-0.2cm}}, 
+	status={\ofcstextfield{status}{0.76}{}},
+	% 
+	job={\ofcstextfield{job}{0.37}{}}, 
+	archetype=\ofcstextfield{archetype}{0.3}{}\vspace*{-0.15cm},
+	specials=\ofcstextfield{specials}{1}{}\vspace*{-0.15cm},
+	abilities=\ofcstextfield{abilities}{1}{, height=2cm},
+	%
+	limitbreak=\ofcstextfield{limitbreak}{0.785}{}\vspace*{-0.45cm},
+	limitmode=\ofcstextfield{limitmode}{0.77}{},
+	limitpoints=\ofcscheckbox{lp1}\ofcscheckbox{lp2}\ofcscheckbox{lp3}\ofcscheckbox{lp4}\ofcscheckbox{lp5}\ofcscheckbox{lp6}\ofcscheckbox{lp7}\ofcscheckbox{lp8}\ofcscheckbox{lp9}\ofcscheckbox{lp10},
+	limitrange=\ofcstextfield{limitrange}{0.1}{},
+	limittarget=\ofcstextfield{limittarget}{0.4}{},
+	limitdesc=\ofcstextfield{limitdesc}{1}{, height=2cm},
+	%
+	summon=\ofcstextfield{summon}{0.85}{},
+	summonsupport={\ofcstextfield{summonsupport}{0.83}{}}\vspace*{0.3cm},
+	summonability=\ofcstextfield{summonability}{1}{, height=1.8cm},
+	%
+	weaponbox=\ofcsweaponboxfillable,
+	armorbox=\ofcsarmorboxfillable,
+	weapon=\ofcstextfield{weapon}{0.6}{}, 
+	weaponeffect=\ofcstextfield{weaponeffect}{0.76}{},
+	weapontype=\ofcstextfield{weapontype}{0.8}{},
+	weaponmateria={\ofcstextfield{weaponmateria}{0.85}{}\vspace*{-0.15cm}}, 
+	armor=\ofcstextfield{armor}{0.59}{}, 
+	armoreffect=\ofcstextfield{armoreffect}{0.76}{},
+	armortype=\ofcstextfield{armortype}{0.8}{},
+	armormateria=\ofcstextfield{armormateria}{0.85}{}\vspace*{-0.1cm},
+	accessory1=\ofcstextfield{accessory1}{0.77}{},
+	accessory1effect=\ofcstextfield{accessory1effect}{0.885}{}\vspace*{-0.15cm}, 
+	accessory2=\ofcstextfield{accessory2}{0.77}{},
+	accessory2effect=\ofcstextfield{accessory2effect}{0.885}{},
+	%
+	gil=\ofcstextfield{gil}{0.2}{}, 
+	inventory=\ofcstextfield{inventory}{1}{, height=1.85cm}
+}
+\end{Form}
+\end{document}
+%
+\clearpage

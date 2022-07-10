@@ -1,0 +1,201 @@
+\documentclass[a4paper, titlepage, 11pt, twocolumn] {article}
+\usepackage{../of2}
+\graphicspath{..}
+%
+\begin{document}
+%
+\ofcs{
+	name=Fran, level=1,
+	description={%
+		\vspace*{-0.5cm}
+		\begin{multicols}{2}
+			Age: ?\\Gender: female\\Hair: white\\Height: 1.87m\\Eyes: brown\\quiet\\mysterious
+			\columnbreak\vspace*{-1.7cm}\\
+			\hspace*{0.5cm}\includegraphics[width=0.65\columnwidth]{./art/charactersheets/fran.jpg}
+		\end{multicols}
+		\vspace*{-0.9cm}
+	},
+	story={\vfill
+		She grew up in a remote village hidden in the woods where she lived in harmony with nature.
+		But when she become older, she left her tribe and her family behind to explore the world outside.
+		\\\\
+		"The Viera may begin as part of the Wood, but it is not the only end that we may choose."
+	},
+	hpmax=19, mpmax=17, agi=2, movement=3u, evasiondc=10, str=1, def=1, mag=0, res=1, 
+	job=Marksman, abilities={Libra},
+	weapon=Elfin Bow, weaponeffect=3 extra damage if target has Status, weapontype={3u Range but don't add STR to damage}, armor=Gaia Gear, armoreffect=Resilience: earth, armortype={DEF +1, RES +1},
+	gil=200, inventory={\\2x Potion, 2x Antidote},
+	weaponbox=\ofcsweaponboxbeginner,armorbox=\ofcsarmorboxbeginner
+}
+%
+\ofcs{
+	name=Kain, level=1,
+	description={%
+		\vspace*{-0.5cm}
+		\begin{multicols}{2}
+			Age: 21\\Gender: male\\Hair: blond\\Height: 1.83m\\ Weight: 61kg\\calm\\driven
+			\columnbreak\vspace*{-1.4cm}\\
+			\hspace*{-1.6cm}\includegraphics[width=1.1\columnwidth]{./art/charactersheets/kain.jpg}
+		\end{multicols}
+		\vspace*{-0.9cm}
+	},
+	story={\vfill
+		Raised in a castle, he became a commander in the army like his father.
+		Later, he was manipulated into betraying his lifelong friend to be with the love of his life.
+		\\\\\\
+		”It would seem your life is spared. For~now.”
+	},
+	hpmax=23, mpmax=16, agi=2, movement=3u, evasiondc=10, str=1, def=2, mag=0, res=0, 
+	job=Dragoon, abilities=Jump,
+	weapon=Trident, weaponeffect=Also attacks anyone right behind target, weapontype=2u range, armor=Diamond Armor, armoreffect=Resilience: lightning, armortype=DEF +2,
+	gil=200, inventory={\\2x Potion\\ 1x Bomb Fragment},
+	weaponbox=\ofcsweaponboxbeginner,armorbox=\ofcsarmorboxbeginner
+}
+%
+\ofcs{
+	name=Locke, level=1,
+	description={%
+		\vspace*{-0.5cm}
+		\begin{multicols}{2}
+			Age: 25\\Gender: male\\Hair: brown\\Height: 1.76m\\ Weight: 67kg\\cheerful\\ kind
+			\columnbreak\vspace*{-1.7cm}\\
+			\hspace*{-0.2cm}\includegraphics[width=0.7\columnwidth]{./art/charactersheets/locke.jpg}
+		\end{multicols}
+		\vspace*{-0.9cm}
+	},
+	story={\vfill
+		After losing the love of his life, he has joined a rebellion group to fight against evil.
+		Using his skills as a ”treasure hunter”, he worked as a spy and saboteur.\\\\\\
+		”Hey! Call me a treasure hunter, or I’ll rip your lungs out!”
+	},
+	hpmax=20, mpmax=19, agi=4, movement=5u, evasiondc=8, str=1, def=1, mag=0, res=1, 
+	job=Thief, abilities=Steal,
+	weapon=Myhtril Knife, weaponeffect=Extra Materia slot, weapontype=Can wear 2nd dagger instead of accessory, armor=Myhtril Vest, armoreffect=Extra Materia slot, armortype={DEF +1, RES +1}, accessory1=Power Armlet, accessory1effect=STR+1,
+	gil=150, inventory={\\2x Potion\\1x Ether},
+	weaponbox=\ofcsweaponboxbeginner,armorbox=\ofcsarmorboxbeginner
+}
+%
+\ofcs{
+	name=Snow, level=1,
+	description={%
+		\vspace*{-0.5cm}
+		\begin{multicols}{2}
+			Age: 21\\Gender: male\\Hair: blonde\\Height: 2.00m\\Eyes: blue\\confident\\irresponsible
+			\columnbreak\vspace*{-1.7cm}\\
+			\hspace*{-0.5cm}\includegraphics[width=0.7\columnwidth]{./art/charactersheets/snow.jpg}
+		\end{multicols}
+		\vspace*{-0.9cm}
+	},
+	story={\vfill
+		He is the leader of a small resistance group named NORA.
+		Just after they got engaged, his fiance was cursed and turned into crystal. 
+		Now he is traveling the world to find a way to lift her curse.
+		\\\\\\
+		"Since when have heroes ever needed plans?"
+	},
+	hpmax=27, mpmax=16, agi=3, movement=4u, evasiondc=9, str=1, def=2, mag=0, res=0, 
+	job=Sentinel, abilities=Guard,
+	weapon=Vorpal Blade, weaponeffect=Triple damage on critical hit, weapontype=counter on 11 or 12 enemy evasion check, armor=Crystal Mail, armoreffect=Resilience: ice, armortype={DEF +2},
+	gil=200, inventory={\\1x Potion, 1x Lunar Curtain},
+	weaponbox=\ofcsweaponboxbeginner,armorbox=\ofcsarmorboxbeginner
+}
+%
+\ofcs{
+	name=Squall, level=1,
+	description={%
+		\vspace*{-0.5cm}
+		\begin{multicols}{2}
+			Age: 17\\Gender: male\\Hair: brown\\Height: 1.75m\\ Right-Handed\\introvered\\aloof
+			\columnbreak\vspace*{-1.7cm}\\
+			\hspace*{-0.6cm}\includegraphics[width=0.9\columnwidth]{./art/charactersheets/squall.jpg}
+		\end{multicols}
+		\vspace*{-0.9cm}
+	},
+	story={\vfill
+		Grew up in an orphanage after his parents died.
+		Then, he was trained in an academy to become a talented mercenary who has mastered the gunblade.
+		A lone wolf, without many friends.\\\\
+		”Why do people depend on each other? In the end, you are on your own.”
+	},
+	hpmax=25, mpmax=18, agi=3, movement=4u, evasiondc=9, str=1, def=1, mag=0, res=1, 
+	job=Warrior, abilities=Rush,
+	weapon=Gunblade, weaponeffect=Ranged attack after ability, weapontype=counter on 11 or 12 enemy evasion check, armor=Myhtril Vest, armoreffect=Extra Materia slot, armortype={DEF +1, RES +1},
+	gil=250, inventory={\\2x Potion, 2x Eyedrops, 1x Giant's Tonic},
+	weaponbox=\ofcsweaponboxbeginner,armorbox=\ofcsarmorboxbeginner
+}
+%
+\ofcs{
+	name=Tifa, level=1,
+	description={%
+		\vspace*{-0.5cm}
+		\begin{multicols}{2}
+			Age: 20\\Gender: fem.\\Hair: dark\\Height: 1.67m\\Eyes: brown\\empathic\\reserved
+			\columnbreak\vspace*{-1.7cm}\\
+			\hspace*{0.2cm}\includegraphics[width=0.6\columnwidth]{./art/charactersheets/tifa.jpg}
+		\end{multicols}
+		\vspace*{-0.9cm}
+	},
+	story={\vfill
+		Grew up in a village where she was trained by a master of martial arts.
+		After the destruction of her village and the death of her family, she moved to a big city 
+		and joined an environmentalist resistance group.
+		\\\\
+		”Words aren't the only way to tell someone how you feel.”
+	},
+	hpmax=20, mpmax=16, agi=4, movement=5u, evasiondc=8, str=2, def=1, mag=0, res=1, 
+	job=Monk, specials=Brawler,
+	weapon=Power Armlet, weaponeffect=STR+1, armor=Kenpo Gi, armoreffect=Immunity: Blind, armortype={DEF +1, RES +1},
+	gil=200, inventory={\\3x Potion},
+	weaponbox=\ofcsweaponboxbeginner,armorbox=\ofcsarmorboxbeginner
+}
+%
+\ofcs{
+	name=Vivi, level=1,
+	description={%
+		\vspace*{-0.5cm}
+		\begin{multicols}{2}
+			Age: 9\\Gender: male\\Race: ?\\Height: 1.21m\\ Right-Handed\\shy\\clumsy
+			\columnbreak\vspace*{-1.7cm}\\
+			\hspace*{-0.3cm}\includegraphics[width=0.7\columnwidth]{./art/charactersheets/vivi.jpg}
+		\end{multicols}
+		\vspace*{-0.9cm}
+	},
+	story={\vfill
+		Fell off a cargo ship and was found by a gourmand named Quan, who he sees as his grandfather. 
+		Lived in his cave for a few months until Quan died. 
+		When alone, he left to find out more about his past.
+		\\\\
+	 	”I have to find out who I am. I’m scared. What if I’m not even human?”
+	},
+	hpmax=18, mpmax=26, agi=2, movement=3u, evasiondc=10, str=0, def=0, mag=2, res=3, 
+	job=Black Mage, abilities={Fire, Blizzard, Thunder},
+	weapon=Stardust Rod, weaponeffect=Regain MP equal to Level on enemy KO, weapontype=MAG +2, armor=Myhtril Robe, armoreffect=Extra Materia slot, armortype=RES +2,
+	gil=250, inventory={\\2x Potion\\2x Ether},
+	weaponbox=\ofcsweaponboxbeginner,armorbox=\ofcsarmorboxbeginner
+}
+%
+\ofcs{
+	name=Yuna, level=1,
+	description={%
+		\vspace*{-0.5cm}
+		\begin{multicols}{2}
+			Age: 17\\Gender: fem.\\Hair: brown\\Height: 1.60m\\Heterochromia\\honest\\passionate
+			\columnbreak\vspace*{-1.7cm}\\
+			\hspace*{0.5cm}\includegraphics[width=0.4\columnwidth]{./art/charactersheets/yuna.jpg}
+		\end{multicols}
+		\vspace*{-0.9cm}
+	},
+	story={\vfill
+		Her parents died at a young age and she was raised in a remote village. 
+		Her father was a famous high summoner, who sacrificed himself to bring peace. 
+		She wants to walk in his footsteps to continue his legacy.\\\\
+		”I will defeat sorrow, in his place.”
+	},
+	hpmax=16, mpmax=34, agi=2, movement=3u, evasiondc=10, str=1, def=0, mag=0, res=2, 
+	job=Summoner, abilities={Summon (Carbuncle)},
+	weapon=Myhtril Staff, weaponeffect=Extra Materia slot, weapontype=Maximum MP +10, armor=White Robe, armoreffect=Immunity: Sleep, armortype=RES +2,
+	gil=200, inventory={\\3x Potion\\ 1x Remedy},
+	weaponbox=\ofcsweaponboxbeginner,armorbox=\ofcsarmorboxbeginner
+}
+%
+\end{document}
