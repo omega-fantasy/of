@@ -203,7 +203,7 @@
 
 \newcommand{\ofabilitygap}[0]{\vspace*{0.23cm}\\}
 \newcommand{\ofarchetypet}[6]{
-	\accf{\hfill #1 Arquétipo \hfill}\\
+	\accf{\hfill Arquétipo de #1 \hfill}\\
 	\begin{tabular}{@{}p{0.32\columnwidth} p{0.11\columnwidth} p{0.11\columnwidth} p{0.11\columnwidth} p{0.11\columnwidth}}\accf{Bônus de Atributo:} & #2\end{tabular} \vspace*{0.05cm}\\
 	#3\ofabilitygap
 	#4\ofabilitygap
@@ -224,12 +224,12 @@
 	#2 \vspace*{0.1cm}\\ \accf{Armas:} #3 \hfill \accf{Armaduras:} #4 \vspace*{0.1cm}\\
 	%
 	\vfill
-	\hfill\accf{#1 Habilidades}\hfill\vspace*{0.15cm}\\
+	\hfill\accf{Habilidades de #1}\hfill\vspace*{0.15cm}\\
 	#6 % abilities
 	%
 	\newpage
 	%
-	\hfill\accf{#1 Atributos}\hfill\vspace*{0.15cm}\\
+	\hfill\accf{Atributos de #1}\hfill\vspace*{0.15cm}\\
 	\begin{tabular}{@{}p{0.18\columnwidth} p{0.16\columnwidth} p{0.16\columnwidth} p{0.16\columnwidth} p{0.16\columnwidth}}#5\end{tabular}
 	\vfill
 	%
@@ -507,37 +507,29 @@
 		\parbox{1\columnwidth}{
 			\footnotesize
 			\acc{Resumo de Ações de Combate:}\ofrow
-			\ofmbox{\oficonsmallattack\acc{Ataque:}} 
-			Attack with your weapon.
-			The target makes an evasion check with DC 12 minus his AGI.
-			On failure, the damage dealt is your weapon's DMG plus your STR.
-			You score a critical hit (2x damage) if he rolls a 2.
-			The target makes a counter attack that cannot be evaded if he rolls a 12.\ofrow
-			\ofmbox{\oficonsmallmagic\acc{Magia:}} Cast a spell by spending MP, choosing a target in range and concentrating.
-			While concentrating, you cannot take actions or evade. 
-			After cast time, its effect occurs on the target right before your turn and cannot be evaded.
-			If it deals damage or restores HP, add MAG to the amount.\ofrow
-			\ofmbox{\oficonsmalltech\acc{Técnica:}} Used the same way as Magic but add your STR instead of MAG to damage and healing if bonus is not already included.\ofrow
-			\ofmbox{\oficonsmalldefend\acc{Defender:}} Damage you receive by Attacks until your next turn is halved. \ofrow
-			\ofmbox{\oficonsmallitem\acc{Item:}} Use Item from your inventory on yourself or someone within 1u.\ofrow
-			\ofmbox{\oficonsmallreequip\acc{Re-Equipar:}} Trocar uma matéria ou peça de equipamento que você está usando por outro que tenha em seu inventário.\ofrow
+			\ofmbox{\oficonsmallattack\acc{Ataque:}} ataque com sua arma. O alvo faz um teste de evasão com DF 12 - AGI e se falhar, cause dano da Arma + FOR. Num Acerto Crítico, resultando em 2, (2x dano). O alvo contra-ataca, sem evasão, se rolar 12.\ofrow
+			\ofmbox{\oficonsmallmagic\acc{Magia:}} conjure uma magia ao gastar PM, escolha o alvo ao alcance e se concentre. Enquanto concentrado, não realize ações ou se evada. Após a conjuração, o efeito atinge o alvo antes de seu turno, não pode ser evadido. Se causar dano ou recuperar PM, adicione MAG ao valor.\ofrow
+			\ofmbox{\oficonsmalltech\acc{Técnica:}} Usada assim como Magia, mas use FOR ao invés de MAG para dano e cura, se já não houver um bônus.\ofrow
+			\ofmbox{\oficonsmalldefend\acc{Defender:}} Todo dano de Ataques recebido é reduzido pela metade até seu próximo turno.\ofrow
+			\ofmbox{\oficonsmallitem\acc{Item:}} Use um item de seu inventário em você ou em alguém a 1u de você.\ofrow
+			\ofmbox{\oficonsmallreequip\acc{Re-Equipar:}} Troque uma matéria ou peça de equipamento que você está usando por outra que tenha em seu inventário.\ofrow
 			\ofmbox{\oficonsmalldash\acc{Correr:}} Mova-se a um local até sua AGI+1 em unidades.
 		}
 		\columnbreak\vspace*{-0.5cm}\\
 		\parbox{1\columnwidth}{
 			\footnotesize	
 			\acc{Resumo de Efeitos de Estado:}\ofrow
-			\ofmbox{\blinksmall\accg{Oscilando:}} You have Advantage on all evasion checks. \ofrow
-			\ofmbox{\enstrsmall\hspace*{-0.05cm}\enndefsmall\hspace*{-0.05cm}\enmagsmall\hspace*{-0.05cm}\enressmall\accg{AuATR:}} According attribute is increased by 1 + half your Level. \ofrow
-			\ofmbox{\hastesmall\accg{Acelerado:}} During your turn, make an extra movement or action. \ofrow
-			\ofmbox{\regensmall\accg{Regenerando:}} You regain 10\% of your max. HP at start of each turn.\ofrow
+			\ofmbox{\blinksmall\accg{Oscilando:}} Tenha Vantagem em testes de evasão. \ofrow
+			\ofmbox{\enstrsmall\hspace*{-0.05cm}\enndefsmall\hspace*{-0.05cm}\enmagsmall\hspace*{-0.05cm}\enressmall\accg{AuATR:}} Atributo em questão aumenta em 1 + metade de seu nível. \ofrow
+			\ofmbox{\hastesmall\accg{Acelerado:}} Durante seu turno, mova-se ou aja mais uma vez. \ofrow
+			\ofmbox{\regensmall\accg{Regenerando:}} Recupere 10\% de seu PV máximo no início de cada turno.\ofrow
 			\ofmbox{\blindsmall\accr{Cego:}} Ao Atacar um inimigo, ele tem Vantagem em testes de esquiva. \ofrow
-			\ofmbox{\destrsmall\hspace*{-0.05cm}\dedefsmall\hspace*{-0.05cm}\demagsmall\hspace*{-0.05cm}\deressmall\accr{ReATR:}} According attribute is reduced by 1 + half your Level. \ofrow
+			\ofmbox{\destrsmall\hspace*{-0.05cm}\dedefsmall\hspace*{-0.05cm}\demagsmall\hspace*{-0.05cm}\deressmall\accr{ReATR:}} Atributo em questão reduz-se em 1 + metade de seu nível.\ofrow
 			\ofmbox{\immobilesmall\accr{Imóvel:}} Você é incapaz de se mover. \ofrow			
-			\ofmbox{\kosmall\accr{KO:}} You are unconscious and your turns are skipped.\ofrow
-			\ofmbox{\poisonsmall\accr{Envenenado:}} You suffer damage equal to 10\% max. HP at start of each turn.\ofrow
-			\ofmbox{\sleepsmall\accr{Sleep:}} You can't move or take actions. Removed when you take damage.\ofrow
-			\ofmbox{\silencesmall\accr{Mudo:}} You cannot begin casting Magic or using Techs.\ofrow
+			\ofmbox{\kosmall\accr{KO:}} Você está inconsciente e seus turnos são pulados.\ofrow
+			\ofmbox{\poisonsmall\accr{Envenenado:}} Perca 10\% de seu PV máximo no início de cada turno.\ofrow
+			\ofmbox{\sleepsmall\accr{Adormecido:}} Incapaz de agir ou mover-se. Removido ao receber dano.\ofrow
+			\ofmbox{\silencesmall\accr{Mudo:}} Incapaz de conjurar Magias ou de usar Técnicas.\ofrow
 			\ofmbox{\slowsmall\accr{Lento:}} Durante sua vez, realize uma ação ou um movimento, não ambos.\ofrow
 			\ofmbox{\zombiesmall\accr{Zumbi:}} Todos os efeitos de cura são revertidos em você.
 		}
