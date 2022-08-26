@@ -1,0 +1,124 @@
+\documentclass[a4paper, titlepage, 11pt, twocolumn] {article}
+\usepackage{../of2}
+\graphicspath{..}
+%
+\newcommand{\atypesep}[0]{\hspace*{0.1cm}--\hspace*{0.175cm}}
+%
+\begin{document}
+%
+\ofarchetypet{Bard Job \atypesep Painter}
+{HP~+10 & MP~+15 & RES~+1 & DEF~+1}
+{\ofarchetypetecha{Sketch}{6}{0r}{Single}{2u}{You learn which abilities the target can use. Select one from the list and use the exact same ability, respecting it's cost, cast time, target and range specifications.}{}}
+{\ofarchetypepassive{Color Theory}{Whenever you bestow one or more positive Status Effects on a target, you can additionally grant him Resilience against an elemental type of your choice for 3 rounds.}}	
+{\ofarchetypereaction{Brush Off}{Whenever you or an ally within 2u suffers damage, you can make a DC~8 check. If you succeed, the target regains an amount of HP equal to your STR.}}
+{\ofarchetypetechb{Draw Target}{10}{1r}{Single}{5u}{The target gains Blink for 3 rounds. If the target suffers any physical damage during this time he may chose to negate the damage by sacrificing this effect.}{}}
+%
+\vfill
+%
+\ofarchetypet{Black Mage Job \atypesep Necromancer}
+{HP~+11 & MP~+14 & DEF~+1 & MAG~+1}
+{\ofarchetypespella{Zombify}{8}{0r}{Single}{5u}{The target makes a DC 8 check and suffers 3d dark damage and Zombie for 3 rounds upon failure.}{\zombie}}
+{\ofarchetypepassive{Afterlife}{Whenever you inflict Zombie or KO on an enemy or reduce his HP to 0, you regain an amount of HP and MP equal to your Level.}}
+{\ofarchetypereaction{Raise Undead}{When an enemy within 5u, that is not an undead, suffers KO, you can make a DC~7 check. If you succeed, the target is re-raised as as an undead that follows your command, acting immediately after you on every turn. Its HP is equal to twice your Level, its DMG is 3d, its AGI is 3 and all of its other attributes are 0. It cannot take any actions other than Attack or Defend and it suffers KO after 5 rounds.}}
+{\ofarchetypespellb{Doom}{18}{1r}{Single}{5u}{The target makes a DC 8 check and suffers KO after 3 rounds upon failure.}{\ko}}
+%
+\newpage
+%
+\ofarchetypet{Dragoon Job \atypesep Commando}
+{HP~+16 & MP~+9 & STR~+1 & DEF~+1}
+{\ofarchetypetecha{Powerchain}{6}{0r}{Single}{2u}{Pick an enemy and an ally within range. Make an Attack against the chosen enemy. If you hit, he additionally suffers an amount of damage equal to the chosen ally's STR or MAG.}{}}
+{\ofarchetypepassive{Rally}{While in combat, at the start of every turn, you regain 2~HP for every ally that is within 2u of you.}}	
+{\ofarchetypereaction{Stagger}{Whenever an enemy within 2u suffers damage outside of your turn, you may make a DC~7 check. If you succeed, the target additionally suffers Immobile or Silence on him for 1 round.}}
+{\ofarchetypetechb{Meteor Javelin}{14}{0r}{2u}{8u}{All enemies in the target area suffer 3d damage, as well as DeSTR and DeDEF for 2 rounds.}{}}
+%
+\vfill
+%
+\ofarchetypet{Marksman Job \atypesep Cannoneer}
+{HP~+8 & MP~+17 & RES~+2}
+{\ofarchetypetecha{Combine Ammo}{6}{0r}{Single}{Weapon}{Choose one of the following elemental types: fire, ice, lightning, wind, earth. Then choose one of the following Status Effects: DeDEF, DeRES, Poison, Blind. Make an Attack on the target. If you hit, the damage dealt has the chosen type and the target suffers the chosen Status Effect for 1 round.}{}}
+{\ofarchetypepassive{Fortify}{When you do not move during your turn, the range of your Attacks and Techs is doubled until the end of that turn.}}	
+{\ofarchetypereaction{Fire Support}{Whenever an ally within your weapon's range performs an Attack, the target suffers Disadvantage on the evasion check.}}
+{\ofarchetypetechb{Mortar}{14}{1r}{3u}{8u}{Everyone in the target area suffers 5d damage. In addition, the targeted area becomes an Slow Field for 1 round.}{}}
+%
+\newpage
+%
+\ofarchetypet{Monk Job \atypesep Berserker}
+{HP~+11 & MP~+4 & STR~+1 & DEF~+2}
+{\ofarchetypetecha{Mad Rush}{7}{0r}{4u (line)}{Self}{Rush to a location within 4u and make an Attack on every enemy in your path, by making one damage roll that applies to everyone that fails to evade. In addition, you can knock all affected targets to either side by 1u.}{}}
+{\ofarchetypepassive{Wild Rage}{When you Attack, you perform a Critical Hit when the target rolls a 2 or 3 on the evasion check. In addition, when you score a Critical Hit, the damage dealt ignores the target's DEF.}}	
+{\ofarchetypereaction{Intimidate}{When you suffer damage by an enemy within 1u, he has to make a DC~7 check. Upon failure, all physical damage that he deals to you on his next turn, is halved.}}
+{\ofarchetypetechb{Leap}{9}{0r}{Single}{3u}{Leap onto the target and make an Attack on him. If you hit, the target also suffers Immobile and DeDEF until the end of your next turn.}{}}
+%
+\vfill
+%
+\ofarchetypet{Red Mage Job \atypesep Fencer}
+{HP~+12 & MP~+13 & DEF~+2}
+{\ofarchetypetecha{Swarmstrike}{6}{0r}{2u (Front)}{Self}{All enemies in the target area make a DC~8 check and suffer damage equal to your current Level and Poison for 3 rounds upon failure.}{}}
+{\ofarchetypepassive{Muscle Memory}{On your turn, when you take the Attack action, you may cast an additional spell. When you use this effect, you cannot move on the same turn.}}	
+{\ofarchetypereaction{En Garde}{When you cast a spell on your turn, you gain Blink and EnDEF until the end of your next turn. Also, when you make a counter Attack, you automatically score a Critical Hit.}}
+{\ofarchetypetechb{Piercethrough}{10}{0r}{Single}{5u}{Dash towards the target and make an Attack on him. The target suffers Disadvantage on the evasion check and any damage dealt ignores his DEF.}{}}
+%
+\newpage
+%
+\ofarchetypet{Sentinel Job \atypesep Gladiator}
+{HP~+8 & MP~+12 & STR~+3}
+{\ofarchetypetecha{Taunt}{6}{0r}{Single}{3u}{The target makes a DC~8 check and upon failure he has to target you with an action on his next turn if possible. This DC is reduced by 2 whenever there is at least one of your allies within 1u of the target. The target may repeat this check at the end of each of his turns, the effect is removed immediately if he succeeds.}{}}
+{\ofarchetypepassive{Outmaneuver}{When you make an Attack and there is at least one of your allies within 1u of the target, double the STR bonus that is added to the damage dealt.}}	
+{\ofarchetypereaction{Shield Bash}{Whenever an enemy within 1u inflicts an amount of total damage to you that is less than twice your Level, you may immediately make an Attack on him. If you hit, the target additionally suffers DeDEF and DeRES for 1 round.}}
+{\ofarchetypetechb{Finisher}{14}{0r}{Single}{1u}{Make an Attack on the target. If his current HP is less than half its maximum, the Attack always hits, otherwise it always misses. If it hits, you automatically score a Critical Hit and if the Attack reduces the target's HP to 0, you additionally gain EnSTR and Regen for 3 rounds.}{}}
+%
+\vfill
+%
+\ofarchetypet{Summoner Job \atypesep Druid}
+{HP~+11 & MP~+14 & MAG~+1 & RES~+1}
+{\ofarchetypespella{Tame}{7}{0r}{Single}{3u}{The target makes a DC~7 check and upon failure, he cannot take the Attack action for 3 rounds.}{}}
+{\ofarchetypepassive{Morph}{You gain the ability to summon Shiva or Ifrit (choose one). When you cast Summon, you can choose to turn yourself into the summoned creature instead of calling it alongside you. In this case, add the summon's STR, DEF, MAG and RES to your own and exchange your HP and MP with the summon's. In this form, you can use only use the summon's attacks and abilities instead of your own and when you would suffer KO, you instead turn back to your usual form with the same attributes and abilities that you had before morphing.}}
+{\ofarchetypereaction{Nature's Wrath}{When you suffer elemental damage from an enemy within 3u, you can return an amount of damage back to him equal to half the total damage you have suffered.}}
+{\ofarchetypespellb{Mist}{14}{0r}{3u}{5u}{All enemies in the target area suffer 3d damage. In addition, the targeted area becomes an Obscure Field that affects everyone except you and your summons.}{}}
+%
+\newpage
+%
+\ofarchetypet{Tinker Job \atypesep Arithmetician}
+{HP~+12 & MP~+13 & RES~+1 & DEF~+1}
+{\ofarchetypetecha{Even the Odds}{8}{0r}{3u}{Self}{If the amount of targets in the target area, including yourself, is an even number, all targeted allies gain Haste for 1 round. If the amount is an odd number, all targeted enemies suffer Slow for 1 round instead.}{}}
+{\ofarchetypepassive{Dis-Integrate}{Whenever you use an ability that targets an area, you may additionally cause DeDEF and DeRES for 1 round to affected targets.}}	
+{\ofarchetypereaction{Q.E.D.}{Whenever you or an ally within 3u performs an evasion check, choose one of the following numbers: 2, 3, 4, 5, 6. If the result of the check is evenly divisible by that number, the target regains an amount of HP equal to twice the chosen number.}}
+{\ofarchetypetechb{Prime Time}{16}{0r}{?}{8u}{Draw a target area that is fully within range. It can be of any size and normal, front or line shaped. If the amount of allies and enemies in the targeted area, including yourself, is equal, the following effect occurs: all targeted enemies suffer 3d damage and Immobile for 1 round and all targeted allies regain 3d HP and Blink for 1 round.}{}}
+%
+\vfill
+%
+\ofarchetypet{Time Mage Job \atypesep Astrologian}
+{HP~+12 & MP~+13 & MAG~+1 & RES~+1}
+{\ofarchetypespella{Perfect Constellation}{8}{0r}{5u (line)}{Self}{All allies in the target area regain HP equal to your current Level and all enemies in the target area suffer an equal amount of dark damage.}{}}
+{\ofarchetypepassive{Cosmic Healing}{Whenever you end your turn in combat and there is at least 1 ally within 2u, either you or one of those allies regains an amount of HP equal to your MAG.}}
+{\ofarchetypereaction{Horoscope}{After you or an ally within 2u suffers damage, pick one of the following damage types: physical or magical. The target gains resilience against that type until the end of his next turn. If this effect is already active on a combatant, you have to wait until it runs out before you can use this ability again.}}
+{\ofarchetypespellb{Celestial Stasis}{10}{1r}{5u}{Self}{All enemies in the target area make a DC~8 check and suffer 4d dark damage and Immobile for 1 round upon failure.}{}}
+%
+\newpage
+%
+\ofarchetypet{Thief Job \atypesep Pirate}
+{HP~+16 & MP~+9 & STR~+1 & DEF~+1}
+{\ofarchetypetecha{Cannonball}{7}{0r}{2u}{5u}{All targets suffer damage equal to your current Level and the target area becomes a Slow Field for 1 round.}{}}
+{\ofarchetypepassive{Corsair}{You gain the ability to equip Swords and Guns. In addition, whenever you take the Re-Equip action, you can take another action immediately after.}}	
+{\ofarchetypereaction{Scurvy Dog}{Whenever you are affected by a negative Status Effect, its duration is reduced by 1 round.}}
+{\ofarchetypetechb{Sea Shanty}{11}{0r}{Single}{3u}{The target makes a DC~8 check and suffers Sleep, DeRES and DeDEF for 3 rounds upon failure.}{}}
+%
+\vfill
+%
+\ofarchetypet{Warrior Job \atypesep Viking}
+{HP~+12 & MP~+3 & STR~+2 & RES~+1}
+{\ofarchetypetecha{Greased Lightning}{6}{0r}{Single}{2u}{Make an Attack on the target. If you hit, the damage dealt is increased by your Level and is of lightning type.}{}}
+{\ofarchetypepassive{War Cry}{Whenever your current HP is lower than half of your maximum HP, all of your damage ignores the target's DEF.}}	
+{\ofarchetypereaction{Soldier of Odin}{Whenever you suffer ice, water or lightning damage, the amount is halved and you gain EnSTR for 3 rounds.}}
+{\ofarchetypetechb{Tsunami}{11}{0r}{5u (line)}{Self}{All enemies in the target area suffer 3d water damage. In addition, they are pushed back by 1u and the target area becomes a Slow Field until the start of your next turn.}{}}
+%
+\vfill
+%
+\ofarchetypet{White Mage Job \atypesep Bishop}
+{HP~+14 & MP~+11 & MAG~+1 & DEF~+1}
+{\ofarchetypespella{Dia}{8}{0r}{1u}{5u}{All enemies in the target area suffer an amount of holy damage equal to your current Level.}{}}
+{\ofarchetypepassive{Blessing}{Whenever you restore your or an ally's HP, the target additionally gains EnSTR and EnMAG for 1 round.}}
+{\ofarchetypereaction{Auto-Regen}{Whenever you or an ally within 1u suffers damage, the target gains Regen for 2 rounds.}}
+{\ofarchetypespellb{Cleanse}{12}{1r}{Single}{6u}{The target makes a DC~8 check, upon failure he suffers 4d holy damage and loses all positive Status Effects.}{}}
+%
+\end{document}

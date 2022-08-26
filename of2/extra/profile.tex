@@ -1,0 +1,326 @@
+\documentclass[a4paper, titlepage, 11pt, twocolumn] {article}
+\usepackage{../of2}
+\graphicspath{..}
+%
+\newcommand{\ofprofilerankbox}[3]{
+	\raisebox{-.025cm}{%
+		\tikz{
+			\tikzstyle{seg}=[draw, circle, align=center, minimum size = 0.35cm, inner sep=0pt, color=accent]
+			\newcommand{\ofcsdmgdist}{0.45}
+			%\node[seg, minimum width=0.95cm, rounded rectangle, rounded rectangle east arc=0pt](l0)at (0,0) {};
+			\node[seg, fill=#1](l1)at (-\ofcsdmgdist,0) {};
+			\node[seg, fill=#2](l2)at (0,0) {};					
+			\node[seg, fill=#3](l3)at (\ofcsdmgdist,0) {};
+		}	
+	}
+}
+\newcommand{\ofprofilerule}{{\color{accent}\rule{1\columnwidth}{0.04cm}}\vspace*{0.1cm}\\}
+%
+\begin{document}
+%
+\ofquote{"Don't forget handsome, and really skilled!"\\}{Edge}\\\\
+%
+\includegraphics[width=\columnwidth]{./art/images/ff3.jpg}
+%
+\vfill
+%
+While Jobs and Equipment enhance your character's combat abilities, their \accf{Profile} describes key aspects of your 
+character that are not related to combat.
+Profiles are an optional set of rules that extend the default Talent rules to provide new avenues for developing player characters.
+A character's Profile consists of 4 \accf{Profile Aspects}: a Bond, an Obstacle, a Reputation, and a Talent.
+In general, the purpose of those Aspects is not to pressure you into fully developing each one and you are encouraged to focus only on those that feel right for your character.
+Every Profile Aspect has 3 Ranks (Beginner, Advanced and Expert) and at first your character has no Ranks in either of them.
+Accordingly, each Profile Aspect only starts coming into play once you actively decide to develop it.
+To reach the next Rank in an Aspect, you need to spend one Profile Point and fulfil a special prerequisite.
+Starting at Level 2, you gain one Profile Point on each Level up and you may later use a Specialization to gain an additional 2 Points.
+You do not have to spend Profile Points immediately and you may save them until you need them.
+%
+\vfill
+%
+While each Aspect has different prerequisites, they are mostly about creating \accf{significant moments} that reflect the desired character development.
+There is no strict definition of such a significant moment and the GM may freely interpret what constitutes as one.
+However, you are encouraged to discuss as a group what kind of character focused moments and developments are important and enjoyable for you.
+Depending on your preferences, a significant moment can take many different forms: it could be an ultimate sacrifice or a deep and emotional conversation, but it could also be an internal monologue, a flashback into the past, just a quick glance exchanged between two characters or something else entirely.
+A moment can also fulfil prerequisites for multiple characters or even multiple prerequisites of the same character.
+In the following, all 4 Profile Aspects are explained in more detail.
+In addition, an example of a player character's profile is shown on the right hand side.
+%
+\newpage
+%
+\vspace*{1.5cm}
+%
+{\Large \accf{Lightning's Profile} \hfill Profile Points: 1}
+%
+\ofrow\vfill
+%
+{\large\accf{Bond} \hfill \accf{Rank:} \ofprofilerankbox{accentlight}{accentlight}{white}}\vspace*{-0.15cm}\\
+\ofprofilerule
+\accf{Bonded Character:} Snow\ofrow
+Lightning's relationship with Snow is conflicted. She initially blamed him for not protecting her sister Serah, but after getting to know him better, she has realized that he is committed to save her at least as much as she is.\ofrow
+\accf{Bond Effects:}\ofrow
+\ofbullet{When increasing Snow's HP or MP with an Item add your Level to total amount}
+\ofbullet{When taking an action while Snow is within 1u, add his STR \& MAG to yours}
+%
+\vfill
+%
+{\large\accf{Obstacle} \hfill \accf{Rank:} \ofprofilerankbox{accentlight}{accentlight}{accentlight}}\vspace*{-0.15cm}\\
+\ofprofilerule
+Due to her parents' early death, Lighting has always been a lone wolf who only looks out for herself and shows no weakness.
+On the journey with her companions, she has learned to show compassion and trust others.
+She finally overcame her Obstacle when she defeated the Eidolon Odin, which manifested from her inner conflicts.\ofrow
+\accf{Obstacle Effects:}\ofrow
+\ofbullet{No more setbacks}
+\ofbullet{Gained an additional Specialization}
+%
+\vfill
+%
+{\large\accf{Reputation} \hfill \accf{Rank:} \ofprofilerankbox{accentlight}{accentlight}{white}}\vspace*{-0.15cm}\\
+\ofprofilerule
+\accf{Reputation Type:} Public Enemy (Shared)\ofrow
+Lightning and her companions are wanted by Cocoon, because they are Pulse l'Cie. 
+They are hunted by the highest ranking members of government, including the Primarch himself.
+The people of Cocoon have been brainwashed to detest anything related to Pulse and thus avoid the party at all cost.  \ofrow
+\accf{Reputation Effects:}\ofrow
+\ofbullet{Advantage when trying to intimidate someone}
+\ofbullet{Advantage when convincing someone of competence or influence}
+%
+\vfill
+%
+{\large\accf{Talent} \hfill \accf{Rank:} \ofprofilerankbox{accentlight}{white}{white}}\vspace*{-0.15cm}\\
+\ofprofilerule
+\accf{Talent Skill:} Guardian Corps\ofrow
+By using her Guardian Corps gravity device, Lightning can dampen her fall from any height. \ofrow
+\accf{Talent Effects:}\ofrow
+\ofbullet{Gained Talent Skill}
+%
+\clearpage
+%
+%
+\ofquote{"Look into my eyes. You're-going-to-like-me.\\ You're-going-to-like-me... Did it work?"}{Rinoa}\\\\
+%
+A \accf{Bond} represents a special relationship between your character and another party member.
+This Bond does not have to be romantic or even positive, it can be a rivalry, a conflicted relationship or any other kind of remarkable connection.
+To increase a Bond's Rank, you have to spend a Profile Point and fulfil the following prerequisite: since the last Rank increase, your character must have shared at least one significant moment with the bonded character that represents a development in their relationship.
+The nature of a Bond often changes as it develops and you should write down a short description explaining the relationship's current status.
+If the bonded character also choses yours as the target of their Bond, it becomes a shared Bond.
+In this case, both characters advance through the Bond Ranks together and on each increase, only one of them has to spend a Profile Point.
+The 3 Bond Ranks and the additional effects they provide are explained below.
+%
+\vfill
+%
+\accf{Beginner Rank Bond:} Your character recognizes that there is a connection between them and another party member. Thus, the Bond's first seed is planted. Whenever you increase the bonded character's HP or MP with an Item, add an amount equal to your current Level to the total.\ofrow
+\accf{Advanced Rank Bond:} The Bond between the two characters strengthens and flourishes. Whenever you perform an action while the bonded character is within 1u, you may add their STR and MAG to yours until the end of your turn.\ofrow
+\accf{Expert Rank Bond:} The connection to the bonded character has become undeniable and unbreakable. Whenever the bonded character suffers KO within 2u of you, you can make a DC~8 check. If you succeed, sacrifice half of your current HP to remove KO from your ally and increase their HP by the same amount yours was reduced.
+%
+\vfill
+%
+\ofboxwithtitle{Example: Bonds}{
+	After defeating a group of Al'Bhed, one of them suddenly starts talking to Rikku in their language.
+	Wakka is shocked by this and confronts Rikku, who admits that she is an Al'Bhed herself.
+	He realizes that the rest of the party kept this fact from him, knowing that he hates all Al'Bhed.
+	Wakka gets very angry and starts a heated argument with Rikku, which ends with him storming off. 
+	Wakka's relationship to Rikku is strained: on the one hand he feels betrayed that she lied about being an Al'Bhed, who he considers as the enemy.
+	On the other hand, he cannot deny how helpful she has been and the rest of the party trusts her.
+	Wakka's player decides that this is a good opportunity for his character to create a Bond with Rikku.
+	The GM agrees that this was a significant moment between the characters, so the player is able to spend a Profile Point to increase the Bond to the Beginner Rank.
+}
+%
+\newpage
+%
+\ofquote{"This is sickening! You sound like chapters from a\\ self-help booklet!"}{Kefka}\\\\
+%
+Your character's \accf{Obstacle} represents a personal struggle that they are suffering from throughout the adventure.
+While this presents characters with an additional challenge at first, they can become even stronger by overcoming their Obstacles.
+Obstacles can have many sources, for example: loss of a loved one, disillusionment with society, a personal insecurity, a crushing debt or a past trauma.
+When gaining the first Rank, write down a description of your characters Obstacle by identifying a root cause related to their personality or background story.
+To increase an Obstacle's Rank, you have to spend a Profile Point and fulfil the following prerequisite: since the last Rank increase, your character must had one significant moment in which they confronted their Obstacle or took a major step towards resolving it.
+The 3 Obstacle Ranks and the additional effects they provide are explained below.
+%
+\vfill
+%
+\accf{Beginner Rank Obstacle:} Your character recognizes their Obstacle and occasionally suffers from its negative effects, holding them back from reaching their full potential. Whenever your character goes to sleep, make a DC~8 check and upon failure, they suffer a setback for the entirety of the upcoming day. In this case, roll 1d and your character suffers from a setback based on the result, as indicated in the table below. \ofrow
+\accf{Advanced Rank Obstacle:} Your character has taken steps to overcome their Obstacle. The DC of all your setback checks is reduced to 6. Whenever you pass a setback check, your character becomes energized and gains AGI+1 for the upcoming day.\ofrow
+\accf{Expert Rank Obstacle:} Your character has fully overcome their Obstacle. You do not have to perform setback checks anymore and you gain an extra Specialization.
+%
+\vfill
+%
+\oftable{p{0.15\columnwidth} p{0.78\columnwidth}}
+{\accf{Result} & \accf{Setback}}
+{
+	1 - 2 & Your character is timid. You permanently suffer DeSTR, DeMAG and Disadvantage on all checks related to showing courage or withstanding intimidation. \ofrow
+	3 - 4 & Your character is dazed. Your movement distance per turn is reduced by 1u, your evasion DC is increased by 1 and you suffer Disadvantage on all checks related to actions that require nimbleness or dexterity.\ofrow 
+	5 - 6 & Your character is distracted. You permanently suffer DeDEF, DeRES and Disadvantage on all checks related to noticing or investigating things. \ofrow
+	%anxious, sluggish, uninspired
+}
+%
+\clearpage
+%
+\ofboxwithtitle{Example: Obstacles}{
+	As a Dark Knight of Baron, Cecil has committed many atrocities in the past that he deeply regrets.
+	He has since denounced the kingdom and taken responsibility for his actions, allowing him to reach the Advanced Rank of his Obstacle.
+	Now he wants to finally overcome his past by relinquishing his dark powers.
+	At the top of Mount Ordeals, he confronts his dark mirror image in battle and secures victory by not raising his sword against it.
+	He withstands the temptation of hatred and darkness which allows him to become a full-fledged Paladin.
+	The GM agrees that this is a significant moment in Cecil's development and thus his player may spend a Profile Point to increase the Obstacle to the Expert Rank.
+}
+%
+\vfill
+%
+\ofquote{"Turnip-squeezing bashi-bazouks like you, the four warriors of legend!?"}{Delilah}\\\\
+%
+Your character's \accf{Reputation} describes how they are perceived by non-player characters in general.
+Throughout the adventure, they will obtain a certain Reputation in the world through the actions they take.
+A Reputation does not necessarily have to be a positive one and it might not even paint an accurate picture of your character.
+For example, they might have been declared a public enemy, or they might be known for a specific skill or they may be a member of an important organization.
+A Reputation is made up of two parts: its Rank, which measures how well your character is known, and its Type, which describes what they are known for.
+When gaining the first Rank, choose the Reputation Type that fits your characters image.
+To increase a Reputation's Rank, you have to spend a Profile Point and fulfil the following prerequisite: since the last Rank increase, your character must have had one significant moment in which they left a strong impression on non-player characters in accordance to their Reputation Type.
+Optionally, your party may work towards a shared Reputation.
+In this case, every party member adopts the same Reputation Type and they should fulfil the prerequisites together when possible.
+They then advance through the Reputation Ranks together and for every Rank increase only one party member needs to spend a Profile Point.
+The 3 Reputation Ranks and the additional effects they provide are explained below.
+Some examples of Reputation Types are listed right after, but your group may also define other ones that fit your party.
+%
+\vfill
+%
+\accf{Beginner Rank Reputation:} Your character's deeds have started spreading across the world. While most people do not know much about you, you often run into people who recognize you in some way. The benefit gained by this Rank is determined by the chosen Reputation Type. \ofrow
+\accf{Advanced Rank Reputation:} Your character becomes more famous to the point where most people have at least heard of them. You gain advantage on all checks related to convincing someone of your competence or influence. \newpage
+\accf{Expert Rank Reputation:} Your character has become a household name, a legend of the game world. You can now stay at every Inn for free. In addition, intelligent enemies that are 2 Levels or more below your own, will not engage you in combat.
+%
+\vfill
+%
+\accf{Examples of Reputation Types:}\\\\
+%
+\accf{Mercenary:} You are known for getting the job done for the right price. Whenever you complete a task for someone who is aware of your Reputation, you receive an additional amount equal to your Level times 50G.\ofrow
+%
+\accf{Explorer:} You are known for pressing onto frontiers nobody else would dare to. You receive a 10\% discount when buying Items from someone who is aware of your Reputation.\ofrow
+%
+\accf{Public Enemy:} You have been declared an enemy of the people by the authorities. You gain advantage whenever you make a check to intimidate someone who is aware of your Reputation. \ofrow
+%
+\accf{Star:} You are known for performing a specific skill, such as singing or smithing. Whenever you perform that skill to people aware of your Reputation, you receive an amount of Gil equal to 25G times your current Level in tips. \ofrow
+%
+\accf{Aristocrat:} You are known for being a member of an influential and powerful organization. You gain advantage on all checks related to extracting information from someone aware of your Reputation. \ofrow
+%
+\accf{Samaritan:} You are known for always helping those in need. Whenever you help a person aware of your Reputation, they will always repay you with a place to sleep, a warm meal or an important piece of information if they are able to do so. \ofrow
+%
+\accf{Nobility:} You are known for having a powerful and influential lineage. Whenever you try to enter a place with restricted access, you and your entourage will be allowed to pass if the guards are aware of your Reputation.
+%
+\vfill
+%
+\ofboxwithtitle{Example: Reputation (FFVIII SeeD)}{
+	Squall, Zell and Selphie are students at Balamb Garden, an academy that trains and contracts mercenaries.
+	After passing the final written exam and the field exam, the headmaster grants them the rank of SeeD, the most elite members of Garden.
+	SeeD are well known and respected throughout the world for their competence and outstanding combat skills.
+	The players and the GM agree that this a good opportunity for the party to adopt a shared Reputation.
+	Squall's player decides to spend the Profile Point necessary for the rank increase.
+	They choose Mercenary as their Reputation Type and advance to the Beginner Rank which grants each party member additional Gil for completing tasks.
+}
+%
+%
+\clearpage
+%
+%
+%
+\ofquote{"Sweet Christmas, it's a talking turtle!"\\}{Bartz}\\\\
+%
+Your character's \accf{Talent} grants them a special proficiency that is not directly related to combat.
+A Talent is made up of two parts: its Rank, which measures how proficient they are, and its Skill.
+When gaining the first Rank, choose a Talent Skill that describes your characters special proficiency and provides an according effect.
+Talent Skills usually fall into one of 3 categories: they grant advantage on a broadly defined set of checks, they allow you to always pass a narrowly defined set of checks or they provide you with a unique non-combat ability.
+Some examples of Talent Skills are listed below, but your group may also define other ones that fit your characters.
+To increase a Talent's Rank, you have to spend a Profile Point and fulfil the following prerequisite: since the last Rank increase, your character must have used their Talent Skill or have performed a closely related action.
+The 3 Talent Ranks and the additional effects they provide are explained below.
+%
+\\\\
+%
+\accf{Beginner Rank Talent:} Your character begins to recognize their aptitude in a specific area. You gain a Talent Skill that describes your character's proficiency. \ofrow
+\accf{Advanced Rank Talent:} Your character's Talent has become undeniable and it provides them with a source of confidence and energy. Whenever you use your Talent Skill, you additionally regain an amount of HP and MP equal to your current Level. \ofrow
+\accf{Expert Rank Talent:} Your character has become a master of their craft and an inspiration to everyone around them. Whenever you use your Talent Skill, add a 6 to the pool of Fortune Dice for the current session.
+%
+\vfill
+%
+\accf{Examples of Talent Skills:}\\\\
+%
+\oftalent{Archylte Hunter}
+{You have Advantage on all checks related to hunting or fishing.}
+\ofrow
+\oftalent{Camping Again}
+{While outside, you can spend an hour to build a comfortable shelter to spend the night out of materials found in nature.}	
+\ofrow
+\oftalent{Carpenter}
+{Given enough time and materials, you can create and repair any object that is mostly made out of wood, such as furniture or vehicles.}
+\ofrow
+\oftalent{Chocobo Sage}{You can comfortably tame and build friendships with friendly animals and monsters.}
+\ofrow
+\oftalent{Cid's Apprentice}
+{Given enough time and materials you are able to repair any broken machine or vehicle.}
+\ofrow
+\oftalent{Clown}
+{You can spend multiple hours to create an almost undetectable poison out of materials found in nature or in stores. A character that consumes the poison makes a DC~8 check and suffers KO upon failure.}
+\ofrow
+\oftalent{Dedicated Driver}
+{You are able to perfectly drive or navigate any vehicle including ships and airships. }
+\newpage
+\oftalent{Flower Girl} 
+{You can identify any plant and know how to grow them even in very unfavorable conditions.}
+\ofrow
+\oftalent{Force of Nature}
+{You have Advantage on all checks that require proficiency and experience related to nature, such as following tracks in a forest.}
+\ofrow
+\oftalent{Guardian Corps} 
+{You do not suffer damage by falling from any height.}
+\ofrow
+\oftalent{Leading Man}
+{You have Advantage on all checks that involve impressing or persuading through speech.}
+\ofrow
+\oftalent{Let's Mosey}
+{You can perfectly imitate the mannerisms of a person that you have spent a few days of time with.}
+\ofrow
+\oftalent{Opera Floozy}
+{You have Advantage on all checks that involve acting, singing, dancing or performing.}
+\ofrow
+\oftalent{Sceptic}
+{You have Advantage on checks related to noticing whether someone is lying or withholding information.}
+\ofrow
+\oftalent{Shrouded One} 
+{You have Advantage on all checks related to hiding or staying undetected.}
+\ofrow
+\oftalent{Simdemehkiym}
+{You are fluent in 2 languages and can learn new ones in a matter of days.}
+\ofrow
+\oftalent{Spira's Historian}
+{You have knowledge on most historical facts and you have Advantage on checks related to making connections to historical events.}
+\ofrow
+\oftalent{Starplayer}
+{You are among the best in the world in one sport or game of your choice.}
+\ofrow
+\oftalent{Strange Gourmand}
+{You can spend an hour to prepare a tasty meal from almost anything that can be found in stores or in nature.}
+\ofrow
+\oftalent{Story Teller}
+{You have Advantage on all checks related to telling convincing lies or omitting the truth.}
+\ofrow
+\oftalent{Tantalus Performer}
+{You can use magic to create simple illusions, including various voices and noises, small flames and gusts of wind.}
+\ofrow
+\oftalent{Theologian}
+{You have perfect knowledge on all religions in the world, including their deities and customs.}
+\ofrow
+\oftalent{Thief's Caution}
+{You have Advantage on all checks related to noticing ambushes or hostile intentions of characters.}
+\ofrow
+\oftalent{Walkthrough}
+{You have Advantage on all checks related to finding hidden locations and passages.}
+%
+\vfill
+%
+\ofboxwithtitle{Example: Talents}
+{
+	Kefka leads the Gestahlian army in a siege on Doma Castle.
+	Their first frontal attack fails spectacularly, because the castle is well fortified and led by a powerful soldier named Cyan.
+	Kefka devises a vicious plan to secure victory: he uses his Clown Talent to create a powerful liquid poison.
+	Despite protest among his allies, he pours the poison into Doma's water supply, resulting in the death of most its population.
+	Although Cyan survives, Doma is severely weakened and the Gestahlian army is able to take the castle with ease.
+	Since Kefka made use of his Talent, he fulfilled the prerequisite and he can spend a Profile Point to increase its Rank from Advanced to Expert.
+}	
+\end{document}

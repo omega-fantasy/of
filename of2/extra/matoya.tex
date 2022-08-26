@@ -1,0 +1,236 @@
+\documentclass[a4paper, titlepage, 11pt, twocolumn] {article}
+\usepackage{../of2}
+\graphicspath{..}
+%
+\begin{document}
+%
+\ofquote{"I can't see a blasted thing!"\\}{Matoya}	
+%
+%
+\begin{center}
+	\includegraphics[width=0.65\columnwidth]{./art/images/matoya.png}
+\end{center}
+%
+\accf{Matoya's Ring} is a prepared adventure that can be completed in a single session and is designed for a party of Level~1 characters.
+In this adventure, the party is tasked with finding a lost ring by the witch Matoya.
+%
+\vfill
+%
+\accf{Prologue:} As the party passes through a small village, a notice board with a single large note on it catches their attention.
+It was posted by the witch Matoya and she is promising a sizeable reward for finding her lost ring.
+Matoya lives in a large cave nearby and upon arrival, the party meets her inside the massively overgrown garden in front of it.
+Even though she looks like a frail old woman in robes, it is very obvious that Matoya is a powerful spellcaster.
+Various magically animated tools are tending to the garden around her and the plants themselves come in shapes, colors and sizes never seen before, clearly they are also of magical nature.
+Without even looking at the party, Matoya seems to already know why they are here and she starts explaining the situation:
+she has lost her ring somewhere in this garden and is struggling to find it, because she is blind.
+Matoya then conjures a device that looks like a small rocket, gives it to one of the party members and tells them to ignite it as a signal when they find the ring.
+Before the party can chime in, she casts the Mini spell on them, shrinking every character and their belongings roughly to the size of mice.
+%
+\vfill
+%
+The party quickly realizes that with their new size, it is much easier to traverse and search the overgrown garden.
+However, they also notice now that the garden is inhabited by a variety of animals.
+Upon closer inspection, they notice that the animals have been influenced by magic as well and many of them have the ability to speak.
+Nearby, they find a large circular indentation from the ring with several prints leading away from it deeper into the garden.
+All paths that the players can explore from here are sketched on the following map.
+Also, all locations of interest are marked on it and described in detail afterwards.
+%
+\newpage
+%
+\colorlet{colorpath}{green!30!white}
+\colorlet{colorwall}{green!50!black}
+\colorlet{colorobject}{white!80!black}
+\resizebox{\columnwidth}{!}{
+	\centering
+	\begin{tikzpicture}[]
+		\tikzstyle{path}=[fill=colorpath, rectangle, align=center]
+		\tikzstyle{warren}=[fill=brown!70!white, rectangle, align=center]
+
+		\node[ultra thick, fill=colorwall, draw, rectangle, minimum height=\textheight, minimum width=\textwidth](tarea)at (0,0) {};
+		\node[path, minimum height=0.2515\textheight, minimum width=0.075\textwidth](a1)at (-0.375\textwidth, -0.375\textheight) {};		
+		\node[path, minimum height=0.075\textwidth, minimum width=0.7\textwidth](a1)at (0\textwidth, -0.4\textheight) {};
+		\node[path, minimum height=0.075\textwidth, minimum width=0.7\textwidth](a1)at (0\textwidth, -0.275\textheight) {};	
+		\node[path, minimum height=0.4265\textheight, minimum width=0.075\textwidth](a1)at (0.375\textwidth, -0.2125\textheight) {};
+			
+		\node[path, minimum height=0.297\textheight, minimum width=0.075\textwidth](a1)at (-0.375\textwidth, -0.027\textheight) {};		
+		\node[path, minimum height=0.075\textwidth, minimum width=0.7\textwidth](a1)at (0\textwidth, -0.15\textheight) {};
+		\node[path, minimum height=0.075\textwidth, minimum width=0.7\textwidth](a1)at (0\textwidth, -0.025\textheight) {};
+
+		\node[path, minimum height=0.112\textheight, minimum width=0.075\textwidth](a1)at (0.375\textwidth, 0.38\textheight) {};
+	
+		\node[path, fill=brown!60!black, draw, thick, minimum height=0.25\textheight, minimum width=0.9\textwidth](a1)at (0\textwidth, 0.2\textheight) {};	
+
+		\node[path, fill=brown, minimum height=0.22\textheight, minimum width=0.25\textwidth](a1)at (-0.3\textwidth, 0.19\textheight) {};			
+		\node[path, fill=brown, minimum height=0.2\textheight, minimum width=0.175\textwidth](a1)at (0.33\textwidth, 0.22\textheight) {};	
+		
+		\node[path, fill=brown, minimum height=0.075\textwidth, minimum width=0.835\textwidth](a1)at (0\textwidth, 0.125\textheight) {};	
+		\node[path, fill=brown, minimum height=0.075\textwidth, minimum width=0.3\textwidth](a1)at (-0.1\textwidth, 0.274\textheight) {};	
+		\node[path, fill=brown, minimum height=0.17\textheight, minimum width=0.075\textwidth](a1)at (0.075\textwidth, 0.215\textheight) {};	
+	
+
+		\node[path, minimum height=0.075\textwidth, minimum width=0.7\textwidth](a1)at (0\textwidth, 0.41\textheight) {};
+		\node[path, fill=blue!80!white, ellipse, thick, draw,  minimum height=0.15\textheight, minimum width=0.4\textwidth](a1)at (-0.25\textwidth, 0.41\textheight) {};	
+	
+		\node[align=center](one)at (-0.375\textwidth, -0.45\textheight) {\bf\Huge1.};
+		\node[align=center](two)at (0\textwidth, -0.4\textheight) {\bf\Huge2.};
+		\node[align=center](two)at (0\textwidth, -0.275\textheight) {\bf\Huge3.};
+		\node[align=center](two)at (0\textwidth, -0.15\textheight) {\bf\Huge4.};
+		\node[align=center](two)at (0\textwidth, -0.025\textheight) {\bf\Huge5.};
+		\node[align=center](two)at (-0.375\textwidth, -0.025\textheight) {\bf\Huge6.};
+		\node[align=center](two)at (-0.3\textwidth, 0.2\textheight) {\bf\Huge7.};
+		\node[align=center](two)at (0\textwidth, 0.41\textheight) {\bf\Huge8.};
+	\end{tikzpicture}
+}
+%
+\vfill
+%
+\accf{1. The Torrent:} As the party tries to follow the tracks, a massive rain storm suddenly breaks out! 
+The giant water droplets falling from the sky are caused by Matoya's reanimated watering cans.
+Every player makes a DC~8 check and upon failure, they take 1d water damage.
+The party may seek shelter below nearby leaves and wait until the watering cans have moved on.
+If they decide to move through the rain instead, they take an additional 1d water damage.
+%
+\ofpar
+%
+\accf{2. The Rock:} The party comes across what looks like a gigantic rock in their path.
+They can make a DC~7 to investigate it from afar, if they succeed, they realize that the rock is really a snail inside its shell.
+In this case, they can either try to sneak past it or they can ambush it to gain a surprise round.
+If they walk up to the snail carelessly, it feel threatened and attacking, gaining a surprise round in the ensuing battle. 
+%
+\ofrow
+%
+\ofmonster{Snail}{1}{\includegraphics[width=0.3\columnwidth]{./art/monsters/snail.jpg}}
+{
+	HP: & \hfill 20 & MP: & \hfill 0\\
+	STR: & \hfill 1 & DEF: & \hfill 2 \\
+	MAG: & \hfill 0 & RES: & \hfill 1 \\
+	AGI: & \hfill 2 & Size: & \hfill L\\
+}
+{\accf{Nibble}: 1d DMG \hfill \accf{Resilient}:\water \\ \accf{Drops:} Snail Shell Piece \hfill \accf{Auto-Regen}}
+{\mpassive{Sticky Slime}{Every target that rolls below 6 on an evasion check against your attack, suffers Immobile for 3 rounds.}}
+%
+\clearpage
+%
+%
+%
+\accf{3. The Hunter:} The party comes across a large snake that has cornered a desperate mouse.
+Just as it is about to make his move, the snake notices the party and is annoyed by their presence, so it offers them a deal: it is willing spare them if they just move along.
+If the party instead successfully defeats the snake, the mouse will be very grateful and gift them 2 Potions before leaving.
+%
+\ofrow
+%
+\ofmonster{Snake}{1}{\includegraphics[width=0.3\columnwidth]{./art/monsters/snake.jpg}}
+{
+	HP: & \hfill 23 & MP: & \hfill 10\\
+	STR: & \hfill 2 & DEF: & \hfill 1 \\
+	MAG: & \hfill 0 & RES: & \hfill 1 \\
+	AGI: & \hfill 3 & Size: & \hfill L\\
+}
+{\accf{Bite}: 1d DMG \hfill \accf{Immune}:\poison \\ \accf{Drops:} Snake Tooth \hfill \accf{Counter}}
+{\mpassive{Venom}{Every target that rolls below 6 on an evasion check against your attack, suffers Poison for 3 rounds.}}
+%
+\vfill
+%
+%
+\accf{4. The Merchant:} The party comes across a large ant that is carrying a basket with various items.
+The ant explains that it is a merchant that specializes in trading rare items.
+The party can offer it the Snail Shell Piece, the Snake Tooth or the Pixie Dust and in return will offer either of the following Beginner accessories: Mytrhil Shield~(DEF+1), Power Armlet~(STR+1), Rune Bracers~(RES+1), Crystal Ring~(MAG+1). 
+If the party tries to fight the ant, it will immediately flee.
+%
+%
+\vfill
+%
+%
+\accf{5. The Web:} The party suddenly feels something sticky around them as they realize, they have walked into a spider web!
+Every party member makes a DC~8 check and is stuck in the web upon failure.
+Shortly after, a big spider reveals itself, but it is annoyed with the party because it was hoping to catch insects instead.
+The spider also hints that it has seen the ring and the party can try to bribe, charm or threaten it to gain more information.
+After passing a DC~7 check, the spider will reveal that it has seen a group of mice pass by here carrying the ring.
+The spider is a coward, if the players keep trying to fight it, it will immediately flee. 
+%
+%
+\vfill
+%
+%
+%
+\accf{6. The Pixie:} The party meets a small pixie beneath a large pumpkin.
+She gets very excited once she realizes that they are what she considers as giants and she wants to know all about their way of life.
+If the party entertains her questions, she will repay them by offering information about the lost ring:
+she has recently seen a group of mice rolling it towards their fortress which is further down this path.
+In addition she will cast a healing spell on the party, which restores 5 HP and MP to every party member.
+She also gifts them a flask of Pixie Dust, an Item which upon use cures all Status Effects except KO and restores 1d HP.
+%
+\vfill
+%
+\accf{7. The Fortress:} The party arrives at a fortress made out of clay and leaves, its entrance is guarded by two mice armed with toothpicks.
+The entrance leads into a large hall that is neatly decorated and filled with various wooden furniture.
+The hallways branching off from it are filled with collected trinkets such as cloths, coins and seeds.
+They lead into a \newpage long dining room with a large table full of cooked insects and an unguarded exit in the back.
+There are multiple ways the party could approach the situation, some of which are discussed below.
+%
+\ofrow
+%
+\accf{Stealth:} The party may try to carefully sneak past the guards and through the fortress.
+In this case the party has to make two DC~6 checks and they will get caught if they fail either.
+If they get caught, they can still resort to one of the options below.
+%
+\ofrow
+%
+\accf{Diplomacy:} The party may try to talk to the mice to handle the situation peacefully.
+In this case, their leader will come forward and explain that their kingdom is ruled by the tyrant King Frog, who lives in the pond behind the castle.
+He also mentions how they gifted the king Matoya's Ring as an offering.
+The party may gain the support of the mice by promising to defeat King Frog and end his rule.
+The mice will then also gift the party a Potion and an Ether to help in their endeavour.
+%
+\ofrow
+%
+\accf{Combat:} To fight their way through the fortress, the party first has to defeat the guards and then another
+amount of mice equal to the party size in the grand hall.
+As they keep moving through the fortress, more and more mice will chase them, leaving no option but to run.
+They will be too scared to chase once the party leaves the fortress and moves towards the pond.
+%
+\ofrow
+\ofmonster{Mouse}{1}{\includegraphics[width=0.2\columnwidth]{./art/monsters/mouse.jpg}}
+{
+	HP: & \hfill 12 & MP: & \hfill 0\\
+	STR: & \hfill 1 & DEF: & \hfill 0 \\
+	MAG: & \hfill 0 & RES: & \hfill 1 \\
+	AGI: & \hfill 3 & Size: & \hfill M\\
+}
+{\accf{Toothpick}: 1d DMG \hfill \accf{Immune}:\immobile}{}
+%
+\vfill
+%
+%
+%
+\accf{8. The Pond:} Right behind the fortress, a short path leads to a small pond.
+A gigantic frog leaps out of it immediately when the party arrives, it is wearing tattered napkin cloak and Matoya's Ring on its head like a crown.
+King Frog believes that the mice have brought it the party as his meal and attacks them!
+%
+\ofrow
+%
+\ofmonster{King Frog}{1}{\includegraphics[width=0.3\columnwidth]{./art/monsters/frog.jpg}}
+{
+	HP: & \hfill 28 & MP: & \hfill 16\\
+	STR: & \hfill 3 & DEF: & \hfill 1 \\
+	MAG: & \hfill 0 & RES: & \hfill 3 \\
+	AGI: & \hfill 3 & Size: & \hfill L\\
+}
+{\accf{Slam}: 1d DMG \hfill \accf{Weak}:\lightning \hfill \accf{Resilient}:\water \\ \accf{Drops:} Matoya's Ring, Pheonix Down \hfill \accf{Dual Attack}}
+{\mtech{Tongue}{4}{0r}{Single}{5u}{The target makes a DC 8 check and suffers 2d damage and Immobile for 1 round upon failure.}{\immobile}}
+%
+%
+%
+\vfill
+%
+%
+%
+\accf{Epilogue:} Shortly after firing the signal rocket, Matoya arrives and casts a spell that transforms them back to their original size.
+She is very grateful that they finally found her ring and she awards every party member 500 Gil.
+In addition, every party member gains a \accf{Level~Up} as they leave Matoya's garden and move on to new adventures.
+%
+%
+\clearpage
+%
+%
+\end{document}

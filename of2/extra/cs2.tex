@@ -1,0 +1,108 @@
+\documentclass[a4paper, titlepage, 11pt, twocolumn] {article}
+\usepackage{../of2}
+\usepackage{eso-pic}
+\graphicspath{..}
+
+\newcommand\BackgroundPic{
+	\put(0,0){
+		\parbox[b][\paperheight]{\paperwidth}{%
+			\vfill
+			\centering
+			\includegraphics[width=\paperwidth,height=\paperheight]{cs2_bg.pdf}
+			\vfill
+}}}
+
+
+
+\definecolor{bg}{RGB}{255,255,255}
+%\definecolor{bg}{RGB}{200,200,200}
+\def\DefaultOptionsofText{print, height=0.28cm, charsize=8pt, borderwidth=0, bordersep=0, backgroundcolor=bg}
+\newcommand{\cstextfield}[3]{\hspace*{-0.1cm}\raisebox{-.175\height}{\TextField[multiline, name=#1, width=#2\columnwidth, #3]{}}}
+\newcommand{\cscheckbox}[1]{\hspace*{-0.01cm}\raisebox{-.1\height}{\CheckBox[print, height=0.4cm, name=#1, borderwidth=0.5, bordercolor=black, backgroundcolor=bg, width=0.45cm]{}}}
+\newcommand{\csstatusbox}[1]{
+	\raisebox{-.25cm}{%
+		\tikz{
+			\tikzstyle{seg}=[align=center, minimum size = 0.25cm, inner sep=0pt, color=accent]
+			\node[seg,](l1)at (-0.48,0) {\CheckBox[print, height=0.35cm, name=#1_1, borderwidth=0.5, bordercolor=black, backgroundcolor=bg, width=0.35cm]{}};
+			\hspace*{-0.025cm}	
+			\node[seg](l2)at (-0.04,0) {\CheckBox[print, height=0.35cm, name=#1_2, borderwidth=0.5, bordercolor=black, backgroundcolor=bg, width=0.35cm]{}};
+			\hspace*{-0.045cm}
+			\node[seg](l3)at (0.41,0) {\CheckBox[print, height=0.35cm, name=#1_3, borderwidth=0.5, bordercolor=black, backgroundcolor=bg, width=0.35cm]{}};
+		}
+	}
+	\vspace*{-0.07cm}\\
+}
+
+\newcommand{\cstextfieldsmall}[3]{\hspace*{-0.1cm}\raisebox{-.175\height}{\TextField[name=#1, width=#2\columnwidth, #3]{}}}
+
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{bottom=0mm,top=33mm,right=18mm,left=18mm, columnsep=10mm}
+\onecolumn
+\AddToShipoutPicture*{\BackgroundPic}
+\begin{Form}
+\begin{multicols}{3}
+\hspace*{2.6cm}\cstextfieldsmall{name}{0.5}{,}\vspace*{0.1cm}\\
+\cstextfield{bio}{1.08}{, height=3.1cm}\vspace*{0.85cm}\\
+\cstextfield{jobs}{1.08}{, height=3.2cm}\vspace*{0.9cm}\\
+\cstextfield{passive}{1.08}{, height=1.8cm}\vspace*{1cm}\\
+\cstextfield{reaction}{1.08}{, height=1.8cm}\vspace*{0.57cm}\\
+\hspace*{1.4cm}\cstextfieldsmall{espername}{0.475}{,}\vspace*{0.1cm}\\
+\cstextfield{esper}{1.08}{, height=2.25cm}\vspace*{0.56cm}\\
+\hspace*{1.95cm}\cstextfieldsmall{gil}{0.43}{,align=2}\vspace*{0.1cm}\\
+\cstextfield{inventory}{1.08}{, height=5cm}\vspace*{0.9cm}\\
+\hspace*{0.6cm}\cstextfieldsmall{fire}{0.4}{,}\hspace*{0.8cm}\cstextfieldsmall{ice}{0.4}{,}\\
+\hspace*{0.6cm}\cstextfieldsmall{light}{0.4}{,}\hspace*{0.8cm}\cstextfieldsmall{water}{0.4}{,}\\
+\hspace*{0.6cm}\cstextfieldsmall{earth}{0.4}{,}\hspace*{0.8cm}\cstextfieldsmall{wind}{0.4}{,}\\
+\hspace*{0.6cm}\cstextfieldsmall{holy}{0.4}{,}\hspace*{0.8cm}\cstextfieldsmall{dark}{0.4}{,}
+\columnbreak\\
+\vspace*{-0.025cm}\\
+\hspace*{2.6cm}\cstextfieldsmall{hpcur}{0.22}{, charsize=14pt, height=0.8cm, align=2}
+\hspace*{0.35cm}\cstextfieldsmall{hpmax}{0.22}{, charsize=14pt, height=0.8cm}\vspace*{0.7025cm}\\
+%
+\hspace*{0.7cm}\cstextfieldsmall{lvl}{0.33}{, charsize=12pt, height=0.5cm, align=2}
+\hspace*{1.3cm}\cstextfieldsmall{mov}{0.33}{, charsize=12pt, height=0.5cm, align=2}
+\vspace*{0cm}\\
+\hspace*{0.7cm}\cstextfieldsmall{agi}{0.33}{, charsize=12pt, height=0.5cm, align=2}
+\hspace*{1.3cm}\cstextfieldsmall{eva}{0.33}{, charsize=12pt, height=0.5cm, align=2}
+\vspace*{0.5cm}\\
+%
+\cstextfield{abilities1}{1.15}{, height=5.45cm}\vspace*{0.75cm}\\
+\cstextfield{limit1}{1.15}{, height=2.55cm}\vspace*{0.75cm}\\
+\hspace*{0.65cm}\cstextfield{weapon}{0.985}{, height=2.45cm}\vspace*{0.05cm}\\
+\hspace*{0.65cm}\cstextfield{acc1}{1.02}{, height=1.45cm}\vspace*{0.75cm}\\
+\cstextfield{notes1}{1.15}{, height=1.8cm}\vspace*{0.77cm}\\
+\hspace*{1.3cm}\csstatusbox{blind}
+\hspace*{1.3cm}\csstatusbox{blink}
+\hspace*{1.3cm}\csstatusbox{haste}
+\hspace*{1.3cm}\csstatusbox{immobile}
+\hspace*{1.3cm}\csstatusbox{poison}
+\hspace*{1.3cm}\csstatusbox{regen}
+\hspace*{1.3cm}\csstatusbox{silence}
+\hspace*{1.3cm}\csstatusbox{sleep}
+\hspace*{1.3cm}\csstatusbox{slow}
+\hspace*{1.3cm}\csstatusbox{zombie}
+\columnbreak\\
+\vspace*{-0.025cm}\\
+\hspace*{2.55cm}\cstextfield{mpcur}{0.22}{, charsize=14pt, height=0.8cm, align=2}
+\hspace*{0.35cm}\cstextfield{mpmax}{0.22}{, charsize=14pt, height=0.8cm}\vspace*{0.7025cm}\\
+%
+\hspace*{0.7cm}\cstextfieldsmall{str}{0.33}{, charsize=12pt, height=0.5cm, align=2}
+\hspace*{1.3cm}\cstextfieldsmall{mag}{0.33}{, charsize=12pt, height=0.5cm, align=2}
+\vspace*{0cm}\\
+\hspace*{0.7cm}\cstextfieldsmall{def}{0.33}{, charsize=12pt, height=0.5cm, align=2}
+\hspace*{1.3cm}\cstextfieldsmall{res}{0.33}{, charsize=12pt, height=0.5cm, align=2}
+\vspace*{0.5cm}\\
+%
+\cstextfield{abilities2}{1.05}{, height=5.45cm}\vspace*{0.75cm}\\
+\cstextfield{limit2}{1.05}{, height=1.95cm}\vspace*{0.135cm}\\
+\hspace*{0.15cm}\cscheckbox{lp1}\cscheckbox{lp2}\cscheckbox{lp3}\cscheckbox{lp4}\cscheckbox{lp5}\cscheckbox{lp6}\cscheckbox{lp7}\cscheckbox{lp8}\cscheckbox{lp9}\cscheckbox{lp10}\vspace*{0.78cm}\\
+\hspace*{0.35cm}\cstextfield{armor}{0.985}{, height=2.45cm}\vspace*{0.05cm}\\
+\cstextfield{acc2}{1.05}{, height=1.45cm}\vspace*{0.75cm}\\
+\cstextfield{notes2}{1.05}{, height=1.8cm}\vspace*{0.75cm}\\
+\end{multicols}	
+\end{Form}
+\end{document}
+%
+\clearpage
