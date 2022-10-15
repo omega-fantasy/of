@@ -1,17 +1,16 @@
 \ofsubsection{Blitzball}
 %
-\ofquote{"The players fight with all their strength: the fans cheer for their favorite team. They forget pain, suffering... Only the game matters! That's why Blitz has been around for so long. Least that's what I think."\\}{Wakka}\\\\
+\ofquote{"Os jogadores lutam com toda sua força: os fãs torçem pelo seu time favorito. Eles equecem da dor, do sofrimento... somente o jogo importa! Esse é o porquê Blitz está vivo por tanto tempo. Pelo menos é o que acho."\\}{Wakka}\\\\
 %
-\accf{Blitzball} is a team sport that can be compared to water polo except that the game is played underwater, inside a large water sphere.
-The water itself is imbued with magical properties to allow players to stay submerged for an extended period.
-In Blitzball two opposing teams play against each other and the team which scores the most points wins.
-A point is scored by shooting the ball inside the enemy goal. 
-Each team consists of one goalkeeper and 2-5 players. 
-Blitzball is similar to combat, except that the game is centered around controlling the ball.
-The turn order is determined in the exact same way as in combat and the player who takes the first turn catches the ball after kick-off.
-Each game consists of two halves, where each half consists of 10 rounds.
-After finishing the first half, the teams take a break where every player fully recovers their SP.
-Blitzball is played inside a 15u diameter sphere filled with water, but you can use the simplified layout shown below to illustrate games.
+\accf{Blitzball} é um esporte de grupo que pode ser comparado ao polo aquático, exceto que se é jogado sob a água, dentro de uma grande esfera. 
+A água em si é imbuída com propriedades mágicas que permitem aos jogadores ficar submergidos por períodos longos.
+Nesse jogo dois times opostos jogam um contra o outro e aquele que pontuar mais, vence.
+Um time consiste em um goleiro e de 2 a 5 jogadores.
+O jogo parece um combate, exceto que se é focado em controlar a bola.
+A ordem de turno é determinado da mesma maneira que no combate, o jogador que age primeiro pega a bola após o pontapé inicial.
+Cada partida consiste em dois tempos, em que cada um tem 10 rodadas.
+Após terminar o primeiro tempo, os times têm um intervalo em que cada jogador recupera seus pontos de fôlego.
+Blitzball é jogado dentro de uma esfera de 15u de diâmetro cheia de água, mas você pode usar um esquema simplificado como mostrado abaixo para ilustrar o jogo.
 %
 \vfill
 %
@@ -35,20 +34,20 @@ Blitzball is played inside a 15u diameter sphere filled with water, but you can 
 	\node[fill=green!60!white, test,minimum size = 0.45cm](player)at (0.3,1) {};
 	\node[fill=green!60!white, test,minimum size = 0.45cm](target)at (-0.5,-1.7) {};
 	\node[fill=black, test,minimum size = 0.1cm](ball)at (-0.5,-1.3) {};		
-	\node[](tball)at (-1.8,-1.1) {\bf Ball};
-	\node[](tplayer)at (1,2) {\bf Players};
+	\node[](tball)at (-1.8,-1.1) {\bf Bola};
+	\node[](tplayer)at (1,2) {\bf Jogadoras};
 	\draw[->, thick](tball) -- (ball);
 	\draw[->, thick](tplayer) -- (player);
 	\draw[->, thick](tplayer) -- (player2);
 	
-	\node[](tgk)at (-1.5,0.7) {\bf Goalkeeper};
-	\node[](tgoal)at (-3,-2.5) {\bf Goal};
+	\node[](tgk)at (-1.5,0.7) {\bf Goleiro};
+	\node[](tgoal)at (-3,-2.5) {\bf Gol};
 	\node[fill=black!80!white, draw, rectangle,minimum height=1.5cm, minimum width=0.05cm](goal)at (-3,0) {};
 	\node[fill=green!30!white, test,minimum size = 0.45cm](gk)at (-2.6,0) {};
 	\draw[->, thick](tgk) -- (gk);
 	\draw[->, thick](tgoal) -- (goal);
 	
-	\node[](tgoal2)at (3,-2.5) {\bf Goal};
+	\node[](tgoal2)at (3,-2.5) {\bf Gol};
 	\node[fill=black!80!white, draw, rectangle,minimum height=1.5cm](goal2)at (3,0) {};
 	\node[fill=red!30!white, test,minimum size = 0.45cm](target)at (2.6,0) {};
 	\draw[->, thick](tgoal2) -- (goal2);
@@ -58,9 +57,9 @@ Blitzball is played inside a 15u diameter sphere filled with water, but you can 
 	\draw[-, dashed](0,3) -- node[] {}(0,-3);
 	\node[](sca)at (-0.25,0) {15u};		
 	
-	\node[](sca)at (2.5,2.9) {\bf\underline{1st Half:}};
-	\node[](sca)at (2.5,2.5) {\bf5r left};
-	\node[](sca)at (-2.5,2.9) {\bf\underline{Score:}};
+	\node[](sca)at (2.5,2.9) {\small\bf\underline{Primeira Parte:}};
+	\node[](sca)at (2.5,2.5) {\small\bf\hspace*{0.4cm}5r restante};
+	\node[](sca)at (-2.5,2.9) {\small\bf\underline{Pontuação:}};
 	\node[](sca)at (-2.5,2.5) {\bf 1 : 0};
 	\end{tikzpicture}
 	}
@@ -68,17 +67,16 @@ Blitzball is played inside a 15u diameter sphere filled with water, but you can 
 %
 \vfill
 %
-Each player's proficiencies in different aspects of the game are defined by the following 4 Blitzball attributes:\ofrow
-\accf{Stamina Points (SP):} Represent your durability during the game. 
-	Most actions cost an amount of SP to perform. 
-	When your current SP reaches 0, you can keep playing, but 
-	cannot perform actions that cost SP.
+As proficiências do jogador em diferentes aspectos do jogo são definidas pelos 4 atributos a seguir:\ofrow
+\accf{Pontos de fôlego (PF):} Representa sua durabilidade durante o jogo.
+	A maioria das ações custam uma quantidade de PF para se executar.
+	Quando seus PF alcançam 0, você pode continuar jogando, mas não pode realizar ações que custam PF.
 %
 \ofrow
 %
-\accf{Offense (OFF):} Improves your chances of successfully passing and shooting the ball.\ofrow
-\accf{Defense (DEF):} Improves your chances of stealing and intercepting the ball.\ofrow
-\accf{Pace (PC):} Determines how fast you can swim.
+\accf{Ataque (ATQ):} Melhora suas chances de passar e chutar a bola.\ofrow
+\accf{Defesa (DEF):} Melhora suas chances de roubar e interceptar a bola.\ofrow
+\accf{Velocidade (VE):} Determina o quão rápido você pode nadar.
 %
 \newpage
 %
@@ -90,110 +88,104 @@ Each player's proficiencies in different aspects of the game are defined by the 
 %
 \vfill
 %
-During each turn, a player can swim a total distance of up to his PC+1 units and take one of the following actions.
-The only exception is the goalkeeper, who stays in front of the goal at all times and only reacts to enemy shots.
-The set of actions you can take changes depending on if you have the ball or not.
+Durante cada turno, um jogador pode mergulhar uma distância total até sua VE+1 em unidades e realizar uma das seguintes ações.
+A única exceção é o goleiro, que fica em frente ao gol o tempo todo e somente reage aos chutes dos inimigos.
+O conjunto de ações que você pode realizar muda a depender de se você tem ou não a bola.
 %
 \ofrow
 %
-\accf{Pass:} You pass the ball to another player.
-The ball can travel a maximum distance of your OFF+1d units.
-While playing the pass, every opponent within 1u of you can try to block the ball.
-In doing this, each blocker reduces the passes distance by their DEF+1d.
-If an opponent reduces the passes distance to 0, they catch the ball.
-If the ball gets past all blockers, but does not reach its target, the player closest to it
-catches the ball.
+\accf{Passe:} Você passa a bola a outro jogador.
+A bola pode viajar uma distância máxima igual a seu ATQ+1d em unidades.
+Enquanto realizando o passe, cada oponente dentro de 1u de você pode tentar bloquear a bola.
+Ao fazer isso, cada bloqueador reduz a distância do passe pela sua DEF+1d.
+Se essa distância for reduzida a 0, ele pega a bola.
+Se a bola passa de todos os bloqueadores, mas não alcança seu alvo, o jogador mais próximo a pega.
 %	
 \ofrow
 %
-\accf{Shoot:} You shoot the ball on the goal. 
-The ball can travel a maximum distance of your OFF+1d units.
-Firstly, each shot can be blocked by nearby opponents in the same way as a pass.
-Then, if the ball reaches the goal, the goalkeeper can try to catch it.
-If the goalkeeper's DEF+1d is higher than the ball's remaining distance, he catches the ball,
-otherwise you score a goal.
-If the keeper catches the ball, he can immediately make a pass that cannot be blocked.
-If you successfully score a goal, a new kick-off is performed like at the start of the game.
-Each shot costs you an amount of SP equal to your OFF.
+\accf{Chute:} Você chuta a bola ao gol.
+A bola pode viajar uma distância máxima igual a seu ATQ+1d em unidades.
+Primeiro, cada chute pode ser bloqueado por oponentes próximos da mesma maneira que o passe. Assim, se a bola alcança o gol, o goleiro pode tentar pegá-la.
+Se a DEF+1d do goleiro é maior do que a distância restante da bola, ele a pega, do contrário você pontua.
+Se o goleiro pega a bola, ele pode imediatamente fazer um passe que não pode ser bloqueado. Se um ponto foi marcado, então um novo pontapé inicial será realizado ao inicio da próxima partida.
+Cada chute custa a você uma quantidade de PF igual ao seu ATQ.
 %	
 \ofrow
 %
-\accf{Tackle:} You try to steal the ball from a player that is within 1u.
-If your DEF+1d is higher than the target's DEF+1d, then you successfully steal the ball.
-Also, add 1d to your roll, for each tackle that the target has suffered since his last turn.
-In performing the tackle, you can additionally dash a distance of your PC+1 units.
-Each tackle cost you an amount of SP equal to your DEF.
+\accf{Encontrão:} Você rouba a bola de um jogador que esteja a 1u.
+Se sua DEF+1 é maior do que a DEF+1d do alvo, então você rouba a bola com sucesso. Também, adicione 1d à sua rolagem, para cada encontrão que o alvo receber desde seu último turno.
+Ao realizar o encontrão, você também pode disparar a uma distância de sua VE+1 em unidades.
+Cada encontrão custa uma quantidade de PF igual à sua DEF.
 %
 \ofrow
 %	
-\accf{Tech:}
-Techs are special abilities that can help you win the game.	
-Each tech contains its effect and SP cost in its description.
-A list of techs is shown on the next page.
+\accf{Técnica:}
+Técnicas são habilidades especiais que podem te ajudar a vencer um jogo.
+Cada técnica contém seu efeito e custo em PF na sua descrição.
+Uma lista de técnicas é mostrada na próxima página.
 %
 \vfill
 %
-During a Blitzball game, players may suffer the following effects for a limited duration.\ofrow
-\accf{Poison:} At the start of each turn, your current SP is reduced by an amount equal to 10\% of your maximum~SP.\ofrow
-\accf{Wither:} Your OFF, DEF and PC are halved.\ofrow
-\accf{Nap:} Your turns are skipped and you cannot catch or block the ball.
-When a player passes to you while asleep, you wake up and the ball is received by the nearest player.
+Durante o jogo, os jogadores podem sofrer os seguintes efeitos por uma duração limitada.\ofrow
+\accf{Veneno:} No início de cada turno, seu PF atual é reduzida em 10\% de seu máximo.\ofrow
+\accf{Enfraquecido:} Seu ATQ, DEF e PF são reduzidos pela metade.\ofrow
+\accf{Soneca:} Seus turnos são pulados e você não pode pegar ou bloquear a bola.
+Quando um jogador passa para você enquanto estiver dormindo, você acorda e a bola é recebida pelo jogador mais próximo.
 %
 \clearpage
 %
-\ofquote{"That was the Jecht shot, wasn’t it?"\\}{Yuna}\ofpar
+\ofquote{"Este é o chute Jecht, não é?"\\}{Yuna}\ofpar
 %
 \includegraphics[width=\columnwidth]{./art/blitz/ingame.jpg}
 %
 \ofpar
 %
-All blitzball attributes of a player are derived from and improved by their combat attributes as follows: \ofrow
-\accf{Stamina Points = Health Points + Mana Points} \ofrow
-\accf{Offense = Strength + Magic} \ofrow
-\accf{Defense = (physical) Defense + Resistance} \ofrow
-\accf{Pace = Agility} \ofrow
+Todos os atributos de um jogador de Blitzball são derivados e melhorados pelos seus atributos de combate como a seguir:\ofrow
+\accf{Pontos de fôlego = Pontos de vida + Pontos de mana} \ofrow
+\accf{Ataque = Força + Magia} \ofrow
+\accf{Defesa = Defesa (físca) + Resistência} \ofrow
+\accf{Velocidade = Agilidade} \ofrow
 %
-So if a player character levels up outside of Blitzball and gains STR+1, his OFF is also increases by 1.
-To avoid confusion, Blitzball attributes should be tracked separately from combat attributes.
-In the beginning each player already knows one tech of their choice.
-Each player can learn up to 3 techs at most, by observing other players who perform them.
-If during a game, someone within 3u of you performs a tech, you can try to pass a DC 9 check to learn it.
-If you already know 3 techs, you have to forget one of them to make place for a new one.
-Playing Blitzball is a source of experience for player characters, which can help them to reach adventuring milestones more quickly.
-Furthermore, winners of Blitzball are usually awarded with various rewards and prices, including Equipment, Items and Gil.
+Então se um personagem jogador aumenta de nível fora de uma partida e ganha FOR+1, seu ATQ também é aumentado em +1.
+Para evitar confusão, os atributos de Blitzball devem ser acompanhados separadamente daqueles de combate.
+No início cada jogador já sabe uma técnica a sua escolha.
+Cada jogador aprende até 3 técnicas no máximo, ao observar outros jogadores que as executam.
+Se durante uma partida, alguém a 3u de você executa uma técnica, você pode tentar passar num teste de DF~9 para aprendê-la.
+Se já conhecer 3, você pode esquecer uma delas para substituir pela nova. Jogar Blitzball é uma fonte de experiência para os personagens jogadores, o que os ajudam a alcançar marcos na aventura mais rapidamente.
+Além do mais, vencedores do Blitzball são normalmente premiados com várias recompensas e prêmios, incluindo equipamentos, itens e Gil.
 %
 \vfill
 %
 \oftable{p{0.15\columnwidth} l p{0.73\columnwidth}}
-{\accf{Tech} & \accf{SP} & \accf{Effect}}
+{\accf{Técnica} & \accf{PF} & \accf{Efeito}}
 {
-	Jecht Shot & 20 & You make a shot, that cannot be blocked by any player except the goalkeeper.\ofrow
-	Grip Gloves & 8 & Until the start of your next turn, add 1d to your DEF while you are trying to catch a pass or shot. \ofrow
-	Brawler & 8 & Until the end of your next turn, your DEF is increased by an amount equal to you OFF. \ofrow
-	Aurochs Spirit & 12 & All allies within 5u increase their OFF and DEF by 3 until the start of your next turn. \ofrow
-	Drain Pass & 8 & You make a pass, where you add 3u to its distance. Every player that fails to intercept it loses 5 SP and your SP is increased by the same amount. \ofrow
+	Chute Jecht & 20 & Você dá um chute que não pode ser bloqueado, exceto pelo goleiro.\ofrow
+	Luvas de agarrar & 8 & Até o inicio de seu próximo turno, adicione 1d a sua DEF enquanto tenta pegar um passe ou chute. \ofrow
+	Parrudo & 8 & Até o fim de seu próximo turno, sua DEF aumenta em um valor igual a seu ATQ.\ofrow
+	Espírito dos\newline auroques & 12 & Todos os aliados dentro de 5u aumentam seu ATQ e DEF em 3 até o início de seu próximo turno. \ofrow
+	Passe\newline drenante & 8 & Você passa a bola, em que se adiciona 3u à distância dela. Cada jogador que falhar ao interceptar a bola, perde 5 PF e seu PF aumenta na mesma quantidade.\ofrow
 }
 %
 \newpage
 %
-\oftable{p{0.13\columnwidth} l p{0.73\columnwidth}}
-{\accf{Tech} & \accf{SP} & \accf{Effect}}
+\oftable{p{0.16\columnwidth} l p{0.73\columnwidth}}
+{\accf{Técnica} & \accf{PF} & \accf{Efeito}}
 {
 %	Jecht Shot & 20 & You make a shot, that cannot be blocked by any player except the goalkeeper.\ofrow
-	Sphere Shot & 15 & You make a shot, where you add 2d units to its distance.\ofrow
-	Volley Shot & 6 & When you receive a pass or catch a ball before the start of your next turn, you can immediately make a shot. \ofrow
-	Venom Shot & 10 & You make a shot, where you add 3u to its distance. Every player that tries to block it makes a DC 8 check and suffers Poison for 3 rounds upon failure.\ofrow
-	Wither Shot & 10 & You make a shot, where you add 3u to its distance. Every player that tries to block it makes a DC 8 check and suffers Wither for 3 rounds upon failure.\ofrow
-	Nap Shot & 10 & You make a shot, where you add 3u to its distance. Every player that tries to block it makes a DC 8 check and suffers Nap for 3 rounds upon failure.\ofrow
-	Wither Pass & 8 & You make a pass, where you add 3u to its distance. Every player that tries to block it makes a DC 8 check and suffers Wither for 3 rounds upon failure. \ofrow
-	Venom Pass & 8 & You make a pass, where you add 3u to its distance. Every player that tries to block it makes a DC 8 check and suffers Poison for 3 rounds upon failure. \ofrow
-	Nap Pass & 8 & You make a pass, where you add 3u to its distance. A player that tries to block it makes a DC 8 check and suffers Nap for 3 rounds upon failure. \ofrow
-	Venom Tackle & 10 & You make a tackle, where you add 3 to your usual DEF. Every player that tries to block it makes a DC 8 check and suffers Poison for 3 rounds upon failure.\ofrow
-	Nap Tackle & 10 & You make a tackle, where you add 3 to your usual DEF. Every player that tries to block it makes a DC 8 check and suffers Nap for 3 rounds upon failure.\ofrow
-	Wither Tackle & 10 & You make a tackle, where you add 3 to your usual DEF. Every player that tries to block it makes a DC 8 check and suffers Wither for 3 rounds upon failure. \ofrow
-	Drain Tackle & 10 & You make a tackle, where you add 3 to your usual DEF. In addition, the target makes DC 8 check and upon failure his SP is reduced 5 and your SP is increased by the same amount. \ofrow
-	Tackle Slip & 7 & 	Until the start of your next turn, every opponent that tries to tackle you has to make a DC 8 check first and upon failure, their tackle misses.\ofrow
-	Elite \newline Defense & 8 & Until the start of your next turn, when an opponent moves within 1u of you, you can immediately make a tackle on him.\ofrow
+	Chute\newline esfera & 15 & Chute e adiciona 2d em unidades a distância da bola.\ofrow
+	Chute\newline voleio & 6 & Ao receber um passe ou pegar a bola antes do início de seu próximo turno, você pode chutar imediatamente. \ofrow
+	Chute\newline venenoso & 10 & Chute e adiciona 3u à distância da bola. Cada jogador que tentar bloqueá-la faz um teste de DF~8 ou fica envenenado por 3 rodadas.\ofrow
+	Chute Enfraquecedor & 10 & Chute e adiciona 3u à distância da bola. Cada jogador que tentar bloqueá-la faz um teste de DF~8 ou fica Enfraquecido por 3 rodadas.\ofrow
+	Chute\newline soneca & 10 & Chute e adiciona 3u à distância da bola. Cada jogador que tentar bloqueá-la faz um teste de DF~8 ou fica Dormindo por 3 rodadas.\ofrow
+	Passe Enfraquecedor & 8 & Passe e adiciona 3u à distância da bola. Cada jogador que tentar bloqueá-la faz um teste de DF~8 ou fica Enfraquecido por 3 rodadas. \ofrow
+	Passe\newline venenoso & 8 & Passe e adiciona 3u à distância da bola. Cada jogador que tentar bloqueá-la faz um teste de DF~8 ou fica Envenenado por 3 rodadas. \ofrow
+	Passe\newline soneca & 8 & Passe e adiciona 3u à distância da bola. Cada jogador que tentar bloqueá-la faz um teste de DF~8 ou fica Dormindo por 3 rodadas.\ofrow
+	Encontrão\newline venenoso & 10 & Dê um encontrão e adiciona +3 à sua DEF atual. Cada jogador que tentar bloqueá-la faz um teste de DF~8 ou fica Envenenado por 3 rodadas.\ofrow
+	Encontrão\newline soneca & 10 & Dê um encontrão e adiciona +3 à sua DEF atual. Cada jogador que tentar bloqueá-la faze um teste de DF~8 ou fica Dormindo por 3 rodadas.\ofrow
+	Encontrão Enfraquecedor & 10 & Dê um encontrão e adiciona +3 à sua DEF atual. Cada jogador que tentar bloqueá-la faz um teste de DF~8 ou fica Enfraquecido por 3 rodadas. \ofrow
+	Encontrão\newline drenante & 10 & Dê um encontrão e adiciona +3 à sua DEF atual. Cada jogador que tentar bloqueá-la faz um teste de DF~8 ou seu PF é reduzido em -5 e o seu PF aumenta na mesma quantidade.\ofrow
+	Encontrão\newline escorrega & 7 & Até o início do seu próximo turno, cada oponente que tentar dar um encontrão em você tem que fazer um teste de DF~8 primeiro ou errará o encontrão.\ofrow
+	Defesa \newline de Elite & 8 & Até o início de seu próximo turno, quando um oponente se mover dentro de 1u de você, você pode dar um encontrão nele imediatamente.\ofrow
 }
 %
 \clearpage
