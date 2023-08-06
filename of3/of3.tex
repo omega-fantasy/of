@@ -1,0 +1,45 @@
+\documentclass[a4paper, titlepage, twocolumn]{article}
+\usepackage{of3}
+%
+\begin{document}
+{
+\newgeometry{bottom=10mm,top=5mm,right=25mm,left=25mm}
+\begin{titlepage}	
+	\begin{center}
+	\includegraphics[width=0.9\columnwidth]{./art/images/title.jpg}
+	\vspace*{2cm}\\
+	\large
+	\parbox[c]{0.9\columnwidth}{
+	\oftocline{Rules}{1}
+	\oftocline{Equipment Lists}{6}
+	\oftocline{Tech List}{9}
+	\oftocline{Spell List}{11}
+	\oftocline{Passive List}{13}
+	\oftocline{Reaction List}{14}
+	\oftocline{Talent Skill List}{15}
+	\oftocline{Esper List}{16}
+	\oftocline{Character Sheet}{17}
+	}
+	\vspace*{\fill}\\
+	\small
+	\accf{Credits:} Edgar Edgelord, JimMorrigan, Bruno Carvalho, Erik Radspinner, OmegaWeapon, StorytellerZeke, Kori,
+	Wally Zielinski, Chris Giannoukos, Joshua Davis, Juan Altamirano, TastyRedTomato, Netzacoatl, Eldi13, Red7394, TaintedBalance, GM\_3826, The\_Fencer0, Kaiten619 and all users of our \href{https://discordapp.com/invite/F5fpxMs}{\accf{Discord Server}}\ofrow
+	Final Fantasy, its themes, art, and other affiliated content are owned by Square Enix Co., Ltd. 
+	Omega Fantasy is a fan project under the \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{\accf{Creative Commons License (CC BY-NC-SA 4.0)}} 2023. 
+	It will submit itself to any demands from the original IP owner, Square Enix Co., Ltd. As a fan project it will never charge for anything, or make commercial interactions.
+	\end{center}
+\end{titlepage}
+%
+}
+%
+\clearpage
+\defaultgeometry
+%
+\input{rules}
+\input{equip}
+\input{abilities}
+\input{talents}
+\input{esper}
+\input{charactersheet}
+%
+\end{document}
