@@ -57,8 +57,8 @@
 \ofspell{Thunder}{4}{1}{Ranged}{HP+7, MP+13, MAG+2}{One target suffers 2d lightning damage.}\vfill
 \ofspell{Blizzard}{4}{1}{Ranged}{HP+6, MP+14, MAG+2}{One target suffers 2d ice damage.}\vfill
 \ofspell{Cure}{4}{1}{Ranged}{HP+5, MP+15, MAG+1, DEF+1}{One target regains 2d HP.}\vfill
-\ofspell{Protect}{4}{1}{Melee}{HP+8, MP+12, DEF+2}{One target gains EnDEF for 3r.}\vfill
-\ofspell{Shell}{4}{1}{Melee}{HP+8, MP+12, RES+2}{One target gains EnRES for 3r.}\vfill
+\ofspell{Protect}{6}{1}{Ranged}{HP+8, MP+12, DEF+1, RES+1}{One target gains EnDEF \& EnRES for 2r.}\vfill
+\ofspell{Imperil}{6}{1}{Ranged}{HP+8, MP+12, MAG+1, RES+1}{One target suffers DeDEF \& DeRES for 2r.}\vfill
 \ofspell{Esuna}{5}{1}{Ranged}{HP+6, MP+14, RES+1, DEF+1}{Remove all negative Status Effects from one target except KO.}\vfill
 \ofspell{Poison}{4}{1}{Ranged}{HP+10, MP+15, RES+1}{One target makes a DC8 check and suffers Poison for 3r upon failure.}\vfill
 \ofspell{Blind}{4}{1}{Ranged}{HP+9, MP+16, RES+1}{One target makes a DC8 check and suffers Blind for 3r upon failure.}\vfill
@@ -70,7 +70,7 @@
 \ofspell{Warp}{8}{4}{Close}{HP+7, MP+18, RES+1}{Make a DC6 check, if you pass, both you and another close target successfully flee the battle.}\vfill
 \ofspell{Zombify}{8}{4}{Ranged}{HP+6, MP+14, MAG+1, RES+1}{One target makes a DC8 check and suffers 2d dark damage and Zombie for 3r upon failure.}\vfill
 \ofspell{Aero}{7}{4}{Ranged}{HP+9, MP+11, MAG+2}{One target suffers 3d wind damage.}\vfill
-\ofspell{Bio}{8}{4}{Ranged}{HP+7, MP+18, MAG+1\hfill Requires: Poison}{One target makes a DC8 check and suffers 2d damage and Poison for 3r upon failure. \\ \acc{Requires:} Poison}\vfill
+\ofspell{Bio}{8}{4}{Ranged}{HP+7, MP+18, MAG+1\hfill Requires: Poison}{One target makes a DC8 check and suffers 2d damage and Poison for 3r upon failure.}\vfill
 \ofspell{Haste}{8}{4}{Melee}{HP+5, MP+20, RES+1}{One target gains Haste for 3r.}\vfill
 \ofspell{Regen}{6}{4}{Melee}{HP+8, MP+12, MAG+1, RES+1}{One target gains Regen for 3r.}\vfill
 \ofspell{Image}{6}{4}{Melee}{HP+6, MP+19, DEF+1}{One target gains Blink for 3r.}\vfill
@@ -82,30 +82,32 @@
 \ofspell{Thundaga}{12}{6}{Ranged}{HP+7, MP+13, MAG+2\hfill Requires: Thunder}{All targets in a row suffer 4d lightning damage.}\vfill
 \ofspell{Blizzaga}{12}{6}{Ranged}{HP+6, MP+14, MAG+2\hfill Requires: Blizzard}{All targets in a row suffer 4d ice damage.}\vfill
 \ofspell{Graviga}{16}{6}{Ranged}{HP+4, MP+16, MAG+1, RES+1\hfill Requires: Gravity}{All targets in a row suffer 4d dark damage and their EVA is reduced by 1 for 1r.}\vfill
-\ofspell{NulElement}{16}{6}{Ranged}{HP+8, MP+12, RES+2\hfill Requires: Shell}{Choose an element (e.g. fire). One target does not suffer any damage of the chosen element for 3r.}\vfill
+\ofspell{NulElement}{16}{6}{Ranged}{HP+8, MP+12, RES+2\hfill Requires: Protect}{Choose an element (e.g. fire). One target does not suffer any damage of the chosen element for 3r.}\vfill
 \ofspell{Quicken}{18}{6}{Ranged}{HP+5, MP+20, RES+1\hfill Requires: Haste}{One target takes an extra turn immediately after yours, then the round continues as usual. You can only use this ability once per round.}\vfill
-\ofspell{Imperil}{10}{6}{Ranged}{HP+10, MP+10, DEF+1, RES+1}{One target suffers DeDEF and DeRES for 3r.}\vfill
-\ofspell{Wall}{10}{6}{Ranged}{HP+10, MP+10, DEF+1, RES+1\hfill Requires: Protect}{One target gains EnDEF and EnRES for 3r.}\vfill
+\ofspell{Float}{10}{6}{Ranged}{HP+10, MP+10, DEF+1, RES+1\hfill Requires Gravity}{For 3r, one target gains Resistance against all damage from effects that target their entire row.}\vfill
+\ofspell{Veil}{12}{6}{Ranged}{HP+10, MP+10, DEF+1, RES+1\hfill Requires: Imperil}{One target gains Immunity against all negative Status Effects for 3r.}\vfill
 %Comet
 %
 \ofspell{Quake}{22}{8}{Artillery}{HP+10, MP+10, MAG+2}{All targets in a row suffer 6d earth damage.}\vfill
 \ofspell{Doom}{20}{8}{Ranged}{HP+6, MP+14, MAG+1, RES+1\hfill Requires: Zombify}{One target suffers KO after 3r. If he is immune to KO, he suffers 6d dark damage after 3r instead.}\vfill
-\ofspell{Aeroga}{20}{8}{Ranged}{HP+9, MP+11, MAG+2\hfill Requires: Aero}{All targets in a row suffer 3d wind damage and make a DC6 check. Upon failure, they are pushed into the other row.}\vfill
+\ofspell{Aeroga}{20}{8}{Ranged}{HP+9, MP+11, MAG+2\hfill Requires: Aero}{All targets in a row suffer 3d wind damage and make a DC6 check and switch row upon failure.}\vfill
 \ofspell{Drain}{16}{8}{Ranged}{HP+16, MP+9, MAG+1\hfill Requires: Osmosis}{One target suffers 2d dark damage and you regain HP equal to the total damage dealt.}\newpage
 \ofspell{Dispel}{12}{8}{Artillery}{HP+6, MP+14, RES+1, DEF+1\hfill Requires: Esuna}{All Resiliences and active beneficial Status Effects of one target are removed for 3r.}\vfill
 \ofspell{Full-Life}{24}{8}{Ranged}{HP+9, MP+11, RES+2\hfill Requires: Raise}{Remove KO from one target and fully restore his HP.}\vfill
-\ofspell{Reflect}{16}{8}{Melee}{HP+9, MP+16, RES+1\hfill Requies: Wall}{One target gains a shield that reflects the next spell that targets them back to its caster. This effect does not stack.}\vfill
+\ofspell{Reflect}{16}{8}{Melee}{HP+9, MP+16, RES+1\hfill Requies: Veil}{One target gains a shield that reflects the next spell that targets them back to its caster. This effect does not stack.}\vfill
 \ofspell{Stop}{18}{8}{Ranged}{HP+7, MP+18, RES+1\hfill Requires: Extend}{All targets in a row make a DC9 check and suffer Sleep for 1 round upon failure.}\vfill
-\ofspell{Exchange}{12}{8}{Melee}{HP+12, MP+13, DEF+1\hfill Requires: Warp}{Switch your position with an ally in the other row.}\vfill
+\ofspell{Swap}{12}{8}{Melee}{HP+12, MP+13, DEF+1\hfill Requires: Warp}{Switch your position with an ally in the other row. Both of you gain EnSTR \& EnMAG for 1r.}\vfill
 %
 \ofspell{Auto-Life}{32}{10}{Artillery}{HP+8, MP+17, RES+1\hfill Requires: Full-Life}{The next time one target falls KO, he is instantly revived with 1 HP. If unused, this effect expires after 10r.}\vfill
 \ofspell{Holy}{32}{10}{Artillery}{HP+5, MP+15, MAG+2\hfill Reqiures: Curaga}{One target suffers 6d+10 holy damage.}\vfill
 \ofspell{Flare}{32}{10}{Artillery}{HP+4, MP+6, MAG+3\hfill Requires: Firaga}{One target suffers 6d+10 fire damage.}\vfill
 \ofspell{Ultima}{35}{10}{Artillery}{HP+3, MP+7, MAG+3\hfill Requires: 3 LV8 spells}{All enemies suffer 6d dark damage.}\vfill
 \ofspell{Banish}{28}{10}{Artillery}{HP+7, MP+18, MAG+1\hfill Requires: Stop}{One target is removed from the battlefield and cannot take actions for 3r. You cannot target the same combatant with this effect more than once per battle.}\vfill
-\ofspell{Dualcast}{0}{10}{Self}{HP+5, MP+20, MAG+1\hfill Requires: 4 LV1 spells}{Cast two spells that are LV4 or lower simultaneously, but need to spend the necessary MP for both.}\vfill
+\ofspell{Dualcast}{0}{10}{Self}{HP+5, MP+20, MAG+1\hfill Requires: any 4 LV1 spells}{Cast two spells that are LV4 or lower simultaneously, but need to spend the necessary MP for both.}\vfill
 \ofspell{Meteor}{35}{10}{Artillery}{HP+6, MP+4, MAG+3\hfill Requires: Graviga}{After 3r, all enemies suffer 6d+30 damage. You cannot cast this ability again in the meantime.}
 %
+% vox/astra: target gains status effect immunity for x rounds
+% float//exchange
 \clearpage
 %
 \ofchapterwithquote{Passive List}{"Welcome to your doom, starring me!"}{Rikku}
